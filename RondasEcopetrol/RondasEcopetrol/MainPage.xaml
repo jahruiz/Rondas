@@ -1,0 +1,253 @@
+﻿<Page
+    x:Class="RondasEcopetrol.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RondasEcopetrol"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image 
+                Grid.Row="0"
+                Source="Assets/LogoEcopetrol.png"
+                Margin="0,10,0,10"/>
+
+            <Grid Grid.Row="1" Background="#80FF00" BorderBrush="Green">
+            <TextBlock 
+                Text="SISTEMA DE RONDAS"
+                FontSize="40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Stretch"
+                FontFamily="Segoe UI"
+                Margin="0,10,0,10"
+                Foreground="#088A08"
+                FontWeight="Bold"/>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="bajar_ronda"
+                    Click="Button_BajarRonda"
+                    Margin="10,10,10,10"
+                    Background="#80FF00"
+                    BorderBrush="Green"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    IsEnabled="False"
+                    >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                            Grid.Row="0"
+                            Source="Assets/LogoDescarga.png"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                        />
+                    <TextBlock 
+                        Grid.Row="1"
+                        Text="Bajar Ronda"
+                        Foreground="#088A08"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Stretch"
+                        FontWeight="Bold"
+                        />
+                </Grid>
+            </Button>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="hacer_ronda"
+                    Click="Button_Click"
+                    Margin="10,10,10,10"
+                    Background="#80FF00"
+                    BorderBrush="Green"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image 
+                            Grid.Row="0"
+                            Source="Assets/LogoHacerRonda.png"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                        />
+                        <TextBlock 
+                        Grid.Row="1"
+                        Text="Hacer Ronda"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Stretch"
+                        Foreground="#088A08"
+                        FontWeight="Bold"
+                        />
+                    </Grid>
+                </Button>
+
+                <Button 
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    x:Name="enviar_ronda"
+                    Click="Button_Click"
+                    Margin="10,10,10,10"
+                    Background="#80FF00"
+                    BorderBrush="Green"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    IsEnabled="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                            Grid.Row="0"
+                            Source="Assets/EnviarRonda.png"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                        />
+                    <TextBlock 
+                        Grid.Row="1"
+                        Text="Enviar Ronda"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Stretch"
+                        Foreground="#088A08"
+                        FontWeight="Bold"
+                        />
+                </Grid>
+            </Button>
+
+                <Button 
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    x:Name="iniciar_sesion" 
+                    Click="Button_Click"
+                    Margin="10,10,10,10"
+                    Background="#80FF00"
+                    BorderBrush="Green"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                            Grid.Row="0"
+                            Source="Assets/IniciarSesion.png"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                        />
+                    <TextBlock 
+                        Grid.Row="1"
+                        Text="Iniciar Sesión"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Stretch"
+                        Foreground="#088A08"
+                        FontWeight="Bold"
+                        />
+                </Grid>
+            </Button>
+
+                <Button 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    x:Name="cerrar_sesion"
+                    Click="Button_SessionClose"
+                    Margin="10,10,10,10"
+                    Background="#80FF00"
+                    BorderBrush="Green"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    IsEnabled="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                            Grid.Row="0"
+                            Source="Assets/CerrarSesion.png"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                        />
+                    <TextBlock 
+                        Grid.Row="1"
+                        Text="Cerrar Sesión"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Stretch"
+                        Foreground="#088A08"
+                        FontWeight="Bold"
+                        />
+                </Grid>
+            </Button>
+
+                <Button 
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    x:Name="salir"
+                    Click="Button_Exit"
+                    Margin="10,10,10,10"
+                    Background="#80FF00"
+                    BorderBrush="Green"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                            Grid.Row="0"
+                            Source="Assets/Salir.png"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                        />
+                    <TextBlock 
+                        Grid.Row="1"
+                        Text="Salir"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Stretch"
+                        Foreground="#088A08"
+                        FontWeight="Bold"
+                        />
+                </Grid>
+            </Button>
+            
+
+        </Grid>
+
+    </Grid>
+</Page>
