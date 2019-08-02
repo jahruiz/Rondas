@@ -26,21 +26,16 @@ namespace RondasEcopetrol
         public MainPage()
         {
             this.InitializeComponent();
-
             this.acceso = "";
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(IniciarSesion));
-           
         }
-
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
         }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -56,10 +51,7 @@ namespace RondasEcopetrol
                     this.iniciar_sesion.IsEnabled = false;
                 }
             }
-
-
         }
-
         private void Button_SessionClose(object sender, RoutedEventArgs e)
         {
             this.bajar_ronda.IsEnabled = false;
@@ -67,10 +59,13 @@ namespace RondasEcopetrol
             this.cerrar_sesion.IsEnabled = false;
             this.iniciar_sesion.IsEnabled = true;
         }
-
         private void Button_BajarRonda(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(BajarRonda));
+        }
+        private void Button_HacerRonda(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(HacerRonda));
         }
     }
 }

@@ -1,6 +1,7 @@
 WinMetadata\Windows.winmd
 Assets\CerrarSesion.png
 Assets\EnviarRonda.png
+Assets\IconoLapiz.png
 Assets\IniciarSesion.png
 Assets\LockScreenLogo.scale-200.png
 Assets\LogoDescarga.png
@@ -15,6 +16,9 @@ Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
 BajarRonda.xbf
+CapturaDatos1.xbf
+CapturaDatos2.xbf
+HacerRonda.xbf
 IniciarSesion.xbf
 MainPage.xbf
 RondasEcopetrol.xr.xml

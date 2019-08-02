@@ -40,6 +40,9 @@
     <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\Assets\EnviarRonda.png">
       <PackagePath>Assets\EnviarRonda.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\Assets\IconoLapiz.png">
+      <PackagePath>Assets\IconoLapiz.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\Assets\IniciarSesion.png">
       <PackagePath>Assets\IniciarSesion.png</PackagePath>
     </AppxPackagedFile>
@@ -93,6 +96,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\bin\x86\Debug\BajarRonda.xbf">
       <PackagePath>BajarRonda.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\bin\x86\Debug\CapturaDatos1.xbf">
+      <PackagePath>CapturaDatos1.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\bin\x86\Debug\CapturaDatos2.xbf">
+      <PackagePath>CapturaDatos2.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\bin\x86\Debug\HacerRonda.xbf">
+      <PackagePath>HacerRonda.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\source\repos\RondasEcopetrol\RondasEcopetrol\bin\x86\Debug\IniciarSesion.xbf">
       <PackagePath>IniciarSesion.xbf</PackagePath>

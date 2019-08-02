@@ -129,6 +129,15 @@
     <Compile Include="BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CapturaDatos1.xaml.cs">
+      <DependentUpon>CapturaDatos1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CapturaDatos2.xaml.cs">
+      <DependentUpon>CapturaDatos2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HacerRonda.xaml.cs">
+      <DependentUpon>HacerRonda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IniciarSesion.xaml.cs">
       <DependentUpon>IniciarSesion.xaml</DependentUpon>
     </Compile>
@@ -145,6 +154,7 @@
   <ItemGroup>
     <Content Include="Assets\CerrarSesion.png" />
     <Content Include="Assets\EnviarRonda.png" />
+    <Content Include="Assets\IconoLapiz.png" />
     <Content Include="Assets\IniciarSesion.png" />
     <Content Include="Assets\LogoDescarga.png" />
     <Content Include="Assets\LogoEcopetrol.png" />
@@ -165,6 +175,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="BajarRonda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CapturaDatos1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CapturaDatos2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HacerRonda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

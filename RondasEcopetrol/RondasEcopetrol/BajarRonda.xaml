@@ -37,8 +37,8 @@
                 FontWeight="Bold"/>
             </Grid>
         </Grid>
-        
-        <ListView x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" >
+
+        <ListView x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" IsItemClickEnabled="True" ItemClick="{x:Bind ClickItemListAsync}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="x:String">
                     <Grid>
