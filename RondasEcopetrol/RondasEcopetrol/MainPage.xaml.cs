@@ -67,6 +67,11 @@ namespace RondasEcopetrol
         {
             Frame.Navigate(typeof(HacerRonda));
         }
+
+        private void Button_EnviarRonda(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

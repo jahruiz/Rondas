@@ -26,5 +26,16 @@ namespace RondasEcopetrol
         {
             this.InitializeComponent();
         }
+
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+           if (Frame.CanGoBack) Frame.GoBack();
+            
+        }
+
+        private void Button_Success(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

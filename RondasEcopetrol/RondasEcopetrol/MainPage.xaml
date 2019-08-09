@@ -120,7 +120,7 @@
                     Grid.Row="0"
                     Grid.Column="2"
                     x:Name="enviar_ronda"
-                    Click="Button_Click"
+                    Click="Button_EnviarRonda"
                     Margin="10,10,10,10"
                     Background="#80FF00"
                     BorderBrush="Green"
