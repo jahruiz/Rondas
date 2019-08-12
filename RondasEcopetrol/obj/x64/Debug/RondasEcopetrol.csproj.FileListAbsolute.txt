@@ -1,0 +1,17 @@
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\RondasEcopetrol.csprojAssemblyReference.cache
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\App.g.i.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\App.g.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\BajarRonda.g.i.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\BajarRonda.g.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\IniciarSesion.g.i.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\IniciarSesion.g.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\MainPage.g.i.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\MainPage.g.cs
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\App.xaml
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\BajarRonda.xaml
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\IniciarSesion.xaml
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\MainPage.xaml
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\App.xbf
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\BajarRonda.xbf
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\IniciarSesion.xbf
+C:\Users\ITAC\Source\Repos\RondasEcopetrol\obj\x64\Debug\Views\MainPage.xbf
