@@ -106,6 +106,9 @@
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\BajarRonda.xbf">
       <PackagePath>Views\BajarRonda.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos1.xbf">
+      <PackagePath>Views\CapturaDatos1.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\HacerRonda.xbf">
       <PackagePath>Views\HacerRonda.xbf</PackagePath>
     </AppxPackagedFile>
