@@ -11,8 +11,6 @@
         public static string Eco;
         public MainPageViewModel()
         {
-            FileUtils.initPath();
-            Eco = ServerUtils.initServer();
         }
         #region Propiedades
         public bool IsButtonEnable

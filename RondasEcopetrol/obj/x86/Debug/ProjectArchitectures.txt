@@ -1,1 +1,1 @@
-C:\Users\ITAC\Source\Repos\RondasEcopetrol200\RondasEcopetrol\RondasEcopetrol.csproj;x86
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\RondasEcopetrol.csproj;x86

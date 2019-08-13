@@ -11,7 +11,7 @@
     public class IniciarSesionViewModel : ViewModelBase
     {
         //Variables
-
+        public static string Eco;
         #region Propiedades
         public string User
         {
@@ -71,6 +71,8 @@
                 string escapePassword = WebUtility.UrlEncode(Password);
                 if (validText(User.ToUpper()))
                 {
+                    FileUtils.initPath();
+                    Eco = ServerUtils.initServer();
                     if (login(User, escapePassword))
                     {
                         FileUtils.createUser(User.ToUpper());
