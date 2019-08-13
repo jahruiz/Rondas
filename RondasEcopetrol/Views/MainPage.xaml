@@ -87,6 +87,8 @@
             </Button>
 
             <Button
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="HacerRonda"
                     Grid.Row="0"
                     Grid.Column="1"                
                     Margin="10,10,10,10"

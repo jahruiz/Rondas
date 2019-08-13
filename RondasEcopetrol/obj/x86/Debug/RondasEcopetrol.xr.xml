@@ -7,6 +7,7 @@
     <RootPropertyPathName Name="RondasDisponibles" />
     <RootPropertyPathName Name="SelectedUser" />
     <RootPropertyPathName Name="Nombre_Ronda" />
+    <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="IniciarSesionViewModel" />
     <RootPropertyPathName Name="CancelarSesionCommand" />
     <RootPropertyPathName Name="IniciarSesionCommand" />
@@ -58,6 +59,7 @@
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="SelectedItem" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
@@ -70,9 +72,9 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="CommandParameter" />
       <RootProperty Name="BorderBrush" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="IsEnabled" />
     </RootType>
@@ -103,6 +105,9 @@
       <RootProperty Name="FontStyle" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.BajarRonda" />
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
+    <RootType FullName="System.String" />
+    <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Text" />
       <RootProperty Name="PlaceholderText" />

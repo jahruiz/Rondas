@@ -132,10 +132,14 @@
     <Compile Include="ServerUtils\ServerUtils.cs" />
     <Compile Include="ServerUtils\XmlUtils.cs" />
     <Compile Include="ViewModels\BajarRondaViewModel.cs" />
+    <Compile Include="ViewModels\HacerRondaViewModel.cs" />
     <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HacerRonda.xaml.cs">
+      <DependentUpon>HacerRonda.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IniciarSesion.xaml.cs">
       <DependentUpon>IniciarSesion.xaml</DependentUpon>
@@ -184,6 +188,10 @@
   <ItemGroup />
   <ItemGroup>
     <Page Include="Views\BajarRonda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HacerRonda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
