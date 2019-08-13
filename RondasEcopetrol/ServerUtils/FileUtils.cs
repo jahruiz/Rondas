@@ -6,9 +6,16 @@
     using System.Text;
     using System.Xml;
     using System.Xml.Serialization;
+
+    using Windows.Storage;
+    
+    using System.Threading.Tasks;
+    using System.Runtime;
+    using System;
     public class FileUtils
     {
         private static string path;
+        private static string configPath;
 
         private static string user;
         private static string pwd;
@@ -18,23 +25,29 @@
             FileUtils.user = null;
             FileUtils.pwd = null;
             FileUtils.path = null;
+            FileUtils.configPath = null;
         }
         public static void configure_user(string user, string pwd)
         {
             FileUtils.user = user;
             FileUtils.pwd = pwd;
         }
-        public static void createUser(string name)
+        public static async void createUser(string name)
         {
             if (FileUtils.path == null)
             {
                 FileUtils.initPath();
             }
             FileUtils.user = name;
-            if (!Directory.Exists(FileUtils.path + "/" + name))
+            /*if (!Directory.Exists(FileUtils.path + "/" + name))
             {
                 Directory.CreateDirectory(FileUtils.path + "/" + name);
-            }
+            }*/
+            //string path = "C:\\Rondas";
+            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path);
+            StorageFolder userFolder = await rondasFolder.CreateFolderAsync(name, CreationCollisionOption.OpenIfExists);
+            //StorageFolder rondasFolder = ApplicationData.Current.LocalFolder;
+            //StorageFolder userFolder = await rondasFolder.CreateFolderAsync(name, CreationCollisionOption.OpenIfExists);
         }
         public static void deleteUser()
         {
@@ -54,13 +67,13 @@
             return FileUtils.pwd;
         }
 
-        public static string getPath()
+        public static string getConfigPath()
         {
-            if (FileUtils.path == null)
+            if (FileUtils.configPath == null)
             {
-                FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
+                FileUtils.configPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
             }
-            return FileUtils.path;
+            return FileUtils.configPath;
         }
         public static byte[] getUTF8BytesFromXml(string filename)
         {
@@ -82,7 +95,8 @@
         }
         public static void initPath()
         {
-            FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
+            //FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
+            FileUtils.path = ApplicationData.Current.LocalFolder.Path;
         }
         public static DataSet loadData(string Filename)
         {

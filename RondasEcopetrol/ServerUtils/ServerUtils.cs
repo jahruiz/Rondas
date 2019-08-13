@@ -59,7 +59,7 @@
         public static string initServer()
         {
             XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.Load(FileUtils.getPath() + "/config.xml");
+            xmlDocument.Load(FileUtils.getConfigPath() + "/config.xml");
             XmlNodeReader xmlNodeReader = new XmlNodeReader(xmlDocument);
             xmlNodeReader.MoveToContent();
             xmlNodeReader.MoveToAttribute(0);
