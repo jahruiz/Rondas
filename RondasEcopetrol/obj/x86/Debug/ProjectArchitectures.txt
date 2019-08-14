@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-C:\Desarrollo\Rondas\RondasEcopetrol\RondasEcopetrol.csproj;x86
-=======
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\RondasEcopetrol.csproj;x86
->>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f

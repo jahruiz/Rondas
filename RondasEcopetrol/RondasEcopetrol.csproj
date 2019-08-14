@@ -134,14 +134,9 @@
     <Compile Include="ServerUtils\ServerUtils.cs" />
     <Compile Include="ServerUtils\XmlUtils.cs" />
     <Compile Include="ViewModels\BajarRondaViewModel.cs" />
-<<<<<<< HEAD
-    <Compile Include="ViewModels\CapturaEquipoViewModel.cs" />
-    <Compile Include="ViewModels\CapturaTareaViewModel.cs" />
-=======
     <Compile Include="ViewModels\CambiarContrasenaViewModel.cs" />
     <Compile Include="ViewModels\CapturaDatos1ViewModel.cs" />
     <Compile Include="ViewModels\CapturaDatos2ViewModel.cs" />
->>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
     <Compile Include="ViewModels\HacerRondaViewModel.cs" />
     <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
@@ -149,19 +144,14 @@
     <Compile Include="Views\BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Views\CapturaEquipo.xaml.cs">
-      <DependentUpon>CapturaEquipo.xaml</DependentUpon>
-=======
     <Compile Include="Views\CambiarContrasena.xaml.cs">
       <DependentUpon>CambiarContrasena.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CapturaDatos1.xaml.cs">
       <DependentUpon>CapturaDatos1.xaml</DependentUpon>
->>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
     </Compile>
-    <Compile Include="Views\CapturaTarea.xaml.cs">
-      <DependentUpon>CapturaTarea.xaml</DependentUpon>
+    <Compile Include="Views\CapturaDatos2.xaml.cs">
+      <DependentUpon>CapturaDatos2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnviarRonda.xaml.cs">
       <DependentUpon>EnviarRonda.xaml</DependentUpon>
@@ -220,19 +210,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-<<<<<<< HEAD
-    <Page Include="Views\CapturaEquipo.xaml">
-=======
     <Page Include="Views\CambiarContrasena.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CapturaDatos1.xaml">
->>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CapturaTarea.xaml">
+    <Page Include="Views\CapturaDatos2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

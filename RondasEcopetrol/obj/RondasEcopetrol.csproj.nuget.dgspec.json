@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj": {}
-  },
-  "projects": {
-    "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
-        "projectName": "RondasEcopetrol",
-        "projectPath": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
-        "packagesPath": "C:\\Users\\ITAC\\.nuget\\packages\\",
-        "outputPath": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\obj\\",
-=======
     "C:\\Users\\Alexander\\Documents\\Repositorio\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj": {}
   },
   "projects": {
@@ -25,7 +12,6 @@
         "projectPath": "C:\\Users\\Alexander\\Documents\\Repositorio\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
         "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Alexander\\Documents\\Repositorio\\Rondas\\RondasEcopetrol\\obj\\",
->>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

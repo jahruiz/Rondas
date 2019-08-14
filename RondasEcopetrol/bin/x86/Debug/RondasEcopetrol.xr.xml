@@ -7,19 +7,12 @@
     <RootPropertyPathName Name="RondasDisponibles" />
     <RootPropertyPathName Name="SelectedUser" />
     <RootPropertyPathName Name="Nombre_Ronda" />
-<<<<<<< HEAD
-    <RootPropertyPathName Name="CapturaEquipoViewModel" />
-    <RootPropertyPathName Name="AceptarCommand" />
-    <RootPropertyPathName Name="NavigationCommand" />
-    <RootPropertyPathName Name="CapturaTareaViewModel" />
-=======
     <RootPropertyPathName Name="CambiarContrasenaViewModel" />
     <RootPropertyPathName Name="IniciarSesionCommand" />
     <RootPropertyPathName Name="Info" />
     <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="CapturaDatos1ViewModel" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
->>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
     <RootPropertyPathName Name="Nombre" />
@@ -27,6 +20,7 @@
     <RootPropertyPathName Name="CancelarSesionCommand" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="MainPageViewModel" />
+    <RootPropertyPathName Name="NavigationCommand" />
     <RootPropertyPathName Name="IsButtonEnable" />
     <RootPropertyPathName Name="IsButtonSesionEnable" />
   </Roots.PropertyPathNames>
@@ -84,8 +78,8 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="RequestedTheme" />
-      <RootProperty Name="CommandParameter" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="CommandParameter" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="IsEnabled" />
@@ -131,18 +125,14 @@
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="System.String" />
-    <RootType FullName="RondasEcopetrol.Views.CapturaEquipo" />
+    <RootType FullName="RondasEcopetrol.Views.CapturaDatos1" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
-<<<<<<< HEAD
-    <RootType FullName="RondasEcopetrol.Views.CapturaTarea" />
-=======
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
     <RootType FullName="RondasEcopetrol.Views.EnviarRonda" />
->>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />
