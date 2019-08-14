@@ -1,1 +1,1 @@
-L:\proyectos\AM ECP 2019\Desarrollo\Rondas Offline\Fuentes\Rondas\RondasEcopetrol\RondasEcopetrol.csproj;x86
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\RondasEcopetrol.csproj;x86

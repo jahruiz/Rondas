@@ -329,3 +329,18 @@ L:\proyectos\AM ECP 2019\Desarrollo\Rondas Offline\Fuentes\Rondas\RondasEcopetro
 L:\proyectos\AM ECP 2019\Desarrollo\Rondas Offline\Fuentes\Rondas\RondasEcopetrol\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 L:\proyectos\AM ECP 2019\Desarrollo\Rondas Offline\Fuentes\Rondas\RondasEcopetrol\obj\x86\Debug\ProjectArchitectures.txt
 L:\proyectos\AM ECP 2019\Desarrollo\Rondas Offline\Fuentes\Rondas\RondasEcopetrol\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885490160000000.json
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos1.xbf
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos2.xbf
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\bin\x86\Debug\Views\HacerRonda.xbf
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos1.g.i.cs
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos1.g.cs
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos2.g.i.cs
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos2.g.cs
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\HacerRonda.g.i.cs
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\HacerRonda.g.cs
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos1.xaml
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos2.xaml
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\HacerRonda.xaml
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos1.xbf
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CapturaDatos2.xbf
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrol\obj\x86\Debug\Views\HacerRonda.xbf
