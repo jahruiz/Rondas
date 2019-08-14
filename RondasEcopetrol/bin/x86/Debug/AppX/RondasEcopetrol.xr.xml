@@ -9,6 +9,8 @@
     <RootPropertyPathName Name="Nombre_Ronda" />
     <RootPropertyPathName Name="CapturaDatos1ViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
+    <RootPropertyPathName Name="RondasDescargadas" />
+    <RootPropertyPathName Name="Nombre" />
     <RootPropertyPathName Name="IniciarSesionViewModel" />
     <RootPropertyPathName Name="CancelarSesionCommand" />
     <RootPropertyPathName Name="IniciarSesionCommand" />
@@ -61,7 +63,7 @@
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="SelectedItem" />
       <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="Items" />
+      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
@@ -126,7 +128,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />

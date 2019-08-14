@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using RondasEcopetrol.Base;
+using RondasEcopetrol.ViewModels;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,6 +27,11 @@ namespace RondasEcopetrol.Views
         public HacerRonda()
         {
             this.InitializeComponent();
+        }
+
+        private void lstRonda_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.listView1.SelectedItem = e.ClickedItem;
         }
     }
 }
