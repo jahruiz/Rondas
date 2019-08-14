@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DESKTOP-P13P5VG</Machine>
-    <WindowsUser>ITAC</WindowsUser>
+    <Machine>DESKTOP-SN60F4A</Machine>
+    <WindowsUser>Alexander</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
@@ -10,121 +10,124 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>2b2f7533-f1ee-4e5f-a3c3-e83106eaf329</PackageIdentityName>
     <PackageIdentityPublisher>CN=ITAC</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Desarrollo\RondasEcopetrol\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\RondasEcopetrol.exe">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\RondasEcopetrol.exe">
       <PackagePath>entrypoint\RondasEcopetrol.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.8\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ITAC\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+    <AppxPackagedFile Include="C:\Users\Alexander\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
       <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ITAC\.nuget\packages\unity\5.11.1\lib\netstandard2.0\Unity.Abstractions.dll">
+    <AppxPackagedFile Include="C:\Users\Alexander\.nuget\packages\unity\5.11.1\lib\netstandard2.0\Unity.Abstractions.dll">
       <PackagePath>Unity.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ITAC\.nuget\packages\unity\5.11.1\lib\netstandard2.0\Unity.Container.dll">
+    <AppxPackagedFile Include="C:\Users\Alexander\.nuget\packages\unity\5.11.1\lib\netstandard2.0\Unity.Container.dll">
       <PackagePath>Unity.Container.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\CerrarSesion.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\CerrarSesion.png">
       <PackagePath>Assets\CerrarSesion.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\EnviarRonda.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\EnviarRonda.png">
       <PackagePath>Assets\EnviarRonda.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\IconoLapiz.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\IconoLapiz.png">
       <PackagePath>Assets\IconoLapiz.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\IniciarSesion.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\IniciarSesion.png">
       <PackagePath>Assets\IniciarSesion.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\LogoDescarga.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LogoDescarga.png">
       <PackagePath>Assets\LogoDescarga.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\LogoEcopetrol.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LogoEcopetrol.png">
       <PackagePath>Assets\LogoEcopetrol.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\LogoHacerRonda.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LogoHacerRonda.png">
       <PackagePath>Assets\LogoHacerRonda.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\Salir.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\Salir.png">
       <PackagePath>Assets\Salir.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\RondasEcopetrol.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\RondasEcopetrol.xr.xml">
       <PackagePath>RondasEcopetrol.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\Views\BajarRonda.xbf">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\BajarRonda.xbf">
       <PackagePath>Views\BajarRonda.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos1.xbf">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos1.xbf">
       <PackagePath>Views\CapturaDatos1.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\Views\HacerRonda.xbf">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos2.xbf">
+      <PackagePath>Views\CapturaDatos2.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\HacerRonda.xbf">
       <PackagePath>Views\HacerRonda.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\Views\IniciarSesion.xbf">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\IniciarSesion.xbf">
       <PackagePath>Views\IniciarSesion.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\Views\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\RondasEcopetrol\bin\x86\Debug\Core\RondasEcopetrol.exe">
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Core\RondasEcopetrol.exe">
       <PackagePath>RondasEcopetrol.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

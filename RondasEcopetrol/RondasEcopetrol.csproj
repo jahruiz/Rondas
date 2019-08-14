@@ -126,8 +126,6 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\ViewModelLocator.cs" />
     <Compile Include="Models\Ronda.cs" />
-    <Compile Include="Models\RondaDescargada.cs" />
-    <Compile Include="Models\Rondas_Descargadas.cs" />
     <Compile Include="Models\Rondas_Disponibles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerUtils\FileUtils.cs" />
@@ -135,6 +133,7 @@
     <Compile Include="ServerUtils\XmlUtils.cs" />
     <Compile Include="ViewModels\BajarRondaViewModel.cs" />
     <Compile Include="ViewModels\CapturaDatos1ViewModel.cs" />
+    <Compile Include="ViewModels\CapturaDatos2ViewModel.cs" />
     <Compile Include="ViewModels\HacerRondaViewModel.cs" />
     <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
@@ -143,6 +142,9 @@
     </Compile>
     <Compile Include="Views\CapturaDatos1.xaml.cs">
       <DependentUpon>CapturaDatos1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CapturaDatos2.xaml.cs">
+      <DependentUpon>CapturaDatos2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HacerRonda.xaml.cs">
       <DependentUpon>HacerRonda.xaml</DependentUpon>
@@ -198,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CapturaDatos1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CapturaDatos2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
