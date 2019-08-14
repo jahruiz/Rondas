@@ -8,6 +8,7 @@
     <RootPropertyPathName Name="SelectedUser" />
     <RootPropertyPathName Name="Nombre_Ronda" />
     <RootPropertyPathName Name="CapturaDatos1ViewModel" />
+    <RootPropertyPathName Name="EnviarRondaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
     <RootPropertyPathName Name="Nombre" />
@@ -105,6 +106,7 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontWeight" />
+      <RootProperty Name="Height" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontStyle" />
     </RootType>
@@ -128,6 +130,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
+    <RootType FullName="RondasEcopetrol.Views.EnviarRonda" />
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />

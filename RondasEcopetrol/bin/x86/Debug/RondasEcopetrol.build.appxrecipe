@@ -67,6 +67,9 @@
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\Salir.png">
       <PackagePath>Assets\Salir.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\SubirRonda.png">
+      <PackagePath>Assets\SubirRonda.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
@@ -111,6 +114,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos2.xbf">
       <PackagePath>Views\CapturaDatos2.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\EnviarRonda.xbf">
+      <PackagePath>Views\EnviarRonda.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\HacerRonda.xbf">
       <PackagePath>Views\HacerRonda.xbf</PackagePath>

@@ -40,6 +40,9 @@
         {
             switch (viewFrame)
             {
+                case "EnviarRonda":
+                    AppFrame.Navigate(typeof(EnviarRonda));
+                    break;
                 case "HacerRonda":
                     AppFrame.Navigate(typeof(HacerRonda));
                     break;

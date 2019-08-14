@@ -139,6 +139,7 @@
     <Compile Include="ViewModels\HacerRondaViewModel.cs" />
     <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\EnviarRondaViewModel.cs" />
     <Compile Include="Views\BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
     </Compile>
@@ -147,6 +148,9 @@
     </Compile>
     <Compile Include="Views\CapturaDatos2.xaml.cs">
       <DependentUpon>CapturaDatos2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnviarRonda.xaml.cs">
+      <DependentUpon>EnviarRonda.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HacerRonda.xaml.cs">
       <DependentUpon>HacerRonda.xaml</DependentUpon>
@@ -172,6 +176,7 @@
     <Content Include="Assets\LogoEcopetrol.png" />
     <Content Include="Assets\LogoHacerRonda.png" />
     <Content Include="Assets\Salir.png" />
+    <Content Include="Assets\SubirRonda.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -206,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CapturaDatos2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EnviarRonda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
