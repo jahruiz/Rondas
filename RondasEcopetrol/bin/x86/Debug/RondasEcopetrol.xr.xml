@@ -120,6 +120,12 @@
     </RootType>
     <RootType FullName="System.String" />
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos1" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
+      <RootProperty Name="Content" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
