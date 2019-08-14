@@ -7,7 +7,10 @@
     <RootPropertyPathName Name="RondasDisponibles" />
     <RootPropertyPathName Name="SelectedUser" />
     <RootPropertyPathName Name="Nombre_Ronda" />
-    <RootPropertyPathName Name="CapturaDatos1ViewModel" />
+    <RootPropertyPathName Name="CapturaEquipoViewModel" />
+    <RootPropertyPathName Name="AceptarCommand" />
+    <RootPropertyPathName Name="NavigationCommand" />
+    <RootPropertyPathName Name="CapturaTareaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
     <RootPropertyPathName Name="Nombre" />
@@ -18,7 +21,6 @@
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="MainPageViewModel" />
-    <RootPropertyPathName Name="NavigationCommand" />
     <RootPropertyPathName Name="IsButtonEnable" />
     <RootPropertyPathName Name="IsButtonSesionEnable" />
   </Roots.PropertyPathNames>
@@ -76,8 +78,8 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="RequestedTheme" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="CommandParameter" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="IsEnabled" />
@@ -121,13 +123,13 @@
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="System.String" />
-    <RootType FullName="RondasEcopetrol.Views.CapturaDatos1" />
+    <RootType FullName="RondasEcopetrol.Views.CapturaEquipo" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
-    <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
+    <RootType FullName="RondasEcopetrol.Views.CapturaTarea" />
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />

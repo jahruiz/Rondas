@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "L:\\proyectos\\AM ECP 2019\\Desarrollo\\Rondas Offline\\Fuentes\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj": {}
+    "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj": {}
   },
   "projects": {
-    "L:\\proyectos\\AM ECP 2019\\Desarrollo\\Rondas Offline\\Fuentes\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj": {
+    "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\proyectos\\AM ECP 2019\\Desarrollo\\Rondas Offline\\Fuentes\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
+        "projectUniqueName": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
         "projectName": "RondasEcopetrol",
-        "projectPath": "L:\\proyectos\\AM ECP 2019\\Desarrollo\\Rondas Offline\\Fuentes\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
+        "projectPath": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
         "packagesPath": "C:\\Users\\ITAC\\.nuget\\packages\\",
-        "outputPath": "L:\\proyectos\\AM ECP 2019\\Desarrollo\\Rondas Offline\\Fuentes\\Rondas\\RondasEcopetrol\\obj\\",
+        "outputPath": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

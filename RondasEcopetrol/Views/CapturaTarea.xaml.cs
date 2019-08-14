@@ -21,9 +21,9 @@ namespace RondasEcopetrol.Views
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class CapturaDatos1 : PageBase
+    public sealed partial class CapturaTarea : PageBase
     {
-        public CapturaDatos1()
+        public CapturaTarea()
         {
             this.InitializeComponent();
         }

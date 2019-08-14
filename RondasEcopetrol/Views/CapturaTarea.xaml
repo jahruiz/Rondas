@@ -1,5 +1,5 @@
 ﻿<base:PageBase
-    x:Class="RondasEcopetrol.Views.CapturaDatos1"
+    x:Class="RondasEcopetrol.Views.CapturaTarea"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RondasEcopetrol.Views"
@@ -8,12 +8,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource Locator}, Path=CapturaDatos1ViewModel}">
+    DataContext="{Binding Source={StaticResource Locator}, Path=CapturaTareaViewModel}">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="6*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
@@ -46,6 +47,8 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -72,7 +75,7 @@
             <TextBlock 
                 Grid.Row="1"
                 Grid.Column="0"
-                Text="Descripcion"
+                Text="Tarea"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
@@ -87,23 +90,28 @@
             <TextBlock 
                 Grid.Row="2"
                 Grid.Column="0"
-                Text="Estado"
+                Text="Valor"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <ComboBox  PlaceholderText="Seleccionar" Width="200" Grid.Row="2"  Grid.Column="1" VerticalAlignment="Center">
-                <x:String>EF</x:String>
-                <x:String>FS</x:String>
-                <x:String>MTC</x:String>
-                <x:String>MTT</x:String>
-                <x:String>NA</x:String>
-                <x:String>OF</x:String>
-                <x:String>OP</x:String>
-                <x:String>SB</x:String>
-                <x:String>SF</x:String>
-            </ComboBox>
+            <Grid Grid.Row="2" Grid.Column="1" Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <CalendarDatePicker 
+                Grid.Column="0"
+                x:Name="arrivalCalendarDatePicker" 
+                />
+                <TextBox
+                Grid.Column="1"
+                Text=""
+                />
+                
+            </Grid>
+            
 
             <TextBlock 
                 Grid.Row="3"
@@ -119,13 +127,59 @@
                 Grid.Column="1"
                 Text="..."
                 />
+            <CheckBox 
+                Grid.Row="4"
+                Grid.Column="1"
+                x:Name="termsOfServiceCheckBox" 
+                Content="Sin comentario"
+                VerticalAlignment="Top"/>
+            <TextBlock 
+                Grid.Row="5"
+                Grid.Column="0"
+                Text="Causa"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Foreground="#088A08"
+                FontWeight="Bold"/>
+            <ComboBox  
+                PlaceholderText="Seleccionar"
+                Width="200"
+                Grid.Row="5"
+                Grid.Column="1"
+                VerticalAlignment="Center">
+                <x:String>Proceso 1</x:String>
+                <x:String>Proceso 2</x:String>
+                <x:String>Proceso 3</x:String>
+                <x:String>Proceso 4</x:String>
+                <x:String>Proceso 5</x:String>
+                <x:String>Proceso 6</x:String>
+               
+            </ComboBox>
         </Grid>
+        <ListView x:Name="listView1" Grid.Row="2" Margin="0,30,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="x:String">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="47"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="valor:291" Foreground="Teal" 
+                           FontSize="14" />
+                        <TextBlock Text="01/23/2018 21:01:58" Foreground="Teal" 
+                           FontSize="14" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:ConnectionId='2' x:Name="aceptar" Content="Aceptar"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:ConnectionId='3' x:Name="cancelar" Content="Cancelar"  Margin="10,10,10,10" Background="#33FD0000" ></Button>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="anterior" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
+            <Button x:Name="siguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
+            <Button x:Name="guardar" Content="Guardar" Command="{Binding AceptarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
+            <Button x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
         </StackPanel>
 
     </Grid>
 </base:PageBase>
-

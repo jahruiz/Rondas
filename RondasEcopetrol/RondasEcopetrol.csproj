@@ -134,19 +134,19 @@
     <Compile Include="ServerUtils\ServerUtils.cs" />
     <Compile Include="ServerUtils\XmlUtils.cs" />
     <Compile Include="ViewModels\BajarRondaViewModel.cs" />
-    <Compile Include="ViewModels\CapturaDatos1ViewModel.cs" />
-    <Compile Include="ViewModels\CapturaDatos2ViewModel.cs" />
+    <Compile Include="ViewModels\CapturaEquipoViewModel.cs" />
+    <Compile Include="ViewModels\CapturaTareaViewModel.cs" />
     <Compile Include="ViewModels\HacerRondaViewModel.cs" />
     <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CapturaDatos1.xaml.cs">
-      <DependentUpon>CapturaDatos1.xaml</DependentUpon>
+    <Compile Include="Views\CapturaEquipo.xaml.cs">
+      <DependentUpon>CapturaEquipo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CapturaDatos2.xaml.cs">
-      <DependentUpon>CapturaDatos2.xaml</DependentUpon>
+    <Compile Include="Views\CapturaTarea.xaml.cs">
+      <DependentUpon>CapturaTarea.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HacerRonda.xaml.cs">
       <DependentUpon>HacerRonda.xaml</DependentUpon>
@@ -201,11 +201,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CapturaDatos1.xaml">
+    <Page Include="Views\CapturaEquipo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CapturaDatos2.xaml">
+    <Page Include="Views\CapturaTarea.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -14,8 +14,8 @@
             _container.RegisterType<BajarRondaViewModel>();
             _container.RegisterType<IniciarSesionViewModel>();
             _container.RegisterType<HacerRondaViewModel>();
-            _container.RegisterType<CapturaDatos1ViewModel>();
-            _container.RegisterType<CapturaDatos2ViewModel>();
+            _container.RegisterType<CapturaEquipoViewModel>();
+            _container.RegisterType<CapturaTareaViewModel>();
         }
         public MainPageViewModel MainPageViewModel => _container.Resolve<MainPageViewModel>();
         public BajarRondaViewModel BajarRondaViewModel => _container.Resolve<BajarRondaViewModel>();
@@ -23,8 +23,8 @@
 
         public HacerRondaViewModel HacerRondaViewModel => _container.Resolve<HacerRondaViewModel>();
 
-        public CapturaDatos1ViewModel CapturaDatos1ViewModel => _container.Resolve<CapturaDatos1ViewModel>();
+        public CapturaEquipoViewModel CapturaEquipoViewModel => _container.Resolve<CapturaEquipoViewModel>();
 
-        public CapturaDatos2ViewModel CapturaDatos2ViewModel => _container.Resolve<CapturaDatos2ViewModel>();
+        public CapturaTareaViewModel CapturaTareaViewModel => _container.Resolve<CapturaTareaViewModel>();
     }
 }

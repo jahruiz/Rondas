@@ -1,1 +1,1 @@
-L:\proyectos\AM ECP 2019\Desarrollo\Rondas Offline\Fuentes\Rondas\RondasEcopetrol\RondasEcopetrol.csproj;x86
+C:\Desarrollo\Rondas\RondasEcopetrol\RondasEcopetrol.csproj;x86
