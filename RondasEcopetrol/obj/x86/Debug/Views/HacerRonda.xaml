@@ -24,7 +24,7 @@
 
             <Image 
                 Grid.Row="0"
-                Source="/Assets/LogoEcopetrol.png"
+                Source="Assets/LogoEcopetrol.png"
                 Margin="0,10,0,10"/>
 
             <Grid Grid.Row="1" Background="#80FF00" BorderBrush="Green">
@@ -40,24 +40,23 @@
             </Grid>
         </Grid>
 
-        <ListView x:ConnectionId='2' x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" IsItemClickEnabled="True" SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+        <ListView x:ConnectionId='2' x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}" IsItemClickEnabled="True" SelectedItem="{Binding SelectedUser,Mode = TwoWay  }"                                >
             <ListView.ItemTemplate>
                 <DataTemplate                      >
-                    <Grid x:ConnectionId='4'>
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="47"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Image Source="Assets/IconoLapiz.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
-                        <TextBlock x:ConnectionId='5'                 Foreground="Teal" 
+                        <TextBlock Text="{Binding Path= Nombre}" Foreground="Teal" 
                            FontSize="14" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>
 
             </ListView.ItemTemplate>
-            <x:String>ANALISTA U-850 (06:00)</x:String>
-            <x:String>OPERADOR 850 PATIO (14:00)</x:String>
+
         </ListView>
         <Button 
             Grid.Row="2"

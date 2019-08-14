@@ -126,6 +126,8 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\ViewModelLocator.cs" />
     <Compile Include="Models\Ronda.cs" />
+    <Compile Include="Models\RondaDescargada.cs" />
+    <Compile Include="Models\Rondas_Descargadas.cs" />
     <Compile Include="Models\Rondas_Disponibles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerUtils\FileUtils.cs" />
