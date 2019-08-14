@@ -15,7 +15,6 @@
             _container.RegisterType<IniciarSesionViewModel>();
             _container.RegisterType<HacerRondaViewModel>();
             _container.RegisterType<CapturaDatos1ViewModel>();
-            _container.RegisterType<CapturaDatos2ViewModel>();
         }
         public MainPageViewModel MainPageViewModel => _container.Resolve<MainPageViewModel>();
         public BajarRondaViewModel BajarRondaViewModel => _container.Resolve<BajarRondaViewModel>();
@@ -24,7 +23,5 @@
         public HacerRondaViewModel HacerRondaViewModel => _container.Resolve<HacerRondaViewModel>();
 
         public CapturaDatos1ViewModel CapturaDatos1ViewModel => _container.Resolve<CapturaDatos1ViewModel>();
-
-        public CapturaDatos2ViewModel CapturaDatos2ViewModel => _container.Resolve<CapturaDatos2ViewModel>();
     }
 }
