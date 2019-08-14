@@ -40,6 +40,12 @@
         {
             switch (viewFrame)
             {
+                case "CambiarContra":
+                    AppFrame.Navigate(typeof(CambiarContrasena));
+                    break;
+                case "EnviarRonda":
+                    AppFrame.Navigate(typeof(EnviarRonda));
+                    break;
                 case "HacerRonda":
                     AppFrame.Navigate(typeof(HacerRonda));
                     break;

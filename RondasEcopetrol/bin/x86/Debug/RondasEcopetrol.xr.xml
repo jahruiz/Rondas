@@ -7,19 +7,25 @@
     <RootPropertyPathName Name="RondasDisponibles" />
     <RootPropertyPathName Name="SelectedUser" />
     <RootPropertyPathName Name="Nombre_Ronda" />
+<<<<<<< HEAD
     <RootPropertyPathName Name="CapturaEquipoViewModel" />
     <RootPropertyPathName Name="AceptarCommand" />
     <RootPropertyPathName Name="NavigationCommand" />
     <RootPropertyPathName Name="CapturaTareaViewModel" />
+=======
+    <RootPropertyPathName Name="CambiarContrasenaViewModel" />
+    <RootPropertyPathName Name="IniciarSesionCommand" />
+    <RootPropertyPathName Name="Info" />
+    <RootPropertyPathName Name="User" />
+    <RootPropertyPathName Name="CapturaDatos1ViewModel" />
+    <RootPropertyPathName Name="EnviarRondaViewModel" />
+>>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
     <RootPropertyPathName Name="Nombre" />
     <RootPropertyPathName Name="IniciarSesionViewModel" />
     <RootPropertyPathName Name="CancelarSesionCommand" />
-    <RootPropertyPathName Name="IniciarSesionCommand" />
-    <RootPropertyPathName Name="Info" />
     <RootPropertyPathName Name="Password" />
-    <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="MainPageViewModel" />
     <RootPropertyPathName Name="IsButtonEnable" />
     <RootPropertyPathName Name="IsButtonSesionEnable" />
@@ -48,9 +54,9 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Background" />
       <RootProperty Name="BorderBrush" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
@@ -109,6 +115,7 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontStyle" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.BajarRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
@@ -116,6 +123,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="PlaceholderText" />
     </RootType>
+    <RootType FullName="RondasEcopetrol.Views.CambiarContrasena" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Width" />
@@ -129,7 +137,12 @@
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
+<<<<<<< HEAD
     <RootType FullName="RondasEcopetrol.Views.CapturaTarea" />
+=======
+    <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
+    <RootType FullName="RondasEcopetrol.Views.EnviarRonda" />
+>>>>>>> 154817767d09bb40001b0ffa14b99aba26aa8a6f
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />

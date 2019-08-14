@@ -119,6 +119,8 @@
             </Button>
 
             <Button 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="EnviarRonda"
                     Grid.Row="0"
                     Grid.Column="2"
                     Margin="10,10,10,10"
@@ -183,6 +185,8 @@
             </Button>
 
             <Button 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="CambiarContra"
                     Grid.Row="1"
                     Grid.Column="1"
                     Margin="10,10,10,10"
@@ -204,7 +208,7 @@
                         />
                     <TextBlock 
                         Grid.Row="1"
-                        Text="Cerrar Sesión"
+                        Text="Cambiar Contraseña"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Stretch"
                         Foreground="#088A08"
