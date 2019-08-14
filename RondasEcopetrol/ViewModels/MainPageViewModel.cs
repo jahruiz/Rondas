@@ -40,14 +40,14 @@
         {
             switch (viewFrame)
             {
-                case "HacerRonda":
-                    AppFrame.Navigate(typeof(HacerRonda));
+                case "IniciarSesion":
+                    AppFrame.Navigate(typeof(IniciarSesion));
                     break;
                 case "BajarRonda":
                     AppFrame.Navigate(typeof(BajarRonda));
                     break;
-                case "IniciarSesion":
-                    AppFrame.Navigate(typeof(IniciarSesion));
+                case "HacerRonda":
+                    AppFrame.Navigate(typeof(HacerRonda));
                     break;
                 case "Salir":
                     Application.Current.Exit();
@@ -62,7 +62,7 @@
         public override Task OnNavigatedTo(NavigationEventArgs args)
         {
             IsButtonSesionEnable = true;
-            if (  args.Parameter != null && args.Parameter != "")
+            if (  args.Parameter != null && args.Parameter.ToString() != "")
             {
                 IsButtonEnable = (bool)args.Parameter;
                 IsButtonSesionEnable = false;

@@ -8403,24 +8403,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alexander\\.nuget\\packages\\": {},
+    "C:\\Users\\ITAC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alexander\\Documents\\Repositorio\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
+      "projectUniqueName": "C:\\Desarrollo\\RondasEcopetrol\\RondasEcopetrol.csproj",
       "projectName": "RondasEcopetrol",
-      "projectPath": "C:\\Users\\Alexander\\Documents\\Repositorio\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
-      "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alexander\\Documents\\Repositorio\\Rondas\\RondasEcopetrol\\obj\\",
+      "projectPath": "C:\\Desarrollo\\RondasEcopetrol\\RondasEcopetrol.csproj",
+      "packagesPath": "C:\\Users\\ITAC\\.nuget\\packages\\",
+      "outputPath": "C:\\Desarrollo\\RondasEcopetrol\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ITAC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -12,6 +12,9 @@
     using System.Threading.Tasks;
     using System.Runtime;
     using System;
+
+    using System.Collections.Generic;
+
     public class FileUtils
     {
         private static string path;
@@ -43,7 +46,6 @@
             {
                 Directory.CreateDirectory(FileUtils.path + "/" + name);
             }*/
-            //string path = "C:\\Rondas";
             StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path);
             StorageFolder userFolder = await rondasFolder.CreateFolderAsync(name, CreationCollisionOption.OpenIfExists);
             //StorageFolder rondasFolder = ApplicationData.Current.LocalFolder;
@@ -244,6 +246,48 @@
                 xmlSerializer.Serialize(textWriter, ObjectToSerialize);
                 return textWriter.ToString();
             }
+        }
+
+        public static async Task<List<string>> GetUsuariosRondasDescargadasAsync()
+        {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
+
+            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path);
+
+            List<String> users = new List<String>();
+            foreach (var folder in await rondasFolder.GetFoldersAsync())
+            {
+                users.Add(folder.Name);
+            }
+            return users;
+        }
+
+        public static async Task<List<StorageFile>> GetArchivosRondasDescargadasAsync(string usuario)
+        {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
+
+            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path + "\\" + usuario);
+
+            //return (await rondasFolder.GetFilesAsync());
+            List<StorageFile> files = new List<StorageFile>();
+            foreach (var file in await rondasFolder.GetFilesAsync())
+            {
+                files.Add(file);
+            }
+            return files;
+        }
+
+        public static async Task<string> GetXmlRondaAsync(StorageFile fileRonda)
+        {
+            string xmlRonda = await Windows.Storage.FileIO.ReadTextAsync(fileRonda);
+            xmlRonda = xmlRonda.Replace("RondasHHT", "Rondas_Descargadas");
+            return xmlRonda;
         }
     }
 }
