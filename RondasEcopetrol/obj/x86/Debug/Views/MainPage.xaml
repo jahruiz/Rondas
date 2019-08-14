@@ -185,6 +185,8 @@
             </Button>
 
             <Button 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="CambiarContra"
                     Grid.Row="1"
                     Grid.Column="1"
                     Margin="10,10,10,10"

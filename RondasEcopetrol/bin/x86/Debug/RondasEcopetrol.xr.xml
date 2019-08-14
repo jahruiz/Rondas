@@ -7,6 +7,10 @@
     <RootPropertyPathName Name="RondasDisponibles" />
     <RootPropertyPathName Name="SelectedUser" />
     <RootPropertyPathName Name="Nombre_Ronda" />
+    <RootPropertyPathName Name="CambiarContrasenaViewModel" />
+    <RootPropertyPathName Name="IniciarSesionCommand" />
+    <RootPropertyPathName Name="Info" />
+    <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="CapturaDatos1ViewModel" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
@@ -14,10 +18,7 @@
     <RootPropertyPathName Name="Nombre" />
     <RootPropertyPathName Name="IniciarSesionViewModel" />
     <RootPropertyPathName Name="CancelarSesionCommand" />
-    <RootPropertyPathName Name="IniciarSesionCommand" />
-    <RootPropertyPathName Name="Info" />
     <RootPropertyPathName Name="Password" />
-    <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="MainPageViewModel" />
     <RootPropertyPathName Name="NavigationCommand" />
     <RootPropertyPathName Name="IsButtonEnable" />
@@ -47,9 +48,9 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Background" />
       <RootProperty Name="BorderBrush" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
@@ -106,9 +107,9 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="Height" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontStyle" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.BajarRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
@@ -116,6 +117,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="PlaceholderText" />
     </RootType>
+    <RootType FullName="RondasEcopetrol.Views.CambiarContrasena" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Width" />

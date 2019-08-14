@@ -349,3 +349,8 @@ C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\Vi
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\Views\EnviarRonda.xaml
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\Views\EnviarRonda.xbf
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\EnviarRonda.xbf
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CambiarContrasena.xbf
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CambiarContrasena.g.i.cs
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CambiarContrasena.g.cs
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CambiarContrasena.xaml
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x86\Debug\Views\CambiarContrasena.xbf
