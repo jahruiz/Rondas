@@ -12,6 +12,8 @@
     <RootPropertyPathName Name="Info" />
     <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="CapturaDatos1ViewModel" />
+    <RootPropertyPathName Name="AceptarCommand" />
+    <RootPropertyPathName Name="NavigationCommand" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
@@ -20,7 +22,6 @@
     <RootPropertyPathName Name="CancelarSesionCommand" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="MainPageViewModel" />
-    <RootPropertyPathName Name="NavigationCommand" />
     <RootPropertyPathName Name="IsButtonEnable" />
     <RootPropertyPathName Name="IsButtonSesionEnable" />
   </Roots.PropertyPathNames>
@@ -78,8 +79,8 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="RequestedTheme" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="CommandParameter" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="IsEnabled" />

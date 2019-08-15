@@ -11,6 +11,7 @@
     using Windows.UI.Popups;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Navigation;
+    using RondasEcopetrol.Views;
     public class HacerRondaViewModel : ViewModelBase
     {
         public HacerRondaViewModel()
@@ -52,7 +53,8 @@
         }
         private void CancelarExecute()
         {
-            AppFrame.GoBack();
+            //AppFrame.GoBack();
+            AppFrame.Navigate(typeof(MainPage));
         }
 
         #endregion Commands
@@ -116,6 +118,7 @@
         {
             //await DescargaAsync();
             //DescargaAsync();
+            AppFrame.Navigate(typeof(CapturaDatos1));
         }
 
         /*private async void DescargaAsync()

@@ -1,4 +1,3 @@
-WinMetadata\Windows.winmd
 Assets\CerrarSesion.png
 Assets\EnviarRonda.png
 Assets\IconoLapiz.png
@@ -26,3 +25,4 @@ Views\HacerRonda.xbf
 Views\IniciarSesion.xbf
 Views\MainPage.xbf
 Properties\Default.rd.xml
+WinMetadata\Windows.winmd
