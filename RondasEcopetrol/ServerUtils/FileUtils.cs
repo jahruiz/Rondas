@@ -151,13 +151,13 @@
         }
 
         //public static XmlReader loadXMLFromUser(string file) recomendado XmlReader en vez de XmlTextReader
-        public static XmlTextReader loadXMLFromUser(string file)
+        public static XmlTextReader loadXMLFromUser(string file, string user)
         {
             string[] array = new string[]
             {
                 FileUtils.path,
                 "/",
-                FileUtils.user,
+                user,
                 "/",
                 file
             };

@@ -14,6 +14,8 @@
     using RondasEcopetrol.Views;
     public class HacerRondaViewModel : ViewModelBase
     {
+        public static Rondas CurrentRonda;
+
         public HacerRondaViewModel()
         {
             LoadRondasDescargadas();
@@ -82,6 +84,7 @@
 
                         foreach (RondaDescargada ronda in rondas_actuales)
                         {
+                            ronda.Usuario = usuario;
                             rondas.Add(ronda);
                         }
                     }
@@ -116,9 +119,17 @@
         }
         private void HacerCommand(IUICommand command)
         {
-            //await DescargaAsync();
-            //DescargaAsync();
-            AppFrame.Navigate(typeof(CapturaDatos1));
+            RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
+            CurrentRonda = lector1.Current;
+            object obj1 = lector1.Current.next();
+            if ((obj1 != null) && (obj1 is Steps))
+            {
+                /*StateMachine.StartStep = (Steps)obj1;
+                StateMachine.step = (Steps)obj1;
+                rndl.Form.App.showCanvas(typeof(StateMachine));*/
+                AppFrame.Navigate(typeof(CapturaDatos1));
+            }
+            
         }
 
         /*private async void DescargaAsync()

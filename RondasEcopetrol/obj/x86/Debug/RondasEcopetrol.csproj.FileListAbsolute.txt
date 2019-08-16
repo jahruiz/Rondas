@@ -438,5 +438,4 @@ C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\qualifiers.txt
 C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\ProjectArchitectures.txt
-C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885238160000000.json
 C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885490160000000.json
