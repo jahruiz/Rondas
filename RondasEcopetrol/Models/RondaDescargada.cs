@@ -16,6 +16,8 @@ namespace RondasEcopetrol.Models
         private string _hora_Gen;
         private string _message_id;
 
+        private string _usuario;
+
         public string Ronda_ID
         {
             get
@@ -111,6 +113,21 @@ namespace RondasEcopetrol.Models
                 if (_message_id != value)
                 {
                     _message_id = value;
+                }
+            }
+        }
+
+        public string Usuario
+        {
+            get
+            {
+                return _usuario;
+            }
+            set
+            {
+                if (_usuario != value)
+                {
+                    _usuario = value;
                 }
             }
         }

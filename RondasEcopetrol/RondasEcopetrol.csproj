@@ -134,8 +134,12 @@
     <Compile Include="Base\ViewModelLocator.cs" />
     <Compile Include="Models\Ronda.cs" />
     <Compile Include="Models\RondaDescargada.cs" />
+    <Compile Include="Models\Rondas.cs" />
+    <Compile Include="Models\RondasLector.cs" />
     <Compile Include="Models\Rondas_Descargadas.cs" />
     <Compile Include="Models\Rondas_Disponibles.cs" />
+    <Compile Include="Models\Steps.cs" />
+    <Compile Include="Models\Work.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerUtils\FileUtils.cs" />
     <Compile Include="ServerUtils\ServerUtils.cs" />

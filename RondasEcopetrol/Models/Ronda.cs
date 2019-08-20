@@ -107,6 +107,6 @@
                     _message_id = value;
                 }
             }
-        }        
+        }
     }
 }

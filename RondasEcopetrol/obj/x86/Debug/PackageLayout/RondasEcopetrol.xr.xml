@@ -142,4 +142,10 @@
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />
-      <RootProperty Name="Placeho
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="RondasEcopetrol.Views.IniciarSesion" />
+    <RootType FullName="RondasEcopetrol.Views.MainPage" />
+  </Roots.RootTypes>
+</Roots>
