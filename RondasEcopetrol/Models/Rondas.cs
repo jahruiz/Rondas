@@ -188,9 +188,8 @@
                 }
                 else
                 {
-                    //TODO Revisar esta condicion
-                    /*if (StateMachine.EndObj == StateMachine.step) this.currentObj = null;
-                    else this.currentObj = this.Steps[0];*/
+                    if (RondasLector.EndObj == RondasLector.Step) this.currentObj = null;
+                    else this.currentObj = this.Steps[0];
                 }
             }
             else if (this.currentObj is Work)
