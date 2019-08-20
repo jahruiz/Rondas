@@ -440,3 +440,4 @@ C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\MultipleQualifiersPerDimensio
 C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\ProjectArchitectures.txt
 C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885238160000000.json
 C:\Desarrollo\Rondas\RondasEcopetrol\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885490160000000.json
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Core\ForBundle\AppxManifest.xml

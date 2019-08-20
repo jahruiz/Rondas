@@ -7,7 +7,7 @@
 
     Para obtener más información acerca de los archivos de manifiesto del paquete, vea http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="2b2f7533-f1ee-4e5f-a3c3-e83106eaf329" Publisher="CN=ITAC" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="2b2f7533-f1ee-4e5f-a3c3-e83106eaf329" Publisher="CN=ITAC" Version="1.0.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="2b2f7533-f1ee-4e5f-a3c3-e83106eaf329" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>RondasEcopetrol</DisplayName>
@@ -26,7 +26,7 @@
   <Applications>
     <Application Id="App" Executable="RondasEcopetrol.exe" EntryPoint="RondasEcopetrol.App">
       <uap:VisualElements DisplayName="RondasEcopetrol" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="RondasEcopetrol" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="RondasEco" />
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
