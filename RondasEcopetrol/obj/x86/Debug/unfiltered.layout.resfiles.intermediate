@@ -1,5 +1,7 @@
 WinMetadata\Windows.winmd
 Assets\CerrarSesion.png
+Assets\ContinuarRonda.png
+Assets\DescripcionRIS.jpg
 Assets\EnviarRonda.png
 Assets\IconoLapiz.png
 Assets\IniciarSesion.png
@@ -7,6 +9,9 @@ Assets\LockScreenLogo.scale-200.png
 Assets\LogoDescarga.png
 Assets\LogoEcopetrol.png
 Assets\LogoHacerRonda.png
+Assets\LogoRIS.jpg
+Assets\LogoRIS_1.jpg
+Assets\LogoRIS2.jpg
 Assets\Salir.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png

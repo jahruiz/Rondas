@@ -184,12 +184,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\CerrarSesion.png" />
+    <Content Include="Assets\ContinuarRonda.png" />
+    <Content Include="Assets\DescripcionRIS.jpg" />
     <Content Include="Assets\EnviarRonda.png" />
     <Content Include="Assets\IconoLapiz.png" />
     <Content Include="Assets\IniciarSesion.png" />
     <Content Include="Assets\LogoDescarga.png" />
     <Content Include="Assets\LogoEcopetrol.png" />
     <Content Include="Assets\LogoHacerRonda.png" />
+    <Content Include="Assets\LogoRIS.jpg" />
+    <Content Include="Assets\LogoRIS2.jpg" />
+    <Content Include="Assets\LogoRIS_1.jpg" />
     <Content Include="Assets\Salir.png" />
     <Content Include="Assets\SubirRonda.png" />
     <Content Include="Properties\Default.rd.xml" />

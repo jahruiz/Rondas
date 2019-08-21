@@ -46,6 +46,9 @@
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\CerrarSesion.png">
       <PackagePath>Assets\CerrarSesion.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\ContinuarRonda.png">
+      <PackagePath>Assets\ContinuarRonda.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\EnviarRonda.png">
       <PackagePath>Assets\EnviarRonda.png</PackagePath>
     </AppxPackagedFile>
@@ -96,6 +99,18 @@
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\DescripcionRIS.jpg">
+      <PackagePath>Assets\DescripcionRIS.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LogoRIS.jpg">
+      <PackagePath>Assets\LogoRIS.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LogoRIS2.jpg">
+      <PackagePath>Assets\LogoRIS2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Assets\LogoRIS_1.jpg">
+      <PackagePath>Assets\LogoRIS_1.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
