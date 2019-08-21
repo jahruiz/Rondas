@@ -152,5 +152,15 @@
         private Rondas current;
         private XmlTextReader reader;
         private string usuario;
+
+        // Campos estaticos migrados de la clase StateMachine
+        public static Steps Step; //StateMachine.step
+        public static Steps StartStep; //StateMachine.StartStep
+        public static Object EndObj; //StateMachine.EndObj
+
+        // Campos estaticos migrados de la clase Sheet
+        public static Work CurrentWork; //Sheet.current
+        public static Rondas CurrentRonda; //Sheet.CurrentRonda
+
     }
 }
