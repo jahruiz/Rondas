@@ -66,11 +66,7 @@
             <TextBox
                 Grid.Row="0"
                 Grid.Column="1"
-<<<<<<< HEAD
-                Text="DH2951"
-=======
                 Text="{Binding Path=Paso,Mode = TwoWay}"
->>>>>>> 53432cb9328c9921221c29fa336c98ef377350e8
                 Margin="0,0,0,10"
                 />
             <TextBlock 
@@ -85,11 +81,7 @@
             <TextBox
                 Grid.Row="1"
                 Grid.Column="1"
-<<<<<<< HEAD
-                Text="DESAIREADOR"
-=======
                 Text="{Binding Path=Direccion,Mode = TwoWay}"
->>>>>>> 53432cb9328c9921221c29fa336c98ef377350e8
                 
                 />
             <TextBlock 
@@ -101,23 +93,10 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-<<<<<<< HEAD
-            <ComboBox  PlaceholderText="Seleccionar" Width="200" Grid.Row="2"  Grid.Column="1" VerticalAlignment="Center">
-                <x:String>EF</x:String>
-                <x:String>FS</x:String>
-                <x:String>MTC</x:String>
-                <x:String>MTT</x:String>
-                <x:String>NA</x:String>
-                <x:String>OF</x:String>
-                <x:String>OP</x:String>
-                <x:String>SB</x:String>
-                <x:String>SF</x:String>
-=======
             <ComboBox  PlaceholderText="Seleccionar" Width="200" Grid.Row="2"  Grid.Column="1" VerticalAlignment="Center" 
                        ItemsSource="{Binding Path=EstadosEquipo,Mode = TwoWay}" 
                        SelectedIndex="{Binding Path=SelectedIndexEstado,Mode = TwoWay}"
                        SelectedValue="{Binding Path=SelectedValueEstado,Mode = TwoWay}">
->>>>>>> 53432cb9328c9921221c29fa336c98ef377350e8
             </ComboBox>
 
             <TextBlock 
@@ -132,22 +111,14 @@
             <TextBox
                 Grid.Row="3"
                 Grid.Column="1"
-<<<<<<< HEAD
-                Text="..."
-=======
                 Text="{Binding Path=Comentario,Mode = TwoWay}"
->>>>>>> 53432cb9328c9921221c29fa336c98ef377350e8
                 />
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:ConnectionId='2' x:Name="anterior" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
             <Button x:ConnectionId='3' x:Name="siguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-<<<<<<< HEAD
-            <Button x:ConnectionId='4' x:Name="guardar" Content="Guardar" Command="{Binding AceptarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-=======
             <Button x:ConnectionId='4' x:Name="guardar" Content="Guardar y Suspender" Command="{Binding GuardarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
->>>>>>> 53432cb9328c9921221c29fa336c98ef377350e8
             <Button x:ConnectionId='5' x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
         </StackPanel>
 

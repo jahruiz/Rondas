@@ -1,11 +1,11 @@
-﻿using System;
+﻿using RondasEcopetrol.Base;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using RondasEcopetrol.ServerUtils;
+using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using RondasEcopetrol.Base;
+using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -13,7 +13,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.Data;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
