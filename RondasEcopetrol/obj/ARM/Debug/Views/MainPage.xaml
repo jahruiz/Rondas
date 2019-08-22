@@ -22,15 +22,29 @@
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
-            <Image 
+            
+            <Grid Grid.Row="0">
+                <Image 
+                Grid.Row="0"
+                Source="/Assets/LogoRIS_1.jpg"
+                Margin="0,10,0,10"
+                    HorizontalAlignment="Left"/>
+                <Image 
+                Grid.Row="0"
+                Source="/Assets/DescripcionRIS.jpg"
+                Margin="0,10,0,10"
+                    HorizontalAlignment="Center"/>
+                <Image 
                 Grid.Row="0"
                 Source="/Assets/LogoEcopetrol.png"
-                Margin="0,10,0,10"/>
+                Margin="0,10,0,10"
+                HorizontalAlignment="Right"/>
+            </Grid>
+            
 
             <Grid Grid.Row="1" Background="#80FF00" BorderBrush="Green">
                 <TextBlock 
-                Text="SISTEMA DE RONDAS"
+                Text="RONDAS OFFLINE"
                 FontSize="40"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Stretch"
@@ -202,13 +216,13 @@
                     </Grid.RowDefinitions>
                     <Image 
                             Grid.Row="0"
-                            Source="/Assets/CerrarSesion.png"
+                            Source="/Assets/ContinuarRonda.png"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
                         />
                     <TextBlock 
                         Grid.Row="1"
-                        Text="Cambiar Contraseña"
+                        Text="Continuar Ronda"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Stretch"
                         Foreground="#088A08"
@@ -240,7 +254,7 @@
                         />
                     <TextBlock 
                         Grid.Row="1"
-                        Text="Salir"
+                        Text="Cerrar"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Stretch"
                         Foreground="#088A08"
