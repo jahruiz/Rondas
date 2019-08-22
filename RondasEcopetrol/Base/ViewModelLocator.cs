@@ -22,15 +22,10 @@
         public MainPageViewModel MainPageViewModel => _container.Resolve<MainPageViewModel>();
         public BajarRondaViewModel BajarRondaViewModel => _container.Resolve<BajarRondaViewModel>();
         public IniciarSesionViewModel IniciarSesionViewModel => _container.Resolve<IniciarSesionViewModel>();
-
         public HacerRondaViewModel HacerRondaViewModel => _container.Resolve<HacerRondaViewModel>();
-
         public CapturaDatos1ViewModel CapturaDatos1ViewModel => _container.Resolve<CapturaDatos1ViewModel>();
-
         public CapturaDatos2ViewModel CapturaDatos2ViewModel => _container.Resolve<CapturaDatos2ViewModel>();
-
         public EnviarRondaViewModel EnviarRondaViewModel => _container.Resolve<EnviarRondaViewModel>();
-
         public CambiarContrasenaViewModel CambiarContrasenaViewModel => _container.Resolve<CambiarContrasenaViewModel>();
     }
 }
