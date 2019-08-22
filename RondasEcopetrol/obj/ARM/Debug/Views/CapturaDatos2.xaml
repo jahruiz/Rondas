@@ -13,9 +13,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
             <Grid.RowDefinitions>
@@ -41,7 +41,7 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="1" Margin="20,20,20,20">
+        <Grid Grid.Row="1" Margin="20,20,0,20" HorizontalAlignment="Left" Width="1480">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -53,7 +53,7 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
             </Grid.ColumnDefinitions>
 
             <TextBlock 
@@ -70,7 +70,9 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Text="DH2951"
-                Margin="0,0,0,10"
+                Margin="0,0,10,10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
                 />
             <TextBlock 
                 Grid.Row="1"
@@ -109,9 +111,9 @@
                 Grid.Column="1"
                 Text=""
                 />
-                
+
             </Grid>
-            
+
 
             <TextBlock 
                 Grid.Row="3"
@@ -144,17 +146,16 @@
                 FontWeight="Bold"/>
             <ComboBox  
                 PlaceholderText="Seleccionar"
-                Width="200"
                 Grid.Row="5"
                 Grid.Column="1"
-                VerticalAlignment="Center">
+                VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0">
                 <x:String>Proceso 1</x:String>
                 <x:String>Proceso 2</x:String>
                 <x:String>Proceso 3</x:String>
                 <x:String>Proceso 4</x:String>
                 <x:String>Proceso 5</x:String>
                 <x:String>Proceso 6</x:String>
-               
+
             </ComboBox>
         </Grid>
         <ListView x:ConnectionId='2' x:Name="listView1" Grid.Row="2" Margin="0,30,0,0">

@@ -14,8 +14,6 @@
     using RondasEcopetrol.Views;
     public class HacerRondaViewModel : ViewModelBase
     {
-        public static Rondas CurrentRonda;
-
         public HacerRondaViewModel()
         {
             LoadRondasDescargadas();
@@ -120,48 +118,16 @@
         private void HacerCommand(IUICommand command)
         {
             RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
-            CurrentRonda = lector1.Current;
+            RondasLector.CurrentRonda = lector1.Current;
             object obj1 = lector1.Current.next();
             if ((obj1 != null) && (obj1 is Steps))
             {
-                /*StateMachine.StartStep = (Steps)obj1;
-                StateMachine.step = (Steps)obj1;
-                rndl.Form.App.showCanvas(typeof(StateMachine));*/
+                RondasLector.StartStep = (Steps)obj1;
+                RondasLector.Step = (Steps)obj1;
                 AppFrame.Navigate(typeof(CapturaDatos1));
             }
             
         }
-
-        /*private async void DescargaAsync()
-        {
-            //var messageDialog = new MessageDialog("Descargando ronda estructurada del sistema RIS...");
-            //messageDialog.Commands.Add(new UICommand(
-            //    "Cancelar"));
-            //await messageDialog.ShowAsync();
-
-            object[] objArray1 = new object[10] { "rondaid=", SelectedUser.ID_Ronda, "&msgId=", SelectedUser.Message_ID, "&pdate=", DateTime.Now.ToString("yyyyMMddHHmmss"), "&user=", FileUtils.getActualUser(), "&pwd=", FileUtils.getActualUserpwd() };
-            if (ServerUtils.send("/getRonda", string.Concat(objArray1)))
-            {
-                if (ServerUtils.isMIME("text/xml"))
-                {
-                    String msgId = "" + SelectedUser.Message_ID;
-                    FileUtils.writeXmlData("rnd" + msgId + ".xml", ServerUtils.getStream());
-                    await MessageDialogError.ImprimirAsync("La ronda ha sido descargada con éxito");
-                }
-                else
-                {
-                    StreamReader reader1 = new StreamReader(ServerUtils.getStream());
-                    await MessageDialogError.ImprimirAsync(reader1.ReadToEnd());//, "Server");
-                    reader1.Close();
-                }
-            }
-            else
-            {
-                //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
-                //app1.showCanvas(typeof(ErrorMessage));
-            }
-            ServerUtils.close();
-        }*/
 
         #endregion Metodos
     }

@@ -12,8 +12,15 @@
     <RootPropertyPathName Name="Info" />
     <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="CapturaDatos1ViewModel" />
-    <RootPropertyPathName Name="AceptarCommand" />
+    <RootPropertyPathName Name="GuardarCommand" />
     <RootPropertyPathName Name="NavigationCommand" />
+    <RootPropertyPathName Name="Comentario" />
+    <RootPropertyPathName Name="EstadosEquipo" />
+    <RootPropertyPathName Name="SelectedIndexEstado" />
+    <RootPropertyPathName Name="SelectedValueEstado" />
+    <RootPropertyPathName Name="Direccion" />
+    <RootPropertyPathName Name="Paso" />
+    <RootPropertyPathName Name="AceptarCommand" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
@@ -126,16 +133,19 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Items" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="SelectedValue" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Items" />
     </RootType>
-    <RootType FullName="System.String" />
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos1" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
+    <RootType FullName="System.String" />
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
     <RootType FullName="RondasEcopetrol.Views.EnviarRonda" />

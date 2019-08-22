@@ -13,8 +13,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
+<<<<<<< HEAD
             <RowDefinition Height="9*"/>
         
+=======
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="Auto"/>
+>>>>>>> 53432cb9328c9921221c29fa336c98ef377350e8
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" >
@@ -23,6 +28,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
+<<<<<<< HEAD
 
             <Grid Grid.Row="0">
                 <Image 
@@ -41,6 +47,12 @@
                 Margin="0,10,0,10"
                 HorizontalAlignment="Right"/>
             </Grid>
+=======
+            <Image 
+                Grid.Row="0"
+                Source="/Assets/LogoEcopetrol.png"
+                Margin="0,10,0,10"/>
+>>>>>>> 53432cb9328c9921221c29fa336c98ef377350e8
 
             <Grid Grid.Row="1" Background="#80FF00" BorderBrush="Green">
                 <TextBlock 
