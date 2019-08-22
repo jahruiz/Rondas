@@ -63,7 +63,7 @@
                 Foreground="#088A08"
                 FontWeight="Bold"
                 />
-            <TextBox
+            <TextBox IsReadOnly="True"
                 Grid.Row="0"
                 Grid.Column="1"
                 Text="{Binding Path=Paso,Mode = TwoWay}"
@@ -78,11 +78,10 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox
+            <TextBox IsReadOnly="True"
                 Grid.Row="1"
                 Grid.Column="1"
                 Text="{Binding Path=Direccion,Mode = TwoWay}"
-                
                 />
             <TextBlock 
                 Grid.Row="2"

@@ -7,12 +7,12 @@ using Windows.UI.Popups;
 
 namespace RondasEcopetrol.Base
 {
-    public class MessageDialogError
+    class MessageDialogWarning
     {
-        public static async System.Threading.Tasks.Task ImprimirAsync(string message)
+        public static async Task ImprimirAsync(string message)
         {
             var messageDialog = new MessageDialog(message);
-            messageDialog.Title = "Error";
+            messageDialog.Title = "Advertencia";
             await messageDialog.ShowAsync();
         }
     }

@@ -20,6 +20,7 @@
     <RootPropertyPathName Name="SelectedValueEstado" />
     <RootPropertyPathName Name="Direccion" />
     <RootPropertyPathName Name="Paso" />
+    <RootPropertyPathName Name="CapturaDatos2ViewModel" />
     <RootPropertyPathName Name="AceptarCommand" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
@@ -124,6 +125,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Text" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="IsReadOnly" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="PlaceholderText" />

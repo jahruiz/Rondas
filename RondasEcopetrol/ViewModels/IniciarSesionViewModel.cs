@@ -48,13 +48,13 @@
         private ICommand _cancelarSesionCommand;
         public ICommand IniciarSesionCommand
         {
-            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommand(IniciarSesionExecute); }
+            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommandAsync(IniciarSesionExecuteAsync); }
         }
         public ICommand CancelarSesionCommand
         {
             get { return _cancelarSesionCommand = _cancelarSesionCommand ?? new DelegateCommand(CancelarSesionExecute); }
         }
-        private void IniciarSesionExecute()
+        private async Task IniciarSesionExecuteAsync()
         {
             if (string.IsNullOrEmpty(User))
             {
@@ -73,7 +73,7 @@
                 {
                     FileUtils.initPath();
                     Eco = ServerUtils.initServer();
-                    if (login(User, escapePassword))
+                    if (await loginAsync(User, escapePassword))
                     {
                         FileUtils.createUser(User.ToUpper());
                         FileUtils.configure_user(User, escapePassword);
@@ -108,7 +108,7 @@
 
         #region Metodos
        
-        private bool login(string user, string pwd)
+        private async Task<bool> loginAsync(string user, string pwd)
         {
             bool IsValidUser = false;
             if (ServerUtils.send("/validateUser", "user=" + user + "&pwd=" + pwd))
@@ -121,14 +121,14 @@
                     if (!IsValidUser)
                     {
                         if (returnValue != null && returnValue.Equals("block"))
-                            MessageDialogError.ImprimirAsync("El usuario esta bloqueado consulte a su administrador para que pueda restablecerle contraseña.");
+                            await MessageDialogError.ImprimirAsync("El usuario esta bloqueado consulte a su administrador para que pueda restablecerle contraseña.");
                         else
-                            MessageDialogError.ImprimirAsync("Usuario y / o Clave Incorrecta");
+                            await MessageDialogError.ImprimirAsync("Usuario y / o Clave Incorrecta");
                     }
                 }
                 catch (System.Exception e)
                 {
-                    MessageDialogError.ImprimirAsync(e.Message);
+                    await MessageDialogError.ImprimirAsync(e.Message);
                     IsValidUser = false;
                 }
             }

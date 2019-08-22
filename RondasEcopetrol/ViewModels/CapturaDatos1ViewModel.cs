@@ -16,7 +16,7 @@ namespace RondasEcopetrol.ViewModels
     {
         public CapturaDatos1ViewModel()
         {
-            initPanel();
+            //initPanel();
         }
 
         //Campos del Step mostrado actualmente
@@ -83,26 +83,14 @@ namespace RondasEcopetrol.ViewModels
             }
         }
 
-        private DelegateCommand<string> _navigationCommand;
+        #region Commands
+        private DelegateCommandAsync<string> _navigationCommand;
         private ICommand _guardarCommand;
         private ICommand _cancelarCommand;
-        public DelegateCommand<string> NavigationCommand
+        public DelegateCommandAsync<string> NavigationCommand
         {
-            get { return _navigationCommand = _navigationCommand ?? new DelegateCommand<string>(NavigationExecute); }
+            get { return _navigationCommand = _navigationCommand ?? new DelegateCommandAsync<string>(NavigationExecuteAsync); }
         }
-        private void NavigationExecute(string viewFrame)
-        {
-            switch (viewFrame)
-            {
-                case "Anterior":
-                    this.anterior();
-                    break;
-                case "Siguiente":
-                    this.siguiente();
-                    break;
-            }
-        }
-
         public ICommand GuardarCommand
         {
             get { return _guardarCommand = _guardarCommand ?? new DelegateCommand(GuardarExecute); }
@@ -111,6 +99,19 @@ namespace RondasEcopetrol.ViewModels
         {
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
         }
+        private async Task NavigationExecuteAsync(string viewFrame)
+        {
+            switch (viewFrame)
+            {
+                case "Anterior":
+                    this.anterior();
+                    break;
+                case "Siguiente":
+                    await this.siguienteAsync();
+                    break;
+            }
+        }
+
         private void GuardarExecute()
         {
 
@@ -120,17 +121,16 @@ namespace RondasEcopetrol.ViewModels
             //AppFrame.Navigate(typeof(HacerRonda));
             this.home();
         }
-
+        #endregion Commands
 
         public override Task OnNavigatedFrom(NavigationEventArgs args)
         {
-            //throw new NotImplementedException();
             return null;
         }
 
         public override Task OnNavigatedTo(NavigationEventArgs args)
         {
-            //throw new NotImplementedException();
+            initPanel();
             return null;
         }
 
@@ -370,20 +370,19 @@ namespace RondasEcopetrol.ViewModels
             }
         }*/
 
-        public void siguiente()
+        public async Task siguienteAsync()
         {
             string text1 = this.SelectedValueEstado;
             if (text1.Length == 0)
             {
-                //TODO
-                //MessageBox.Show("Usted debe seleccionar un estado", "Error");
+                await MessageDialogError.ImprimirAsync("Usted debe seleccionar un estado");
             }
             else
             {
                 if ((text1.Equals("OF") || text1.Equals("SF") || text1.Equals("EF")) && this.Comentario.Trim().Length == 0)
                 {
+                    await MessageDialogWarning.ImprimirAsync("Se sugiere documentar");
                     //TODO
-                    //MessageBox.Show("Se sugiere documentar", "Advertencia");
                     //this.txtCommentary.Focus();
                 }
                 else
@@ -395,7 +394,6 @@ namespace RondasEcopetrol.ViewModels
                     //Sheet.INIT_STATE = true;
                     if (RondasLector.Step.Works.Count > 0)
                     {
-                        //base.Form.App.showCanvas(typeof(Sheet));
                         AppFrame.Navigate(typeof(CapturaDatos2));
                     }
                     else
