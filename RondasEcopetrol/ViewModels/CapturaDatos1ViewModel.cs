@@ -9,6 +9,7 @@ using Windows.UI.Xaml.Navigation;
 using System.Windows.Input;
 using RondasEcopetrol.Views;
 using RondasEcopetrol.Models;
+using RondasEcopetrol.PopUps;
 
 namespace RondasEcopetrol.ViewModels
 {
@@ -84,12 +85,12 @@ namespace RondasEcopetrol.ViewModels
         }
 
         #region Commands
-        private DelegateCommandAsync<string> _navigationCommand;
+        private DelegateCommand<string> _navigationCommand;
         private ICommand _guardarCommand;
         private ICommand _cancelarCommand;
-        public DelegateCommandAsync<string> NavigationCommand
+        public DelegateCommand<string> NavigationCommand
         {
-            get { return _navigationCommand = _navigationCommand ?? new DelegateCommandAsync<string>(NavigationExecuteAsync); }
+            get { return _navigationCommand = _navigationCommand ?? new DelegateCommand<string>(NavigationExecute); }
         }
         public ICommand GuardarCommand
         {
@@ -99,7 +100,7 @@ namespace RondasEcopetrol.ViewModels
         {
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
         }
-        private async Task NavigationExecuteAsync(string viewFrame)
+        private void NavigationExecute(string viewFrame)
         {
             switch (viewFrame)
             {
@@ -107,14 +108,14 @@ namespace RondasEcopetrol.ViewModels
                     this.anterior();
                     break;
                 case "Siguiente":
-                    await this.siguienteAsync();
+                    this.siguiente();
                     break;
             }
         }
 
         private void GuardarExecute()
         {
-
+            suspender();
         }
         private void CancelarExecute()
         {
@@ -137,16 +138,16 @@ namespace RondasEcopetrol.ViewModels
         //Codigo traido de StateMachine
         // Methods
 
-        //TODO Pendiente Guardar y continuar ronda
-        /*public override bool aceptar()
+        public void suspender()
         {
-            jump.fbased.Application application1 = base.Form.App;
+            //TODO Pendiente Guardar y continuar ronda
+            /*jump.fbased.Application application1 = base.Form.App;
             RondasAdvertenciaManager.sheet = true;
             AdvertenciaSuspendManager.sheet = false;
             AdvertenciaPopUp.manager = new AdvertenciaSuspendManager();
             application1.showCanvas(typeof(AdvertenciaPopUp));
-            return true;
-        }*/
+            return true;*/
+        }
 
         //TODO Pendiente Buscar en àrbol
         /*public void buscar()
@@ -247,12 +248,10 @@ namespace RondasEcopetrol.ViewModels
             application1.showCanvas(typeof(AdvertenciaPopUp));
         }*/
 
-        public void home()
+        public async void home()
         {
-            //TODO Pendiente implementar Cancelar
-            /*CancelarAdvertencia.sheet = false;
-            AdvertenciaPopUp.manager = new CancelarAdvertencia();
-            base.Form.App.showCanvas(typeof(AdvertenciaPopUp));*/
+            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.AppFrame, false);
+            await _popUp.showAsync();
         }
 
         //TODO Mirar que se toma de aqui
@@ -370,7 +369,7 @@ namespace RondasEcopetrol.ViewModels
             }
         }*/
 
-        public async Task siguienteAsync()
+        public async void siguiente()
         {
             string text1 = this.SelectedValueEstado;
             if (text1.Length == 0)
@@ -408,25 +407,16 @@ namespace RondasEcopetrol.ViewModels
                         {
                             RondasLector.CurrentRonda.Current = RondasLector.Step;
                             RondasLector.EndObj = RondasLector.Step;
-                            //TODO Falta implementar Finalizacion de la ronda
-                            /*RondasAdvertenciaManager.sheet = false;
-                            base.Form.App.showCanvas(typeof(AdvertenciaPopUp));*/
+                            RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, false);
+                            if (await _popUp.showAsync())
+                            {
+                                //Ir a la pantalla de Hacer Ronda
+                                AppFrame.Navigate(typeof(HacerRonda));
+                            }
                         }
                     }
                 }
             }
         }
-
-        // Fields
-        //TODO Revisar que se necesita de aqui
-        /*private SButton btnAceptar;
-        private ComboBox cmbEstado;
-        private TextBox txtPaso;
-        private TextBox txtDireccion;
-        private TextBox txtCommentary;
-        private Label lblNameRonda = null;*/
-
-
     }
-
 }

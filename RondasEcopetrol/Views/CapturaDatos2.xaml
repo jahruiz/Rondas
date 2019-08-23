@@ -69,7 +69,7 @@
             <TextBox
                 Grid.Row="0"
                 Grid.Column="1"
-                Text="DH2951"
+                Text="{Binding Paso,Mode=TwoWay}"
                 Margin="0,0,10,10"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
@@ -86,7 +86,7 @@
             <TextBox
                 Grid.Row="1"
                 Grid.Column="1"
-                Text="DESAIREADOR"
+                Text="{Binding Tarea,Mode=TwoWay}"
                 
                 />
             <TextBlock 
@@ -109,7 +109,7 @@
                 />
                 <TextBox
                 Grid.Column="1"
-                Text=""
+                Text="{Binding ValorText,Mode=TwoWay}"
                 />
 
             </Grid>
@@ -127,7 +127,7 @@
             <TextBox
                 Grid.Row="3"
                 Grid.Column="1"
-                Text="..."
+                Text="{Binding Comentario,Mode=TwoWay}"
                 />
             <CheckBox 
                 Grid.Row="4"
@@ -148,14 +148,10 @@
                 PlaceholderText="Seleccionar"
                 Grid.Row="5"
                 Grid.Column="1"
-                VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0">
-                <x:String>Proceso 1</x:String>
-                <x:String>Proceso 2</x:String>
-                <x:String>Proceso 3</x:String>
-                <x:String>Proceso 4</x:String>
-                <x:String>Proceso 5</x:String>
-                <x:String>Proceso 6</x:String>
-
+                VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
+                ItemsSource="{Binding Path=Causa,Mode = TwoWay}" 
+                       SelectedIndex="{Binding Path=SelectedIndexCausa,Mode = TwoWay}"
+                       SelectedValue="{Binding Path= SelectedValueCausa,Mode = TwoWay}">
             </ComboBox>
         </Grid>
         <ListView x:Name="listView1" Grid.Row="2" Margin="0,30,0,0">
@@ -175,10 +171,10 @@
 
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="anterior" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
             <Button x:Name="siguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:Name="guardar" Content="Guardar" Command="{Binding AceptarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
+            <Button x:Name="guardar" Content="Guardar y Suspender" Command="{Binding GuardarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
             <Button x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
         </StackPanel>
 

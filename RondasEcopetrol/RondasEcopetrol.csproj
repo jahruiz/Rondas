@@ -126,6 +126,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Base\WarningPopUp.cs" />
     <Compile Include="Base\DelegateCommand.cs" />
     <Compile Include="Base\DelegateCommandAsync.cs" />
     <Compile Include="Base\MessageDialogError.cs" />
@@ -141,6 +142,8 @@
     <Compile Include="Models\Rondas_Disponibles.cs" />
     <Compile Include="Models\Steps.cs" />
     <Compile Include="Models\Work.cs" />
+    <Compile Include="PopUps\RondasCancelarPopUp.cs" />
+    <Compile Include="PopUps\RondasFinalizarPopUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerUtils\FileUtils.cs" />
     <Compile Include="ServerUtils\ServerUtils.cs" />
