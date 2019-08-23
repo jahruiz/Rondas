@@ -17,8 +17,11 @@ namespace RondasEcopetrol.ViewModels
         public static bool NEXT_TRIGGER = true;
         public static bool INIT_STATE = false;
         public static Work current = (Work)null;
+
+        public static CapturaDatos2ViewModel currentInstance;
         public CapturaDatos2ViewModel()
         {
+            currentInstance = this;
             //initPanel();
         }
         #region Propiedades
@@ -218,7 +221,7 @@ namespace RondasEcopetrol.ViewModels
 
         public override Task OnNavigatedTo(NavigationEventArgs args)
         {
-            initPanel();
+            //initPanel();
             return null;
         }
         private void CargarComboCausa()

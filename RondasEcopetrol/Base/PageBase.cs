@@ -10,9 +10,10 @@ namespace RondasEcopetrol.Base
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
             _viewModel = (ViewModelBase)this.DataContext;
             _viewModel.SetAppFrame(this.Frame);
+            _viewModel.SetPage(this);
+            base.OnNavigatedTo(e);
             _viewModel.OnNavigatedTo(e);
 
             //Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;

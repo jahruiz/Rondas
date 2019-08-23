@@ -72,7 +72,7 @@
             <TextBlock 
                 Grid.Row="1"
                 Grid.Column="0"
-                Text="Descripcion"
+                Text="Descripción"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
@@ -107,7 +107,7 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox
+            <TextBox x:Name="txtCommentary" x:FieldModifier="public"
                 Grid.Row="3"
                 Grid.Column="1"
                 Text="{Binding Path=Comentario,Mode = TwoWay}"

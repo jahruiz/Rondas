@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RondasEcopetrol.Base;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml;
 using System.Windows.Input;
 using RondasEcopetrol.Views;
 using RondasEcopetrol.Models;
@@ -20,6 +21,7 @@ namespace RondasEcopetrol.ViewModels
             //initPanel();
         }
 
+        #region Propiedades
         //Campos del Step mostrado actualmente
         public string Paso
         {
@@ -83,6 +85,7 @@ namespace RondasEcopetrol.ViewModels
                 SetPropertyValue(value);
             }
         }
+        #endregion Propiedades
 
         #region Commands
         private DelegateCommand<string> _navigationCommand;
@@ -202,8 +205,7 @@ namespace RondasEcopetrol.ViewModels
             if (obj1 == null)
             {
                 RondasLector.CurrentRonda.Lector.Close();
-                //TODO
-                //base.Form.App.showCanvas(typeof(RondasDownload));
+                //TODO Definir a donde ir desde este punto
                 AppFrame.Navigate(typeof(HacerRonda));
             }
             else if (obj1 is Work)
@@ -213,10 +215,11 @@ namespace RondasEcopetrol.ViewModels
                 {
                     if (w.Step.isValid())
                     {
-                        //TODO Pendiente traducir
-                        /*Sheet.NEXT_TRIGGER = false;*/
+                        CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                         RondasLector.CurrentWork = (Work)obj1;
+                        CapturaDatos2ViewModel.current = (Work)obj1; //TODO Instruccion para pruebas -> Borrar!!
                         AppFrame.Navigate(typeof(CapturaDatos2));
+                        CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
                     else
                     {
@@ -382,18 +385,19 @@ namespace RondasEcopetrol.ViewModels
                 {
                     await MessageDialogWarning.ImprimirAsync("Se sugiere documentar");
                     //TODO
-                    //this.txtCommentary.Focus();
+                    ((CapturaDatos1)this.Page).txtCommentary.Focus(FocusState.Programmatic);
                 }
                 else
                 {
                     RondasLector.Step.SelectedValue = this.SelectedIndexEstado;
                     RondasLector.Step.Commentary = this.Comentario;
                     RondasLector.Step.fechar();
-                    //TODO
-                    //Sheet.INIT_STATE = true;
+                    //Ir al siguiente nodo (Paso/Tarea) de la ronda
+                    CapturaDatos2ViewModel.INIT_STATE = true;
                     if (RondasLector.Step.Works.Count > 0)
                     {
                         AppFrame.Navigate(typeof(CapturaDatos2));
+                        CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
                     else
                     {
