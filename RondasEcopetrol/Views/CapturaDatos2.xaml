@@ -101,17 +101,26 @@
             <Grid Grid.Row="2" Grid.Column="1" Margin="0,10,0,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <CalendarDatePicker 
                 Grid.Column="0"
                 x:Name="arrivalCalendarDatePicker" 
                 />
                 <TextBox
-                Grid.Column="1"
+                Grid.Column="0"
                 Text="{Binding ValorText,Mode=TwoWay}"
+                IsEnabled="{Binding IsEnabledValorText}"
                 />
-
+                <ComboBox  
+                PlaceholderText="Seleccionar"
+                Grid.Row="5"
+                Grid.Column="1"
+                VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
+                ItemsSource="{Binding Path=ValorCombo,Mode = TwoWay}" 
+                       SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
+                       SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
+                IsEnabled="{Binding IsEnabledComboValor}">
+                </ComboBox>
             </Grid>
 
 

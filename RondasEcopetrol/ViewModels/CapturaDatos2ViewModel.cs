@@ -9,6 +9,7 @@ using System.Windows.Input;
 using RondasEcopetrol.Views;
 using System.Collections.ObjectModel;
 using RondasEcopetrol.Models;
+using RondasEcopetrol.PopUps;
 
 namespace RondasEcopetrol.ViewModels
 {
@@ -16,7 +17,6 @@ namespace RondasEcopetrol.ViewModels
     {
         public static bool NEXT_TRIGGER = true;
         public static bool INIT_STATE = false;
-        public static Work current = (Work)null;
 
         public static CapturaDatos2ViewModel currentInstance;
         public CapturaDatos2ViewModel()
@@ -197,22 +197,22 @@ namespace RondasEcopetrol.ViewModels
             }
         }
 
-        //public ICommand AceptarCommand
-        //{
-        //    get { return _aceptarCommand = _aceptarCommand ?? new DelegateCommand(AceptarExecute); }
-        //}
-        //public ICommand CancelarCommand
-        //{
-        //    get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
-        //}
-        //private void AceptarExecute()
-        //{
+        public ICommand AceptarCommand
+        {
+            get { return _aceptarCommand = _aceptarCommand ?? new DelegateCommand(AceptarExecute); }
+        }
+        public ICommand CancelarCommand
+        {
+            get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
+        }
+        private void AceptarExecute()
+        {
 
-        //}
-        //private void CancelarExecute()
-        //{
-        //    AppFrame.Navigate(typeof(HacerRonda));
-        //}
+        }
+        private void CancelarExecute()
+        {
+            this.home();
+        }
 
         public override Task OnNavigatedFrom(NavigationEventArgs args)
         {
@@ -262,19 +262,19 @@ namespace RondasEcopetrol.ViewModels
                     //this.txtValor.GotFocus -= this.pickHandler;
                     //this.pickEnabled = false;
                 }
-                if (current == null)
+                if (RondasLector.CurrentWork == null)
                     return;
-                Paso = current.Step.Alias;
-                Tarea = (current.Obligatorio ? "*" : "") + current.Description;
-                if (current.Tipo.Equals("VP CARACTER"))
+                Paso = RondasLector.CurrentWork.Step.Alias;
+                Tarea = (RondasLector.CurrentWork.Obligatorio ? "*" : "") + RondasLector.CurrentWork.Description;
+                if (RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
                 {
-                    if (current.Values.Length == 0)
+                    if (RondasLector.CurrentWork.Values.Length == 0)
                     {
                         this.IsEnabledComboValor = false;
                         this.IsEnabledValorText = true;
                         //this.txtValor.GotFocus += this.pickHandler;
                         this.IsEnabledPicker = true;
-                        this.ValorText = current.Valor;
+                        this.ValorText = RondasLector.CurrentWork.Valor;
                         //this.Focus();
                     }
                     else
@@ -282,11 +282,11 @@ namespace RondasEcopetrol.ViewModels
                         this.IsEnabledComboValor = true;
                         this.IsEnabledValorText = false;
                         this.ValorCombo = new ObservableCollection<string>();
-                        for (int index = 0; index < current.Values.Length - 1; ++index)
+                        for (int index = 0; index < RondasLector.CurrentWork.Values.Length - 1; ++index)
                         {
-                            this.ValorCombo.Add(current.Values[index]);
+                            this.ValorCombo.Add(RondasLector.CurrentWork.Values[index]);
                         }
-                        this.SelectedValueValorCombo = current.Valor;
+                        this.SelectedValueValorCombo = RondasLector.CurrentWork.Valor;
                     }
                 }
                 else
@@ -295,15 +295,15 @@ namespace RondasEcopetrol.ViewModels
                     this.IsEnabledValorText = true;
                     //this.txtValor.Focus();
                     //this.currFocus = this.txtValor;
-                    this.ValorText = current.Valor;
+                    this.ValorText = RondasLector.CurrentWork.Valor;
                 }
-                this.Comentario = current.Description;
+                this.Comentario = RondasLector.CurrentWork.Description;
                 //this.noComment.Selected = Sheet.current.NoComment;
-                this.FechaOld1 = current.OldValue1;
-                this.FechaOld2 = current.OldValue2;
-                this.Unidad = "(" + current.UM + ")";
-                this.NombreRonda = "Ronda: " + current.Nombre;
-                this.SelectedValueCausa = current.Causa;
+                this.FechaOld1 = RondasLector.CurrentWork.OldValue1;
+                this.FechaOld2 = RondasLector.CurrentWork.OldValue2;
+                this.Unidad = "(" + RondasLector.CurrentWork.UM + ")";
+                this.NombreRonda = "Ronda: " + RondasLector.CurrentWork.Nombre;
+                this.SelectedValueCausa = RondasLector.CurrentWork.Causa;
             }
             catch (Exception)
             {
@@ -322,13 +322,13 @@ namespace RondasEcopetrol.ViewModels
                 }
                 else if (obj is Work && ((Work)obj).isValidForThisState())
                 {
-                    current = (Work)obj;
+                    RondasLector.CurrentWork = (Work)obj;
                     this.showActual();
                     return;
                 }
             }
             while (!(obj is Steps));
-            current = (Work)null;
+            RondasLector.CurrentWork = (Work)null;
             RondasLector.Step = (Steps)obj;
             //this.Form.App.showCanvas(typeof(StateMachine));
             AppFrame.Navigate(typeof(CapturaDatos1));
@@ -346,13 +346,13 @@ namespace RondasEcopetrol.ViewModels
             INIT_STATE = false;
             if (!flag)
                 return;
-            if (current != null)
+            if (RondasLector.CurrentWork != null)
             {
-                current.Valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
-                current.Descripcion = this.Comentario.Trim();
+                RondasLector.CurrentWork.Valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
+                RondasLector.CurrentWork.Descripcion = this.Comentario.Trim();
                 //RondasLector.CurrentWork.NoComment = this.noComment.Selected;
-                current.Causa = this.SelectedValueCausa;
-                current.fechar();
+                RondasLector.CurrentWork.Causa = this.SelectedValueCausa;
+                RondasLector.CurrentWork.fechar();
             }
             object obj;
             do
@@ -366,7 +366,7 @@ namespace RondasEcopetrol.ViewModels
                 }
                 if (obj is Work && ((Work)obj).isValidForThisState())
                 {
-                    current = (Work)obj;
+                    RondasLector.CurrentWork = (Work)obj;
                     this.showActual();
                     return;
                 }
@@ -378,7 +378,7 @@ namespace RondasEcopetrol.ViewModels
         }
         private int[] validarEntrada()
         {
-            if (current != null)
+            if (RondasLector.CurrentWork != null)
             {
                 int num1 = 0;
                 string valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
@@ -389,7 +389,7 @@ namespace RondasEcopetrol.ViewModels
                     //this.currFocus = this.txtValor;
                     return new int[2];
                 }
-                if (current.Obligatorio)
+                if (RondasLector.CurrentWork.Obligatorio)
                 {
                     if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                     {
@@ -430,16 +430,21 @@ namespace RondasEcopetrol.ViewModels
             string resultMsgTitle = null, resultMsgDetail = null;
             //bool showMsg = !this.noComment.Selected && (this.txtComentario.Text.Length == 0 || this.cmbCausas.Text.Length == 0);
             bool showMsg = !(this.Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
-            if (!current.Tipo.Equals("VP CARACTER"))
-                return current.validEntry(valor, showMsg, out resultMsgTitle, out resultMsgDetail);
+            if (!RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
+                return RondasLector.CurrentWork.validEntry(valor, showMsg, out resultMsgTitle, out resultMsgDetail);
             if (this.IsEnabledComboValor)
             {
                 int selectedIndex = this.SelectedIndexValorCombo;
                 string str = "" + this.SelectedValueValorCombo;
                 if (selectedIndex != -1)
-                    return current.validEntryText(selectedIndex, str, showMsg, out resultMsgTitle, out resultMsgDetail);
+                    return RondasLector.CurrentWork.validEntryText(selectedIndex, str, showMsg, out resultMsgTitle, out resultMsgDetail);
             }
             return 2;
+        }
+        public async void home()
+        {
+            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.AppFrame, false);
+            await _popUp.showAsync();
         }
     }
 }
