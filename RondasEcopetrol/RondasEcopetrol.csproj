@@ -141,6 +141,7 @@
     <Compile Include="Models\Rondas_Descargadas.cs" />
     <Compile Include="Models\Rondas_Disponibles.cs" />
     <Compile Include="Models\Steps.cs" />
+    <Compile Include="Models\SuspendRound.cs" />
     <Compile Include="Models\Work.cs" />
     <Compile Include="PopUps\RondasCancelarPopUp.cs" />
     <Compile Include="PopUps\RondasFinalizarPopUp.cs" />
