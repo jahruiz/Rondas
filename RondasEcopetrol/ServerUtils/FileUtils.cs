@@ -197,13 +197,13 @@
             streamWriter.Close();
             fileStream.Close();
         }
-        public static void writeXmlData(string filename, string xmlsource)
+        public static void writeXmlData(string filename, string xmlsource, string user)
         {
             string[] array = new string[]
             {
                 FileUtils.path,
                 "/",
-                FileUtils.user,
+                user,
                 "/",
                 filename
             };

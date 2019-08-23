@@ -68,7 +68,7 @@
         public override Task OnNavigatedTo(NavigationEventArgs args)
         {
             IsButtonSesionEnable = true;
-            if (  args.Parameter != null && args.Parameter != "")
+            if (  args.Parameter != null && !args.Parameter.Equals(""))
             {
                 IsButtonEnable = (bool)args.Parameter;
                 IsButtonSesionEnable = false;

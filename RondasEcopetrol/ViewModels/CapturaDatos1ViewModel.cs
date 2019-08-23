@@ -141,15 +141,10 @@ namespace RondasEcopetrol.ViewModels
         //Codigo traido de StateMachine
         // Methods
 
-        public void suspender()
+        public async void suspender()
         {
-            //TODO Pendiente Guardar y continuar ronda
-            /*jump.fbased.Application application1 = base.Form.App;
-            RondasAdvertenciaManager.sheet = true;
-            AdvertenciaSuspendManager.sheet = false;
-            AdvertenciaPopUp.manager = new AdvertenciaSuspendManager();
-            application1.showCanvas(typeof(AdvertenciaPopUp));
-            return true;*/
+            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.AppFrame, false);
+            await _popUp.showAsync();
         }
 
         //TODO Pendiente Buscar en àrbol
@@ -217,7 +212,6 @@ namespace RondasEcopetrol.ViewModels
                     {
                         CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                         RondasLector.CurrentWork = (Work)obj1;
-                        CapturaDatos2ViewModel.current = (Work)obj1; //TODO Instruccion para pruebas -> Borrar!!
                         AppFrame.Navigate(typeof(CapturaDatos2));
                         CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
@@ -384,7 +378,6 @@ namespace RondasEcopetrol.ViewModels
                 if ((text1.Equals("OF") || text1.Equals("SF") || text1.Equals("EF")) && this.Comentario.Trim().Length == 0)
                 {
                     await MessageDialogWarning.ImprimirAsync("Se sugiere documentar");
-                    //TODO
                     ((CapturaDatos1)this.Page).txtCommentary.Focus(FocusState.Programmatic);
                 }
                 else

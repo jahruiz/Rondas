@@ -24,7 +24,12 @@
     <RootPropertyPathName Name="Causa" />
     <RootPropertyPathName Name="SelectedIndexCausa" />
     <RootPropertyPathName Name="SelectedValueCausa" />
+    <RootPropertyPathName Name="ValorCombo" />
+    <RootPropertyPathName Name="SelectedIndexValorCombo" />
+    <RootPropertyPathName Name="SelectedValueValorCombo" />
+    <RootPropertyPathName Name="IsEnabledComboValor" />
     <RootPropertyPathName Name="ValorText" />
+    <RootPropertyPathName Name="IsEnabledValorText" />
     <RootPropertyPathName Name="Tarea" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
@@ -132,6 +137,7 @@
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="IsEnabled" />
       <RootProperty Name="PlaceholderText" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.CambiarContrasena" />
@@ -144,6 +150,7 @@
       <RootProperty Name="SelectedValue" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="IsEnabled" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos1" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">

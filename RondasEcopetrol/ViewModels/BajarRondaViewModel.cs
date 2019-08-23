@@ -82,7 +82,7 @@
                                 rondas.Add(ronda);
                             }
                         }
-                        catch (System.Exception e)
+                        catch (System.Exception)
                         {
                             await MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
                         }
@@ -117,7 +117,7 @@
                                 rondas.Add(ronda);
                             }
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             await MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
                             //int num = (int)MessageBox.Show("La ronda no esta en su formato correcto");

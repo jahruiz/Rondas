@@ -88,7 +88,7 @@
                     }
                 }
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 await MessageDialogError.ImprimirAsync("Error listando las rondas descargadas");
             }

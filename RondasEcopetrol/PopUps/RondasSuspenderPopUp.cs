@@ -6,30 +6,30 @@ using RondasEcopetrol.ViewModels;
 
 namespace RondasEcopetrol.PopUps
 {
-    public class RondasCancelarPopUp : WarningPopUp
+    public class RondasSuspenderPopUp : WarningPopUp
     {
         private Frame _curFrame;
 
-        public RondasCancelarPopUp(Frame curFrame, bool navFromSheet)
+        public RondasSuspenderPopUp(Frame curFrame, bool navFromSheet)
         {
             _curFrame = curFrame;
             this.navFromSheet = navFromSheet;
         }
-
         public override string getDescription()
         {
-            return "Esta seguro que desea INICIAR esta ronda en otro momento? \n(Si) Perdera los datos que ud haya tomado.";
+            return "Desea Suspender la Ronda? \n(Si) La ronda será almacenada en disco y podrá continuarla en otro momento";
         }
 
         public override string getTitle()
         {
-            return "Cancelar Ronda";
+            return "Suspender Ronda";
         }
 
         public override void noClick()
         {
             if (navFromSheet)
             {
+                CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 _curFrame.Navigate(typeof(CapturaDatos2));
                 CapturaDatos2ViewModel.currentInstance.initPanel();
             }
@@ -41,16 +41,19 @@ namespace RondasEcopetrol.PopUps
 
         public override void yesClick()
         {
-            if (RondasLector.CurrentRonda.Suspend)
-            {
-                SuspendRound.deleteSuspend(RondasLector.CurrentRonda.MessageID);
-            }
-            else
-            {
-                RondasLector.CurrentRonda.Lector.Close();
-            }
+            suspendRound();
             //Ir al menú principal
             _curFrame.Navigate(typeof(MainPage));
+        }
+
+        private void suspendRound()
+        {
+            SuspendRound.addSuspendRound(RondasLector.CurrentRonda);
+            RondasLector.CurrentRonda.Suspend = true;
+            RondasLector.CurrentWork = null;
+            RondasLector.CurrentRonda = null;
+            RondasLector.Step = null;
+            RondasLector.StartStep = null;
         }
     }
 }
