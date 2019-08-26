@@ -8409,11 +8409,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
+      "projectUniqueName": "C:\\Users\\ITAC\\Documents\\RepositorioRondasGit\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
       "projectName": "RondasEcopetrol",
-      "projectPath": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
+      "projectPath": "C:\\Users\\ITAC\\Documents\\RepositorioRondasGit\\Rondas\\RondasEcopetrol\\RondasEcopetrol.csproj",
       "packagesPath": "C:\\Users\\ITAC\\.nuget\\packages\\",
-      "outputPath": "C:\\Desarrollo\\Rondas\\RondasEcopetrol\\obj\\",
+      "outputPath": "C:\\Users\\ITAC\\Documents\\RepositorioRondasGit\\Rondas\\RondasEcopetrol\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

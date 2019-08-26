@@ -10,6 +10,7 @@ using RondasEcopetrol.Views;
 using System.Collections.ObjectModel;
 using RondasEcopetrol.Models;
 using RondasEcopetrol.PopUps;
+using Windows.UI.Xaml;
 
 namespace RondasEcopetrol.ViewModels
 {
@@ -17,6 +18,7 @@ namespace RondasEcopetrol.ViewModels
     {
         public static bool NEXT_TRIGGER = true;
         public static bool INIT_STATE = false;
+        private bool pickEnabled = false;
 
         public static CapturaDatos2ViewModel currentInstance;
         public CapturaDatos2ViewModel()
@@ -241,7 +243,7 @@ namespace RondasEcopetrol.ViewModels
             //    //barra.Buscar = Sheet.CurrentRonda.Show_tree;
             //    //this.Form.Text = "Rondas Pocket";
             //    //this.noComment.Selected = false;
-            //    this.CargarComboCausa();
+            this.CargarComboCausa();
             if (NEXT_TRIGGER)
             {
                 this.siguiente();
@@ -257,10 +259,11 @@ namespace RondasEcopetrol.ViewModels
             try
             {
                 //this.currFocus = (TextBox)null;
-                if (IsEnabledPicker)
+                //if (IsEnabledPicker) 
+                if (pickEnabled)
                 {
                     //this.txtValor.GotFocus -= this.pickHandler;
-                    //this.pickEnabled = false;
+                    this.pickEnabled = false;
                 }
                 if (RondasLector.CurrentWork == null)
                     return;
@@ -273,9 +276,11 @@ namespace RondasEcopetrol.ViewModels
                         this.IsEnabledComboValor = false;
                         this.IsEnabledValorText = true;
                         //this.txtValor.GotFocus += this.pickHandler;
-                        this.IsEnabledPicker = true;
+                        //this.IsEnabledPicker = true;
+                        this.pickEnabled = true;
                         this.ValorText = RondasLector.CurrentWork.Valor;
                         //this.Focus();
+                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
                     }
                     else
                     {
@@ -293,6 +298,7 @@ namespace RondasEcopetrol.ViewModels
                 {
                     this.IsEnabledComboValor = false;
                     this.IsEnabledValorText = true;
+                    ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
                     //this.txtValor.Focus();
                     //this.currFocus = this.txtValor;
                     this.ValorText = RondasLector.CurrentWork.Valor;
@@ -333,13 +339,13 @@ namespace RondasEcopetrol.ViewModels
             //this.Form.App.showCanvas(typeof(StateMachine));
             AppFrame.Navigate(typeof(CapturaDatos1));
         }
-        public void siguiente()
+        public async void siguiente()
         {
             bool flag = true;
             int num = 0;
             if (!INIT_STATE)
             {
-                int[] numArray = this.validarEntrada();
+                int[] numArray = await this.ValidarEntrada();
                 num = numArray[0];
                 flag = numArray[1] == 1;
             }
@@ -376,7 +382,7 @@ namespace RondasEcopetrol.ViewModels
             //this.Form.App.showCanvas(typeof(StateMachine));
             AppFrame.Navigate(typeof(CapturaDatos1));
         }
-        private int[] validarEntrada()
+        private async Task<int[]> ValidarEntrada()
         {
             if (RondasLector.CurrentWork != null)
             {
@@ -385,7 +391,9 @@ namespace RondasEcopetrol.ViewModels
                 if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                 {
                     //int num2 = (int)MessageBox.Show("Debe digitar valor o un comentario");
+                    await MessageDialogError.ImprimirAsync("Debe digitar valor o un comentario");
                     //this.txtValor.Focus();
+                    ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
                     //this.currFocus = this.txtValor;
                     return new int[2];
                 }
@@ -394,7 +402,9 @@ namespace RondasEcopetrol.ViewModels
                     if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                     {
                         //int num2 = (int)MessageBox.Show("El valor es obligatorio");
+                        await MessageDialogError.ImprimirAsync("El valor es obligatorio");
                         //this.txtValor.Focus();
+                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
                         //this.currFocus = this.txtValor;
                         return new int[2];
                     }
@@ -406,6 +416,7 @@ namespace RondasEcopetrol.ViewModels
                 switch (num1)
                 {
                     case 0:
+                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
                         //this.txtValor.Focus();
                         return new int[2];
                     case 1:
@@ -414,10 +425,11 @@ namespace RondasEcopetrol.ViewModels
                         {
                             if (this.Comentario.Trim().Length == 0)
                                 //this.Comentario.Focus();
-                                ;
+                                ((CapturaDatos2)this.Page).txtComentario.Focus(FocusState.Programmatic);
                             else
                                 //this.cmbCausas.Focus();
-                                return new int[2] { num1, 0 };
+                                ((CapturaDatos2)this.Page).cmbCausas.Focus(FocusState.Programmatic);
+                            return new int[2] { num1, 0 };
                         }
                         break;
                 }
@@ -443,7 +455,7 @@ namespace RondasEcopetrol.ViewModels
         }
         public async void home()
         {
-            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.AppFrame, false);
+            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.AppFrame, true);
             await _popUp.showAsync();
         }
     }

@@ -102,16 +102,17 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <CalendarDatePicker 
+                <CalendarDatePicker
                 Grid.Column="0"
-                x:Name="arrivalCalendarDatePicker" 
+                x:Name="arrivalCalendarDatePicker" x:FieldModifier="public"
+                    Visibility="{Binding IsEnabledPicker}"
                 />
-                <TextBox
+                <TextBox x:Name="txtValorText" x:FieldModifier="public"
                 Grid.Column="0"
                 Text="{Binding ValorText,Mode=TwoWay}"
-                IsEnabled="{Binding IsEnabledValorText}"
+                Visibility="{Binding IsEnabledValorText}"
                 />
-                <ComboBox  
+                <ComboBox  x:Name="cmbValor" x:FieldModifier="public"
                 PlaceholderText="Seleccionar"
                 Grid.Row="5"
                 Grid.Column="1"
@@ -119,7 +120,7 @@
                 ItemsSource="{Binding Path=ValorCombo,Mode = TwoWay}" 
                        SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
                        SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
-                IsEnabled="{Binding IsEnabledComboValor}">
+                Visibility="{Binding IsEnabledComboValor}">
                 </ComboBox>
             </Grid>
 
@@ -133,7 +134,7 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox
+            <TextBox x:Name="txtComentario" x:FieldModifier="public"
                 Grid.Row="3"
                 Grid.Column="1"
                 Text="{Binding Comentario,Mode=TwoWay}"
@@ -153,7 +154,7 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <ComboBox  
+            <ComboBox  x:Name="cmbCausas" x:FieldModifier="public"
                 PlaceholderText="Seleccionar"
                 Grid.Row="5"
                 Grid.Column="1"
