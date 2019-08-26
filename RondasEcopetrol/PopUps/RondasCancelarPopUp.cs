@@ -30,6 +30,7 @@ namespace RondasEcopetrol.PopUps
         {
             if (navFromSheet)
             {
+                CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 _curFrame.Navigate(typeof(CapturaDatos2));
                 CapturaDatos2ViewModel.currentInstance.initPanel();
             }

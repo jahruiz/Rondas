@@ -207,8 +207,7 @@
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    IsEnabled="{Binding IsButtonEnable}">
+                    VerticalAlignment="Stretch">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>

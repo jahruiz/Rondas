@@ -17,8 +17,25 @@
         public static bool showSuspendRounds = false;
         public HacerRondaViewModel()
         {
-            if (showSuspendRounds) LoadRondasSuspendidas();
-            else LoadRondasDescargadas();
+            if (showSuspendRounds)
+            {
+                tituloPantalla = "RONDAS POR CONTINUAR";
+                LoadRondasSuspendidas();
+            }
+            else
+            {
+                tituloPantalla = "RONDAS POR REALIZAR";
+                LoadRondasDescargadas();
+            }
+        }
+
+        public string tituloPantalla
+        {
+            get { return GetPropertyValue<string>(); }
+            set
+            {
+                SetPropertyValue(value);
+            }
         }
         public ObservableCollection<RondaDescargada> RondasDescargadas
         {
@@ -37,6 +54,7 @@
                 this.ClickItemListAsync();
             }
         }
+
         private ICommand _actualizarCommand;
         private ICommand _cancelarCommand;
 
@@ -84,8 +102,11 @@
 
                         foreach (RondaDescargada ronda in rondas_actuales)
                         {
-                            ronda.Usuario = usuario;
-                            rondas.Add(ronda);
+                            if (!SuspendRound.isRoundSuspend(ronda.Message_ID))
+                            {
+                                ronda.Usuario = usuario;
+                                rondas.Add(ronda);
+                            }
                         }
                     }
                 }

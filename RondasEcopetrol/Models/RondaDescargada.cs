@@ -92,7 +92,7 @@ namespace RondasEcopetrol.Models
         {
             get
             {
-                return _fecha_Gen;
+                return _hora_Gen;
             }
             set
             {

@@ -51,6 +51,27 @@ namespace RondasEcopetrol.ViewModels
                 SetPropertyValue(value);
             }
         }
+
+        public bool SinComentario
+        {
+            get { return GetPropertyValue<bool>(); }
+            set
+            {
+                SetPropertyValue(value);
+                IsComentarioEnabled = !value;
+            }
+        }
+        public bool IsComentarioEnabled
+        {
+            get { return GetPropertyValue<bool>(); }
+            set
+            {
+                SetPropertyValue(value);
+                if (!value)
+                    Comentario = "";
+            }
+        }
+
         public string NombreRonda
         {
             get { return GetPropertyValue<string>(); }
@@ -180,7 +201,7 @@ namespace RondasEcopetrol.ViewModels
 
 
         private DelegateCommand<string> _navigationCommand;
-        private ICommand _aceptarCommand;
+        private ICommand _guardarCommand;
         private ICommand _cancelarCommand;
         public DelegateCommand<string> NavigationCommand
         {
@@ -199,17 +220,17 @@ namespace RondasEcopetrol.ViewModels
             }
         }
 
-        public ICommand AceptarCommand
+        public ICommand GuardarCommand
         {
-            get { return _aceptarCommand = _aceptarCommand ?? new DelegateCommand(AceptarExecute); }
+            get { return _guardarCommand = _guardarCommand ?? new DelegateCommand(GuardarExecute); }
         }
         public ICommand CancelarCommand
         {
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
         }
-        private void AceptarExecute()
+        private void GuardarExecute()
         {
-
+            suspender();
         }
         private void CancelarExecute()
         {
@@ -243,7 +264,7 @@ namespace RondasEcopetrol.ViewModels
             //    //barra.Ultimo = false;
             //    //barra.Buscar = Sheet.CurrentRonda.Show_tree;
             //    //this.Form.Text = "Rondas Pocket";
-            //    //this.noComment.Selected = false;
+            this.SinComentario = false;
             this.CargarComboCausa();
             if (NEXT_TRIGGER)
             {
@@ -302,7 +323,7 @@ namespace RondasEcopetrol.ViewModels
                         this.ValorText = RondasLector.CurrentWork.Valor;
                     }
                     this.Comentario = RondasLector.CurrentWork.Descripcion;
-                    //this.noComment.Selected = RondasLector.CurrentWork.NoComment;
+                    this.SinComentario = RondasLector.CurrentWork.NoComment;
                     this.FechaOld1 = RondasLector.CurrentWork.OldValue1;
                     this.FechaOld2 = RondasLector.CurrentWork.OldValue2;
                     this.Unidad = "(" + RondasLector.CurrentWork.UM + ")";
@@ -314,6 +335,12 @@ namespace RondasEcopetrol.ViewModels
             {
             }
         }
+        public async void suspender()
+        {
+            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.AppFrame, true);
+            await _popUp.showAsync();
+        }
+
         public void anterior()
         {
             object obj;
@@ -324,6 +351,10 @@ namespace RondasEcopetrol.ViewModels
                 {
                     //RondasAdvertenciaManager.sheet = true;
                     //this.Form.App.showCanvas(typeof(AdvertenciaPopUp));
+                    RondasLector.CurrentRonda.Lector.Close();
+                    //TODO Definir a donde ir desde este punto
+                    AppFrame.Navigate(typeof(HacerRonda));
+                    return;
                 }
                 else if (obj is Work && ((Work)obj).isValidForThisState())
                 {
@@ -355,7 +386,7 @@ namespace RondasEcopetrol.ViewModels
                 {
                     RondasLector.CurrentWork.Valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
                     RondasLector.CurrentWork.Descripcion = this.Comentario.Trim();
-                    //RondasLector.CurrentWork.NoComment = this.noComment.Selected;
+                    RondasLector.CurrentWork.NoComment = this.SinComentario;
                     RondasLector.CurrentWork.Causa = this.SelectedValueCausa;
                     RondasLector.CurrentWork.fechar();
                 }
@@ -367,7 +398,11 @@ namespace RondasEcopetrol.ViewModels
                         //RondasAdvertenciaManager.sheet = true;
                         //base.Form.App.showCanvas(typeof(AdvertenciaPopUp));
                         RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, true);
-                        await _popUp.showAsync();
+                        if (await _popUp.showAsync())
+                        {
+                            //Ir al menú principal
+                            AppFrame.Navigate(typeof(MainPage));
+                        }
                         break;
                     }
                     else if (obj1 is Work && ((Work)obj1).isValidForThisState())
@@ -421,7 +456,7 @@ namespace RondasEcopetrol.ViewModels
                 else if (returnValue == 1)
                 {
                     //if (!noComment.Selected && (Comentario.Trim().Length == 0 || this.SelectedValueCausa.Length == 0))
-                    if (!false && (Comentario.Trim().Length == 0 || this.SelectedValueCausa.Length == 0))
+                    if (!this.SinComentario && (Comentario.Trim().Length == 0 || this.SelectedValueCausa.Length == 0))
                     {
                         if (Comentario.Trim().Length == 0)
                         {
@@ -441,7 +476,7 @@ namespace RondasEcopetrol.ViewModels
         private async Task<int> validValue(string valor)
         {
             //bool showMsg = !noComment.Selected && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
-            bool showMsg = !false && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
+            bool showMsg = !this.SinComentario && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
             showMsg = true;
             int valorReturn = 0;
             string resultMsgTitle = null, resultMsgDetail = null;

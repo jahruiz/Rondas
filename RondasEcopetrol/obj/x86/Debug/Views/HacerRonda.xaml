@@ -29,7 +29,7 @@
 
             <Grid Grid.Row="1" Background="#80FF00" BorderBrush="Green">
                 <TextBlock 
-                Text="RONDAS DESCARGADAS"
+                Text="{Binding Path=tituloPantalla,Mode = TwoWay}"
                 FontSize="40"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Stretch"

@@ -183,7 +183,11 @@ namespace RondasEcopetrol.ViewModels
 
                 if (temp.SelectedValue == -1)
                     this.SelectedValueEstado = "";
-                else this.SelectedIndexEstado = temp.SelectedValue;
+                else
+                {
+                    this.SelectedIndexEstado = temp.SelectedValue;
+                    this.SelectedValueEstado = this.EstadosEquipo[temp.SelectedValue];
+                }
 
                 this.Direccion = temp.Direccion;
                 this.Comentario = temp.Commentary;
@@ -407,8 +411,8 @@ namespace RondasEcopetrol.ViewModels
                             RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, false);
                             if (await _popUp.showAsync())
                             {
-                                //Ir a la pantalla de Hacer Ronda
-                                AppFrame.Navigate(typeof(HacerRonda));
+                                //Ir al menú principal
+                                AppFrame.Navigate(typeof(MainPage));
                             }
                         }
                     }

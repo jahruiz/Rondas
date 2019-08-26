@@ -66,7 +66,7 @@
                 Foreground="#088A08"
                 FontWeight="Bold"
                 />
-            <TextBox
+            <TextBox IsReadOnly="True"
                 Grid.Row="0"
                 Grid.Column="1"
                 Text="{Binding Paso,Mode=TwoWay}"
@@ -83,7 +83,7 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox
+            <TextBox IsReadOnly="True"
                 Grid.Row="1"
                 Grid.Column="1"
                 Text="{Binding Tarea,Mode=TwoWay}"
@@ -124,9 +124,15 @@
                 </ComboBox>
             </Grid>
 
-
-            <TextBlock 
+            <CheckBox x:ConnectionId='9' 
                 Grid.Row="3"
+                Grid.Column="1"
+                x:Name="termsOfServiceCheckBox" 
+                Content="Sin comentario"
+                IsChecked="{Binding SinComentario,Mode=TwoWay}"
+                VerticalAlignment="Top"/>
+            <TextBlock 
+                Grid.Row="4"
                 Grid.Column="0"
                 Text="Comentario"
                 HorizontalAlignment="Center"
@@ -134,17 +140,12 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox x:ConnectionId='9' x:Name="txtComentario" x:FieldModifier="public"
-                Grid.Row="3"
-                Grid.Column="1"
-                Text="{Binding Comentario,Mode=TwoWay}"
-                />
-            <CheckBox x:ConnectionId='10' 
+            <TextBox x:ConnectionId='10' x:Name="txtComentario" x:FieldModifier="public"
                 Grid.Row="4"
                 Grid.Column="1"
-                x:Name="termsOfServiceCheckBox" 
-                Content="Sin comentario"
-                VerticalAlignment="Top"/>
+                Text="{Binding Comentario,Mode=TwoWay}"
+                IsEnabled="{Binding IsComentarioEnabled,Mode=TwoWay}"
+                />
             <TextBlock 
                 Grid.Row="5"
                 Grid.Column="0"
