@@ -229,7 +229,8 @@ namespace RondasEcopetrol.ViewModels
         private void CargarComboCausa()
         {
             Causa = new ObservableCollection<string>();
-            this.Causa.Add("");
+            Causa.Clear();
+            this.Causa.Add(" ");
             this.Causa.Add("Limites");
             this.Causa.Add("Proceso");
             this.Causa.Add("Instrumento");
@@ -258,58 +259,56 @@ namespace RondasEcopetrol.ViewModels
         {
             try
             {
-                //this.currFocus = (TextBox)null;
-                //if (IsEnabledPicker) 
+                //currFocus = null;
                 if (pickEnabled)
                 {
-                    //this.txtValor.GotFocus -= this.pickHandler;
-                    this.pickEnabled = false;
+                    //txtValor.GotFocus -= this.pickHandler;
+                    pickEnabled = false;
                 }
-                if (RondasLector.CurrentWork == null)
-                    return;
-                Paso = RondasLector.CurrentWork.Step.Alias;
-                Tarea = (RondasLector.CurrentWork.Obligatorio ? "*" : "") + RondasLector.CurrentWork.Description;
-                if (RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
+                if (RondasLector.CurrentWork != null)
                 {
-                    if (RondasLector.CurrentWork.Values.Length == 0)
+                    this.Paso = RondasLector.CurrentWork.Step.Alias;
+                    this.Tarea = (RondasLector.CurrentWork.Obligatorio ? "*" : "") + RondasLector.CurrentWork.Description;
+                    if (RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
                     {
-                        this.IsEnabledComboValor = false;
-                        this.IsEnabledValorText = true;
-                        //this.txtValor.GotFocus += this.pickHandler;
-                        //this.IsEnabledPicker = true;
-                        this.pickEnabled = true;
-                        this.ValorText = RondasLector.CurrentWork.Valor;
-                        //this.Focus();
-                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                        if (RondasLector.CurrentWork.Values.Length == 0)
+                        {
+                            this.IsEnabledComboValor = false;
+                            this.IsEnabledValorText = true;
+                            //this.txtValor.GotFocus += this.pickHandler;
+                            pickEnabled = true;
+                            this.ValorText = RondasLector.CurrentWork.Valor;
+                            ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                        }
+                        else
+                        {
+                            this.IsEnabledComboValor = true;
+                            this.IsEnabledValorText = false;
+                            ((CapturaDatos2)this.Page).cmbValor.Focus(FocusState.Programmatic);
+                            this.ValorCombo.Clear();
+                            for (int num1 = 0; num1 < (RondasLector.CurrentWork.Values.Length - 1); num1++)
+                            {
+                                this.ValorCombo.Add(RondasLector.CurrentWork.Values[num1]);
+                            }
+                            this.SelectedValueValorCombo = RondasLector.CurrentWork.Valor;
+                        }
                     }
                     else
                     {
-                        this.IsEnabledComboValor = true;
-                        this.IsEnabledValorText = false;
-                        this.ValorCombo = new ObservableCollection<string>();
-                        for (int index = 0; index < RondasLector.CurrentWork.Values.Length - 1; ++index)
-                        {
-                            this.ValorCombo.Add(RondasLector.CurrentWork.Values[index]);
-                        }
-                        this.SelectedValueValorCombo = RondasLector.CurrentWork.Valor;
+                        this.IsEnabledComboValor = false;
+                        this.IsEnabledValorText = true;
+                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                        //currFocus = this.txtValor;
+                        this.ValorText = RondasLector.CurrentWork.Valor;
                     }
+                    this.Comentario = RondasLector.CurrentWork.Descripcion;
+                    //this.noComment.Selected = RondasLector.CurrentWork.NoComment;
+                    this.FechaOld1 = RondasLector.CurrentWork.OldValue1;
+                    this.FechaOld2 = RondasLector.CurrentWork.OldValue2;
+                    this.Unidad = "(" + RondasLector.CurrentWork.UM + ")";
+                    this.NombreRonda = "Ronda: " + RondasLector.CurrentRonda.Nombre;
+                    this.SelectedValueCausa = RondasLector.CurrentWork.Causa;
                 }
-                else
-                {
-                    this.IsEnabledComboValor = false;
-                    this.IsEnabledValorText = true;
-                    ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
-                    //this.txtValor.Focus();
-                    //this.currFocus = this.txtValor;
-                    this.ValorText = RondasLector.CurrentWork.Valor;
-                }
-                this.Comentario = RondasLector.CurrentWork.Description;
-                //this.noComment.Selected = Sheet.current.NoComment;
-                this.FechaOld1 = RondasLector.CurrentWork.OldValue1;
-                this.FechaOld2 = RondasLector.CurrentWork.OldValue2;
-                this.Unidad = "(" + RondasLector.CurrentWork.UM + ")";
-                this.NombreRonda = "Ronda: " + RondasLector.CurrentWork.Nombre;
-                this.SelectedValueCausa = RondasLector.CurrentWork.Causa;
             }
             catch (Exception)
             {
@@ -341,117 +340,135 @@ namespace RondasEcopetrol.ViewModels
         }
         public async void siguiente()
         {
-            bool flag = true;
-            int num = 0;
+            bool b = true;
+            int value_Validation = 0;
             if (!INIT_STATE)
             {
-                int[] numArray = await this.ValidarEntrada();
-                num = numArray[0];
-                flag = numArray[1] == 1;
+                int[] result = await this.ValidarEntrada();
+                value_Validation = result[0];
+                b = (result[1] == 1);
             }
             INIT_STATE = false;
-            if (!flag)
-                return;
-            if (RondasLector.CurrentWork != null)
+            if (b)
             {
-                RondasLector.CurrentWork.Valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
-                RondasLector.CurrentWork.Descripcion = this.Comentario.Trim();
-                //RondasLector.CurrentWork.NoComment = this.noComment.Selected;
-                RondasLector.CurrentWork.Causa = this.SelectedValueCausa;
-                RondasLector.CurrentWork.fechar();
-            }
-            object obj;
-            do
-            {
-                obj = RondasLector.CurrentRonda.next();
-                if (obj == null)
+                if (RondasLector.CurrentWork != null)
                 {
-                    //RondasAdvertenciaManager.sheet = true;
-                    //this.Form.App.showCanvas(typeof(AdvertenciaPopUp));
-                    return;
+                    RondasLector.CurrentWork.Valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
+                    RondasLector.CurrentWork.Descripcion = this.Comentario.Trim();
+                    //RondasLector.CurrentWork.NoComment = this.noComment.Selected;
+                    RondasLector.CurrentWork.Causa = this.SelectedValueCausa;
+                    RondasLector.CurrentWork.fechar();
                 }
-                if (obj is Work && ((Work)obj).isValidForThisState())
+                while (true)
                 {
-                    RondasLector.CurrentWork = (Work)obj;
-                    this.showActual();
-                    return;
+                    object obj1 = RondasLector.CurrentRonda.next();
+                    if (obj1 == null)
+                    {
+                        //RondasAdvertenciaManager.sheet = true;
+                        //base.Form.App.showCanvas(typeof(AdvertenciaPopUp));
+                        RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, true);
+                        await _popUp.showAsync();
+                        break;
+                    }
+                    else if (obj1 is Work && ((Work)obj1).isValidForThisState())
+                    {
+                        RondasLector.CurrentWork = (Work)obj1;
+                        this.showActual();
+                        break;
+                    }
+                    else if (obj1 is Steps)
+                    {
+                        RondasLector.Step = (Steps)obj1;
+                        AppFrame.Navigate(typeof(CapturaDatos1));
+                        break;
+                    }
                 }
             }
-            while (!(obj is Steps));
-            RondasLector.Step = (Steps)obj;
-            //this.Form.App.showCanvas(typeof(StateMachine));
-            AppFrame.Navigate(typeof(CapturaDatos1));
         }
         private async Task<int[]> ValidarEntrada()
         {
             if (RondasLector.CurrentWork != null)
             {
-                int num1 = 0;
+                int returnValue = 0;
                 string valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
                 if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                 {
-                    //int num2 = (int)MessageBox.Show("Debe digitar valor o un comentario");
                     await MessageDialogError.ImprimirAsync("Debe digitar valor o un comentario");
-                    //this.txtValor.Focus();
                     ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
-                    //this.currFocus = this.txtValor;
-                    return new int[2];
+                    //currFocus = txtValor;
+                    return new int[] { 0, 0 };
                 }
                 if (RondasLector.CurrentWork.Obligatorio)
                 {
                     if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                     {
-                        //int num2 = (int)MessageBox.Show("El valor es obligatorio");
                         await MessageDialogError.ImprimirAsync("El valor es obligatorio");
-                        //this.txtValor.Focus();
                         ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
-                        //this.currFocus = this.txtValor;
-                        return new int[2];
+                        //currFocus = txtValor;
+                        return new int[] { 0, 0 };
                     }
-                    if (valor.Length == 0)
-                        return new int[2] { 0, 1 };
+                    if (valor.Length == 0) return new int[] { 0, 1 };
                 }
                 if (valor.Length != 0)
-                    num1 = this.validValue(valor);
-                switch (num1)
                 {
-                    case 0:
-                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
-                        //this.txtValor.Focus();
-                        return new int[2];
-                    case 1:
-                        //if (!this.noComment.Selected && (this.txtComentario.Text.Trim().Length == 0 || this.cmbCausas.Text.Length == 0))
-                        if (!(this.Comentario.Trim().Length == 0 || this.SelectedValueCausa.Length == 0))
-                        {
-                            if (this.Comentario.Trim().Length == 0)
-                                //this.Comentario.Focus();
-                                ((CapturaDatos2)this.Page).txtComentario.Focus(FocusState.Programmatic);
-                            else
-                                //this.cmbCausas.Focus();
-                                ((CapturaDatos2)this.Page).cmbCausas.Focus(FocusState.Programmatic);
-                            return new int[2] { num1, 0 };
-                        }
-                        break;
+                    returnValue = await this.validValue(valor);
                 }
-                return new int[2] { num1, 1 };
+                if (returnValue == 0)
+                {
+                    ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                    return new int[] { 0, 0 }; ;
+                }
+                else if (returnValue == 1)
+                {
+                    //if (!noComment.Selected && (Comentario.Trim().Length == 0 || this.SelectedValueCausa.Length == 0))
+                    if (!false && (Comentario.Trim().Length == 0 || this.SelectedValueCausa.Length == 0))
+                    {
+                        if (Comentario.Trim().Length == 0)
+                        {
+                            ((CapturaDatos2)this.Page).txtComentario.Focus(FocusState.Programmatic);
+                        }
+                        else
+                        {
+                            ((CapturaDatos2)this.Page).cmbCausas.Focus(FocusState.Programmatic);
+                        }
+                        return new int[] { returnValue, 0 };
+                    }
+                }
+                return new int[] { returnValue, 1 };
             }
-            return new int[2] { 0, 1 };
+            return new int[] { 0, 1 };
         }
-        private int validValue(string valor)
+        private async Task<int> validValue(string valor)
         {
+            //bool showMsg = !noComment.Selected && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
+            bool showMsg = !false && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
+            showMsg = true;
+            int valorReturn = 0;
             string resultMsgTitle = null, resultMsgDetail = null;
-            //bool showMsg = !this.noComment.Selected && (this.txtComentario.Text.Length == 0 || this.cmbCausas.Text.Length == 0);
-            bool showMsg = !(this.Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
-            if (!RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
-                return RondasLector.CurrentWork.validEntry(valor, showMsg, out resultMsgTitle, out resultMsgDetail);
-            if (this.IsEnabledComboValor)
+            if (RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
             {
-                int selectedIndex = this.SelectedIndexValorCombo;
-                string str = "" + this.SelectedValueValorCombo;
-                if (selectedIndex != -1)
-                    return RondasLector.CurrentWork.validEntryText(selectedIndex, str, showMsg, out resultMsgTitle, out resultMsgDetail);
+                if (this.IsEnabledComboValor)
+                {
+                    int index = this.SelectedIndexValorCombo;
+                    string value = "" + this.SelectedValueValorCombo;
+                    if (index != -1)
+                    {
+                        valorReturn = RondasLector.CurrentWork.validEntryText(index, value, showMsg, out resultMsgTitle, out resultMsgDetail);
+                        if (resultMsgTitle != null)
+                        {
+                            await MessageDialogError.ImprimirAsync(resultMsgDetail + ": " + resultMsgTitle);
+                            return valorReturn;
+                        }
+                    }
+                }
+                return 2;
             }
-            return 2;
+            valorReturn = RondasLector.CurrentWork.validEntry(valor, showMsg, out resultMsgTitle, out resultMsgDetail);
+            if (resultMsgTitle != null)
+            {
+                await MessageDialogError.ImprimirAsync(resultMsgDetail + ": " + resultMsgTitle);
+            }
+            return valorReturn;
         }
         public async void home()
         {
