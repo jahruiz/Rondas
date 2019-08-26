@@ -11,6 +11,11 @@ namespace RondasEcopetrol.Models
     {
         private static Hashtable suspendRounds;
 
+        public static IEnumerable<Rondas> getSuspendRoundsList()
+        {
+            if (suspendRounds == null) return new List<Rondas>();
+            return suspendRounds.Values.Cast<Rondas>();
+        }
         public static void addSuspendRound(Rondas ronda)
         {
             if (suspendRounds == null) suspendRounds = new Hashtable();

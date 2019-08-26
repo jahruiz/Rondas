@@ -200,7 +200,7 @@
 
             <Button 
                     Command="{Binding NavigationCommand}"
-                    CommandParameter="CambiarContra"
+                    CommandParameter="ContinuarRonda"
                     Grid.Row="1"
                     Grid.Column="1"
                     Margin="10,10,10,10"

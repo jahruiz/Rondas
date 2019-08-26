@@ -40,20 +40,25 @@
         {
             switch (viewFrame)
             {
-                case "CambiarContra":
-                    AppFrame.Navigate(typeof(CambiarContrasena));
+                case "IniciarSesion":
+                    AppFrame.Navigate(typeof(IniciarSesion));
+                    break;
+                case "BajarRonda":
+                    AppFrame.Navigate(typeof(BajarRonda));
                     break;
                 case "EnviarRonda":
                     AppFrame.Navigate(typeof(EnviarRonda));
                     break;
                 case "HacerRonda":
+                    HacerRondaViewModel.showSuspendRounds = false;
                     AppFrame.Navigate(typeof(HacerRonda));
                     break;
-                case "BajarRonda":
-                    AppFrame.Navigate(typeof(BajarRonda));
+                case "ContinuarRonda":
+                    HacerRondaViewModel.showSuspendRounds = true;
+                    AppFrame.Navigate(typeof(HacerRonda));
                     break;
-                case "IniciarSesion":
-                    AppFrame.Navigate(typeof(IniciarSesion));
+                case "CambiarContra":
+                    AppFrame.Navigate(typeof(CambiarContrasena));
                     break;
                 case "Salir":
                     Application.Current.Exit();

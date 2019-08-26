@@ -30,6 +30,7 @@
     <RootPropertyPathName Name="IsEnabledComboValor" />
     <RootPropertyPathName Name="ValorText" />
     <RootPropertyPathName Name="IsEnabledValorText" />
+    <RootPropertyPathName Name="IsEnabledPicker" />
     <RootPropertyPathName Name="Tarea" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
@@ -137,7 +138,7 @@
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="PlaceholderText" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.CambiarContrasena" />
@@ -150,14 +151,16 @@
       <RootProperty Name="SelectedValue" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos1" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
+      <RootProperty Name="Visibility" />
+    </RootType>
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
     <RootType FullName="RondasEcopetrol.Views.EnviarRonda" />
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />

@@ -278,7 +278,8 @@
             List<StorageFile> files = new List<StorageFile>();
             foreach (var file in await rondasFolder.GetFilesAsync())
             {
-                files.Add(file);
+                if (file.Name.Contains(".xml") && !File.Exists(file.Path.Replace(".xml", ".drxml")))
+                    files.Add(file);
             }
             return files;
         }
@@ -289,5 +290,6 @@
             xmlRonda = xmlRonda.Replace("RondasHHT", "Rondas_Descargadas");
             return xmlRonda;
         }
+
     }
 }
