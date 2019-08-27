@@ -124,15 +124,8 @@
                 </ComboBox>
             </Grid>
 
-            <CheckBox x:ConnectionId='9' 
-                Grid.Row="3"
-                Grid.Column="1"
-                x:Name="termsOfServiceCheckBox" 
-                Content="Sin comentario"
-                IsChecked="{Binding SinComentario,Mode=TwoWay}"
-                VerticalAlignment="Top"/>
             <TextBlock 
-                Grid.Row="4"
+                Grid.Row="3"
                 Grid.Column="0"
                 Text="Comentario"
                 HorizontalAlignment="Center"
@@ -140,12 +133,20 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox x:ConnectionId='10' x:Name="txtComentario" x:FieldModifier="public"
-                Grid.Row="4"
+            <TextBox x:ConnectionId='9' x:Name="txtComentario" x:FieldModifier="public"
+                Grid.Row="3"
                 Grid.Column="1"
                 Text="{Binding Comentario,Mode=TwoWay}"
                 IsEnabled="{Binding IsComentarioEnabled,Mode=TwoWay}"
                 />
+            <CheckBox x:ConnectionId='10' 
+                Grid.Row="4"
+                Grid.Column="1"
+                x:Name="termsOfServiceCheckBox" 
+                Content="Sin comentario"
+                IsChecked="{Binding SinComentario,Mode=TwoWay}"
+                VerticalAlignment="Top"/>
+            
             <TextBlock 
                 Grid.Row="5"
                 Grid.Column="0"

@@ -24,8 +24,8 @@
     <RootPropertyPathName Name="Causa" />
     <RootPropertyPathName Name="SelectedIndexCausa" />
     <RootPropertyPathName Name="SelectedValueCausa" />
-    <RootPropertyPathName Name="IsComentarioEnabled" />
     <RootPropertyPathName Name="SinComentario" />
+    <RootPropertyPathName Name="IsComentarioEnabled" />
     <RootPropertyPathName Name="ValorCombo" />
     <RootPropertyPathName Name="SelectedIndexValorCombo" />
     <RootPropertyPathName Name="SelectedValueValorCombo" />

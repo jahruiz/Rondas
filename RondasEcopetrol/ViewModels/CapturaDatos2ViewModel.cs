@@ -341,7 +341,7 @@ namespace RondasEcopetrol.ViewModels
             await _popUp.showAsync();
         }
 
-        public void anterior()
+        public async void anterior()
         {
             object obj;
             do
@@ -351,9 +351,12 @@ namespace RondasEcopetrol.ViewModels
                 {
                     //RondasAdvertenciaManager.sheet = true;
                     //this.Form.App.showCanvas(typeof(AdvertenciaPopUp));
-                    RondasLector.CurrentRonda.Lector.Close();
-                    //TODO Definir a donde ir desde este punto
-                    AppFrame.Navigate(typeof(HacerRonda));
+                    RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, true);
+                    if (await _popUp.showAsync())
+                    {
+                        //Ir al menú principal
+                        AppFrame.Navigate(typeof(MainPage));
+                    }
                     return;
                 }
                 else if (obj is Work && ((Work)obj).isValidForThisState())
@@ -413,6 +416,7 @@ namespace RondasEcopetrol.ViewModels
                     }
                     else if (obj1 is Steps)
                     {
+                        RondasLector.CurrentWork = (Work)null;
                         RondasLector.Step = (Steps)obj1;
                         AppFrame.Navigate(typeof(CapturaDatos1));
                         break;
@@ -477,7 +481,7 @@ namespace RondasEcopetrol.ViewModels
         {
             //bool showMsg = !noComment.Selected && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
             bool showMsg = !this.SinComentario && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
-            showMsg = true;
+            //showMsg = true; //Linea para debug
             int valorReturn = 0;
             string resultMsgTitle = null, resultMsgDetail = null;
             if (RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
@@ -491,9 +495,9 @@ namespace RondasEcopetrol.ViewModels
                         valorReturn = RondasLector.CurrentWork.validEntryText(index, value, showMsg, out resultMsgTitle, out resultMsgDetail);
                         if (resultMsgTitle != null)
                         {
-                            await MessageDialogError.ImprimirAsync(resultMsgDetail + ": " + resultMsgTitle);
-                            return valorReturn;
+                            await MessageDialogError.ImprimirAsync(resultMsgDetail, resultMsgTitle);
                         }
+                        return valorReturn;
                     }
                 }
                 return 2;
@@ -501,7 +505,7 @@ namespace RondasEcopetrol.ViewModels
             valorReturn = RondasLector.CurrentWork.validEntry(valor, showMsg, out resultMsgTitle, out resultMsgDetail);
             if (resultMsgTitle != null)
             {
-                await MessageDialogError.ImprimirAsync(resultMsgDetail + ": " + resultMsgTitle);
+                await MessageDialogError.ImprimirAsync(resultMsgDetail, resultMsgTitle);
             }
             return valorReturn;
         }

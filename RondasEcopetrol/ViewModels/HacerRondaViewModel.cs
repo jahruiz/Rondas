@@ -181,6 +181,7 @@
                     Object current = ronda.Current;
                     if (current is Steps)
                     {
+                        RondasLector.CurrentWork = (Work)null;
                         RondasLector.Step = (Steps)current;
                         AppFrame.Navigate(typeof(CapturaDatos1));
                     }
@@ -202,6 +203,7 @@
                 if ((obj1 != null) && (obj1 is Steps))
                 {
                     RondasLector.StartStep = (Steps)obj1;
+                    RondasLector.CurrentWork = (Work)null;
                     RondasLector.Step = (Steps)obj1;
                     AppFrame.Navigate(typeof(CapturaDatos1));
                 }

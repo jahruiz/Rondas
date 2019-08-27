@@ -115,10 +115,10 @@
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="anterior" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:Name="siguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:Name="guardar" Content="Guardar y Suspender" Command="{Binding GuardarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
+            <Button x:Name="btnAnterior" x:FieldModifier="public" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
+            <Button x:Name="btnSiguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
+            <Button x:Name="btnGuardar" Content="Guardar y Suspender" Command="{Binding GuardarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
         </StackPanel>
 
     </Grid>

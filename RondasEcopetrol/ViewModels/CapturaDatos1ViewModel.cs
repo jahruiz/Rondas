@@ -85,6 +85,7 @@ namespace RondasEcopetrol.ViewModels
                 SetPropertyValue(value);
             }
         }
+
         #endregion Propiedades
 
         #region Commands
@@ -196,6 +197,7 @@ namespace RondasEcopetrol.ViewModels
             catch (Exception)
             {
             }
+            ((CapturaDatos1)this.Page).btnAnterior.IsEnabled = !RondasLector.Step.Equals(RondasLector.StartStep);
         }
 
         public void anterior()
