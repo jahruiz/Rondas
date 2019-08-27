@@ -283,7 +283,24 @@
             }
             return files;
         }
+        public static async Task<List<StorageFile>> GetArchivosRondasASubirAsync(string usuario)
+        {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
 
+            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path + "\\" + usuario);
+
+            //return (await rondasFolder.GetFilesAsync());
+            List<StorageFile> files = new List<StorageFile>();
+            foreach (var file in await rondasFolder.GetFilesAsync())
+            {
+                if (file.Name.Contains(".drxml"))
+                    files.Add(file);
+            }
+            return files;
+        }
         public static async Task<string> GetXmlRondaAsync(StorageFile fileRonda)
         {
             string xmlRonda = await Windows.Storage.FileIO.ReadTextAsync(fileRonda);

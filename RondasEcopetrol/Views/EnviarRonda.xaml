@@ -40,7 +40,11 @@
             </Grid>
         </Grid>
 
-        <ListView x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" ItemsSource="{Binding Path=RondasDisponibles}" IsItemClickEnabled="True" SelectedItem="{Binding SelectedUser,Mode = TwoWay  }" >
+        <ListView x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" 
+                  ItemsSource="{Binding Path=RondasaSubir}" 
+                  IsItemClickEnabled="True" 
+                  SelectedItem="{Binding SelectedItem,Mode = TwoWay  }" 
+                  ItemClick="ListView1_ItemClick" >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="x:String">
                     <Grid>
@@ -50,7 +54,7 @@
                         </Grid.ColumnDefinitions>
                         <Image Source="/Assets/SubirRonda.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
-                        <TextBlock Text="{Binding Path= Nombre_Ronda}" Foreground="Teal" 
+                        <TextBlock Text="{Binding Path= Nombre}" Foreground="Teal" 
                            FontSize="14" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>

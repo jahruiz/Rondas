@@ -27,5 +27,9 @@ namespace RondasEcopetrol.Views
         {
             this.InitializeComponent();
         }
+        private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.listView1.SelectedItem = e.ClickedItem;
+        }
     }
 }
