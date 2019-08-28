@@ -35,9 +35,11 @@
     <RootPropertyPathName Name="IsEnabledPicker" />
     <RootPropertyPathName Name="Tarea" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
+    <RootPropertyPathName Name="RondasaSubir" />
+    <RootPropertyPathName Name="SelectedItem" />
+    <RootPropertyPathName Name="Nombre" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
-    <RootPropertyPathName Name="Nombre" />
     <RootPropertyPathName Name="tituloPantalla" />
     <RootPropertyPathName Name="IniciarSesionViewModel" />
     <RootPropertyPathName Name="CancelarSesionCommand" />
