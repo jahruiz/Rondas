@@ -72,11 +72,7 @@
             <TextBlock 
                 Grid.Row="1"
                 Grid.Column="0"
-<<<<<<< HEAD
-                Text="Descripcion"
-=======
                 Text="Descripción"
->>>>>>> ff0c8dd463fcfb6207707698bd9f633f23b48019
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
@@ -111,11 +107,7 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-<<<<<<< HEAD
-            <TextBox
-=======
             <TextBox x:ConnectionId='6' x:Name="txtCommentary" x:FieldModifier="public"
->>>>>>> ff0c8dd463fcfb6207707698bd9f633f23b48019
                 Grid.Row="3"
                 Grid.Column="1"
                 Text="{Binding Path=Comentario,Mode = TwoWay}"
@@ -123,17 +115,10 @@
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-<<<<<<< HEAD
-            <Button x:ConnectionId='2' x:Name="anterior" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:ConnectionId='3' x:Name="siguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:ConnectionId='4' x:Name="guardar" Content="Guardar y Suspender" Command="{Binding GuardarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
-            <Button x:ConnectionId='5' x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
-=======
             <Button x:ConnectionId='2' x:Name="btnAnterior" x:FieldModifier="public" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
             <Button x:ConnectionId='3' x:Name="btnSiguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
             <Button x:ConnectionId='4' x:Name="btnGuardar" Content="Guardar y Suspender" Command="{Binding GuardarCommand}"  Margin="10,10,10,10" Background="#330CFF00" RequestedTheme="Default"/>
             <Button x:ConnectionId='5' x:Name="btnCancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
->>>>>>> ff0c8dd463fcfb6207707698bd9f633f23b48019
         </StackPanel>
 
     </Grid>

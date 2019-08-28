@@ -10,7 +10,7 @@
     DataContext="{Binding Source={StaticResource Locator}, Path=MainPageViewModel}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Margin="62,0,386,125" Height="567" VerticalAlignment="Bottom" >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="6*"/>
@@ -200,15 +200,14 @@
 
             <Button 
                     Command="{Binding NavigationCommand}"
-                    CommandParameter="CambiarContra"
+                    CommandParameter="ContinuarRonda"
                     Grid.Row="1"
                     Grid.Column="1"
                     Margin="10,10,10,10"
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    IsEnabled="{Binding IsButtonEnable}">
+                    VerticalAlignment="Stretch">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>
