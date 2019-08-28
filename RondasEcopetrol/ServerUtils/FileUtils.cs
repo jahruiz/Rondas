@@ -197,13 +197,13 @@
             streamWriter.Close();
             fileStream.Close();
         }
-        public static void writeXmlData(string filename, string xmlsource)
+        public static void writeXmlData(string filename, string xmlsource, string user)
         {
             string[] array = new string[]
             {
                 FileUtils.path,
                 "/",
-                FileUtils.user,
+                user,
                 "/",
                 filename
             };
@@ -278,16 +278,35 @@
             List<StorageFile> files = new List<StorageFile>();
             foreach (var file in await rondasFolder.GetFilesAsync())
             {
-                files.Add(file);
+                if (file.Name.Contains(".xml") && !File.Exists(file.Path.Replace(".xml", ".drxml")))
+                    files.Add(file);
             }
             return files;
         }
+        public static async Task<List<StorageFile>> GetArchivosRondasASubirAsync(string usuario)
+        {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
 
+            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path + "\\" + usuario);
+
+            //return (await rondasFolder.GetFilesAsync());
+            List<StorageFile> files = new List<StorageFile>();
+            foreach (var file in await rondasFolder.GetFilesAsync())
+            {
+                if (file.Name.Contains(".drxml"))
+                    files.Add(file);
+            }
+            return files;
+        }
         public static async Task<string> GetXmlRondaAsync(StorageFile fileRonda)
         {
             string xmlRonda = await Windows.Storage.FileIO.ReadTextAsync(fileRonda);
             xmlRonda = xmlRonda.Replace("RondasHHT", "Rondas_Descargadas");
             return xmlRonda;
         }
+
     }
 }

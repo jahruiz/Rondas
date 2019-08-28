@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using RondasEcopetrol.Base;
 using RondasEcopetrol.Models;
 using RondasEcopetrol.Views;
 using RondasEcopetrol.ServerUtils;
+using RondasEcopetrol.ViewModels;
 
 namespace RondasEcopetrol.PopUps
 {
@@ -35,10 +32,10 @@ namespace RondasEcopetrol.PopUps
         {
             if (navFromSheet)
             {
-                //TODO
-                /*Sheet.NEXT_TRIGGER = false;*/
+                CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 RondasLector.CurrentRonda.getLastWork();
                 _curFrame.Navigate(typeof(CapturaDatos2));
+                CapturaDatos2ViewModel.currentInstance.initPanel();
             }
             else
             {
@@ -51,21 +48,18 @@ namespace RondasEcopetrol.PopUps
             Rondas rondas1 = RondasLector.CurrentRonda;
             rondas1.ensureProccessAll();
             String rondaXML = rondas1.getStringSave();
-            FileUtils.writeXmlData("rnd" + rondas1.MessageID + "Save.xml", rondaXML);
-            //System.IO.FileStream stream = new System.IO.FileStream("/My Documents/ronda" + rondas1.Id + DateTime.Now.ToString("yyyyMMddHHmmss"), System.IO.FileMode.Create);
-            //byte[] b = System.Text.UTF8Encoding.UTF8.GetBytes(rondaXML);
-            //stream.Write(b, 0, b.Length);
-            //stream.Close();
+            FileUtils.writeXmlData("rnd" + rondas1.MessageID + ".drxml", rondaXML, rondas1.Usuario);
 
             //TODO Pendiente traducir esto
             /*DataRow[] rowArray1 = RondasApp.app.DsetRondasDown.Tables["Ronda"].Select("Message_ID=" + rondas1.MessageID);
             rowArray1[0]["Complete"] = "true";
             rowArray1[0].AcceptChanges();
-            rowArray1[0].Table.AcceptChanges();
+            rowArray1[0].Table.AcceptChanges();*/
+
             if (rondas1.Suspend)
             {
-                RondasApp.deleteSuspend(rondas1);
-            }*/
+                SuspendRound.deleteSuspend(rondas1);
+            }
         }
     }
 }

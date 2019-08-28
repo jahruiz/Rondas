@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RondasEcopetrol.Base;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml;
 using System.Windows.Input;
 using RondasEcopetrol.Views;
 using RondasEcopetrol.Models;
@@ -20,6 +21,7 @@ namespace RondasEcopetrol.ViewModels
             //initPanel();
         }
 
+        #region Propiedades
         //Campos del Step mostrado actualmente
         public string Paso
         {
@@ -84,6 +86,8 @@ namespace RondasEcopetrol.ViewModels
             }
         }
 
+        #endregion Propiedades
+
         #region Commands
         private DelegateCommand<string> _navigationCommand;
         private ICommand _guardarCommand;
@@ -138,15 +142,10 @@ namespace RondasEcopetrol.ViewModels
         //Codigo traido de StateMachine
         // Methods
 
-        public void suspender()
+        public async void suspender()
         {
-            //TODO Pendiente Guardar y continuar ronda
-            /*jump.fbased.Application application1 = base.Form.App;
-            RondasAdvertenciaManager.sheet = true;
-            AdvertenciaSuspendManager.sheet = false;
-            AdvertenciaPopUp.manager = new AdvertenciaSuspendManager();
-            application1.showCanvas(typeof(AdvertenciaPopUp));
-            return true;*/
+            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.AppFrame, false);
+            await _popUp.showAsync();
         }
 
         //TODO Pendiente Buscar en àrbol
@@ -185,7 +184,11 @@ namespace RondasEcopetrol.ViewModels
 
                 if (temp.SelectedValue == -1)
                     this.SelectedValueEstado = "";
-                else this.SelectedIndexEstado = temp.SelectedValue;
+                else
+                {
+                    this.SelectedIndexEstado = temp.SelectedValue;
+                    this.SelectedValueEstado = this.EstadosEquipo[temp.SelectedValue];
+                }
 
                 this.Direccion = temp.Direccion;
                 this.Comentario = temp.Commentary;
@@ -194,6 +197,7 @@ namespace RondasEcopetrol.ViewModels
             catch (Exception)
             {
             }
+            ((CapturaDatos1)this.Page).btnAnterior.IsEnabled = !RondasLector.Step.Equals(RondasLector.StartStep);
         }
 
         public void anterior()
@@ -202,8 +206,7 @@ namespace RondasEcopetrol.ViewModels
             if (obj1 == null)
             {
                 RondasLector.CurrentRonda.Lector.Close();
-                //TODO
-                //base.Form.App.showCanvas(typeof(RondasDownload));
+                //TODO Definir a donde ir desde este punto
                 AppFrame.Navigate(typeof(HacerRonda));
             }
             else if (obj1 is Work)
@@ -213,10 +216,10 @@ namespace RondasEcopetrol.ViewModels
                 {
                     if (w.Step.isValid())
                     {
-                        //TODO Pendiente traducir
-                        /*Sheet.NEXT_TRIGGER = false;*/
+                        CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                         RondasLector.CurrentWork = (Work)obj1;
                         AppFrame.Navigate(typeof(CapturaDatos2));
+                        CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
                     else
                     {
@@ -381,19 +384,19 @@ namespace RondasEcopetrol.ViewModels
                 if ((text1.Equals("OF") || text1.Equals("SF") || text1.Equals("EF")) && this.Comentario.Trim().Length == 0)
                 {
                     await MessageDialogWarning.ImprimirAsync("Se sugiere documentar");
-                    //TODO
-                    //this.txtCommentary.Focus();
+                    ((CapturaDatos1)this.Page).txtCommentary.Focus(FocusState.Programmatic);
                 }
                 else
                 {
                     RondasLector.Step.SelectedValue = this.SelectedIndexEstado;
                     RondasLector.Step.Commentary = this.Comentario;
                     RondasLector.Step.fechar();
-                    //TODO
-                    //Sheet.INIT_STATE = true;
+                    //Ir al siguiente nodo (Paso/Tarea) de la ronda
+                    CapturaDatos2ViewModel.INIT_STATE = true;
                     if (RondasLector.Step.Works.Count > 0)
                     {
                         AppFrame.Navigate(typeof(CapturaDatos2));
+                        CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
                     else
                     {
@@ -410,8 +413,8 @@ namespace RondasEcopetrol.ViewModels
                             RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, false);
                             if (await _popUp.showAsync())
                             {
-                                //Ir a la pantalla de Hacer Ronda
-                                AppFrame.Navigate(typeof(HacerRonda));
+                                //Ir al menú principal
+                                AppFrame.Navigate(typeof(MainPage));
                             }
                         }
                     }

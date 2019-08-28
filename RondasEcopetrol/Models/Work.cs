@@ -179,8 +179,8 @@
                 if (showMsg)
                 {
                     //MessageBox.Show(action + suffix, msg);
-                    resultMsgTitle = action + suffix;
-                    resultMsgDetail = msg;
+                    resultMsgDetail = action + suffix;
+                    resultMsgTitle = msg;
                 }
             }
             else if (value == 1)
@@ -188,8 +188,8 @@
                 if (showMsg)
                 {
                     //MessageBox.Show("Se sugiere documentar", msg);
-                    resultMsgTitle = "Se sugiere documentar";
-                    resultMsgDetail = msg;
+                    resultMsgDetail = "Se sugiere documentar";
+                    resultMsgTitle = msg;
                 }
             }
 
@@ -238,8 +238,8 @@
                     else
                         objArray1 = new object[4] { "Los Limites son ", num6, " y ", num7 };
                     //MessageBox.Show(string.Concat(objArray1), "Fuera de Limites");
-                    resultMsgTitle = string.Concat(objArray1);
-                    resultMsgDetail = "Fuera de Limites";
+                    resultMsgDetail = string.Concat(objArray1);
+                    resultMsgTitle = "Fuera de Limites";
                     return 0;
                 }
 
@@ -267,8 +267,8 @@
                     if (showMsg)
                     {
                         //MessageBox.Show(finalMsg, "Fuera de Ventana");
-                        resultMsgTitle = finalMsg;
-                        resultMsgDetail = "Fuera de Ventana";
+                        resultMsgDetail = finalMsg;
+                        resultMsgTitle = "Fuera de Ventana";
                     }
                     return 1;
                 }
@@ -295,8 +295,8 @@
                     if (showMsg)
                     {
                         //MessageBox.Show(finalMsg, "Fuera de Guia");
-                        resultMsgTitle = finalMsg;
-                        resultMsgDetail = "Fuera de Guia";
+                        resultMsgDetail = finalMsg;
+                        resultMsgTitle = "Fuera de Guia";
                     }
                     return 1;
                 }
@@ -305,8 +305,8 @@
             catch (Exception)
             {
                 //MessageBox.Show("El Tipo de dato es invalido, asegurese de que el valor digitado es un número.", "Error de Formato");
-                resultMsgTitle = "El Tipo de dato es invalido, asegurese de que el valor digitado es un número.";
-                resultMsgDetail = "Error de Formato";
+                resultMsgDetail = "El Tipo de dato es invalido, asegurese de que el valor digitado es un número.";
+                resultMsgTitle = "Error de Formato";
                 flag1 = 0;
             }
             return flag1;

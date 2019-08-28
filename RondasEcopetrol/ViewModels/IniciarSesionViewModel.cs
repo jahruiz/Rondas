@@ -134,7 +134,7 @@
             }
             else
             {
-                MessageDialogError.ImprimirAsync("Error en la conexion con la BD, intente más tarde");
+                await MessageDialogError.ImprimirAsync("Error en la conexion con la BD, intente más tarde");
                 IsValidUser = false;
             }
             ServerUtils.close();
