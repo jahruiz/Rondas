@@ -10,7 +10,7 @@
     DataContext="{Binding Source={StaticResource Locator}, Path=MainPageViewModel}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Margin="62,0,386,125" Height="567" VerticalAlignment="Bottom" >
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="6*"/>

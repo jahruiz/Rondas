@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-22T19:14:21.823</Modified>
+      <Modified>2019-08-23T16:23:56.194</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\RondasEcopetrol.exe">
       <PackagePath>entrypoint\RondasEcopetrol.exe</PackagePath>
-      <Modified>2019-08-22T19:14:20.671</Modified>
+      <Modified>2019-08-23T16:23:55.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.8\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -154,43 +154,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\RondasEcopetrol.xr.xml">
       <PackagePath>RondasEcopetrol.xr.xml</PackagePath>
-      <Modified>2019-08-22T17:33:54.524</Modified>
+      <Modified>2019-08-23T16:03:25.996</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.144</Modified>
+      <Modified>2019-08-23T16:23:54.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\BajarRonda.xbf">
       <PackagePath>Views\BajarRonda.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.146</Modified>
+      <Modified>2019-08-23T16:23:54.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CambiarContrasena.xbf">
       <PackagePath>Views\CambiarContrasena.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.147</Modified>
+      <Modified>2019-08-23T16:23:54.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos1.xbf">
       <PackagePath>Views\CapturaDatos1.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.148</Modified>
+      <Modified>2019-08-23T16:23:54.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\CapturaDatos2.xbf">
       <PackagePath>Views\CapturaDatos2.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.130</Modified>
+      <Modified>2019-08-23T16:23:54.726</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\EnviarRonda.xbf">
       <PackagePath>Views\EnviarRonda.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.150</Modified>
+      <Modified>2019-08-23T16:23:54.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\HacerRonda.xbf">
       <PackagePath>Views\HacerRonda.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.151</Modified>
+      <Modified>2019-08-23T16:23:54.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\IniciarSesion.xbf">
       <PackagePath>Views\IniciarSesion.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.152</Modified>
+      <Modified>2019-08-23T16:23:54.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2019-08-22T19:14:20.144</Modified>
+      <Modified>2019-08-23T16:23:54.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -198,11 +198,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-08-22T19:09:15.796</Modified>
+      <Modified>2019-08-23T15:56:29.527</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\Core\RondasEcopetrol.exe">
       <PackagePath>RondasEcopetrol.exe</PackagePath>
-      <Modified>2019-08-22T19:14:21.811</Modified>
+      <Modified>2019-08-23T16:23:56.193</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
