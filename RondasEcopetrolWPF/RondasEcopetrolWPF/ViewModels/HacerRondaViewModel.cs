@@ -94,11 +94,11 @@
 
             try
             {
-                foreach (string usuario in await FileUtils.GetUsuariosRondasDescargadasAsync())
+                foreach (string usuario in FileUtils.GetUsuariosRondasDescargadas())
                 {
-                    foreach (var file in await FileUtils.GetArchivosRondasDescargadasAsync(usuario))
+                    foreach (var file in FileUtils.GetArchivosRondasDescargadas(usuario))
                     {
-                        Rondas_Descargadas rondas_actuales = FileUtils.Deserialize<Rondas_Descargadas>(await FileUtils.GetXmlRondaAsync(file));
+                        Rondas_Descargadas rondas_actuales = FileUtils.Deserialize<Rondas_Descargadas>(FileUtils.GetXmlRonda(file));
 
                         foreach (RondaDescargada ronda in rondas_actuales)
                         {

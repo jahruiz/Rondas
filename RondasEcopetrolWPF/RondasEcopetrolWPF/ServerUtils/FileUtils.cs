@@ -7,8 +7,6 @@
     using System.Xml;
     using System.Xml.Serialization;
 
-    using Windows.Storage;
-
     using System.Threading.Tasks;
     using System.Runtime;
     using System;
@@ -35,20 +33,18 @@
             FileUtils.user = user;
             FileUtils.pwd = pwd;
         }
-        public static async void createUser(string name)
+        public static void createUser(string name)
         {
             if (FileUtils.path == null)
             {
                 FileUtils.initPath();
             }
             FileUtils.user = name;
-            /*if (!Directory.Exists(FileUtils.path + "/" + name))
+            if (!Directory.Exists(FileUtils.path + "/" + name))
             {
                 Directory.CreateDirectory(FileUtils.path + "/" + name);
-            }*/
-            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path);
-            StorageFolder userFolder = await rondasFolder.CreateFolderAsync(name, CreationCollisionOption.OpenIfExists);
-            //StorageFolder rondasFolder = ApplicationData.Current.LocalFolder;
+            }
+            //StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path);
             //StorageFolder userFolder = await rondasFolder.CreateFolderAsync(name, CreationCollisionOption.OpenIfExists);
         }
         public static void deleteUser()
@@ -97,8 +93,8 @@
         }
         public static void initPath()
         {
-            //FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
-            FileUtils.path = ApplicationData.Current.LocalFolder.Path;
+            FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
+            //FileUtils.path = ApplicationData.Current.LocalFolder.Path;
         }
         public static DataSet loadData(string Filename)
         {
@@ -248,62 +244,79 @@
             }
         }
 
-        public static async Task<List<string>> GetUsuariosRondasDescargadasAsync()
+        public static List<string> GetUsuariosRondasDescargadas()
         {
             if (FileUtils.path == null)
             {
                 FileUtils.initPath();
             }
 
-            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path);
-
             List<String> users = new List<String>();
+            /*StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path);
             foreach (var folder in await rondasFolder.GetFoldersAsync())
             {
                 users.Add(folder.Name);
+            }*/
+            foreach (var folder in Directory.GetDirectories(path))
+            {
+                users.Add(folder);
             }
             return users;
         }
 
-        public static async Task<List<StorageFile>> GetArchivosRondasDescargadasAsync(string usuario)
+        public static List<string> GetArchivosRondasDescargadas(string usuario)
         {
             if (FileUtils.path == null)
             {
                 FileUtils.initPath();
             }
 
-            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path + "\\" + usuario);
-
+            /*StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path + "\\" + usuario);
             //return (await rondasFolder.GetFilesAsync());
             List<StorageFile> files = new List<StorageFile>();
             foreach (var file in await rondasFolder.GetFilesAsync())
             {
                 if (file.Name.Contains(".xml") && !File.Exists(file.Path.Replace(".xml", ".drxml")))
                     files.Add(file);
+            }*/
+            List<string> files = new List<string>();
+            foreach (var file in Directory.GetFiles(path + "\\" + usuario, "*.xml"))
+            {
+                if (!File.Exists(file.Replace(".xml", ".drxml")))
+                    files.Add(file);
             }
             return files;
         }
-        public static async Task<List<StorageFile>> GetArchivosRondasASubirAsync(string usuario)
+
+        public static List<string> GetArchivosRondasASubir(string usuario)
         {
             if (FileUtils.path == null)
             {
                 FileUtils.initPath();
             }
 
-            StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path + "\\" + usuario);
-
+            /*StorageFolder rondasFolder = await StorageFolder.GetFolderFromPathAsync(path + "\\" + usuario);
             //return (await rondasFolder.GetFilesAsync());
             List<StorageFile> files = new List<StorageFile>();
             foreach (var file in await rondasFolder.GetFilesAsync())
             {
                 if (file.Name.Contains(".drxml"))
                     files.Add(file);
+            }*/
+            List<string> files = new List<string>();
+            foreach (var file in Directory.GetFiles(path + "\\" + usuario, "*.drxml"))
+            {
+                if (!File.Exists(file.Replace(".xml", ".drxml")))
+                    files.Add(file);
             }
+
             return files;
         }
-        public static async Task<string> GetXmlRondaAsync(StorageFile fileRonda)
+        public static string GetXmlRonda(string fileRonda)
         {
-            string xmlRonda = await Windows.Storage.FileIO.ReadTextAsync(fileRonda);
+            //string xmlRonda = await Windows.Storage.FileIO.ReadTextAsync(fileRonda);
+            string xmlRonda = File.ReadAllText(fileRonda);
+
             xmlRonda = xmlRonda.Replace("RondasHHT", "Rondas_Descargadas");
             return xmlRonda;
         }
