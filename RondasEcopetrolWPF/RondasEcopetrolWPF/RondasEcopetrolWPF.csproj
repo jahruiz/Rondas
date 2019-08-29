@@ -66,14 +66,6 @@
     <Compile Include="ViewModels\HacerRondaViewModel.cs" />
     <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
-    <Compile Include="Views\BajarRonda.xaml.cs" />
-    <Compile Include="Views\CambiarContrasena.xaml.cs" />
-    <Compile Include="Views\CapturaDatos1.xaml.cs" />
-    <Compile Include="Views\CapturaDatos2.xaml.cs" />
-    <Compile Include="Views\EnviarRonda.xaml.cs" />
-    <Compile Include="Views\HacerRonda.xaml.cs" />
-    <Compile Include="Views\IniciarSesion.xaml.cs" />
-    <Compile Include="Views\MainPage.xaml.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -86,38 +78,6 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\ViewModelLocator.cs" />
     <Compile Include="Base\WarningPopUp.cs" />
-    <Page Include="Views\BajarRonda.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\CambiarContrasena.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\CapturaDatos1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\CapturaDatos2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EnviarRonda.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\HacerRonda.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\IniciarSesion.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Ronda.cs" />
@@ -157,7 +117,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\CerrarSesion.png" />
     <Resource Include="Assets\ContinuarRonda.png" />
