@@ -1,14 +1,12 @@
-﻿<base:PageBase
-    x:Class="RondasEcopetrol.Views.HacerRonda"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:RondasEcopetrol.Views"
-    xmlns:base="using:RondasEcopetrol.Base"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource Locator}, Path=HacerRondaViewModel}">
+﻿<Page x:Class="RondasEcopetrolWPF.Views.HacerRonda"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RondasEcopetrolWPF.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HacerRonda">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -38,7 +36,7 @@
                 Margin="0,10,0,10"
                 HorizontalAlignment="Right"/>
 
-            <Grid Grid.Row="1" Background="#80FF00" BorderBrush="Green">
+            <Grid Grid.Row="1" Background="#80FF00" >
                 <TextBlock 
                 Text="{Binding Path=tituloPantalla,Mode = TwoWay}"
                 FontSize="40"
@@ -51,9 +49,9 @@
             </Grid>
         </Grid>
 
-        <ListView x:ConnectionId='2' x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}" IsItemClickEnabled="True" SelectedItem="{Binding SelectedUser,Mode = TwoWay  }"                                >
+        <ListView x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }"  >
             <ListView.ItemTemplate>
-                <DataTemplate                      >
+                <DataTemplate >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*"/>
@@ -78,5 +76,4 @@
             Background="#33FD0000"
             Command="{Binding CancelarCommand}"></Button>
     </Grid>
-</base:PageBase>
-
+</Page>
