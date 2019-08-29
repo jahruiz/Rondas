@@ -23,6 +23,16 @@
 						<Value>Assets\CerrarSesion.png</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="ContinuarRonda.png" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/ContinuarRonda.png">
+					<Candidate type="Path">
+						<Value>Assets\ContinuarRonda.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="DescripcionRIS.jpg" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/DescripcionRIS.jpg">
+					<Candidate type="Path">
+						<Value>Assets\DescripcionRIS.jpg</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="EnviarRonda.png" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/EnviarRonda.png">
 					<Candidate type="Path">
 						<Value>Assets\EnviarRonda.png</Value>
@@ -56,6 +66,21 @@
 				<NamedResource name="LogoHacerRonda.png" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/LogoHacerRonda.png">
 					<Candidate type="Path">
 						<Value>Assets\LogoHacerRonda.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LogoRIS.jpg" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/LogoRIS.jpg">
+					<Candidate type="Path">
+						<Value>Assets\LogoRIS.jpg</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LogoRIS2.jpg" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/LogoRIS2.jpg">
+					<Candidate type="Path">
+						<Value>Assets\LogoRIS2.jpg</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LogoRIS_1.jpg" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/LogoRIS_1.jpg">
+					<Candidate type="Path">
+						<Value>Assets\LogoRIS_1.jpg</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="Salir.png" uri="ms-resource://2b2f7533-f1ee-4e5f-a3c3-e83106eaf329/Files/Assets/Salir.png">

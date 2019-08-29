@@ -12,18 +12,41 @@
     <RootPropertyPathName Name="Info" />
     <RootPropertyPathName Name="User" />
     <RootPropertyPathName Name="CapturaDatos1ViewModel" />
-    <RootPropertyPathName Name="AceptarCommand" />
+    <RootPropertyPathName Name="GuardarCommand" />
     <RootPropertyPathName Name="NavigationCommand" />
+    <RootPropertyPathName Name="Comentario" />
+    <RootPropertyPathName Name="EstadosEquipo" />
+    <RootPropertyPathName Name="SelectedIndexEstado" />
+    <RootPropertyPathName Name="SelectedValueEstado" />
+    <RootPropertyPathName Name="Direccion" />
+    <RootPropertyPathName Name="Paso" />
+    <RootPropertyPathName Name="CapturaDatos2ViewModel" />
+    <RootPropertyPathName Name="Causa" />
+    <RootPropertyPathName Name="SelectedIndexCausa" />
+    <RootPropertyPathName Name="SelectedValueCausa" />
+    <RootPropertyPathName Name="SinComentario" />
+    <RootPropertyPathName Name="IsComentarioEnabled" />
+    <RootPropertyPathName Name="ValorCombo" />
+    <RootPropertyPathName Name="SelectedIndexValorCombo" />
+    <RootPropertyPathName Name="SelectedValueValorCombo" />
+    <RootPropertyPathName Name="IsEnabledComboValor" />
+    <RootPropertyPathName Name="ValorText" />
+    <RootPropertyPathName Name="IsEnabledValorText" />
+    <RootPropertyPathName Name="IsEnabledPicker" />
+    <RootPropertyPathName Name="Tarea" />
     <RootPropertyPathName Name="EnviarRondaViewModel" />
+    <RootPropertyPathName Name="RondasaSubir" />
+    <RootPropertyPathName Name="SelectedItem" />
+    <RootPropertyPathName Name="Nombre" />
     <RootPropertyPathName Name="HacerRondaViewModel" />
     <RootPropertyPathName Name="RondasDescargadas" />
-    <RootPropertyPathName Name="Nombre" />
+    <RootPropertyPathName Name="tituloPantalla" />
     <RootPropertyPathName Name="IniciarSesionViewModel" />
     <RootPropertyPathName Name="CancelarSesionCommand" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="MainPageViewModel" />
-    <RootPropertyPathName Name="IsButtonEnable" />
     <RootPropertyPathName Name="IsButtonSesionEnable" />
+    <RootPropertyPathName Name="IsButtonEnable" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -32,17 +55,17 @@
     <RootType FullName="Windows.UI.Xaml.ResourceDictionary" />
     <RootType FullName="RondasEcopetrol.Base.ViewModelLocator" />
     <RootType FullName="RondasEcopetrol.Base.PageBase">
-      <RootProperty Name="DataContext" />
       <RootProperty Name="Background" />
+      <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
       <RootProperty Name="Path" />
       <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
@@ -52,6 +75,7 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
@@ -116,6 +140,11 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Text" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="IsReadOnly" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="PlaceholderText" />
     </RootType>
     <RootType FullName="RondasEcopetrol.Views.CambiarContrasena" />
@@ -123,15 +152,22 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Items" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="SelectedValue" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Visibility" />
     </RootType>
-    <RootType FullName="System.String" />
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos1" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Content" />
+      <RootProperty Name="IsChecked" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
+      <RootProperty Name="Visibility" />
+    </RootType>
     <RootType FullName="RondasEcopetrol.Views.CapturaDatos2" />
     <RootType FullName="RondasEcopetrol.Views.EnviarRonda" />
     <RootType FullName="RondasEcopetrol.Views.HacerRonda" />

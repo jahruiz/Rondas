@@ -1,0 +1,15 @@
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\RondasEcopetrolWPF.exe.config
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\RondasEcopetrolWPF.exe
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\RondasEcopetrolWPF.pdb
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csprojAssemblyReference.cache
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\MainWindow.g.cs
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\App.g.cs
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF_MarkupCompile.cache
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF_MarkupCompile.lref
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\MainWindow.baml
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.g.resources
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.Properties.Resources.resources
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csproj.GenerateResource.cache
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csproj.CoreCompileInputs.cache
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.exe
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.pdb

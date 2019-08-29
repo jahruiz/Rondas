@@ -9,7 +9,7 @@
   <Identity
     Name="2b2f7533-f1ee-4e5f-a3c3-e83106eaf329"
     Publisher="CN=ITAC"
-    Version="1.0.1.0" />
+    Version="1.0.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="2b2f7533-f1ee-4e5f-a3c3-e83106eaf329" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

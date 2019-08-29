@@ -200,15 +200,14 @@
 
             <Button 
                     Command="{Binding NavigationCommand}"
-                    CommandParameter="CambiarContra"
+                    CommandParameter="ContinuarRonda"
                     Grid.Row="1"
                     Grid.Column="1"
                     Margin="10,10,10,10"
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    IsEnabled="{Binding IsButtonEnable}">
+                    VerticalAlignment="Stretch">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>

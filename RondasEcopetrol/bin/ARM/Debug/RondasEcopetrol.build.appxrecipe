@@ -118,33 +118,6 @@
     <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\RondasEcopetrol.xr.xml">
       <PackagePath>RondasEcopetrol.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\App.xbf">
-      <PackagePath>App.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\BajarRonda.xbf">
-      <PackagePath>Views\BajarRonda.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\CambiarContrasena.xbf">
-      <PackagePath>Views\CambiarContrasena.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\CapturaDatos1.xbf">
-      <PackagePath>Views\CapturaDatos1.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\CapturaDatos2.xbf">
-      <PackagePath>Views\CapturaDatos2.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\EnviarRonda.xbf">
-      <PackagePath>Views\EnviarRonda.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\HacerRonda.xbf">
-      <PackagePath>Views\HacerRonda.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\IniciarSesion.xbf">
-      <PackagePath>Views\IniciarSesion.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Desarrollo\Rondas\RondasEcopetrol\bin\ARM\Debug\Views\MainPage.xbf">
-      <PackagePath>Views\MainPage.xbf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>

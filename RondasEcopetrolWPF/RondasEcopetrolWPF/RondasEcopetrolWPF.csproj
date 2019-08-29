@@ -55,20 +55,83 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="ServerUtils\FileUtils.cs" />
+    <Compile Include="ServerUtils\ServerUtils.cs" />
+    <Compile Include="ServerUtils\XmlUtils.cs" />
+    <Compile Include="ViewModels\BajarRondaViewModel.cs" />
+    <Compile Include="ViewModels\CambiarContrasenaViewModel.cs" />
+    <Compile Include="ViewModels\CapturaDatos1ViewModel.cs" />
+    <Compile Include="ViewModels\CapturaDatos2ViewModel.cs" />
+    <Compile Include="ViewModels\EnviarRondaViewModel.cs" />
+    <Compile Include="ViewModels\HacerRondaViewModel.cs" />
+    <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="Views\BajarRonda.xaml.cs" />
+    <Compile Include="Views\CambiarContrasena.xaml.cs" />
+    <Compile Include="Views\CapturaDatos1.xaml.cs" />
+    <Compile Include="Views\CapturaDatos2.xaml.cs" />
+    <Compile Include="Views\EnviarRonda.xaml.cs" />
+    <Compile Include="Views\HacerRonda.xaml.cs" />
+    <Compile Include="Views\IniciarSesion.xaml.cs" />
+    <Compile Include="Views\MainPage.xaml.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Base\DelegateCommand.cs" />
+    <Compile Include="Base\DelegateCommandAsync.cs" />
+    <Compile Include="Base\MessageDialogError.cs" />
+    <Compile Include="Base\MessageDialogWarning.cs" />
+    <Compile Include="Base\PageBase.cs" />
+    <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Base\ViewModelLocator.cs" />
+    <Compile Include="Base\WarningPopUp.cs" />
+    <Page Include="Views\BajarRonda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CambiarContrasena.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CapturaDatos1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CapturaDatos2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EnviarRonda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HacerRonda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\IniciarSesion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Ronda.cs" />
+    <Compile Include="Models\RondaDescargada.cs" />
+    <Compile Include="Models\Rondas.cs" />
+    <Compile Include="Models\RondasLector.cs" />
+    <Compile Include="Models\Rondas_Descargadas.cs" />
+    <Compile Include="Models\Rondas_Disponibles.cs" />
+    <Compile Include="Models\Steps.cs" />
+    <Compile Include="Models\SuspendRound.cs" />
+    <Compile Include="Models\Work.cs" />
+    <Compile Include="PopUps\RondasCancelarPopUp.cs" />
+    <Compile Include="PopUps\RondasFinalizarPopUp.cs" />
+    <Compile Include="PopUps\RondasSuspenderPopUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,6 +156,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\CerrarSesion.png" />
+    <Resource Include="Assets\ContinuarRonda.png" />
+    <Resource Include="Assets\DescripcionRIS.jpg" />
+    <Resource Include="Assets\EnviarRonda.png" />
+    <Resource Include="Assets\IconoLapiz.png" />
+    <Resource Include="Assets\IniciarSesion.png" />
+    <Resource Include="Assets\LockScreenLogo.scale-200.png" />
+    <Resource Include="Assets\LogoDescarga.png" />
+    <Resource Include="Assets\LogoEcopetrol.png" />
+    <Resource Include="Assets\LogoHacerRonda.png" />
+    <Resource Include="Assets\LogoRIS.jpg" />
+    <Resource Include="Assets\LogoRIS2.jpg" />
+    <Resource Include="Assets\LogoRIS_1.jpg" />
+    <Resource Include="Assets\Salir.png" />
+    <Resource Include="Assets\SplashScreen.scale-200.png" />
+    <Resource Include="Assets\Square150x150Logo.scale-200.png" />
+    <Resource Include="Assets\Square44x44Logo.scale-200.png" />
+    <Resource Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Resource Include="Assets\StoreLogo.png" />
+    <Resource Include="Assets\SubirRonda.png" />
+    <Resource Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

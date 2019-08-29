@@ -6,7 +6,7 @@
     <autoResourcePackage qualifier="DXFeatureLevel" />
     <omitSchemaFromResourcePacks />
   </packaging>
-  <index root="\" startIndexAt="C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x86\Debug\resources.pri">
+  <index root="\" startIndexAt="C:\Desarrollo\Rondas\RondasEcopetrol\bin\x86\Debug\resources.pri">
     <default>
       <qualifier name="Language" value="es-ES" />
       <qualifier name="Contrast" value="standard" />

@@ -1,2 +1,2 @@
-MainPackage=C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\bin\x64\Debug\RondasEcopetrol_1.0.1.0_x64_Debug.msix
-SymbolPackage=C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrol\obj\x64\Debug\Symbols\RondasEcopetrol_1.0.1.0_x64_Debug.appxsym
+MainPackage=C:\Desarrollo\Rondas\RondasEcopetrol\bin\x64\Debug\RondasEcopetrol_1.0.2.0_x64_Debug.msix
+SymbolPackage=C:\Desarrollo\Rondas\RondasEcopetrol\obj\x64\Debug\Symbols\RondasEcopetrol_1.0.2.0_x64_Debug.appxsym
