@@ -78,6 +78,30 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\ViewModelLocator.cs" />
     <Compile Include="Base\WarningPopUp.cs" />
+    <Compile Include="Views\BajarRonda.xaml.cs">
+      <DependentUpon>BajarRonda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CambiarContrasena.xaml.cs">
+      <DependentUpon>CambiarContrasena.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CapturaDatos1.xaml.cs">
+      <DependentUpon>CapturaDatos1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CapturaDatos2.xaml.cs">
+      <DependentUpon>CapturaDatos2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnviarRonda.xaml.cs">
+      <DependentUpon>EnviarRonda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HacerRonda.xaml.cs">
+      <DependentUpon>HacerRonda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IniciarSesion.xaml.cs">
+      <DependentUpon>IniciarSesion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Ronda.cs" />
@@ -117,9 +141,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\CerrarSesion.png" />
     <Resource Include="Assets\ContinuarRonda.png" />
@@ -142,6 +164,40 @@
     <Resource Include="Assets\StoreLogo.png" />
     <Resource Include="Assets\SubirRonda.png" />
     <Resource Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\BajarRonda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CambiarContrasena.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CapturaDatos1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CapturaDatos2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EnviarRonda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HacerRonda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IniciarSesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

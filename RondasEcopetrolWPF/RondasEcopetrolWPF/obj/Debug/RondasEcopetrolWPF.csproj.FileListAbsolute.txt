@@ -13,3 +13,10 @@ C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcope
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csproj.CoreCompileInputs.cache
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.exe
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.pdb
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csprojAssemblyReference.cache
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\MainPage.g.cs
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\App.g.cs
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF_MarkupCompile.cache
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF_MarkupCompile.lref
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.exe
+C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.pdb
