@@ -1,11 +1,9 @@
-﻿namespace RondasEcopetrol.ViewModels
+﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System.Threading.Tasks;
-    using RondasEcopetrol.Base;
-    using RondasEcopetrol.ServerUtils;
-    using RondasEcopetrol.Views;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Navigation;
+    using RondasEcopetrolWPF.Base;
+    using RondasEcopetrolWPF.ServerUtils;
+    using RondasEcopetrolWPF.Views;
     public class MainPageViewModel : ViewModelBase
     {
         public static string Eco;
@@ -41,44 +39,44 @@
             switch (viewFrame)
             {
                 case "IniciarSesion":
-                    AppFrame.Navigate(typeof(IniciarSesion));
+                    Navigated(typeof(IniciarSesion));
                     break;
                 case "BajarRonda":
-                    AppFrame.Navigate(typeof(BajarRonda));
+                    Navigated(typeof(BajarRonda));
                     break;
                 case "EnviarRonda":
-                    AppFrame.Navigate(typeof(EnviarRonda));
+                    Navigated(typeof(EnviarRonda));
                     break;
                 case "HacerRonda":
                     HacerRondaViewModel.showSuspendRounds = false;
-                    AppFrame.Navigate(typeof(HacerRonda));
+                    Navigated(typeof(HacerRonda));
                     break;
                 case "ContinuarRonda":
                     HacerRondaViewModel.showSuspendRounds = true;
-                    AppFrame.Navigate(typeof(HacerRonda));
+                    Navigated(typeof(HacerRonda));
                     break;
                 case "CambiarContra":
-                    AppFrame.Navigate(typeof(CambiarContrasena));
+                    Navigated(typeof(CambiarContrasena));
                     break;
                 case "Salir":
-                    Application.Current.Exit();
+                    App.Current.Shutdown();
                     break;
             }
         }
-        public override Task OnNavigatedFrom(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedFrom(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
 
-        public override Task OnNavigatedTo(NavigationEventArgs args)
-        {
-            IsButtonSesionEnable = true;
-            if (  args.Parameter != null && !args.Parameter.Equals(""))
-            {
-                IsButtonEnable = (bool)args.Parameter;
-                IsButtonSesionEnable = false;
-            }
-            return null;
-        }
+        //public override Task OnNavigatedTo(NavigationEventArgs args)
+        //{
+        //    IsButtonSesionEnable = true;
+        //    if (  args.Parameter != null && !args.Parameter.Equals(""))
+        //    {
+        //        IsButtonEnable = (bool)args.Parameter;
+        //        IsButtonSesionEnable = false;
+        //    }
+        //    return null;
+        //}
     }
 }

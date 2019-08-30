@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RondasEcopetrolWPF.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace RondasEcopetrolWPF.Views
     /// <summary>
     /// Lógica de interacción para CapturaDatos1.xaml
     /// </summary>
-    public partial class CapturaDatos1 : Page
+    public partial class CapturaDatos1 : PageBase
     {
         public CapturaDatos1()
         {

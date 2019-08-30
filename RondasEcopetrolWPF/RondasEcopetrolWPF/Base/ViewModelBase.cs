@@ -5,10 +5,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
+using System.Windows.Controls;
 
-namespace RondasEcopetrol.Base
+namespace RondasEcopetrolWPF.Base
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
@@ -44,19 +43,23 @@ namespace RondasEcopetrol.Base
             RaisePropertyChanged(propertyName);
             return true;
         }
-        private Frame _appFrame;
-        public Frame AppFrame => _appFrame;
+        public void Navigated(Type tipo)
+        {
+            Page.NavigationService.Navigate(new Uri("Views/" + tipo.Name + ".xaml", UriKind.Relative));
+        }
+        //private Frame _appFrame;
+        //public Frame AppFrame => _appFrame;
 
         private PageBase _page;
-        public PageBase Page => _page;
+        public Page Page => _page;
 
-        public abstract Task OnNavigatedTo(NavigationEventArgs args);
-        public abstract Task OnNavigatedFrom(NavigationEventArgs args);
+        //public abstract Task OnNavigatedTo(EventArgs args);
+        //public abstract Task OnNavigatedFrom(NavigationEventArgs args);
 
-        internal void SetAppFrame(Frame viewFrame)
-        {
-            _appFrame = viewFrame;
-        }
+        //internal void SetAppFrame(Frame viewFrame)
+        //{
+        //    _appFrame = viewFrame;
+        //}
 
         internal void SetPage(PageBase page)
         {

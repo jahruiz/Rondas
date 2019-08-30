@@ -1,17 +1,14 @@
-﻿namespace RondasEcopetrol.ViewModels
+﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
     using System.Threading.Tasks;
     using System.Windows.Input;
-    using RondasEcopetrol.Base;
-    using RondasEcopetrol.Models;
-    using RondasEcopetrol.ServerUtils;
-    using Windows.UI.Popups;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Navigation;
-    using RondasEcopetrol.Views;
+    using RondasEcopetrolWPF.Base;
+    using RondasEcopetrolWPF.Models;
+    using RondasEcopetrolWPF.ServerUtils;
+    using RondasEcopetrolWPF.Views;
     public class HacerRondaViewModel : ViewModelBase
     {
         public static bool showSuspendRounds = false;
@@ -74,19 +71,19 @@
         private void CancelarExecute()
         {
             //AppFrame.GoBack();
-            AppFrame.Navigate(typeof(MainPage));
+            base.Navigated(typeof(MainPage));
         }
 
         #endregion Commands
-        public override Task OnNavigatedFrom(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedFrom(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
 
-        public override Task OnNavigatedTo(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedTo(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
         #region Metodos
         public async void LoadRondasDescargadas()
         {
@@ -162,53 +159,53 @@
         }
         public async void DetallesRondaAsync(string texto)
         {
-            var messageDialog = new MessageDialog(texto);
-            messageDialog.Commands.Add(new UICommand(
-                "Aceptar", new UICommandInvokedHandler(HacerCommand)));
-            messageDialog.Commands.Add(new UICommand(
-                "Cancelar"));
-            await messageDialog.ShowAsync();
+            //var messageDialog = new MessageDialog(texto);
+            //messageDialog.Commands.Add(new UICommand(
+            //    "Aceptar", new UICommandInvokedHandler(HacerCommand)));
+            //messageDialog.Commands.Add(new UICommand(
+            //    "Cancelar"));
+            //await messageDialog.ShowAsync();
         }
-        private void HacerCommand(IUICommand command)
-        {
-            if (showSuspendRounds)
-            {
-                Rondas ronda = SuspendRound.getSuspendRound("" + SelectedUser.Message_ID);
-                if (ronda != null)
-                {
-                    RondasLector.CurrentRonda = ronda;
-                    RondasLector.StartStep = (Steps)ronda.Steps[0];
-                    Object current = ronda.Current;
-                    if (current is Steps)
-                    {
-                        RondasLector.CurrentWork = (Work)null;
-                        RondasLector.Step = (Steps)current;
-                        AppFrame.Navigate(typeof(CapturaDatos1));
-                    }
-                    else
-                    {
-                        RondasLector.CurrentWork = (Work)current;
-                        RondasLector.Step = RondasLector.CurrentWork.Step;
-                        CapturaDatos2ViewModel.NEXT_TRIGGER = false;
-                        AppFrame.Navigate(typeof(CapturaDatos2));
-                        CapturaDatos2ViewModel.currentInstance.initPanel();
-                    }
-                }
-            }
-            else
-            {
-                RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
-                RondasLector.CurrentRonda = lector1.Current;
-                object obj1 = lector1.Current.next();
-                if ((obj1 != null) && (obj1 is Steps))
-                {
-                    RondasLector.StartStep = (Steps)obj1;
-                    RondasLector.CurrentWork = (Work)null;
-                    RondasLector.Step = (Steps)obj1;
-                    AppFrame.Navigate(typeof(CapturaDatos1));
-                }
-            }
-        }
+        //private void HacerCommand(IUICommand command)
+        //{
+        //    if (showSuspendRounds)
+        //    {
+        //        Rondas ronda = SuspendRound.getSuspendRound("" + SelectedUser.Message_ID);
+        //        if (ronda != null)
+        //        {
+        //            RondasLector.CurrentRonda = ronda;
+        //            RondasLector.StartStep = (Steps)ronda.Steps[0];
+        //            Object current = ronda.Current;
+        //            if (current is Steps)
+        //            {
+        //                RondasLector.CurrentWork = (Work)null;
+        //                RondasLector.Step = (Steps)current;
+        //                AppFrame.Navigate(typeof(CapturaDatos1));
+        //            }
+        //            else
+        //            {
+        //                RondasLector.CurrentWork = (Work)current;
+        //                RondasLector.Step = RondasLector.CurrentWork.Step;
+        //                CapturaDatos2ViewModel.NEXT_TRIGGER = false;
+        //                AppFrame.Navigate(typeof(CapturaDatos2));
+        //                CapturaDatos2ViewModel.currentInstance.initPanel();
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
+        //        RondasLector.CurrentRonda = lector1.Current;
+        //        object obj1 = lector1.Current.next();
+        //        if ((obj1 != null) && (obj1 is Steps))
+        //        {
+        //            RondasLector.StartStep = (Steps)obj1;
+        //            RondasLector.CurrentWork = (Work)null;
+        //            RondasLector.Step = (Steps)obj1;
+        //            AppFrame.Navigate(typeof(CapturaDatos1));
+        //        }
+        //    }
+        //}
 
         #endregion Metodos
     }

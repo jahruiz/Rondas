@@ -1,15 +1,13 @@
-﻿namespace RondasEcopetrol.ViewModels
+﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
     using System.Windows.Input;
-    using RondasEcopetrol.Base;
-    using RondasEcopetrol.Models;
-    using RondasEcopetrol.ServerUtils;
-    using RondasEcopetrol.Views;
-    using Windows.UI.Popups;
-    using Windows.UI.Xaml.Navigation;
+    using RondasEcopetrolWPF.Base;
+    using RondasEcopetrolWPF.Models;
+    using RondasEcopetrolWPF.ServerUtils;
+    using RondasEcopetrolWPF.Views;
     public class EnviarRondaViewModel : ViewModelBase
     {
         public EnviarRondaViewModel()
@@ -42,21 +40,22 @@
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
         }
         #endregion Comandos
-        public override Task OnNavigatedFrom(NavigationEventArgs args)
-        {
-            //throw new NotImplementedException();
-            return null;
-        }
+        //public override Task OnNavigatedFrom(NavigationEventArgs args)
+        //{
+        //    //throw new NotImplementedException();
+        //    return null;
+        //}
 
-        public override Task OnNavigatedTo(NavigationEventArgs args)
-        {
-            //throw new NotImplementedException();
-            return null;
-        }
+        //public override Task OnNavigatedTo(NavigationEventArgs args)
+        //{
+        //    //throw new NotImplementedException();
+        //    return null;
+        //}
 
         private void CancelarExecute()
         {
-            AppFrame.GoBack();
+            //AppFrame.GoBack();
+            Page.NavigationService.GoBack();
         }
         private void ClickItemListAsync()
         {
@@ -71,17 +70,17 @@
         }
         public async void DetallesRondaAsync(string texto)
         {
-            var messageDialog = new MessageDialog(texto);
-            messageDialog.Commands.Add(new UICommand(
-                "Aceptar", new UICommandInvokedHandler(HacerCommand)));
-            messageDialog.Commands.Add(new UICommand(
-                "Cancelar"));
-            await messageDialog.ShowAsync();
+            //var messageDialog = new MessageDialog(texto);
+            //messageDialog.Commands.Add(new UICommand(
+            //    "Aceptar", new UICommandInvokedHandler(HacerCommand)));
+            //messageDialog.Commands.Add(new UICommand(
+            //    "Cancelar"));
+            //await messageDialog.ShowAsync();
         }
-        private void HacerCommand(IUICommand command)
-        {
+        //private void HacerCommand(IUICommand command)
+        //{
 
-        }
+        //}
         public async void LoadRondasCompletas()
         {
             ObservableCollection<RondaDescargada> rondas = new ObservableCollection<RondaDescargada>();

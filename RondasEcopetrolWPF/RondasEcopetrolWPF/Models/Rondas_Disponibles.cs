@@ -1,4 +1,4 @@
-﻿namespace RondasEcopetrol.Models
+﻿namespace RondasEcopetrolWPF.Models
 {
     using System.Collections.Generic;
     using System.Xml.Serialization;

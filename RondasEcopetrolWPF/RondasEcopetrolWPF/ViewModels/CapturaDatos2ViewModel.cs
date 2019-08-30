@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RondasEcopetrol.Base;
-using Windows.UI.Xaml.Navigation;
-using System.Windows.Input;
-using RondasEcopetrol.Views;
-using System.Collections.ObjectModel;
-using RondasEcopetrol.Models;
-using RondasEcopetrol.PopUps;
-using Windows.UI.Xaml;
-
-namespace RondasEcopetrol.ViewModels
+﻿namespace RondasEcopetrolWPF.ViewModels
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using RondasEcopetrolWPF.Base;
+    using System.Windows.Input;
+    using RondasEcopetrolWPF.Views;
+    using System.Collections.ObjectModel;
+    using RondasEcopetrolWPF.Models;
+    using RondasEcopetrolWPF.PopUps;
     public class CapturaDatos2ViewModel : ViewModelBase
     {
         public static bool NEXT_TRIGGER = true;
@@ -237,16 +234,16 @@ namespace RondasEcopetrol.ViewModels
             this.home();
         }
 
-        public override Task OnNavigatedFrom(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedFrom(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
 
-        public override Task OnNavigatedTo(NavigationEventArgs args)
-        {
-            //initPanel();
-            return null;
-        }
+        //public override Task OnNavigatedTo(NavigationEventArgs args)
+        //{
+        //    //initPanel();
+        //    return null;
+        //}
         private void CargarComboCausa()
         {
             Causa = new ObservableCollection<string>();
@@ -299,13 +296,13 @@ namespace RondasEcopetrol.ViewModels
                             //this.txtValor.GotFocus += this.pickHandler;
                             pickEnabled = true;
                             this.ValorText = RondasLector.CurrentWork.Valor;
-                            ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                            ((CapturaDatos2)this.Page).txtValorText.Focus();
                         }
                         else
                         {
                             this.IsEnabledComboValor = true;
                             this.IsEnabledValorText = false;
-                            ((CapturaDatos2)this.Page).cmbValor.Focus(FocusState.Programmatic);
+                            ((CapturaDatos2)this.Page).cmbValor.Focus();
                             this.ValorCombo.Clear();
                             for (int num1 = 0; num1 < (RondasLector.CurrentWork.Values.Length - 1); num1++)
                             {
@@ -318,7 +315,7 @@ namespace RondasEcopetrol.ViewModels
                     {
                         this.IsEnabledComboValor = false;
                         this.IsEnabledValorText = true;
-                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                        ((CapturaDatos2)this.Page).txtValorText.Focus();
                         //currFocus = this.txtValor;
                         this.ValorText = RondasLector.CurrentWork.Valor;
                     }
@@ -337,8 +334,8 @@ namespace RondasEcopetrol.ViewModels
         }
         public async void suspender()
         {
-            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.AppFrame, true);
-            await _popUp.showAsync();
+            //RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.AppFrame, true);
+            //await _popUp.showAsync();
         }
 
         public async void anterior()
@@ -351,12 +348,13 @@ namespace RondasEcopetrol.ViewModels
                 {
                     //RondasAdvertenciaManager.sheet = true;
                     //this.Form.App.showCanvas(typeof(AdvertenciaPopUp));
-                    RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, true);
-                    if (await _popUp.showAsync())
-                    {
-                        //Ir al menú principal
-                        AppFrame.Navigate(typeof(MainPage));
-                    }
+                    RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, true);
+                    //if (await _popUp.showAsync())
+                    //{
+                    //    //Ir al menú principal
+                    //    //AppFrame.Navigate(typeof(MainPage));
+                    //    Navigated(typeof(MainPage));
+                    //}
                     return;
                 }
                 else if (obj is Work && ((Work)obj).isValidForThisState())
@@ -370,7 +368,8 @@ namespace RondasEcopetrol.ViewModels
             RondasLector.CurrentWork = (Work)null;
             RondasLector.Step = (Steps)obj;
             //this.Form.App.showCanvas(typeof(StateMachine));
-            AppFrame.Navigate(typeof(CapturaDatos1));
+            //AppFrame.Navigate(typeof(CapturaDatos1));
+            Navigated(typeof(CapturaDatos1));
         }
         public async void siguiente()
         {
@@ -400,12 +399,13 @@ namespace RondasEcopetrol.ViewModels
                     {
                         //RondasAdvertenciaManager.sheet = true;
                         //base.Form.App.showCanvas(typeof(AdvertenciaPopUp));
-                        RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.AppFrame, true);
-                        if (await _popUp.showAsync())
-                        {
-                            //Ir al menú principal
-                            AppFrame.Navigate(typeof(MainPage));
-                        }
+                        RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, true);
+                        //if (await _popUp.showAsync())
+                        //{
+                        //    //Ir al menú principal
+                        //    //AppFrame.Navigate(typeof(MainPage));
+                        //    Navigated(typeof(MainPage));
+                        //}
                         break;
                     }
                     else if (obj1 is Work && ((Work)obj1).isValidForThisState())
@@ -418,7 +418,8 @@ namespace RondasEcopetrol.ViewModels
                     {
                         RondasLector.CurrentWork = (Work)null;
                         RondasLector.Step = (Steps)obj1;
-                        AppFrame.Navigate(typeof(CapturaDatos1));
+                        //AppFrame.Navigate(typeof(CapturaDatos1));
+                        Navigated(typeof(CapturaDatos1));
                         break;
                     }
                 }
@@ -433,7 +434,7 @@ namespace RondasEcopetrol.ViewModels
                 if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                 {
                     await MessageDialogError.ImprimirAsync("Debe digitar valor o un comentario");
-                    ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                    ((CapturaDatos2)this.Page).txtValorText.Focus();
                     //currFocus = txtValor;
                     return new int[] { 0, 0 };
                 }
@@ -442,7 +443,7 @@ namespace RondasEcopetrol.ViewModels
                     if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                     {
                         await MessageDialogError.ImprimirAsync("El valor es obligatorio");
-                        ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                        ((CapturaDatos2)this.Page).txtValorText.Focus();
                         //currFocus = txtValor;
                         return new int[] { 0, 0 };
                     }
@@ -454,7 +455,7 @@ namespace RondasEcopetrol.ViewModels
                 }
                 if (returnValue == 0)
                 {
-                    ((CapturaDatos2)this.Page).txtValorText.Focus(FocusState.Programmatic);
+                    ((CapturaDatos2)this.Page).txtValorText.Focus();
                     return new int[] { 0, 0 }; ;
                 }
                 else if (returnValue == 1)
@@ -464,11 +465,11 @@ namespace RondasEcopetrol.ViewModels
                     {
                         if (Comentario.Trim().Length == 0)
                         {
-                            ((CapturaDatos2)this.Page).txtComentario.Focus(FocusState.Programmatic);
+                            ((CapturaDatos2)this.Page).txtComentario.Focus();
                         }
                         else
                         {
-                            ((CapturaDatos2)this.Page).cmbCausas.Focus(FocusState.Programmatic);
+                            ((CapturaDatos2)this.Page).cmbCausas.Focus();
                         }
                         return new int[] { returnValue, 0 };
                     }
@@ -511,8 +512,8 @@ namespace RondasEcopetrol.ViewModels
         }
         public async void home()
         {
-            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.AppFrame, true);
-            await _popUp.showAsync();
+            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.Page, true);
+            //await _popUp.showAsync();
         }
     }
 }

@@ -1,16 +1,14 @@
-﻿namespace RondasEcopetrol.ViewModels
+﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
     using System.Threading.Tasks;
     using System.Windows.Input;
-    using RondasEcopetrol.Base;
-    using RondasEcopetrol.Models;
-    using RondasEcopetrol.ServerUtils;
-    using Windows.UI.Popups;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Navigation;
+    using RondasEcopetrolWPF.Base;
+    using RondasEcopetrolWPF.Models;
+    using RondasEcopetrolWPF.ServerUtils;
+ 
     public class BajarRondaViewModel : ViewModelBase
     {
         public BajarRondaViewModel()
@@ -49,19 +47,20 @@
         }
         private void CancelarExecute()
         {
-            AppFrame.GoBack();
+            Page.NavigationService.GoBack();
+            //AppFrame.GoBack();
         }
 
         #endregion Commands
-        public override Task OnNavigatedFrom(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedFrom(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
 
-        public override Task OnNavigatedTo(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedTo(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
         #region Metodos
         public async void LoadRondasDisponibles()
         {
@@ -155,18 +154,18 @@
         }
         public async void DetallesRondaAsync(string texto)
         {
-            var messageDialog = new MessageDialog(texto);
-            messageDialog.Commands.Add(new UICommand(
-                "Descargar", new UICommandInvokedHandler(DescargarCommand)));
-            messageDialog.Commands.Add(new UICommand(
-                "Cancelar"));
-            await messageDialog.ShowAsync();
+            //var messageDialog = new MessageDialog(texto);
+            //messageDialog.Commands.Add(new UICommand(
+            //    "Descargar", new UICommandInvokedHandler(DescargarCommand)));
+            //messageDialog.Commands.Add(new UICommand(
+            //    "Cancelar"));
+            //await messageDialog.ShowAsync();
         }
-        private void DescargarCommand(IUICommand command)
-        {
-            //await DescargaAsync();
-            DescargaAsync();
-        }
+        //private void DescargarCommand(IUICommand command)
+        //{
+        //    //await DescargaAsync();
+        //    DescargaAsync();
+        //}
         private async void DescargaAsync()
         {
             //var messageDialog = new MessageDialog("Descargando ronda estructurada del sistema RIS...");

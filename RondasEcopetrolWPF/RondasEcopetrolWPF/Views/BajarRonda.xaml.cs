@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RondasEcopetrolWPF.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace RondasEcopetrolWPF.Views
     /// <summary>
     /// Lógica de interacción para BajarRonda.xaml
     /// </summary>
-    public partial class BajarRonda : Page
+    public partial class BajarRonda : PageBase
     {
         public BajarRonda()
         {

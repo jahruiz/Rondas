@@ -1,11 +1,13 @@
-﻿<Page x:Class="RondasEcopetrolWPF.Views.MainPage"
+﻿<base:PageBase x:Class="RondasEcopetrolWPF.Views.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RondasEcopetrolWPF.Views"
+      xmlns:base="clr-namespace:RondasEcopetrolWPF.Base"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      DataContext="{Binding Source={StaticResource Locator}, Path=MainPageViewModel}"
       Title="MainPage">
 
     <Grid>
@@ -73,9 +75,8 @@
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    IsEnabled="{Binding IsButtonEnable}"
-                    >
+                    VerticalAlignment="Stretch">
+                <!--IsEnabled="{Binding IsButtonEnable}"-->
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>
@@ -139,8 +140,8 @@
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    IsEnabled="{Binding IsButtonEnable}">
+                    VerticalAlignment="Stretch">
+                <!--IsEnabled="{Binding IsButtonEnable}">-->
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>
@@ -172,8 +173,8 @@
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    IsEnabled="{Binding IsButtonSesionEnable}">
+                    VerticalAlignment="Stretch">
+                <!--IsEnabled="{Binding IsButtonSesionEnable}">-->
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>
@@ -261,6 +262,5 @@
             </Button>
 
         </Grid>
-
     </Grid>
-</Page>
+</base:PageBase>

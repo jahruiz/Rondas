@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace RondasEcopetrol.Base
+namespace RondasEcopetrolWPF.Base
 {
     public class DelegateCommandAsync : ICommand
     {

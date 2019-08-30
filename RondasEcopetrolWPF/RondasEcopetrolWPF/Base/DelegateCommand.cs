@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace RondasEcopetrol.Base
+namespace RondasEcopetrolWPF.Base
 {
     public class DelegateCommand : ICommand
     {
