@@ -47,14 +47,17 @@
         private ICommand _cancelarSesionCommand;
         public ICommand IniciarSesionCommand
         {
-            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommandAsync(IniciarSesionExecuteAsync); }
+            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommandAsync<object>(IniciarSesionExecuteAsync); }
         }
         public ICommand CancelarSesionCommand
         {
             get { return _cancelarSesionCommand = _cancelarSesionCommand ?? new DelegateCommand(CancelarSesionExecute); }
         }
-        private async Task IniciarSesionExecuteAsync()
+        private async Task IniciarSesionExecuteAsync(object parameter)
         {
+			var passwordBox = parameter as PasswordBox;
+            Password = passwordBox.Password;
+			
             if (string.IsNullOrEmpty(User))
             {
                 Info = "Debe ingresar un nombre de usuario." + "\r\n";
