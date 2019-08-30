@@ -10,6 +10,7 @@ namespace RondasEcopetrolWPF.Base
 
         public PageBase()
         {
+			ShowsNavigationUI = false;
             this.Loaded += Inicialezar;
         }
 
