@@ -6,12 +6,14 @@
 	using System.Windows.Controls;
     using System.Windows.Input;
     using RondasEcopetrolWPF.Base;
+    using RondasEcopetrolWPF.PopUps;
     using RondasEcopetrolWPF.ServerUtils;
     using RondasEcopetrolWPF.Views;
     public class IniciarSesionViewModel : ViewModelBase
     {
         //Variables
         public static string Eco;
+        private bool IsValidUser = false;
         #region Propiedades
         public string User
         {
@@ -76,12 +78,16 @@
                 {
                     FileUtils.initPath();
                     Eco = ServerUtils.initServer();
-                    if (await loginAsync(User, escapePassword))
+                    FileUtils.configure_user(User, escapePassword);
+                    using (Loading loading = new Loading(loginAsync, ""))
                     {
-                        FileUtils.createUser(User.ToUpper());
-                        FileUtils.configure_user(User, escapePassword);
+                        loading.ShowDialog();
+                    }
+                    if (IsValidUser)
+                    {
+                        FileUtils.createUser(User.ToUpper());                        
                         //AppFrame.Navigate(typeof(MainPage), true);
-                        //Navigated(typeof(MainPage), true);
+                        Navigated(typeof(MainPage));
                     }
                 }
                 else
@@ -113,10 +119,10 @@
 
         #region Metodos
        
-        private async Task<bool> loginAsync(string user, string pwd)
+        private async void loginAsync()
         {
-            bool IsValidUser = false;
-            if (ServerUtils.send("/validateUser", "user=" + user + "&pwd=" + pwd))
+            IsValidUser = false;
+            if (ServerUtils.send("/validateUser", "user=" + FileUtils.getActualUser() + "&pwd=" + FileUtils.getActualUserpwd()))
             {
                 try
                 {
@@ -143,7 +149,6 @@
                 IsValidUser = false;
             }
             ServerUtils.close();
-            return IsValidUser;
         }
         private bool validText(String text)
         {

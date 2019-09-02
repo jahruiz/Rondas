@@ -264,7 +264,20 @@
             }
             return users;
         }
-
+        public static async void deleteUserasync(string usuario, string fileNameStartsWith)
+        {
+            //string pathCompleto = path + "\\" + usuario;
+            //if (FileUtils.path == null)
+            //{
+            //    FileUtils.initPath();
+            //}
+            //StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(pathCompleto);
+            //var files = (await folder.GetFilesAsync()).Where(p => p.DisplayName.StartsWith(fileNameStartsWith));
+            //foreach (var file in files)
+            //{
+            //    await file.DeleteAsync(StorageDeleteOption.Default);
+            //}
+        }
         public static List<string> GetArchivosRondasDescargadas(string usuario)
         {
             if (FileUtils.path == null)
