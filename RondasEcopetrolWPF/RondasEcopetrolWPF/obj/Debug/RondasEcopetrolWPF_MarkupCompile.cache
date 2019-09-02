@@ -4,32 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
-=======
-C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
->>>>>>> 92f4df500c57e0e9145b3561b2ab1e6885078111
 RondasEcopetrolWPF
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
+81892505251
 
-
-36-236138103
+44383162370
 131254293103
-
-
-False
-=======
-C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
-1-1298081492
-
-36-1512381752
-131254293103
-Views\MainPage.xaml;
+Views\BajarRonda.xaml;Views\CambiarContrasena.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
 
 True
->>>>>>> 92f4df500c57e0e9145b3561b2ab1e6885078111
 
