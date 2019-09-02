@@ -25,21 +25,30 @@
 
 
             <Grid Grid.Row="0">
-                <Image 
-                Grid.Row="0"
-                Source="/Assets/LogoRIS_1.jpg"
-                Margin="0,10,0,10"
-                    HorizontalAlignment="Left"/>
-                <Image 
-                Grid.Row="0"
-                Source="/Assets/DescripcionRIS.jpg"
-                Margin="0,10,0,10"
-                    HorizontalAlignment="Center"/>
-                <Image 
-                Grid.Row="0"
-                Source="/Assets/LogoEcopetrol.png"
-                Margin="0,10,0,10"
-                HorizontalAlignment="Right"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image 
+                        Source="/Assets/LogoRIS_1.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid   Grid.Column="1">
+                    <Image 
+                        Source="/Assets/DescripcionRIS.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Center"/>
+                </Grid>
+                <Grid   Grid.Column="2">
+                    <Image 
+                        Grid.Row="0"
+                        Source="/Assets/LogoEcopetrol.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                </Grid>
             </Grid>
 
             <Grid Grid.Row="1" Background="#80FF00" >
@@ -60,16 +69,108 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Digite su nombre de usuario de red y la clave del sistema de rondas." Margin="0,10,0,10"></TextBlock>
-            <TextBox  Grid.Row="1" Text="{Binding User, Mode=TwoWay}"  Margin="0,10,0,10"></TextBox>
-            <PasswordBox x:Name="txtPassword" Grid.Row="2"  Margin="0,10,0,10"></PasswordBox>
-            <TextBlock Grid.Row="3" Foreground="#FFC43131" Text = "{Binding Info, Mode=TwoWay}"  Margin="0,10,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Stretch" FontStyle="Normal"/>
-            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="ingresar" Content="Aceptar"  Command="{Binding IniciarSesionCommand}" CommandParameter="{Binding ElementName=txtPassword}" Margin="10,10,10,10" Background="#330CFF00" />
-                <Button x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarSesionCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
+            <TextBlock 
+                Grid.Row="0"
+                Text="USUARIO"
+                Margin="0,10,0,10"
+                FontSize="20"
+                FontStyle="Italic"
+                HorizontalAlignment="Center"
+                FontWeight="Bold"/>
+            <TextBox
+                Grid.Row="1"
+                Text="{Binding User, Mode=TwoWay}"
+                Margin="0,10,0,10"
+                Width="700"
+                Height="50"/>
+            <TextBlock 
+                Grid.Row="2"
+                Text="CONTRASEÑA"
+                Margin="0,10,0,10"
+                FontSize="20"
+                FontStyle="Italic"
+                HorizontalAlignment="Center"
+                FontWeight="Bold"/>
+            <PasswordBox
+                x:Name="txtPassword"
+                Grid.Row="3"
+                Margin="0,10,0,10"
+                Width="700"
+                Height="50"/>
+            <TextBlock
+                Grid.Row="4"
+                Foreground="#FFC43131"
+                Text = "{Binding Info, Mode=TwoWay}"
+                Margin="0,10,0,10"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Stretch"
+                FontStyle="Normal"/>
+            <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button
+                    x:Name="ingresar"
+                    Command="{Binding IniciarSesionCommand}"
+                    CommandParameter="{Binding ElementName=txtPassword}"
+                    Margin="10,10,10,10"
+                    Width="150"
+                    Height="50"
+                    FontSize="18"
+                    Background="#80FF00"
+                    BorderBrush="Green">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  
+                            Grid.Column="0"
+                            Text="Aceptar"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Margin="10"
+                            Foreground="#088A08"
+                            FontWeight="Bold"/>
+                        <Image 
+                        Grid.Column="1"
+                        Source="/Assets/VoBo.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                    </Grid>
+                </Button>
+                <Button
+                    x:Name="cancelar"
+                    Command="{Binding IniciarSesionCommand}"
+                    CommandParameter="{Binding ElementName=txtPassword}"
+                    Margin="10,10,10,10"
+                    Width="150"
+                    Height="50"
+                    FontSize="18"
+                    Background="#80FF00"
+                    BorderBrush="Green">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  
+                            Grid.Column="0"
+                            Text="Regresar"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Margin="10"
+                            Foreground="#088A08"
+                            FontWeight="Bold"/>
+                        <Image 
+                        Grid.Column="1"
+                        Source="/Assets/Regresar.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                    </Grid>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

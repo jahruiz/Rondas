@@ -158,7 +158,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Regresar.png" />
+    <Resource Include="Assets\VoBo.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\CerrarSesion.png" />
     <Resource Include="Assets\ContinuarRonda.png" />
