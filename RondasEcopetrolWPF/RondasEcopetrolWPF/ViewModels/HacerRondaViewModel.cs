@@ -9,21 +9,12 @@
     using RondasEcopetrolWPF.Models;
     using RondasEcopetrolWPF.ServerUtils;
     using RondasEcopetrolWPF.Views;
+    using System.Windows;
     public class HacerRondaViewModel : ViewModelBase
     {
         public static bool showSuspendRounds = false;
         public HacerRondaViewModel()
         {
-            if (showSuspendRounds)
-            {
-                tituloPantalla = "RONDAS POR CONTINUAR";
-                LoadRondasSuspendidas();
-            }
-            else
-            {
-                tituloPantalla = "RONDAS POR REALIZAR";
-                LoadRondasDescargadas();
-            }
         }
 
         public string tituloPantalla
@@ -52,21 +43,12 @@
             }
         }
 
-        private ICommand _actualizarCommand;
         private ICommand _cancelarCommand;
 
         #region Commands
-        public ICommand ActualizarCommand
-        {
-            get { return _actualizarCommand = _actualizarCommand ?? new DelegateCommand(ActualizarExecute); }
-        }
         public ICommand CancelarCommand
         {
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
-        }
-        private void ActualizarExecute()
-        {
-
         }
         private void CancelarExecute()
         {
@@ -75,15 +57,29 @@
         }
 
         #endregion Commands
+
         //public override Task OnNavigatedFrom(NavigationEventArgs args)
         //{
         //    return null;
         //}
 
-        //public override Task OnNavigatedTo(NavigationEventArgs args)
-        //{
-        //    return null;
-        //}
+        public override Task OnNavigatedTo(EventArgs args)
+        {
+            if (showSuspendRounds)
+            {
+                tituloPantalla = "RONDAS POR CONTINUAR";
+                LoadRondasSuspendidas();
+            }
+            else
+            {
+                tituloPantalla = "RONDAS POR REALIZAR";
+                LoadRondasDescargadas();
+            }
+
+            ((HacerRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
+            return null;
+        }
+
         #region Metodos
         public async void LoadRondasDescargadas()
         {
@@ -155,9 +151,15 @@
                 "Hora: " + SelectedUser.Hora_Gen.ToString() + "\n" +
                 "Planta: " + SelectedUser.Planta.ToString() + "\n" +
                 "Puesto: " + SelectedUser.Puesto.ToString();
-            DetallesRondaAsync(textoRonda);
+            DetallesRonda(textoRonda);
         }
-        public async void DetallesRondaAsync(string texto)
+
+        private void ListView_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelectedUser != null)
+                ClickItemListAsync();
+        }
+        public void DetallesRonda(string texto)
         {
             //var messageDialog = new MessageDialog(texto);
             //messageDialog.Commands.Add(new UICommand(
@@ -165,47 +167,54 @@
             //messageDialog.Commands.Add(new UICommand(
             //    "Cancelar"));
             //await messageDialog.ShowAsync();
+            MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (result == MessageBoxResult.OK)
+            {
+                HacerRonda();
+            }
+
         }
-        //private void HacerCommand(IUICommand command)
-        //{
-        //    if (showSuspendRounds)
-        //    {
-        //        Rondas ronda = SuspendRound.getSuspendRound("" + SelectedUser.Message_ID);
-        //        if (ronda != null)
-        //        {
-        //            RondasLector.CurrentRonda = ronda;
-        //            RondasLector.StartStep = (Steps)ronda.Steps[0];
-        //            Object current = ronda.Current;
-        //            if (current is Steps)
-        //            {
-        //                RondasLector.CurrentWork = (Work)null;
-        //                RondasLector.Step = (Steps)current;
-        //                AppFrame.Navigate(typeof(CapturaDatos1));
-        //            }
-        //            else
-        //            {
-        //                RondasLector.CurrentWork = (Work)current;
-        //                RondasLector.Step = RondasLector.CurrentWork.Step;
-        //                CapturaDatos2ViewModel.NEXT_TRIGGER = false;
-        //                AppFrame.Navigate(typeof(CapturaDatos2));
-        //                CapturaDatos2ViewModel.currentInstance.initPanel();
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
-        //        RondasLector.CurrentRonda = lector1.Current;
-        //        object obj1 = lector1.Current.next();
-        //        if ((obj1 != null) && (obj1 is Steps))
-        //        {
-        //            RondasLector.StartStep = (Steps)obj1;
-        //            RondasLector.CurrentWork = (Work)null;
-        //            RondasLector.Step = (Steps)obj1;
-        //            AppFrame.Navigate(typeof(CapturaDatos1));
-        //        }
-        //    }
-        //}
+
+        private void HacerRonda()
+        {
+            if (showSuspendRounds)
+            {
+                Rondas ronda = SuspendRound.getSuspendRound("" + SelectedUser.Message_ID);
+                if (ronda != null)
+                {
+                    RondasLector.CurrentRonda = ronda;
+                    RondasLector.StartStep = (Steps)ronda.Steps[0];
+                    Object current = ronda.Current;
+                    if (current is Steps)
+                    {
+                        RondasLector.CurrentWork = (Work)null;
+                        RondasLector.Step = (Steps)current;
+                        this.Navigated(typeof(CapturaDatos1));
+                    }
+                    else
+                    {
+                        RondasLector.CurrentWork = (Work)current;
+                        RondasLector.Step = RondasLector.CurrentWork.Step;
+                        CapturaDatos2ViewModel.NEXT_TRIGGER = false;
+                        this.Navigated(typeof(CapturaDatos2));
+                        CapturaDatos2ViewModel.currentInstance.initPanel();
+                    }
+                }
+            }
+            else
+            {
+                RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
+                RondasLector.CurrentRonda = lector1.Current;
+                object obj1 = lector1.Current.next();
+                if ((obj1 != null) && (obj1 is Steps))
+                {
+                    RondasLector.StartStep = (Steps)obj1;
+                    RondasLector.CurrentWork = (Work)null;
+                    RondasLector.Step = (Steps)obj1;
+                    this.Navigated(typeof(CapturaDatos1));
+                }
+            }
+        }
 
         #endregion Metodos
     }

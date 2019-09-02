@@ -4,6 +4,7 @@
     using System.IO;
     using System.Net;
     using System.Xml;
+    using System.Configuration;
     public class ServerUtils
     {
         private static string backupHost;
@@ -58,7 +59,7 @@
         }
         public static string initServer()
         {
-            XmlDocument xmlDocument = new XmlDocument();
+            /*XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load(FileUtils.getConfigPath() + "/config.xml");
             XmlNodeReader xmlNodeReader = new XmlNodeReader(xmlDocument);
             xmlNodeReader.MoveToContent();
@@ -79,7 +80,9 @@
                     ServerUtils.backupHost = xmlNodeReader.Value;
                 }
             }
-            xmlNodeReader.Close();
+            xmlNodeReader.Close();*/
+            ServerUtils.host = ConfigurationManager.AppSettings["host"].ToString();
+            string result = ConfigurationManager.AppSettings["tag"].ToString();
             return result;
         }
         public static bool isMIME(string mime)

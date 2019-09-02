@@ -112,7 +112,7 @@ C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\Hacer
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\IniciarSesion.baml
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\MainPage.baml
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csproj.CopyComplete
-C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Block.g.cs
-C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Loading.g.cs
-C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Block.baml
-C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Loading.baml
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Block.g.cs
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Loading.g.cs
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Block.baml
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\PopUps\Loading.baml

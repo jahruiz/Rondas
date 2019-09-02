@@ -11,14 +11,15 @@ namespace RondasEcopetrolWPF.Base
         public PageBase()
         {
 			ShowsNavigationUI = false;
-            this.Loaded += Inicialezar;
+            this.Loaded += Inicializar;
         }
 
-        protected void Inicialezar(Object sender, EventArgs e)
+        protected void Inicializar(Object sender, EventArgs e)
         {
             _viewModel = (ViewModelBase)this.DataContext;
             //_viewModel.SetAppFrame(this.Frame);
             _viewModel.SetPage(this);
+            _viewModel.OnNavigatedTo(e);
         }
             /*
             protected override void OnNavigatedTo(NavigationEventArgs e)

@@ -59,6 +59,7 @@
                     FontWeight="Bold"/>
             </Grid>
         </Grid>
+
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
@@ -67,14 +68,16 @@
             <ListView Margin="10"  Grid.Row="1" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Fecha/Hora" Width="200" DisplayMemberBinding="{Binding Age}" />
-                        <GridViewColumn Header="Usuario" Width="200" DisplayMemberBinding="{Binding Mail}" />
-                        <GridViewColumn Header="Pasos" Width="200" DisplayMemberBinding="{Binding Mail}" />
+                        <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding Nombre}" />
+                        <GridViewColumn Header="Fecha" Width="120" DisplayMemberBinding="{Binding Fecha_Gen}" />
+                        <GridViewColumn Header="Hora" Width="80" DisplayMemberBinding="{Binding Hora_Gen}" />
+                        <GridViewColumn Header="Usuario" Width="200" DisplayMemberBinding="{Binding Usuario}" />
+                        <GridViewColumn Header="Pasos" Width="200" DisplayMemberBinding="{Binding Pasos}" />
                     </GridView>
                 </ListView.View>
             </ListView>
         </Grid>
+
         <Button 
             Grid.Row="2"
             Content="Regresar"

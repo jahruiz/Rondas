@@ -17,11 +17,11 @@ namespace RondasEcopetrolWPF.ViewModels
         //    return null;
         //}
 
-        //public override Task OnNavigatedTo(NavigationEventArgs args)
-        //{
-        //    //throw new NotImplementedException();
-        //    return null;
-        //}
+        public override Task OnNavigatedTo(EventArgs args)
+        {
+            //throw new NotImplementedException();
+            return null;
+        }
         public ICommand CancelarCommand
         {
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
