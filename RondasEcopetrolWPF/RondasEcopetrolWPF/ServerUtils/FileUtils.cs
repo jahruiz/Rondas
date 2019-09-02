@@ -93,6 +93,7 @@
         }
         public static void initPath()
         {
+            FileUtils.path = Directory.GetCurrentDirectory();
             FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
             //FileUtils.path = ApplicationData.Current.LocalFolder.Path;
         }
