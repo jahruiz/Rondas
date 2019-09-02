@@ -7,13 +7,14 @@
     using System.Windows.Input;
     using RondasEcopetrolWPF.Base;
     using RondasEcopetrolWPF.Models;
+    using RondasEcopetrolWPF.PopUps;
     using RondasEcopetrolWPF.ServerUtils;
  
     public class BajarRondaViewModel : ViewModelBase
     {
         public BajarRondaViewModel()
         {
-            LoadRondasDisponibles();
+            LoadRondas();
         }
         public ObservableCollection<Ronda> RondasDisponibles
         {
@@ -62,6 +63,13 @@
         //    return null;
         //}
         #region Metodos
+        private void LoadRondas()
+        {
+            using (Loading loading = new Loading(LoadRondasDisponibles, "Descargando..."))
+            {
+                loading.ShowDialog();
+            }
+        }
         public async void LoadRondasDisponibles()
         {
             ObservableCollection<Ronda> rondas = new ObservableCollection<Ronda>();
