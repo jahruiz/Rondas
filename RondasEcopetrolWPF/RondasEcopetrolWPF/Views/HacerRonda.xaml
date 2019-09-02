@@ -16,40 +16,50 @@
             <RowDefinition Height="6*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
-            <Image 
-                Grid.Row="0"
-                Source="/Assets/LogoRIS_1.jpg"
-                Margin="0,10,0,10"
-                    HorizontalAlignment="Left"/>
-            <Image 
-                Grid.Row="0"
-                Source="/Assets/DescripcionRIS.jpg"
-                Margin="0,10,0,10"
-                    HorizontalAlignment="Center"/>
-            <Image 
-                Grid.Row="0"
-                Source="/Assets/LogoEcopetrol.png"
-                Margin="0,10,0,10"
-                HorizontalAlignment="Right"/>
-
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image 
+                        Source="/Assets/LogoRIS_1.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid   Grid.Column="1">
+                    <Image 
+                        Source="/Assets/DescripcionRIS.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Center"/>
+                </Grid>
+                <Grid   Grid.Column="2">
+                    <Image 
+                        Grid.Row="0"
+                        Source="/Assets/LogoEcopetrol.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                </Grid>
+            </Grid>
             <Grid Grid.Row="1" Background="#80FF00" >
                 <TextBlock 
-                Text="{Binding Path=tituloPantalla,Mode = TwoWay}"
-                FontSize="40"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Stretch"
-                FontFamily="Segoe UI"
-                Margin="0,10,0,10"
-                Foreground="#088A08"
-                FontWeight="Bold"/>
+                    Text="RONDAS POR REALIZAR"
+                    FontSize="40"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    FontFamily="Segoe UI"
+                    Margin="0,10,0,10"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
             </Grid>
         </Grid>
+<<<<<<< HEAD
 
         <ListView x:Name="lstRondas" x:FieldModifier="public" Grid.Row="1" Margin="0,30,0,0" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }" >
             <ListView.ItemTemplate>
@@ -71,11 +81,32 @@
             </ListView.ItemTemplate>
 
         </ListView>
+=======
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <ListView Margin="10"  Grid.Row="1" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Fecha/Hora" Width="200" DisplayMemberBinding="{Binding Age}" />
+                        <GridViewColumn Header="Usuario" Width="200" DisplayMemberBinding="{Binding Mail}" />
+                        <GridViewColumn Header="Pasos" Width="200" DisplayMemberBinding="{Binding Mail}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+>>>>>>> 66ca80257d72c194716579ca0e81a4f6c293591f
         <Button 
             Grid.Row="2"
-            Content="Cancelar"
+            Content="Regresar"
             HorizontalAlignment="Center"
-            Background="#33FD0000"
+            VerticalAlignment="Center"
+            Background="#CACAC9"
+            Width="120"
+            Height="40"
             Command="{Binding CancelarCommand}"></Button>
     </Grid>
 </base:PageBase>
