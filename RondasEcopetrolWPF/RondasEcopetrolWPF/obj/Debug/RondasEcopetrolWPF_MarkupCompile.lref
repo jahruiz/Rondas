@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 FC:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml;;
 FC:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\BajarRonda.xaml;;
@@ -8,4 +9,31 @@ FC:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopet
 FC:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\HacerRonda.xaml;;
 FC:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\IniciarSesion.xaml;;
 FC:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\MainPage.xaml;;
+=======
+<<<<<<< HEAD
+﻿C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\BajarRonda.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\CambiarContrasena.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\CapturaDatos1.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\CapturaDatos2.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\EnviarRonda.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\HacerRonda.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\IniciarSesion.xaml;;
+FC:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\MainPage.xaml;;
+=======
+﻿C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\PopUps\Block.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\PopUps\Loading.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\BajarRonda.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\CambiarContrasena.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\CapturaDatos1.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\CapturaDatos2.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\EnviarRonda.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\HacerRonda.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\IniciarSesion.xaml;;
+FC:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\Views\MainPage.xaml;;
+>>>>>>> cb097592424ed2122b82f82a8860898c8ac5745e
+>>>>>>> a61b783d8c661d5029ed04220e436d93547450b6
 

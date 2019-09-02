@@ -8,11 +8,11 @@ namespace RondasEcopetrolWPF.PopUps
 {
     public class RondasSuspenderPopUp : WarningPopUp
     {
-        private Page _curFrame;
+        private Page _page;
 
-        public RondasSuspenderPopUp(Page curFrame, bool navFromSheet)
+        public RondasSuspenderPopUp(Page page, bool navFromSheet)
         {
-            _curFrame = curFrame;
+            _page = page;
             this.navFromSheet = navFromSheet;
         }
         public override string getDescription()
@@ -30,12 +30,12 @@ namespace RondasEcopetrolWPF.PopUps
             if (navFromSheet)
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
-                _curFrame.NavigationService.Navigate(typeof(CapturaDatos2));
+                _page.NavigationService.Navigate(typeof(CapturaDatos2));
                 CapturaDatos2ViewModel.currentInstance.initPanel();
             }
             else
             {
-                _curFrame.NavigationService.Navigate(typeof(CapturaDatos1));
+                _page.NavigationService.Navigate(typeof(CapturaDatos1));
             }
         }
 
@@ -43,7 +43,7 @@ namespace RondasEcopetrolWPF.PopUps
         {
             suspendRound();
             //Ir al menú principal
-            _curFrame.NavigationService.Navigate(typeof(MainPage));
+            _page.NavigationService.Navigate(typeof(MainPage));
         }
 
         private void suspendRound()

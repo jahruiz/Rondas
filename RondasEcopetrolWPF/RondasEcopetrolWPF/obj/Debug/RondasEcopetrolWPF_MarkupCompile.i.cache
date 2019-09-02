@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
-81892505251
+10-1266791915
 
-44383162370
+47-1894993437
 69302618411
-Views\BajarRonda.xaml;Views\CambiarContrasena.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
+PopUps\Block.xaml;PopUps\Loading.xaml;Views\BajarRonda.xaml;Views\CambiarContrasena.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
 
 True
 
