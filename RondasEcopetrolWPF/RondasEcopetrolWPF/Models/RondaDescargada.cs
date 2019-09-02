@@ -131,5 +131,14 @@ namespace RondasEcopetrolWPF.Models
                 }
             }
         }
+
+        public int Pasos
+        {
+            get
+            {
+                return 0;
+            }
+        }
+
     }
 }

@@ -15,16 +15,6 @@
         public static bool showSuspendRounds = false;
         public HacerRondaViewModel()
         {
-            if (showSuspendRounds)
-            {
-                tituloPantalla = "RONDAS POR CONTINUAR";
-                LoadRondasSuspendidas();
-            }
-            else
-            {
-                tituloPantalla = "RONDAS POR REALIZAR";
-                LoadRondasDescargadas();
-            }
         }
 
         public string tituloPantalla
@@ -75,6 +65,17 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
+            if (showSuspendRounds)
+            {
+                tituloPantalla = "RONDAS POR CONTINUAR";
+                LoadRondasSuspendidas();
+            }
+            else
+            {
+                tituloPantalla = "RONDAS POR REALIZAR";
+                LoadRondasDescargadas();
+            }
+
             ((HacerRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
             return null;
         }
