@@ -53,8 +53,8 @@ namespace RondasEcopetrolWPF.Base
         private PageBase _page;
         public Page Page => _page;
 
-        //public abstract Task OnNavigatedTo(EventArgs args);
-        //public abstract Task OnNavigatedFrom(NavigationEventArgs args);
+        public abstract Task OnNavigatedTo(EventArgs args);
+        //public abstract Task OnNavigatedFrom(EventArgs args);
 
         //internal void SetAppFrame(Frame viewFrame)
         //{

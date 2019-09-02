@@ -1,5 +1,6 @@
 ﻿namespace RondasEcopetrolWPF.ViewModels
 {
+    using System;
     using System.Threading.Tasks;
     using RondasEcopetrolWPF.Base;
     using RondasEcopetrolWPF.ServerUtils;
@@ -68,15 +69,15 @@
         //    return null;
         //}
 
-        //public override Task OnNavigatedTo(NavigationEventArgs args)
-        //{
+        public override Task OnNavigatedTo(EventArgs args)
+        {
         //    IsButtonSesionEnable = true;
         //    if (  args.Parameter != null && !args.Parameter.Equals(""))
         //    {
         //        IsButtonEnable = (bool)args.Parameter;
         //        IsButtonSesionEnable = false;
         //    }
-        //    return null;
-        //}
+            return null;
+        }
     }
 }

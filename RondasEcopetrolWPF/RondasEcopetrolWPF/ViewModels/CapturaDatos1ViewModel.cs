@@ -131,11 +131,11 @@ namespace RondasEcopetrolWPF.ViewModels
         //    return null;
         //}
 
-        //public override Task OnNavigatedTo(NavigationEventArgs args)
-        //{
-        //    initPanel();
-        //    return null;
-        //}
+        public override Task OnNavigatedTo(EventArgs args)
+        {
+            initPanel();
+            return null;
+        }
 
         //Codigo traido de StateMachine
         // Methods

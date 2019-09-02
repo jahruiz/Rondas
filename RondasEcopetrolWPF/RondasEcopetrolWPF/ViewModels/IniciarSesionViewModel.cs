@@ -111,14 +111,14 @@
         //    return null;
         //}
 
-        //public override Task OnNavigatedTo(NavigationEventArgs args)
-        //{
-        //    return null;
-        //}
+        public override Task OnNavigatedTo(EventArgs args)
+        {
+            return null;
+        }
 
 
         #region Metodos
-       
+
         private async void loginAsync()
         {
             IsValidUser = false;

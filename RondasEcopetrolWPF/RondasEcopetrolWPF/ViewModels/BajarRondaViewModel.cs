@@ -58,10 +58,10 @@
         //    return null;
         //}
 
-        //public override Task OnNavigatedTo(NavigationEventArgs args)
-        //{
-        //    return null;
-        //}
+        public override Task OnNavigatedTo(EventArgs args)
+        {
+            return null;
+        }
         #region Metodos
         private void LoadRondas()
         {

@@ -46,11 +46,11 @@
         //    return null;
         //}
 
-        //public override Task OnNavigatedTo(NavigationEventArgs args)
-        //{
-        //    //throw new NotImplementedException();
-        //    return null;
-        //}
+        public override Task OnNavigatedTo(EventArgs args)
+        {
+            //throw new NotImplementedException();
+            return null;
+        }
 
         private void CancelarExecute()
         {

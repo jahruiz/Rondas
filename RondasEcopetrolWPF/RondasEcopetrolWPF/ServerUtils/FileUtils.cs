@@ -12,6 +12,7 @@
     using System;
 
     using System.Collections.Generic;
+    using System.Configuration;
 
     public class FileUtils
     {
@@ -65,14 +66,14 @@
             return FileUtils.pwd;
         }
 
-        public static string getConfigPath()
-        {
-            if (FileUtils.configPath == null)
-            {
-                FileUtils.configPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
-            }
-            return FileUtils.configPath;
-        }
+        //public static string getConfigPath()
+        //{
+        //    if (FileUtils.configPath == null)
+        //    {
+        //        FileUtils.configPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
+        //    }
+        //    return FileUtils.configPath;
+        //}
         public static byte[] getUTF8BytesFromXml(string filename)
         {
             string[] array = new string[]
@@ -93,9 +94,11 @@
         }
         public static void initPath()
         {
-            FileUtils.path = Directory.GetCurrentDirectory();
-            FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
             //FileUtils.path = ApplicationData.Current.LocalFolder.Path;
+            //FileUtils.path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
+            FileUtils.path = ConfigurationManager.AppSettings["RondasPath"].ToString();
+            if (FileUtils.path.Trim().Length == 0)
+                FileUtils.path = Directory.GetCurrentDirectory();
         }
         public static DataSet loadData(string Filename)
         {
@@ -260,23 +263,27 @@
             }*/
             foreach (var folder in Directory.GetDirectories(path))
             {
-                users.Add(folder);
+                users.Add(folder.Remove(0, path.Length + 1));
             }
             return users;
         }
         public static async void deleteUserasync(string usuario, string fileNameStartsWith)
         {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
             //string pathCompleto = path + "\\" + usuario;
-            //if (FileUtils.path == null)
-            //{
-            //    FileUtils.initPath();
-            //}
             //StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(pathCompleto);
             //var files = (await folder.GetFilesAsync()).Where(p => p.DisplayName.StartsWith(fileNameStartsWith));
             //foreach (var file in files)
             //{
             //    await file.DeleteAsync(StorageDeleteOption.Default);
             //}
+            foreach (var file in Directory.GetFiles(path + "\\" + usuario, fileNameStartsWith +".*xml"))
+            {
+                File.Delete(file);                    
+            }
         }
         public static List<string> GetArchivosRondasDescargadas(string usuario)
         {

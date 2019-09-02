@@ -4,32 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
-=======
-C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
->>>>>>> cb097592424ed2122b82f82a8860898c8ac5745e
 RondasEcopetrolWPF
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
-81892505251
-
-43-46364506
-69160763217
-Views\BajarRonda.xaml;Views\CambiarContrasena.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
-
-False
-=======
-C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
 10-1266791915
 
-47-1894993437
-69302618411
+461970446983
+70-917967584
 PopUps\Block.xaml;PopUps\Loading.xaml;Views\BajarRonda.xaml;Views\CambiarContrasena.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
 
-True
->>>>>>> cb097592424ed2122b82f82a8860898c8ac5745e
+False
 

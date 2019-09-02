@@ -51,7 +51,7 @@
             </Grid>
         </Grid>
 
-        <ListView x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }"  >
+        <ListView x:Name="lstRondas" x:FieldModifier="public" Grid.Row="1" Margin="0,30,0,0" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }" >
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Grid>
