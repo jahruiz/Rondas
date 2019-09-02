@@ -1,4 +1,4 @@
-﻿namespace RondasEcopetrol.Models
+﻿namespace RondasEcopetrolWPF.Models
 {
     public class Ronda 
     {

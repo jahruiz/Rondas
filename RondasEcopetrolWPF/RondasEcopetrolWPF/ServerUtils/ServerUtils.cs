@@ -1,4 +1,4 @@
-﻿namespace RondasEcopetrol.ServerUtils
+﻿namespace RondasEcopetrolWPF.ServerUtils
 {
     using System;
     using System.IO;
@@ -102,7 +102,7 @@
             try
             {
                 WebRequest webRequest = WebRequest.Create(string.Concat(array2));
-                webRequest.Timeout = -1;
+                webRequest.Timeout = 5000;
                 ServerUtils.response = webRequest.GetResponse();
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 flag = true;

@@ -1,9 +1,9 @@
-﻿namespace RondasEcopetrol.Models
+﻿namespace RondasEcopetrolWPF.Models
 {
     using System;
     using System.Collections;
     //using jump.fbased;
-    using RondasEcopetrol.ServerUtils;
+    using RondasEcopetrolWPF.ServerUtils;
 
     public class Rondas
     {

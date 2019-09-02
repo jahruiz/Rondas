@@ -1,4 +1,4 @@
-﻿namespace RondasEcopetrol.Models
+﻿namespace RondasEcopetrolWPF.Models
 {
     using System;
     using System.Text.RegularExpressions;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RondasEcopetrolWPF.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace RondasEcopetrolWPF.Views
     /// <summary>
     /// Lógica de interacción para HacerRonda.xaml
     /// </summary>
-    public partial class HacerRonda : Page
+    public partial class HacerRonda : PageBase
     {
         public HacerRonda()
         {

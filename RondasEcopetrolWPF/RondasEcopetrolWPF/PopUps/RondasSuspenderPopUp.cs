@@ -1,16 +1,16 @@
-﻿using Windows.UI.Xaml.Controls;
-using RondasEcopetrol.Base;
-using RondasEcopetrol.Models;
-using RondasEcopetrol.Views;
-using RondasEcopetrol.ViewModels;
+﻿using RondasEcopetrolWPF.Base;
+using RondasEcopetrolWPF.Models;
+using RondasEcopetrolWPF.Views;
+using RondasEcopetrolWPF.ViewModels;
+using System.Windows.Controls;
 
-namespace RondasEcopetrol.PopUps
+namespace RondasEcopetrolWPF.PopUps
 {
     public class RondasSuspenderPopUp : WarningPopUp
     {
-        private Frame _curFrame;
+        private Page _curFrame;
 
-        public RondasSuspenderPopUp(Frame curFrame, bool navFromSheet)
+        public RondasSuspenderPopUp(Page curFrame, bool navFromSheet)
         {
             _curFrame = curFrame;
             this.navFromSheet = navFromSheet;
@@ -30,12 +30,12 @@ namespace RondasEcopetrol.PopUps
             if (navFromSheet)
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
-                _curFrame.Navigate(typeof(CapturaDatos2));
+                _curFrame.NavigationService.Navigate(typeof(CapturaDatos2));
                 CapturaDatos2ViewModel.currentInstance.initPanel();
             }
             else
             {
-                _curFrame.Navigate(typeof(CapturaDatos1));
+                _curFrame.NavigationService.Navigate(typeof(CapturaDatos1));
             }
         }
 
@@ -43,7 +43,7 @@ namespace RondasEcopetrol.PopUps
         {
             suspendRound();
             //Ir al menú principal
-            _curFrame.Navigate(typeof(MainPage));
+            _curFrame.NavigationService.Navigate(typeof(MainPage));
         }
 
         private void suspendRound()

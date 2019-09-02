@@ -1,6 +1,6 @@
-﻿namespace RondasEcopetrol.Models
+﻿namespace RondasEcopetrolWPF.Models
 {
-    using RondasEcopetrol.ServerUtils;
+    using RondasEcopetrolWPF.ServerUtils;
     using System;
     using System.Xml;
 

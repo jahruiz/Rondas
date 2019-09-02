@@ -1,18 +1,18 @@
 ﻿using System;
-using Windows.UI.Xaml.Controls;
-using RondasEcopetrol.Base;
-using RondasEcopetrol.Models;
-using RondasEcopetrol.Views;
-using RondasEcopetrol.ServerUtils;
-using RondasEcopetrol.ViewModels;
+using RondasEcopetrolWPF.Base;
+using RondasEcopetrolWPF.Models;
+using RondasEcopetrolWPF.Views;
+using RondasEcopetrolWPF.ServerUtils;
+using RondasEcopetrolWPF.ViewModels;
+using System.Windows.Controls;
 
-namespace RondasEcopetrol.PopUps
+namespace RondasEcopetrolWPF.PopUps
 {
     public class RondasFinalizarPopUp : WarningPopUp
     {
-        private Frame _curFrame;
+        private Page _curFrame;
 
-        public RondasFinalizarPopUp(Frame curFrame, bool navFromSheet)
+        public RondasFinalizarPopUp(Page curFrame, bool navFromSheet)
         {
             _curFrame = curFrame;
             this.navFromSheet = navFromSheet;
@@ -34,12 +34,13 @@ namespace RondasEcopetrol.PopUps
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 RondasLector.CurrentRonda.getLastWork();
-                _curFrame.Navigate(typeof(CapturaDatos2));
+                //_curFrame.Navigate(typeof(CapturaDatos2));
+                _curFrame.NavigationService.Navigate(typeof(CapturaDatos2));
                 CapturaDatos2ViewModel.currentInstance.initPanel();
             }
             else
             {
-                _curFrame.Navigate(typeof(CapturaDatos1));
+                _curFrame.NavigationService.Navigate(typeof(CapturaDatos1));
             }
         }
 

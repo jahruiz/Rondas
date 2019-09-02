@@ -2,8 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:RondasEcopetrolWPF"
+             xmlns:locator="clr-namespace:RondasEcopetrolWPF.Base"
              StartupUri="Views/MainPage.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <locator:ViewModelLocator x:Key="Locator"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

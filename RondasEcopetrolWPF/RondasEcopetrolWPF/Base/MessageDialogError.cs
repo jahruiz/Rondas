@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.UI.Popups;
+using System.Windows;
 
-namespace RondasEcopetrol.Base
+namespace RondasEcopetrolWPF.Base
 {
     public class MessageDialogError
     {
         public static async System.Threading.Tasks.Task ImprimirAsync(string message)
         {
-            var messageDialog = new MessageDialog(message);
-            messageDialog.Title = "Error";
-            await messageDialog.ShowAsync();
+            MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            //var messageDialog = new MessageDialog(message);
+            //messageDialog.Title = "Error";
+            //await messageDialog.ShowAsync();
         }
 
         public static async System.Threading.Tasks.Task ImprimirAsync(string message, string title)
         {
-            var messageDialog = new MessageDialog(message);
-            messageDialog.Title = title;
-            await messageDialog.ShowAsync();
+            MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Information);
+            //var messageDialog = new MessageDialog(message);
+            //messageDialog.Title = title;
+            //await messageDialog.ShowAsync();
         }
 
     }

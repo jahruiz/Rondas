@@ -1,4 +1,4 @@
-﻿namespace RondasEcopetrol.ServerUtils
+﻿namespace RondasEcopetrolWPF.ServerUtils
 {
     using System.Data;
     using System.IO;

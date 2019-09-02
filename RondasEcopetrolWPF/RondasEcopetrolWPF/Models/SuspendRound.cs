@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RondasEcopetrol.Models
+namespace RondasEcopetrolWPF.Models
 {
     class SuspendRound
     {

@@ -1,13 +1,13 @@
-﻿namespace RondasEcopetrol.ViewModels
+﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
     using System.Net;
     using System.Threading.Tasks;
+	using System.Windows.Controls;
     using System.Windows.Input;
-    using RondasEcopetrol.Base;
-    using RondasEcopetrol.ServerUtils;
-    using RondasEcopetrol.Views;
-    using Windows.UI.Xaml.Navigation;
+    using RondasEcopetrolWPF.Base;
+    using RondasEcopetrolWPF.ServerUtils;
+    using RondasEcopetrolWPF.Views;
     public class IniciarSesionViewModel : ViewModelBase
     {
         //Variables
@@ -48,14 +48,17 @@
         private ICommand _cancelarSesionCommand;
         public ICommand IniciarSesionCommand
         {
-            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommandAsync(IniciarSesionExecuteAsync); }
+            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommandAsync<object>(IniciarSesionExecuteAsync); }
         }
         public ICommand CancelarSesionCommand
         {
             get { return _cancelarSesionCommand = _cancelarSesionCommand ?? new DelegateCommand(CancelarSesionExecute); }
         }
-        private async Task IniciarSesionExecuteAsync()
+        private async Task IniciarSesionExecuteAsync(object parameter)
         {
+			var passwordBox = parameter as PasswordBox;
+            Password = passwordBox.Password;
+			
             if (string.IsNullOrEmpty(User))
             {
                 Info = "Debe ingresar un nombre de usuario." + "\r\n";
@@ -77,7 +80,8 @@
                     {
                         FileUtils.createUser(User.ToUpper());
                         FileUtils.configure_user(User, escapePassword);
-                        AppFrame.Navigate(typeof(MainPage), true);
+                        //AppFrame.Navigate(typeof(MainPage), true);
+                        //Navigated(typeof(MainPage), true);
                     }
                 }
                 else
@@ -92,18 +96,19 @@
         }
         private void CancelarSesionExecute()
         {
-            if (AppFrame.CanGoBack) AppFrame.GoBack();
+            //if (AppFrame.CanGoBack) AppFrame.GoBack();
+            if (Page.NavigationService.CanGoBack) Page.NavigationService.GoBack();
         }
         #endregion Command
-        public override Task OnNavigatedFrom(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedFrom(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
 
-        public override Task OnNavigatedTo(NavigationEventArgs args)
-        {
-            return null;
-        }
+        //public override Task OnNavigatedTo(NavigationEventArgs args)
+        //{
+        //    return null;
+        //}
 
 
         #region Metodos

@@ -1,6 +1,6 @@
-﻿namespace RondasEcopetrol.Base
+﻿namespace RondasEcopetrolWPF.Base
 {
-    using RondasEcopetrol.ViewModels;
+    using RondasEcopetrolWPF.ViewModels;
     using Unity;
     public class ViewModelLocator
     {
