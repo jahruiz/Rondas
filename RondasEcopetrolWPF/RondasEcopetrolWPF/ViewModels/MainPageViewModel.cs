@@ -8,6 +8,7 @@
     public class MainPageViewModel : ViewModelBase
     {
         public static string Eco;
+        public static bool Isvalid;
         public MainPageViewModel()
         {
         }
@@ -71,12 +72,12 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
-        //    IsButtonSesionEnable = true;
-        //    if (  args.Parameter != null && !args.Parameter.Equals(""))
-        //    {
-        //        IsButtonEnable = (bool)args.Parameter;
-        //        IsButtonSesionEnable = false;
-        //    }
+            this.IsButtonSesionEnable = true;
+            if (Isvalid)
+            {
+                IsButtonEnable = Isvalid;
+                IsButtonSesionEnable = false;
+            }
             return null;
         }
     }

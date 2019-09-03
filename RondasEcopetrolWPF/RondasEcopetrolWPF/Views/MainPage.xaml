@@ -90,8 +90,8 @@
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch">
-                    <!--IsEnabled="{Binding IsButtonSesionEnable}">-->
+                    VerticalAlignment="Stretch"
+                    IsEnabled="{Binding IsButtonSesionEnable}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
@@ -121,8 +121,8 @@
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch">
-                    <!--IsEnabled="{Binding IsButtonEnable}"-->
+                    VerticalAlignment="Stretch"
+                    IsEnabled="{Binding IsButtonEnable}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
@@ -153,8 +153,8 @@
                     Background="#80FF00"
                     BorderBrush="Green"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch">
-                    <!--IsEnabled="{Binding IsButtonEnable}">-->
+                    VerticalAlignment="Stretch"
+                    IsEnabled="{Binding IsButtonEnable}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>

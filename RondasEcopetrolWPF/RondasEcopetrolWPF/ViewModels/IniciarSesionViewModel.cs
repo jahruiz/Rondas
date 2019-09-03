@@ -85,8 +85,9 @@
                     }
                     if (IsValidUser)
                     {
-                        FileUtils.createUser(User.ToUpper());                        
+                        FileUtils.createUser(User.ToUpper());
                         //AppFrame.Navigate(typeof(MainPage), true);
+                        MainPageViewModel.Isvalid = true;
                         Navigated(typeof(MainPage));
                     }
                 }
