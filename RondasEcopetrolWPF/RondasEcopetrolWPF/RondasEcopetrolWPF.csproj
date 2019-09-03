@@ -76,7 +76,6 @@
     <Compile Include="ServerUtils\UploadSetupManager.cs" />
     <Compile Include="ServerUtils\XmlUtils.cs" />
     <Compile Include="ViewModels\BajarRondaViewModel.cs" />
-    <Compile Include="ViewModels\CambiarContrasenaViewModel.cs" />
     <Compile Include="ViewModels\CapturaDatos1ViewModel.cs" />
     <Compile Include="ViewModels\CapturaDatos2ViewModel.cs" />
     <Compile Include="ViewModels\EnviarRondaViewModel.cs" />
@@ -97,9 +96,6 @@
     <Compile Include="Base\WarningPopUp.cs" />
     <Compile Include="Views\BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CambiarContrasena.xaml.cs">
-      <DependentUpon>CambiarContrasena.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CapturaDatos1.xaml.cs">
       <DependentUpon>CapturaDatos1.xaml</DependentUpon>
@@ -196,10 +192,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BajarRonda.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CambiarContrasena.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

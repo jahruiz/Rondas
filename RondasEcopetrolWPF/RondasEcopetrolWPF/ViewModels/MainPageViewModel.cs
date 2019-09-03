@@ -57,9 +57,6 @@
                     HacerRondaViewModel.showSuspendRounds = true;
                     Navigated(typeof(HacerRonda));
                     break;
-                case "CambiarContra":
-                    Navigated(typeof(CambiarContrasena));
-                    break;
                 case "Salir":
                     App.Current.Shutdown();
                     break;

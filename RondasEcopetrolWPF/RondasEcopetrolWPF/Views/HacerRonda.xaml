@@ -59,7 +59,6 @@
                     FontWeight="Bold"/>
             </Grid>
         </Grid>
-
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
@@ -77,15 +76,36 @@
                 </ListView.View>
             </ListView>
         </Grid>
-
-        <Button 
-            Grid.Row="2"
-            Content="Regresar"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="#CACAC9"
-            Width="120"
-            Height="40"
-            Command="{Binding CancelarCommand}"></Button>
+        <Button
+                    x:Name="cancelar"
+                    Grid.Row="2"
+                    Command="{Binding CancelarCommand}"
+                    CommandParameter="{Binding ElementName=txtPassword}"
+                    Margin="10,10,10,10"
+                    Width="150"
+                    Height="50"
+                    FontSize="18"
+                    Background="#80FF00"
+                    BorderBrush="Green">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock  
+                            Grid.Column="0"
+                            Text="Regresar"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Margin="10"
+                            Foreground="#088A08"
+                            FontWeight="Bold"/>
+                <Image 
+                        Grid.Column="1"
+                        Source="/Assets/Regresar.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+            </Grid>
+        </Button>
     </Grid>
 </base:PageBase>

@@ -106,7 +106,8 @@
             }
             catch (System.Exception)
             {
-                await MessageDialogError.ImprimirAsync("Error listando las rondas descargadas");
+                await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
+                
             }
 
             RondasDescargadas = rondas;

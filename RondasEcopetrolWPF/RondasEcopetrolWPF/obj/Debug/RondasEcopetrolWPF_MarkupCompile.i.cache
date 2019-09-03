@@ -4,29 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
-=======
-C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
->>>>>>> 77a1fde28bd834cc63d06ea9bf9a5dc1c1c56123
 RondasEcopetrolWPF
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
-10-1266791915
+9-1609983540
 
-47-541709963
-69-999111306
-=======
-C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
-10-1266791915
-
-47-1894993437
-70-917967584
->>>>>>> 77a1fde28bd834cc63d06ea9bf9a5dc1c1c56123
-PopUps\Block.xaml;PopUps\Loading.xaml;Views\BajarRonda.xaml;Views\CambiarContrasena.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
+45-205818259
+70-2077842107
+PopUps\Block.xaml;PopUps\Loading.xaml;Views\BajarRonda.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
 
 False
 
