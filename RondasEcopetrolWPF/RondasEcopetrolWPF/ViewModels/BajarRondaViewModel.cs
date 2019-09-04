@@ -1,6 +1,7 @@
 ﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
+	using System.Windows;
     using System.Collections.ObjectModel;
     using System.IO;
     using System.Threading.Tasks;
@@ -9,6 +10,7 @@
     using RondasEcopetrolWPF.Models;
     using RondasEcopetrolWPF.PopUps;
     using RondasEcopetrolWPF.ServerUtils;
+	using RondasEcopetrolWPF.Views;
  
     public class BajarRondaViewModel : ViewModelBase
     {
@@ -44,7 +46,7 @@
         }
         private void ActualizarExecute()
         {
-
+			LoadRondas();
         }
         private void CancelarExecute()
         {
@@ -60,9 +62,15 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
+			((BajarRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
             return null;
         }
         #region Metodos
+		private void ListView_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelectedUser != null)
+                ClickItemListAsync();
+        }
         private void LoadRondas()
         {
             using (Loading loading = new Loading(LoadRondasDisponibles, "Descargando..."))
@@ -160,7 +168,7 @@
                 "Puesto: " + SelectedUser.Nombre_Puesto.ToString();
             DetallesRondaAsync(textoRonda);
         }
-        public async void DetallesRondaAsync(string texto)
+        public  void DetallesRondaAsync(string texto)
         {
             //var messageDialog = new MessageDialog(texto);
             //messageDialog.Commands.Add(new UICommand(
@@ -168,13 +176,20 @@
             //messageDialog.Commands.Add(new UICommand(
             //    "Cancelar"));
             //await messageDialog.ShowAsync();
+            MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (result == MessageBoxResult.OK)
+            {
+                DescargaAsync();
+            }
         }
-        //private void DescargarCommand(IUICommand command)
-        //{
-        //    //await DescargaAsync();
-        //    DescargaAsync();
-        //}
-        private async void DescargaAsync()
+        private void DescargaAsync()
+        {
+            using (Loading loading = new Loading(DescargarRonda, "Descargando..."))
+            {
+                loading.ShowDialog();
+            }
+        }
+        private async void DescargarRonda()
         {
             //var messageDialog = new MessageDialog("Descargando ronda estructurada del sistema RIS...");
             //messageDialog.Commands.Add(new UICommand(
@@ -188,17 +203,19 @@
                 {
                     String msgId = "" + SelectedUser.Message_ID;
                     FileUtils.writeXmlData("rnd" + msgId + ".xml", ServerUtils.getStream());
-                    await MessageDialogError.ImprimirAsync("La ronda ha sido descargada con éxito");
+                    MessageBox.Show("La ronda ha sido descargada con éxito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
                     StreamReader reader1 = new StreamReader(ServerUtils.getStream());
-                    await MessageDialogError.ImprimirAsync(reader1.ReadToEnd());//, "Server");
+                    MessageBox.Show(reader1.ReadToEnd(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //await MessageDialogError.ImprimirAsync(reader1.ReadToEnd());//, "Server");
                     reader1.Close();
                 }
             }
             else
             {
+                await MessageDialogError.ImprimirAsync("Error en la conexión");//, "Server");
                 //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
                 //app1.showCanvas(typeof(ErrorMessage));
             }
