@@ -139,10 +139,13 @@
         }
         public bool IsEnabledValorText
         {
-            get { return GetPropertyValue<bool>(); }
+            get { return ((CapturaDatos2)this.Page).txtValorText.Visibility == Visibility.Visible; }
             set
             {
-                SetPropertyValue(value);
+                if (value)
+                    ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Visible;
+                else
+                    ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Hidden;
             }
         }
         public ObservableCollection<string> ValorCombo
@@ -173,10 +176,13 @@
         }
         public bool IsEnabledComboValor
         {
-            get { return GetPropertyValue<bool>(); }
+            get { return ((CapturaDatos2)this.Page).cmbValor.Visibility == Visibility.Visible; }
             set
             {
-                SetPropertyValue(value);
+                if (value)
+                    ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Visible;
+                else
+                    ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Hidden;
             }
         }
         public bool IsEnabledPicker
@@ -292,8 +298,8 @@
                     {
                         if (RondasLector.CurrentWork.Values.Length == 0)
                         {
-                            ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Hidden; //this.IsEnabledComboValor = false;
-                            ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Visible; //this.IsEnabledValorText = true;
+                            this.IsEnabledComboValor = false;
+                            this.IsEnabledValorText = true;
                             //this.txtValor.GotFocus += this.pickHandler;
                             pickEnabled = true;
                             this.ValorText = RondasLector.CurrentWork.Valor;
@@ -301,8 +307,8 @@
                         }
                         else
                         {
-                            ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Visible; //this.IsEnabledComboValor = true;
-                            ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Hidden; //this.IsEnabledValorText = false;
+                            this.IsEnabledComboValor = true;
+                            this.IsEnabledValorText = false;
                             ((CapturaDatos2)this.Page).cmbValor.Focus();
                             this.ValorCombo.Clear();
                             for (int num1 = 0; num1 < (RondasLector.CurrentWork.Values.Length - 1); num1++)
@@ -314,8 +320,8 @@
                     }
                     else
                     {
-                        ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Hidden; //this.IsEnabledComboValor = false;
-                        ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Visible; //this.IsEnabledValorText = true;
+                        this.IsEnabledComboValor = false;
+                        this.IsEnabledValorText = true;
                         ((CapturaDatos2)this.Page).txtValorText.Focus();
                         //currFocus = this.txtValor;
                         this.ValorText = RondasLector.CurrentWork.Valor;
@@ -335,7 +341,7 @@
         }
         public async void suspender()
         {
-            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.Page, true);
+            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this, true);
             _popUp.showAsync();
         }
 
@@ -349,7 +355,7 @@
                 {
                     //RondasAdvertenciaManager.sheet = true;
                     //this.Form.App.showCanvas(typeof(AdvertenciaPopUp));
-                    RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, true);
+                    RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this, true);
                     if (_popUp.showAsync())
                     {
                         //Ir al menú principal
@@ -375,6 +381,7 @@
         public async void siguiente()
         {
             bool b = true;
+            bool prevEquipment = INIT_STATE;
             int value_Validation = 0;
             if (!INIT_STATE)
             {
@@ -400,7 +407,7 @@
                     {
                         //RondasAdvertenciaManager.sheet = true;
                         //base.Form.App.showCanvas(typeof(AdvertenciaPopUp));
-                        RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, true);
+                        RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this, !prevEquipment);
                         if (_popUp.showAsync())
                         {
                             //Ir al menú principal
@@ -513,7 +520,7 @@
         }
         public async void home()
         {
-            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.Page, true);
+            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this, true);
             _popUp.showAsync();
         }
     }
