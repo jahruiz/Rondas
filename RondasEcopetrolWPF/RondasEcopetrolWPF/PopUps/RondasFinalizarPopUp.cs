@@ -10,11 +10,11 @@ namespace RondasEcopetrolWPF.PopUps
 {
     public class RondasFinalizarPopUp : WarningPopUp
     {
-        private Page _page;
+        private ViewModelBase _viewModel;
 
-        public RondasFinalizarPopUp(Page page, bool navFromSheet)
+        public RondasFinalizarPopUp(ViewModelBase viewModel, bool navFromSheet)
         {
-            _page = page;
+            _viewModel = viewModel;
             this.navFromSheet = navFromSheet;
         }
 
@@ -34,13 +34,13 @@ namespace RondasEcopetrolWPF.PopUps
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 RondasLector.CurrentRonda.getLastWork();
-                //_curFrame.Navigate(typeof(CapturaDatos2));
-                _page.NavigationService.Navigate(typeof(CapturaDatos2));
+                _viewModel.Navigated(typeof(CapturaDatos2));
                 //CapturaDatos2ViewModel.currentInstance.initPanel();
             }
             else
             {
-                _page.NavigationService.Navigate(typeof(CapturaDatos1));
+                RondasLector.CurrentRonda.getLastStep();
+                _viewModel.Navigated(typeof(CapturaDatos1));
             }
         }
 
@@ -59,7 +59,7 @@ namespace RondasEcopetrolWPF.PopUps
 
             if (rondas1.Suspend)
             {
-                SuspendRound.deleteSuspend(rondas1);
+                SuspendRound.deleteSuspend(rondas1.MessageID);
             }
         }
     }

@@ -103,11 +103,12 @@
                         }
                     }
                 }
+                if (rondas.Count == 0)
+                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
-                await MessageDialogError.ImprimirAsync("Error listando las rondas descargadas");
-                //await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
+                await MessageDialogError.ImprimirAsync("Error listando las rondas descargadas: " + e.Message);
             }
 
             RondasDescargadas = rondas;
@@ -134,10 +135,12 @@
 
                     rondas.Add(ronda);
                 }
+                if (rondas.Count == 0)
+                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
-                await MessageDialogError.ImprimirAsync("Error listando las rondas suspendidas");
+                await MessageDialogError.ImprimirAsync("Error listando las rondas suspendidas: " + e.Message);
             }
 
             RondasDescargadas = rondas;

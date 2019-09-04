@@ -142,7 +142,7 @@ namespace RondasEcopetrolWPF.ViewModels
 
         public async void suspender()
         {
-            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.Page, false);
+            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this, false);
             _popUp.showAsync();
         }
 
@@ -253,7 +253,7 @@ namespace RondasEcopetrolWPF.ViewModels
 
         public async void home()
         {
-            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.Page, false);
+            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this, false);
             _popUp.showAsync();
         }
 
@@ -412,7 +412,7 @@ namespace RondasEcopetrolWPF.ViewModels
                         {
                             RondasLector.CurrentRonda.Current = RondasLector.Step;
                             RondasLector.EndObj = RondasLector.Step;
-                            RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, false);
+                            RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this, false);
                             if (_popUp.showAsync())
                             {
                                 //Ir al menú principal

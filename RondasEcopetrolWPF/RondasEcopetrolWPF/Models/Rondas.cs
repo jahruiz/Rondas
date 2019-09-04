@@ -98,6 +98,12 @@
             this.currentObj = steps1.Works[steps1.Works.Count - 1];
         }
 
+        public void getLastStep()
+        {
+            Steps steps1 = (Steps)this.Steps[this.Steps.Count - 1];
+            this.currentObj = steps1;
+        }
+
         //TODO Mover a la clase HacerRondaViewModel
         /*public TreeNode getRoot()
         {
