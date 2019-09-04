@@ -9,11 +9,13 @@
     using RondasEcopetrolWPF.Models;
     using RondasEcopetrolWPF.ServerUtils;
     using RondasEcopetrolWPF.Views;
+    using RondasEcopetrolWPF.PopUps;
+
     public class EnviarRondaViewModel : ViewModelBase
     {
         public EnviarRondaViewModel()
         {
-            LoadRondasCompletas();
+            LoadRondasCompl();
         }
         #region Propiedades
         public ObservableCollection<RondaDescargada> RondasaSubir
@@ -35,7 +37,12 @@
         }
         #endregion Propiedades
         #region Comandos
+        private ICommand _actualizarCommand;
         private ICommand _cancelarCommand;
+        public ICommand ActualizarCommand
+        {
+            get { return _actualizarCommand = _actualizarCommand ?? new DelegateCommand(ActualizarExecute); }
+        }
         public ICommand CancelarCommand
         {
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
@@ -57,7 +64,17 @@
             if (SelectedItem != null)
                 ClickItemListAsync();
         }
-
+        private void LoadRondasCompl()
+        {
+            using (Loading loading = new Loading(LoadRondasCompletas, "Buscando..."))
+            {
+                loading.ShowDialog();
+            }
+        }
+        private void ActualizarExecute()
+        {
+            LoadRondasCompl();
+        }
         private void CancelarExecute()
         {
             //AppFrame.GoBack();
