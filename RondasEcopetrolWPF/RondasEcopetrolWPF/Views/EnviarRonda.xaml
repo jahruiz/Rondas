@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       DataContext="{Binding Source={StaticResource Locator}, Path=EnviarRondaViewModel}"
       Title="EnviarRonda">
-
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
@@ -21,50 +21,122 @@
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
-            <Image 
-                Grid.Row="0"
-                Source="/Assets/LogoEcopetrol.png"
-                Margin="0,10,0,10"/>
-
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image 
+                        Source="/Assets/LogoRIS_1.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid   Grid.Column="1">
+                    <Image 
+                        Source="/Assets/DescripcionRIS.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Center"/>
+                </Grid>
+                <Grid   Grid.Column="2">
+                    <Image 
+                        Grid.Row="0"
+                        Source="/Assets/LogoEcopetrol.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                </Grid>
+            </Grid>
             <Grid Grid.Row="1" Background="#80FF00" >
                 <TextBlock 
-                Text="ENVIAR RONDA"
-                FontSize="40"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                FontFamily="Segoe UI"
-                Margin="0,10,0,0"
-                Foreground="#088A08"
-                FontWeight="Bold" Height="54"/>
+                    Text="ENVIAR RONDA"
+                    FontSize="40"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    FontFamily="Segoe UI"
+                    Margin="0,10,0,10"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
             </Grid>
         </Grid>
 
-        <ListView x:Name="listView1" Grid.Row="1" Margin="0,30,0,0" 
-                  ItemsSource="{Binding Path=RondasaSubir}" 
-                  
-                  SelectedItem="{Binding SelectedItem,Mode = TwoWay  }" 
-                   >
-            <ListView.ItemTemplate>
-                <DataTemplate >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="47"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="/Assets/SubirRonda.png" Width="32" Height="32" 
-                       HorizontalAlignment="Left"/>
-                        <TextBlock Text="{Binding Path= Nombre}" Foreground="Teal" 
-                           FontSize="14" Grid.Column="1"/>
-                    </Grid>
-                </DataTemplate>
-
-            </ListView.ItemTemplate>
-
-        </ListView>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="actualizar" Content="Actualizar" Command="{Binding ActualizarCommand}" Margin="10,10,10,10" Background="#330CFF00" />
-            <Button x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <ListView Margin="10"  Grid.Row="1" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding Nombre}" />
+                        <GridViewColumn Header="Fecha" Width="120" DisplayMemberBinding="{Binding Fecha_Gen}" />
+                        <GridViewColumn Header="Hora" Width="80" DisplayMemberBinding="{Binding Hora_Gen}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button
+                    x:Name="actualizar"
+                    Command="{Binding ActualizarCommand}"
+                    CommandParameter="{Binding ElementName=txtPassword}"
+                    Margin="10,10,10,10"
+                    Width="150"
+                    Height="50"
+                    FontSize="18"
+                    Background="#80FF00"
+                    BorderBrush="Green">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  
+                            Grid.Column="0"
+                            Text="Actualizar"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Margin="10"
+                            Foreground="#088A08"
+                            FontWeight="Bold"/>
+                    <Image 
+                        Grid.Column="1"
+                        Source="/Assets/VoBo.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                </Grid>
+            </Button>
+            <Button
+                    x:Name="cancelar"
+                    Grid.Row="2"
+                    Command="{Binding CancelarCommand}"
+                    CommandParameter="{Binding ElementName=txtPassword}"
+                    Margin="10,10,10,10"
+                    Width="150"
+                    Height="50"
+                    FontSize="18"
+                    Background="#80FF00"
+                    BorderBrush="Green">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  
+                            Grid.Column="0"
+                            Text="Regresar"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Margin="10"
+                            Foreground="#088A08"
+                            FontWeight="Bold"/>
+                    <Image 
+                        Grid.Column="1"
+                        Source="/Assets/Regresar.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                </Grid>
+            </Button>
         </StackPanel>
     </Grid>
 </base:PageBase>
