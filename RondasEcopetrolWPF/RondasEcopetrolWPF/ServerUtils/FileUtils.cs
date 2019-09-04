@@ -267,6 +267,19 @@
             }
             return users;
         }
+		public static List<string> GetArchivosRonda(string usuario)
+        {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
+            List<string> files = new List<string>();
+            foreach (var file in Directory.GetFiles(path + "\\" + usuario))
+            {
+                    files.Add(file);
+            }
+            return files;
+        }
         public static async void deleteUserasync(string usuario, string fileNameStartsWith)
         {
             if (FileUtils.path == null)
