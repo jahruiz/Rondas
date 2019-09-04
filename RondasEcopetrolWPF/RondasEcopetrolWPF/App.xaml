@@ -7,6 +7,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <locator:ViewModelLocator x:Key="Locator"/>
+            <ResourceDictionary x:Key="Dictionary" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
