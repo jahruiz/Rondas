@@ -29,6 +29,22 @@
                 SetPropertyValue(value);
             }
         }
+        public string CantRondasdescargadas
+        {
+            get { return GetPropertyValue<string>(); ; }
+            set
+            {
+                SetPropertyValue(value);
+            }
+        }
+        public string CantRondasporSubir
+        {
+            get { return GetPropertyValue<string>(); ; }
+            set
+            {
+                SetPropertyValue(value);
+            }
+        }
         #endregion Propiedades
 
         private DelegateCommand<string> _navigationCommand;
@@ -69,11 +85,35 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
+            int Rondasdescargadas = 0, RondasporSubir = 0;
             this.IsButtonSesionEnable = true;
             if (Isvalid)
             {
                 IsButtonEnable = Isvalid;
                 IsButtonSesionEnable = false;
+            }
+            try
+            {
+                foreach (string usuario in FileUtils.GetUsuariosRondasDescargadas())
+                {
+                    foreach (var file in FileUtils.GetArchivosRonda(usuario))
+                    {                        
+                       if (file.EndsWith(".xml"))
+                        {
+                             Rondasdescargadas+= 1;
+                        }
+                       else if(file.EndsWith(".drxml"))
+                        {
+                             RondasporSubir +=1;
+                        }                        
+                    }
+                }
+                CantRondasdescargadas = "Rondas descargadas: " + Rondasdescargadas.ToString();
+                CantRondasporSubir = "Rondas por enviar: " + RondasporSubir.ToString();
+            }
+            catch (System.Exception e)
+            {
+                
             }
             return null;
         }
