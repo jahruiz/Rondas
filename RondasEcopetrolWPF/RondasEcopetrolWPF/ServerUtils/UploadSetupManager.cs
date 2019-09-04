@@ -3,6 +3,8 @@
     using RondasEcopetrolWPF.Base;
     using System.IO;
     using System.Threading.Tasks;
+    using System.Windows;
+
     public class UploadSetupManager
     {
         private byte[] _currentRonda = (byte[])null;
@@ -16,19 +18,22 @@
             _usuario = Usuario;
         }
 
-        public async Task<bool> Enviar()//RondasApp app, ConnectClass connect) 
+        public async void Enviar()//RondasApp app, ConnectClass connect) 
         {
             if (ServerUtils.send("/servlet/ecopetrol.ris.rondas.subirRondas?userId=" + FileUtils.getActualUser() + "&pwd=" + FileUtils.getActualUserpwd(), "text/xml", _currentRonda))
             {
                 //connect.setDetail("Recibiendo respuesta");
-                StreamReader streamReader = new StreamReader(ServerUtils.getStream());
-                string end = streamReader.ReadToEnd();
-                //int num = (int)MessageBox.Show(end, "Server");
-                streamReader.Close();
+                StreamReader reader1 = new StreamReader(ServerUtils.getStream());
+                string msg = reader1.ReadToEnd();
+                MessageBox.Show(msg, "Server", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show(msg, "Server");
+                reader1.Close();
                 ServerUtils.close();
-                if (!end.StartsWith("Error::"))
+
+                if (!msg.StartsWith("Error::"))
                 {
                     FileUtils.deleteUserasync(_usuario, _idMessage);
+                    //MessageBox.Show("Ronda enviada con exito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                     //DataTable table = UploadSetupManager.row.Table;
                     //table.Rows.Remove(UploadSetupManager.row);
                     //table.AcceptChanges();
@@ -41,7 +46,6 @@
                 //app.showCanvas(typeof(ErrorMessage));
                 await MessageDialogError.ImprimirAsync("Fallas de Conexión no permiten almacenar esta ronda en RIS.");
             }
-            return true;
         }
     }
 }

@@ -102,7 +102,7 @@
 			MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (result == MessageBoxResult.OK)
             {
-                
+                EnviarRonda();
             }
         }
         //private void HacerCommand(IUICommand command)
@@ -135,6 +135,15 @@
 				MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
 			}
             RondasaSubir = rondas;
+        }
+        public void EnviarRonda()
+        {
+            byte[] currentRonda = FileUtils.getUTF8BytesFromXml("rnd" + SelectedItem.Message_ID + ".drxml");
+            UploadSetupManager uploadSetupManager = new UploadSetupManager(currentRonda, SelectedItem.Message_ID, SelectedItem.Usuario);
+            using (Loading loading = new Loading(uploadSetupManager.Enviar, "Enviando..."))
+            {
+                loading.ShowDialog();
+            }  
         }
     }
 }
