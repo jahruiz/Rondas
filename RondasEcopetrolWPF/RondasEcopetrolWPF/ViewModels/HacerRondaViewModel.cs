@@ -106,8 +106,8 @@
             }
             catch (System.Exception)
             {
-                await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
-                
+                await MessageDialogError.ImprimirAsync("Error listando las rondas descargadas");
+                //await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
             }
 
             RondasDescargadas = rondas;
@@ -198,7 +198,7 @@
                         RondasLector.Step = RondasLector.CurrentWork.Step;
                         CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                         this.Navigated(typeof(CapturaDatos2));
-                        CapturaDatos2ViewModel.currentInstance.initPanel();
+                        //CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
                 }
             }
