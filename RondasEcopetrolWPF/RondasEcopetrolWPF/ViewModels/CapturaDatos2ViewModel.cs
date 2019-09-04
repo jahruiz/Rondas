@@ -1,6 +1,7 @@
 ﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
+    using System.Windows;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
@@ -17,10 +18,10 @@
         public static bool INIT_STATE = false;
         private bool pickEnabled = false;
 
-        public static CapturaDatos2ViewModel currentInstance;
+        //public static CapturaDatos2ViewModel currentInstance;
         public CapturaDatos2ViewModel()
         {
-            currentInstance = this;
+            //currentInstance = this;
             //initPanel();
         }
         #region Propiedades
@@ -241,7 +242,7 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
-            //initPanel();
+            initPanel();
             return null;
         }
         private void CargarComboCausa()
@@ -291,8 +292,8 @@
                     {
                         if (RondasLector.CurrentWork.Values.Length == 0)
                         {
-                            this.IsEnabledComboValor = false;
-                            this.IsEnabledValorText = true;
+                            ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Hidden; //this.IsEnabledComboValor = false;
+                            ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Visible; //this.IsEnabledValorText = true;
                             //this.txtValor.GotFocus += this.pickHandler;
                             pickEnabled = true;
                             this.ValorText = RondasLector.CurrentWork.Valor;
@@ -300,8 +301,8 @@
                         }
                         else
                         {
-                            this.IsEnabledComboValor = true;
-                            this.IsEnabledValorText = false;
+                            ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Visible; //this.IsEnabledComboValor = true;
+                            ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Hidden; //this.IsEnabledValorText = false;
                             ((CapturaDatos2)this.Page).cmbValor.Focus();
                             this.ValorCombo.Clear();
                             for (int num1 = 0; num1 < (RondasLector.CurrentWork.Values.Length - 1); num1++)
@@ -313,8 +314,8 @@
                     }
                     else
                     {
-                        this.IsEnabledComboValor = false;
-                        this.IsEnabledValorText = true;
+                        ((CapturaDatos2)this.Page).cmbValor.Visibility = Visibility.Hidden; //this.IsEnabledComboValor = false;
+                        ((CapturaDatos2)this.Page).txtValorText.Visibility = Visibility.Visible; //this.IsEnabledValorText = true;
                         ((CapturaDatos2)this.Page).txtValorText.Focus();
                         //currFocus = this.txtValor;
                         this.ValorText = RondasLector.CurrentWork.Valor;
@@ -334,8 +335,8 @@
         }
         public async void suspender()
         {
-            //RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.AppFrame, true);
-            //await _popUp.showAsync();
+            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.Page, true);
+            _popUp.showAsync();
         }
 
         public async void anterior()
@@ -349,12 +350,12 @@
                     //RondasAdvertenciaManager.sheet = true;
                     //this.Form.App.showCanvas(typeof(AdvertenciaPopUp));
                     RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, true);
-                    //if (await _popUp.showAsync())
-                    //{
-                    //    //Ir al menú principal
-                    //    //AppFrame.Navigate(typeof(MainPage));
-                    //    Navigated(typeof(MainPage));
-                    //}
+                    if (_popUp.showAsync())
+                    {
+                        //Ir al menú principal
+                        //AppFrame.Navigate(typeof(MainPage));
+                        Navigated(typeof(MainPage));
+                    }
                     return;
                 }
                 else if (obj is Work && ((Work)obj).isValidForThisState())
@@ -400,12 +401,12 @@
                         //RondasAdvertenciaManager.sheet = true;
                         //base.Form.App.showCanvas(typeof(AdvertenciaPopUp));
                         RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, true);
-                        //if (await _popUp.showAsync())
-                        //{
-                        //    //Ir al menú principal
-                        //    //AppFrame.Navigate(typeof(MainPage));
-                        //    Navigated(typeof(MainPage));
-                        //}
+                        if (_popUp.showAsync())
+                        {
+                            //Ir al menú principal
+                            //AppFrame.Navigate(typeof(MainPage));
+                            Navigated(typeof(MainPage));
+                        }
                         break;
                     }
                     else if (obj1 is Work && ((Work)obj1).isValidForThisState())
@@ -513,7 +514,7 @@
         public async void home()
         {
             RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.Page, true);
-            //await _popUp.showAsync();
+            _popUp.showAsync();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace RondasEcopetrolWPF.PopUps
                 RondasLector.CurrentRonda.getLastWork();
                 //_curFrame.Navigate(typeof(CapturaDatos2));
                 _page.NavigationService.Navigate(typeof(CapturaDatos2));
-                CapturaDatos2ViewModel.currentInstance.initPanel();
+                //CapturaDatos2ViewModel.currentInstance.initPanel();
             }
             else
             {

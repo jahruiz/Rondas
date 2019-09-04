@@ -106,18 +106,15 @@
                 <TextBox x:Name="txtValorText" x:FieldModifier="public"
                 Grid.Column="0"
                 Text="{Binding ValorText,Mode=TwoWay}"
-                Visibility="{Binding IsEnabledValorText}"
                 />
-                <ComboBox  x:Name="cmbValor" x:FieldModifier="public"
-                
+                <ComboBox x:Name="cmbValor" x:FieldModifier="public"
                 Grid.Row="5"
                 Grid.Column="1"
                 VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
                 ItemsSource="{Binding Path=ValorCombo,Mode = TwoWay}" 
                        SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
                        SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
-                Visibility="{Binding IsEnabledComboValor}">
-                </ComboBox>
+                />
             </Grid>
 
             <TextBlock 

@@ -92,7 +92,6 @@ C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\System.Runt
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\Unity.Abstractions.pdb
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\Unity.Container.pdb
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\BajarRonda.g.cs
-C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\CambiarContrasena.g.cs
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\CapturaDatos1.g.cs
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\CapturaDatos2.g.cs
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\EnviarRonda.g.cs
@@ -102,7 +101,6 @@ C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\MainP
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\App.baml
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\BajarRonda.baml
-C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\CambiarContrasena.baml
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\CapturaDatos1.baml
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\CapturaDatos2.baml
 C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\Views\EnviarRonda.baml

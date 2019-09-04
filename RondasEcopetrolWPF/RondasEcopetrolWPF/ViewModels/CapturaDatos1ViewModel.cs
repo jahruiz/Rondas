@@ -142,8 +142,8 @@ namespace RondasEcopetrolWPF.ViewModels
 
         public async void suspender()
         {
-            //RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.AppFrame, false);
-            //await _popUp.showAsync();
+            RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this.Page, false);
+            _popUp.showAsync();
         }
 
         //TODO Pendiente Buscar en àrbol
@@ -219,7 +219,7 @@ namespace RondasEcopetrolWPF.ViewModels
                         RondasLector.CurrentWork = (Work)obj1;
                         //AppFrame.Navigate(typeof(CapturaDatos2));
                         Navigated(typeof(CapturaDatos2));
-                        CapturaDatos2ViewModel.currentInstance.initPanel();
+                        //CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
                     else
                     {
@@ -253,8 +253,8 @@ namespace RondasEcopetrolWPF.ViewModels
 
         public async void home()
         {
-            //RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.AppFrame, false);
-            //await _popUp.showAsync();
+            RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this.Page, false);
+            _popUp.showAsync();
         }
 
         //TODO Mirar que se toma de aqui
@@ -398,7 +398,7 @@ namespace RondasEcopetrolWPF.ViewModels
                     {
                         //AppFrame.Navigate(typeof(CapturaDatos2));
                         Navigated(typeof(CapturaDatos2));
-                        CapturaDatos2ViewModel.currentInstance.initPanel();
+                        //CapturaDatos2ViewModel.currentInstance.initPanel();
                     }
                     else
                     {
@@ -413,12 +413,12 @@ namespace RondasEcopetrolWPF.ViewModels
                             RondasLector.CurrentRonda.Current = RondasLector.Step;
                             RondasLector.EndObj = RondasLector.Step;
                             RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(this.Page, false);
-                            //if (await _popUp.showAsync())
-                            //{
-                            //    //Ir al menú principal
-                            //    //AppFrame.Navigate(typeof(MainPage));
-                            //    Navigated(typeof(MainPage));
-                            //}
+                            if (_popUp.showAsync())
+                            {
+                                //Ir al menú principal
+                                //AppFrame.Navigate(typeof(MainPage));
+                                Navigated(typeof(MainPage));
+                            }
                         }
                     }
                 }
