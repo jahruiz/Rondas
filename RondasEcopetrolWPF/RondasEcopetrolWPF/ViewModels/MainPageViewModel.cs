@@ -109,7 +109,7 @@
                     }
                 }
                 CantRondasdescargadas = "Rondas descargadas: " + Rondasdescargadas.ToString();
-                CantRondasporSubir = "Rondas por continuar: " + RondasporSubir.ToString();
+                CantRondasporSubir = "Rondas por enviar: " + RondasporSubir.ToString();
             }
             catch (System.Exception e)
             {
