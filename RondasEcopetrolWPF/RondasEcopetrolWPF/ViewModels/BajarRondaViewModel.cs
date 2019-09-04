@@ -1,6 +1,7 @@
 ﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
+	using System.Windows;
     using System.Collections.ObjectModel;
     using System.IO;
     using System.Threading.Tasks;
