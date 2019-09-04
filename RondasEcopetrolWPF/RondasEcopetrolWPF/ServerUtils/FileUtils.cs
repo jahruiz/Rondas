@@ -327,7 +327,7 @@
             List<string> files = new List<string>();
             foreach (var file in Directory.GetFiles(path + "\\" + usuario, "*.drxml"))
             {
-                if (!File.Exists(file.Replace(".xml", ".drxml")))
+                //if (!File.Exists(file.Replace(".xml", ".drxml")))
                     files.Add(file);
             }
 

@@ -1,6 +1,7 @@
 ﻿namespace RondasEcopetrolWPF.ViewModels
 {
     using System;
+	using System.Windows;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
     using System.Windows.Input;
@@ -48,8 +49,13 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
-            //throw new NotImplementedException();
+            ((EnviarRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
             return null;
+        }
+        private void ListView_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelectedItem != null)
+                ClickItemListAsync();
         }
 
         private void CancelarExecute()
@@ -76,6 +82,11 @@
             //messageDialog.Commands.Add(new UICommand(
             //    "Cancelar"));
             //await messageDialog.ShowAsync();
+			MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (result == MessageBoxResult.OK)
+            {
+                
+            }
         }
         //private void HacerCommand(IUICommand command)
         //{
@@ -87,25 +98,25 @@
 
             try
             {
-                foreach (string usuario in FileUtils.GetUsuariosRondasDescargadas())
-                {
-                    foreach (var file in FileUtils.GetArchivosRondasASubir(usuario))
-                    {
-                        Rondas_Descargadas rondas_actuales = FileUtils.Deserialize<Rondas_Descargadas>(FileUtils.GetXmlRonda(file));
+				foreach (var file in FileUtils.GetArchivosRondasASubir(FileUtils.getActualUser()))
+				{
+					Rondas_Descargadas rondas_actuales = FileUtils.Deserialize<Rondas_Descargadas>(FileUtils.GetXmlRonda(file));
 
-                        foreach (RondaDescargada ronda in rondas_actuales)
-                        {
-                            ronda.Usuario = usuario;
-                            rondas.Add(ronda);
-                        }
-                    }
-                }
+					foreach (RondaDescargada ronda in rondas_actuales)
+					{
+						ronda.Usuario = FileUtils.getActualUser();
+						rondas.Add(ronda);
+					}
+				}
             }
             catch (System.Exception)
             {
                 await MessageDialogError.ImprimirAsync("Error listando las rondas a enviar");
             }
-
+			if(rondas.Count==0)
+			{
+				MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+			}
             RondasaSubir = rondas;
         }
     }

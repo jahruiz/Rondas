@@ -65,7 +65,7 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="9*"/>
             </Grid.RowDefinitions>
-            <ListView Margin="10"  Grid.Row="1" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+            <ListView Margin="10"  Grid.Row="1" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasaSubir,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding Nombre}" />
