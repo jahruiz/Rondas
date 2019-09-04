@@ -9,6 +9,7 @@
     using RondasEcopetrolWPF.Models;
     using RondasEcopetrolWPF.PopUps;
     using RondasEcopetrolWPF.ServerUtils;
+	using RondasEcopetrolWPF.Views;
  
     public class BajarRondaViewModel : ViewModelBase
     {
@@ -44,7 +45,7 @@
         }
         private void ActualizarExecute()
         {
-
+			LoadRondas();
         }
         private void CancelarExecute()
         {
