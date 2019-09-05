@@ -296,7 +296,7 @@
                     FontWeight="Bold"
                     FontSize="18"/>
                 <TextBlock 
-                    Text="Rondas por continuar:"
+                    Text="{Binding CantRondasPorContinuar}"
                     Margin="50,10,50,10"
                     Foreground="#088A08"
                     FontWeight="Bold"

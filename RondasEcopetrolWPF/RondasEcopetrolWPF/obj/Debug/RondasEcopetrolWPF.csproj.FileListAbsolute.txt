@@ -121,3 +121,8 @@ C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetr
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignColors.pdb
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Alexander\Documents\Repositorio\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignColors.dll
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignColors.pdb
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Desarrollo\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Debug\MaterialDesignThemes.Wpf.xml

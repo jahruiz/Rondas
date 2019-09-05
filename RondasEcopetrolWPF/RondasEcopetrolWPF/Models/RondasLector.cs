@@ -6,10 +6,6 @@
 
     public class RondasLector
     {
-        public RondasLector()
-        {
-        }
-
         // Methods
         public RondasLector(XmlTextReader reader, string usuario)
         {
@@ -19,6 +15,30 @@
             reader.MoveToContent();
             reader.WhitespaceHandling = WhitespaceHandling.None;
             this.createRonda();
+        }
+
+        public RondasLector(XmlTextReader reader, Rondas ronda)
+        {
+            this.close = false;
+            this.reader = reader;
+            reader.MoveToContent();
+            reader.WhitespaceHandling = WhitespaceHandling.None;
+            //Asignar la ronda al lector
+            this.current = ronda;
+            this.current.Lector = this;
+            this.usuario = ronda.Usuario;
+            //Mover el lector al paso deonde quedó suspendida la ronda
+            bool encontrado = false;
+            if (ronda.Current != null)
+            {
+                Object currentNode = ronda.Current;
+                if (currentNode is Steps)
+                    encontrado = this.GoToStep(((Steps)currentNode).Orden.ToString());
+                else
+                    encontrado = this.GoToStep(((Work)currentNode).Step.Orden.ToString());
+            }
+            if (!encontrado)
+                this.Close();
         }
 
         public void Close()
@@ -124,7 +144,6 @@
                     Steps steps1 = new Steps(this.current, textArray1);
                     this.createWorks(steps1);
 
-
                     return steps1;
                 }
             }
@@ -132,6 +151,28 @@
             return null;
         }
 
+        private bool GoToStep(string step_Orden)
+        {
+            bool encontrado = false;
+            while (!encontrado && XmlUtils.readNextElement(this.reader))
+            {
+                if (this.reader.Name.Equals("Step"))
+                {
+                    string cur_step_Orden = XmlUtils.readNextTextContent(this.reader, "Step_Orden");
+                    XmlUtils.readEndElement(this.reader, "Step");
+                    encontrado = cur_step_Orden.Equals(step_Orden);
+                }
+            }
+            if (encontrado)
+            {
+                //Mover el puntero del lector hasta el siguiente Step
+                while (XmlUtils.readNextElement(this.reader) && !this.reader.Name.Equals("Step"))
+                {
+                    continue;
+                }
+            }
+            return encontrado;
+        }
 
         // Properties
         public Rondas Current

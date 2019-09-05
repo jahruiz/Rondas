@@ -3,12 +3,9 @@
     using System;
     using System.Collections;
 
+    [Serializable()]
     public class Rondas
     {
-        public Rondas()
-        {
-        }
-
         // Methods
         public Rondas(string[] row)
         {
@@ -439,6 +436,7 @@
         private string fecha;
         private string hora;
         private string id;
+        [field: NonSerialized()]
         private RondasLector lector;
         //TODO Resolver asunto del atributo node
         //private TreeNode node;
