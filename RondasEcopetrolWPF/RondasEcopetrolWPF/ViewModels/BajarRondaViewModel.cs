@@ -20,8 +20,11 @@
         }
         public ObservableCollection<Ronda> RondasDisponibles
         {
-            get;
-            set;
+            get { return GetPropertyValue<ObservableCollection<Ronda>>(); }
+            set
+            {
+                SetPropertyValue(value);
+            }
         }
         public Ronda SelectedUser
         {

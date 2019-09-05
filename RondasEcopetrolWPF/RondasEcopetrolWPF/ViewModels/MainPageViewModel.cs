@@ -10,6 +10,8 @@
         public static string Eco;
         public static bool Isvalid;
         public static bool initProgram = true;
+		private const string _FILENAMEXML = @".xml";
+        private const string _FILECONTINUARNAMEDRXML = @".drxml";
 
         public MainPageViewModel()
         {
@@ -106,11 +108,11 @@
                 {
                     foreach (var file in FileUtils.GetArchivosRonda(usuario))
                     {                        
-                       if (file.EndsWith(".xml"))
+                       if (file.EndsWith(_FILENAMEXML))
                         {
                              Rondasdescargadas+= 1;
                         }
-                       else if(file.EndsWith(".drxml"))
+                       else if(file.EndsWith(_FILECONTINUARNAMEDRXML))
                         {
                              RondasporSubir +=1;
                         }                        
