@@ -8,7 +8,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       DataContext="{Binding Source={StaticResource Locator}, Path=MainPageViewModel}"
-      Title="MainPage">
+      Title="MainPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,6 +17,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+
         <Grid Grid.Row="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="5*"/>
@@ -48,6 +50,9 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1" Background="#80FF00" >
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="10"/>
+                </Grid.Effect>
                 <TextBlock 
                     Text="RONDAS OFFLINE"
                     FontSize="40"
@@ -81,6 +86,9 @@
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="10"/>
+                </Grid.Effect>
                 <Button 
                     Grid.Row="0"
                     Grid.Column="0"
@@ -97,11 +105,13 @@
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image 
-                            Grid.Row="0"
-                            Source="/Assets/IniciarSesion.png"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"/>
+                        <materialDesign:PackIcon
+                            Kind="AccountCircle"
+                            Width="120"
+                            Height="120"
+                           HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="black"></materialDesign:PackIcon>
                         <TextBlock 
                             Grid.Row="1"
                             Text="Iniciar Sesión"
@@ -109,7 +119,7 @@
                             VerticalAlignment="Stretch"
                             Foreground="#088A08"
                             FontWeight="Bold"
-                            FontSize="16"/>
+                             FontSize="18"/>
                     </Grid>
                 </Button>
                 <Button 
@@ -128,11 +138,13 @@
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image 
-                            Grid.Row="0"
-                            Source="/Assets/LogoDescarga.png"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"/>
+                        <materialDesign:PackIcon
+                            Kind="GetApp"
+                            Width="120"
+                            Height="120"
+                           HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="black"></materialDesign:PackIcon>
                         <TextBlock 
                             Grid.Row="1"
                             Text="Bajar Ronda"
@@ -140,7 +152,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Stretch"
                             FontWeight="Bold"
-                            FontSize="16"
+                            FontSize="18"
                         />
                     </Grid>
                 </Button>
@@ -160,11 +172,13 @@
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image 
-                            Grid.Row="0"
-                            Source="/Assets/EnviarRonda.png"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"/>
+                        <materialDesign:PackIcon
+                            Kind="CloudUpload"
+                                Width="120"
+                            Height="120"
+                           HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="black"></materialDesign:PackIcon>
                         <TextBlock 
                             Grid.Row="1"
                             Text="Enviar Ronda"
@@ -172,7 +186,7 @@
                             VerticalAlignment="Stretch"
                             Foreground="#088A08"
                             FontWeight="Bold"
-                            FontSize="16"/>
+                            FontSize="18"/>
                     </Grid>
                 </Button>
                 <Button
@@ -190,11 +204,13 @@
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image 
-                            Grid.Row="0"
-                            Source="/Assets/LogoHacerRonda.png"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"/>
+                        <materialDesign:PackIcon
+                            Kind="FormatListChecks"
+                            Width="120"
+                            Height="120"
+                           HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="black"></materialDesign:PackIcon>
                         <TextBlock 
                             Grid.Row="1"
                             Text="Hacer Ronda"
@@ -202,7 +218,7 @@
                             VerticalAlignment="Stretch"
                             Foreground="#088A08"
                             FontWeight="Bold"
-                            FontSize="16"/>
+                            FontSize="18"/>
                     </Grid>
                 </Button>
                 <Button 
@@ -220,11 +236,13 @@
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image 
-                            Grid.Row="0"
-                            Source="/Assets/ContinuarRonda.png"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"/>
+                        <materialDesign:PackIcon
+                            Kind="Edit"
+                            Width="120"
+                            Height="120"
+                           HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="black"></materialDesign:PackIcon>
                         <TextBlock 
                             Grid.Row="1"
                             Text="Continuar Ronda"
@@ -232,7 +250,7 @@
                             VerticalAlignment="Stretch"
                             Foreground="#088A08"
                             FontWeight="Bold"
-                            FontSize="16"/>
+                            FontSize="18"/>
                     </Grid>
                 </Button>
                 <Button 
@@ -250,11 +268,13 @@
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image 
-                            Grid.Row="0"
-                            Source="/Assets/Salir.png"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"/>
+                        <materialDesign:PackIcon
+                            Kind="Power"
+                            Width="120"
+                            Height="120"
+                           HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="black"></materialDesign:PackIcon>
                         <TextBlock 
                             Grid.Row="1"
                             Text="Cerrar"
@@ -262,7 +282,7 @@
                             VerticalAlignment="Stretch"
                             Foreground="#088A08"
                             FontWeight="Bold"
-                            FontSize="16"/>
+                            FontSize="18"/>
                     </Grid>
                 </Button>
             </Grid>
@@ -270,7 +290,7 @@
         <Grid Grid.Row="2">
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                 <TextBlock
-                    Text="Rondas descargadas:"
+                    Text="{Binding CantRondasdescargadas}"
                     Margin="10,10,50,10"
                     Foreground="#088A08"
                     FontWeight="Bold"
@@ -282,7 +302,7 @@
                     FontWeight="Bold"
                     FontSize="18"/>
                 <TextBlock 
-                    Text="Rondas por enviar :"
+                    Text="{Binding CantRondasporSubir}"
                     Margin="50,10,10,10"
                     Foreground="#088A08"
                     FontWeight="Bold"

@@ -155,6 +155,10 @@
 
             }
             ServerUtils.close();
+			if (rondas.Count == 0)
+            {
+                MessageBox.Show("No hay rondas disponibles para este turno", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
             RondasDisponibles = rondas;
         }
         private void ClickItemListAsync()
@@ -215,7 +219,7 @@
             }
             else
             {
-                await MessageDialogError.ImprimirAsync("Error en la conexión");//, "Server");
+				MessageBox.Show("Por favor asegúrese de disponer servicio de red", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);                
                 //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
                 //app1.showCanvas(typeof(ErrorMessage));
             }
