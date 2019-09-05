@@ -13,8 +13,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
@@ -22,11 +23,32 @@
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
-            <Image 
-                Grid.Row="0"
-                Source="/Assets/LogoEcopetrol.png"
-                Margin="0,10,0,10"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image 
+                        Source="/Assets/LogoRIS_1.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid   Grid.Column="1">
+                    <Image 
+                        Source="/Assets/DescripcionRIS.jpg"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Center"/>
+                </Grid>
+                <Grid   Grid.Column="2">
+                    <Image 
+                        Grid.Row="0"
+                        Source="/Assets/LogoEcopetrol.png"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Right"/>
+                </Grid>
+            </Grid>
 
             <Grid Grid.Row="1" Background="#80FF00" >
                 <TextBlock 
@@ -40,23 +62,28 @@
                 FontWeight="Bold"/>
             </Grid>
         </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock Text="NombreRonda" HorizontalAlignment="Center" FontSize="20"></TextBlock>
+            <TextBlock Text="Pasos" HorizontalAlignment="Right" Margin="0,0,30,0" FontSize="20"></TextBlock>
+        </Grid>
+        <ScrollViewer Grid.Row="2">
 
-        <Grid Grid.Row="1" Margin="20,20,0,20" HorizontalAlignment="Left" Width="1480">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+            <Grid  Margin="20,20,20,20" HorizontalAlignment="Left" Width="1480">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="4*" />
-            </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
 
-            <TextBlock 
+                <TextBlock 
                 Grid.Row="0"
                 Grid.Column="0"
                 Text="Equipo"
@@ -64,17 +91,15 @@
                 VerticalAlignment="Center"
                 FontSize="20"
                 Foreground="#088A08"
-                FontWeight="Bold"
-                />
-            <TextBox IsReadOnly="True"
+                FontWeight="Bold"/>
+                <TextBox 
+                IsReadOnly="True"
                 Grid.Row="0"
                 Grid.Column="1"
                 Text="{Binding Paso,Mode=TwoWay}"
-                Margin="0,0,10,10"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                />
-            <TextBlock 
+                Height="50"
+                FontSize="18"/>
+                <TextBlock 
                 Grid.Row="1"
                 Grid.Column="0"
                 Text="Tarea"
@@ -83,13 +108,14 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox IsReadOnly="True"
+                <TextBox 
+                IsReadOnly="True"
                 Grid.Row="1"
                 Grid.Column="1"
                 Text="{Binding Tarea,Mode=TwoWay}"
-                
-                />
-            <TextBlock 
+                FontSize="18"
+                Height="50"/>
+                <TextBlock 
                 Grid.Row="2"
                 Grid.Column="0"
                 Text="Valor"
@@ -98,26 +124,29 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <Grid Grid.Row="2" Grid.Column="1" Margin="0,10,0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-                
-                <TextBox x:Name="txtValorText" x:FieldModifier="public"
+                <Grid 
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,10,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="txtValorText" x:FieldModifier="public"
                 Grid.Column="0"
                 Text="{Binding ValorText,Mode=TwoWay}"
+                FontSize="18"
                 />
-                <ComboBox x:Name="cmbValor" x:FieldModifier="public"
+                    <ComboBox x:Name="cmbValor" x:FieldModifier="public"
                 Grid.Row="5"
                 Grid.Column="1"
                 VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
                 ItemsSource="{Binding Path=ValorCombo,Mode = TwoWay}" 
                        SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
                        SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
+                          FontSize="18"
                 />
-            </Grid>
-
-            <TextBlock 
+                </Grid>
+                <TextBlock 
                 Grid.Row="3"
                 Grid.Column="0"
                 Text="Comentario"
@@ -126,21 +155,22 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <TextBox x:Name="txtComentario" x:FieldModifier="public"
+                <TextBox x:Name="txtComentario" x:FieldModifier="public"
                 Grid.Row="3"
                 Grid.Column="1"
                 Text="{Binding Comentario,Mode=TwoWay}"
                 IsEnabled="{Binding IsComentarioEnabled,Mode=TwoWay}"
-                />
-            <CheckBox 
+                FontSize="18"
+                           Height="50"/>
+                <CheckBox 
                 Grid.Row="4"
                 Grid.Column="1"
                 x:Name="termsOfServiceCheckBox" 
                 Content="Sin comentario"
                 IsChecked="{Binding SinComentario,Mode=TwoWay}"
-                VerticalAlignment="Top"/>
-
-            <TextBlock 
+                VerticalAlignment="Top"
+                FontSize="18"/>
+                <TextBlock 
                 Grid.Row="5"
                 Grid.Column="0"
                 Text="Causa"
@@ -149,17 +179,21 @@
                 FontSize="20"
                 Foreground="#088A08"
                 FontWeight="Bold"/>
-            <ComboBox  x:Name="cmbCausas" x:FieldModifier="public"
-                
+                <ComboBox  
+                x:Name="cmbCausas"
+                x:FieldModifier="public"
                 Grid.Row="5"
                 Grid.Column="1"
                 VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
                 ItemsSource="{Binding Path=Causa,Mode = TwoWay}" 
                        SelectedIndex="{Binding Path=SelectedIndexCausa,Mode = TwoWay}"
-                       SelectedValue="{Binding Path= SelectedValueCausa,Mode = TwoWay}">
-            </ComboBox>
-        </Grid>
-        <ListView x:Name="listView1" Grid.Row="2" Margin="0,30,0,0">
+                       SelectedValue="{Binding Path= SelectedValueCausa,Mode = TwoWay}"
+                FontSize="18">
+                </ComboBox>
+
+            </Grid>
+        </ScrollViewer>
+        <ListView x:Name="listView1" Grid.Row="3">
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Grid>
@@ -176,12 +210,60 @@
 
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="anterior" Content="Anterior" Command="{Binding NavigationCommand}" CommandParameter="Anterior" Margin="10,10,10,10" Background="#330CFF00" />
-            <Button x:Name="siguiente" Content="Siguiente" Command="{Binding NavigationCommand}" CommandParameter="Siguiente" Margin="10,10,10,10" Background="#330CFF00" />
-            <Button x:Name="guardar" Content="Guardar y Suspender" Command="{Binding GuardarCommand}"  Margin="10,10,10,10" Background="#330CFF00" />
-            <Button x:Name="cancelar" Content="Cancelar" Command="{Binding CancelarCommand}" Margin="10,10,10,10" Background="#33FD0000" ></Button>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button 
+                x:Name="btnAnterior" 
+                x:FieldModifier="public" 
+                Command="{Binding NavigationCommand}"
+                CommandParameter="Anterior"
+                Margin="10,10,10,10"
+                Width="100"
+                Height="50" 
+                Content="Anterior"
+                FontSize="18" 
+                Click="BtnAnterior_Click"
+                Background="#80FF00"
+                FontWeight="Bold"
+                BorderBrush="Green"
+                >
+            </Button>
+            <Button
+                x:Name="siguiente"
+                Content="Siguiente"
+                Command="{Binding NavigationCommand}"
+                CommandParameter="Siguiente"
+                Margin="10,10,10,10"
+                 Background="#80FF00"
+                FontWeight="Bold"
+                BorderBrush="Green"
+                Width="100"
+                Height="50" 
+                FontSize="18" 
+                />
+            <Button 
+                x:Name="btnGuardar"
+                Command="{Binding GuardarCommand}"
+                Margin="10,10,10,10"
+                Width="200"
+                Height="50"
+                Content="Guardar y Suspender"
+                FontSize="18" 
+                Background="#80FF00"
+                FontWeight="Bold"
+                BorderBrush="Green">
+            </Button>
+            <Button 
+                x:Name="btnCancelar"
+                Command="{Binding CancelarCommand}"
+                Margin="10,10,10,10"
+                Width="100"
+                Height="50"
+                Content="Cancelar"
+                FontSize="18" 
+                Background="#80FF00"
+                FontWeight="Bold"
+                BorderBrush="Green">
+            </Button>
         </StackPanel>
-
     </Grid>
 </base:PageBase>

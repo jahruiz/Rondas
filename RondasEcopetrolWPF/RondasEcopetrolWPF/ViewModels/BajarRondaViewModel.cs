@@ -65,7 +65,7 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
-			((BajarRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
+			((BajarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
         #region Metodos
