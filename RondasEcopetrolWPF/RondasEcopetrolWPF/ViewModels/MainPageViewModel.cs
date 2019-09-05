@@ -9,8 +9,15 @@
     {
         public static string Eco;
         public static bool Isvalid;
+        public static bool initProgram = true;
+
         public MainPageViewModel()
         {
+            if (initProgram)
+            {
+                RondasEcopetrolWPF.Models.SuspendRound.LoadSuspends();
+                initProgram = false;
+            }
         }
         #region Propiedades
         public bool IsButtonEnable
@@ -58,6 +65,7 @@
                     Navigated(typeof(HacerRonda));
                     break;
                 case "Salir":
+                    RondasEcopetrolWPF.Models.SuspendRound.SaveSuspends();
                     App.Current.Shutdown();
                     break;
             }

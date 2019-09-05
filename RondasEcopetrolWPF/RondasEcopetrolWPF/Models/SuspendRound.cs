@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace RondasEcopetrolWPF.Models
 {
     class SuspendRound
     {
         private static Hashtable suspendRounds;
+        private const string CACHE_FILENAME = @"suspendRounds.xml";
 
         public static IEnumerable<Rondas> getSuspendRoundsList()
         {
@@ -49,7 +52,7 @@ namespace RondasEcopetrolWPF.Models
         {
             try
             {
-                if (suspendRounds.Count > 0)
+                if (suspendRounds != null && suspendRounds.Count > 0)
                 {
                     foreach (Rondas r in suspendRounds.Values)
                     {
@@ -63,14 +66,69 @@ namespace RondasEcopetrolWPF.Models
             }
         }
 
-        public static void saveSuspends()
+        public static void SaveSuspends()
         {
-            //TODO
+            try
+            {
+                if (suspendRounds != null && suspendRounds.Count > 0)
+                {
+                    SerializeData();
+                }
+            }
+            catch (Exception e)
+            {
+            }
         }
 
-        public static void loadSuspends()
+        public static void LoadSuspends()
         {
-            //TODO
+            try
+            {
+                if (File.Exists(CACHE_FILENAME))
+                {
+                    DeserializeData();
+                }
+            }
+            catch (Exception e)
+            {
+            }
+        }
+
+        private static void SerializeData()
+        {
+            //Colocar las rondas en un objeto lista temporal
+            List<Rondas> tempdataitems = new List<Rondas>(suspendRounds.Count);
+            foreach (Rondas ronda in suspendRounds.Values)
+            {
+                ronda.Lector.Close();
+                ronda.Lector = null;
+                //Agregar a la lista temporal
+                tempdataitems.Add(ronda);
+            }
+
+            //Serializar la lista en un archivo XML
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Rondas>));
+            TextWriter textWriter = new StreamWriter(CACHE_FILENAME);
+            serializer.Serialize(textWriter, tempdataitems);
+            textWriter.Close();
+        }
+
+        private static void DeserializeData()
+        {
+            //Inicializar la cache
+            suspendRounds = new Hashtable();
+            
+            //Leer la lista de Rondas del archivo XML
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Rondas>));
+            TextReader textReader = new StreamReader(CACHE_FILENAME);
+            List<Rondas> tempdataitems = (List<Rondas>)serializer.Deserialize(textReader);
+            textReader.Close();
+
+            //Agregar las rondas a la cache
+            foreach (Rondas ronda in tempdataitems)
+            {
+                addSuspendRound(ronda);
+            }
         }
     }
 }

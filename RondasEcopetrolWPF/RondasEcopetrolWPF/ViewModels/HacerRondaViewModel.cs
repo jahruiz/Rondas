@@ -104,7 +104,11 @@
                     }
                 }
                 if (rondas.Count == 0)
+                {
                     await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
+                    //Ir al menú principal
+                    Navigated(typeof(MainPage));
+                }
             }
             catch (System.Exception e)
             {
@@ -136,7 +140,11 @@
                     rondas.Add(ronda);
                 }
                 if (rondas.Count == 0)
+                {
                     await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
+                    //Ir al menú principal
+                    Navigated(typeof(MainPage));
+                }
             }
             catch (System.Exception e)
             {

@@ -6,6 +6,10 @@
 
     public class RondasLector
     {
+        public RondasLector()
+        {
+        }
+
         // Methods
         public RondasLector(XmlTextReader reader, string usuario)
         {

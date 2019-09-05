@@ -2,11 +2,13 @@
 {
     using System;
     using System.Collections;
-    //using jump.fbased;
-    using RondasEcopetrolWPF.ServerUtils;
 
     public class Rondas
     {
+        public Rondas()
+        {
+        }
+
         // Methods
         public Rondas(string[] row)
         {

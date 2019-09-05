@@ -5,6 +5,10 @@
 
     public class Work
     {
+        public Work()
+        {
+        }
+
         // Methods
         public Work(Steps step, string[] row)
         {

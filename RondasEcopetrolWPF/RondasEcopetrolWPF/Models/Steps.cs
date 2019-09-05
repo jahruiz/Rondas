@@ -6,6 +6,10 @@
 
     public class Steps
     {
+        public Steps()
+        {
+        }
+
         // Methods
         public Steps(Rondas round, string[] row)
         {
