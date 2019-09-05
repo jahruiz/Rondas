@@ -76,7 +76,7 @@
                     FontSize="20"
                     FontStyle="Italic"/>
             </Grid>
-            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Grid.Row="1"  >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
@@ -287,27 +287,54 @@
                 </Button>
             </Grid>
         </Grid>
+
         <Grid Grid.Row="2">
-            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                <TextBlock
+            <StackPanel   Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <TextBlock 
+                    Text="RONDAS"
+                    Margin="0,5,5,5"
+                    Foreground="#088A08"
+                    FontWeight="Bold"
+                    FontSize="18"/>
+                </Border>
+             
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <TextBlock
                     Text="{Binding CantRondasdescargadas}"
-                    Margin="10,10,50,10"
+                    Margin="0,5,5,5"
                     Foreground="#088A08"
                     FontWeight="Bold"
                     FontSize="18"/>
-                <TextBlock 
-                    Text="Rondas por continuar:"
-                    Margin="50,10,50,10"
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <TextBlock 
+                    Text="Por hacer:"
+                    Margin="0,5,5,5"
                     Foreground="#088A08"
                     FontWeight="Bold"
                     FontSize="18"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <TextBlock 
+                    Text="Por continuar:"
+                    Margin="0,5,5,5"
+                    Foreground="#088A08"
+                    FontWeight="Bold"
+                    FontSize="18"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Gray">
                 <TextBlock 
                     Text="{Binding CantRondasporSubir}"
-                    Margin="50,10,10,10"
+                    Margin="0,5,5,5"
                     Foreground="#088A08"
                     FontWeight="Bold"
                     FontSize="18"/>
+                </Border>
+
             </StackPanel>
-        </Grid>
+        
+    </Grid>
+        
     </Grid>
 </base:PageBase>
