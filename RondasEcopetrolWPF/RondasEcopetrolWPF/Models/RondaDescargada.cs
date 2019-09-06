@@ -15,6 +15,7 @@ namespace RondasEcopetrolWPF.Models
         private string _fecha_Gen;
         private string _hora_Gen;
         private string _message_id;
+        private int _pasos;
 
         private string _usuario;
 
@@ -136,7 +137,14 @@ namespace RondasEcopetrolWPF.Models
         {
             get
             {
-                return 0;
+                return _pasos;
+            }
+            set
+            {
+                if (_pasos != value)
+                {
+                    _pasos = value;
+                }
             }
         }
 

@@ -30,6 +30,15 @@ namespace RondasEcopetrolWPF.ViewModels
             }
         }
 
+        public string RefPaso
+        {
+            get { return GetPropertyValue<string>(); }
+            set
+            {
+                SetPropertyValue(value);
+            }
+        }
+
         public string Direccion
         {
             get { return GetPropertyValue<string>(); }
@@ -140,7 +149,7 @@ namespace RondasEcopetrolWPF.ViewModels
         //Codigo traido de StateMachine
         // Methods
 
-        public async void suspender()
+        public void suspender()
         {
             RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this, false);
             _popUp.showAsync();
@@ -165,6 +174,9 @@ namespace RondasEcopetrolWPF.ViewModels
         {
             try
             {
+                this.NombreRonda = RondasLector.CurrentRonda.Nombre;
+                this.RefPaso = "Paso " + RondasLector.Step.Orden + " de " + RondasLector.CurrentRonda.TotalPasos;
+
                 this.Paso = RondasLector.Step.Alias;
                 string[] textArray1 = RondasLector.Step.States;
                 //this.EstadosEquipo.Clear();
@@ -251,7 +263,7 @@ namespace RondasEcopetrolWPF.ViewModels
             application1.showCanvas(typeof(AdvertenciaPopUp));
         }*/
 
-        public async void home()
+        public void home()
         {
             RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this, false);
             _popUp.showAsync();

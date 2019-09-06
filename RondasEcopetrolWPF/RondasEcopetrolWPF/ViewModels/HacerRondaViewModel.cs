@@ -98,6 +98,7 @@
                             if (!SuspendRound.isRoundSuspend(ronda.Message_ID))
                             {
                                 ronda.Usuario = usuario;
+                                ronda.Pasos = rondas_actuales.Steps.Count;
                                 rondas.Add(ronda);
                             }
                         }
@@ -137,6 +138,7 @@
                     ronda.Hora_Gen = rondaSuspendida.Hora;
 
                     ronda.Usuario = rondaSuspendida.Usuario;
+                    ronda.Pasos = rondaSuspendida.TotalPasos;
 
                     rondas.Add(ronda);
                 }
@@ -238,6 +240,7 @@
             else
             {
                 RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
+                lector1.Current.TotalPasos = SelectedUser.Pasos;
                 RondasLector.CurrentRonda = lector1.Current;
                 object obj1 = lector1.Current.next();
                 if ((obj1 != null) && (obj1 is Steps))
