@@ -461,6 +461,8 @@
         private DateTime pocketdate;
         private TimeSpan diff;
 
+        private int _pasos; //Guarda el total de pasos de la ronda
+
         public DateTime MaxDate
         {
             set
@@ -492,6 +494,21 @@
                 }
             }
         }
+        public int TotalPasos
+        {
+            get
+            {
+                return _pasos;
+            }
+            set
+            {
+                if (_pasos != value)
+                {
+                    _pasos = value;
+                }
+            }
+        }
+
     }
 }
 

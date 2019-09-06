@@ -33,6 +33,14 @@
                 SetPropertyValue(value);
             }
         }
+        public string RefPaso
+        {
+            get { return GetPropertyValue<string>(); }
+            set
+            {
+                SetPropertyValue(value);
+            }
+        }
         public string Tarea
         {
             get { return GetPropertyValue<string>(); }
@@ -292,6 +300,9 @@
                 }
                 if (RondasLector.CurrentWork != null)
                 {
+                    this.NombreRonda = RondasLector.CurrentRonda.Nombre;
+                    this.RefPaso = "Paso " + RondasLector.Step.Orden + " de " + RondasLector.CurrentRonda.TotalPasos;
+
                     this.Paso = RondasLector.CurrentWork.Step.Alias;
                     this.Tarea = (RondasLector.CurrentWork.Obligatorio ? "*" : "") + RondasLector.CurrentWork.Description;
                     if (RondasLector.CurrentWork.Tipo.Equals("VP CARACTER"))
@@ -330,7 +341,7 @@
                     this.SinComentario = RondasLector.CurrentWork.NoComment;
                     this.FechaOld1 = RondasLector.CurrentWork.OldValue1;
                     this.FechaOld2 = RondasLector.CurrentWork.OldValue2;
-                    this.Unidad = "(" + RondasLector.CurrentWork.UM + ")";
+                    this.Unidad = "Valor (" + RondasLector.CurrentWork.UM + ")";
                     this.NombreRonda = "Ronda: " + RondasLector.CurrentRonda.Nombre;
                     this.SelectedValueCausa = RondasLector.CurrentWork.Causa;
                 }

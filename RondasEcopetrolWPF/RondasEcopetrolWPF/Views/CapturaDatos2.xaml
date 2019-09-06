@@ -63,8 +63,8 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock Text="NombreRonda" HorizontalAlignment="Center" FontSize="20"></TextBlock>
-            <TextBlock Text="Pasos" HorizontalAlignment="Right" Margin="0,0,30,0" FontSize="20"></TextBlock>
+            <TextBlock Text="{Binding Path=NombreRonda,Mode = TwoWay}" HorizontalAlignment="Center" FontSize="20"></TextBlock>
+            <TextBlock Text="{Binding Path=RefPaso,Mode = TwoWay}" HorizontalAlignment="Right" Margin="0,0,30,0" FontSize="20"></TextBlock>
         </Grid>
         <ScrollViewer Grid.Row="2">
 
@@ -118,7 +118,7 @@
                 <TextBlock 
                 Grid.Row="2"
                 Grid.Column="0"
-                Text="Valor"
+                Text="{Binding Unidad,Mode=TwoWay}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
