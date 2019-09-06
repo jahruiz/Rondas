@@ -76,7 +76,7 @@
                 LoadRondasDescargadas();
             }
 
-            ((HacerRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
+            ((HacerRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
 
@@ -108,6 +108,7 @@
                     await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
+                    return;
                 }
             }
             catch (System.Exception e)
@@ -144,6 +145,7 @@
                     await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
+                    return;
                 }
             }
             catch (System.Exception e)

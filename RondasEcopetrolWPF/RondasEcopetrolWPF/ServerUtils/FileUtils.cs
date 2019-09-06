@@ -351,7 +351,9 @@
             //string xmlRonda = await Windows.Storage.FileIO.ReadTextAsync(fileRonda);
             string xmlRonda = File.ReadAllText(fileRonda);
 
-            xmlRonda = xmlRonda.Replace("RondasHHT", "Rondas_Descargadas");
+            xmlRonda = xmlRonda
+                            .Replace("RondasHHT", "Rondas_Descargadas") //Ronda descargada
+                            .Replace("RondasValues", "Rondas_Descargadas"); //Ronda a enviar
             return xmlRonda;
         }
 

@@ -309,7 +309,7 @@
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Gray">
                     <TextBlock 
-                    Text="Por hacer:"
+                    Text="{Binding CantRondasPorHacer}"
                     Margin="0,5,5,5"
                     Foreground="#088A08"
                     FontWeight="Bold"
@@ -317,7 +317,7 @@
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Gray">
                     <TextBlock 
-                    Text="Por continuar:"
+                    Text="{Binding CantRondasPorContinuar}"
                     Margin="0,5,5,5"
                     Foreground="#088A08"
                     FontWeight="Bold"
