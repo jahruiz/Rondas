@@ -67,7 +67,7 @@ namespace RondasEcopetrolWPF.Models
                     SerializeData();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
         }
@@ -85,7 +85,7 @@ namespace RondasEcopetrolWPF.Models
                         File.Delete(CACHE_FILENAME);
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                 }
                 //Actualizar la bandera
@@ -95,7 +95,7 @@ namespace RondasEcopetrolWPF.Models
 
         private static void SerializeData()
         {
-            //Serializar la lista en un archivo binario (.dat)
+            //Guardar el HashTasble en un archivo binario (.dat)
             Stream SaveFileStream = File.Create(CACHE_FILENAME);
             BinaryFormatter serializer = new BinaryFormatter();
             serializer.Serialize(SaveFileStream, suspendRounds);
@@ -104,6 +104,7 @@ namespace RondasEcopetrolWPF.Models
 
         private static void DeserializeData()
         {
+            //Cargar el HashTasble desde el archivo binario (.dat)
             Stream openFileStream = File.OpenRead(CACHE_FILENAME);
             BinaryFormatter deserializer = new BinaryFormatter();
             suspendRounds = (Hashtable)deserializer.Deserialize(openFileStream);

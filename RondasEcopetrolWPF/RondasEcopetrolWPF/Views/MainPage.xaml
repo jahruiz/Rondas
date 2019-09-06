@@ -298,7 +298,7 @@
                     FontWeight="Bold"
                     FontSize="18"/>
                 </Border>
-             
+
                 <Border BorderThickness="1" BorderBrush="Gray">
                     <TextBlock
                     Text="{Binding CantRondasdescargadas}"
@@ -306,17 +306,11 @@
                     Foreground="#088A08"
                     FontWeight="Bold"
                     FontSize="18"/>
-<<<<<<< HEAD
-                <TextBlock 
-                    Text="{Binding CantRondasPorContinuar}"
-                    Margin="50,10,50,10"
-=======
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Gray">
                     <TextBlock 
                     Text="Por hacer:"
                     Margin="0,5,5,5"
->>>>>>> 6380a5e4ca621293d63b1215e16843efb1c78ab8
                     Foreground="#088A08"
                     FontWeight="Bold"
                     FontSize="18"/>
@@ -330,7 +324,7 @@
                     FontSize="18"/>
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Gray">
-                <TextBlock 
+                    <TextBlock 
                     Text="{Binding CantRondasporSubir}"
                     Margin="0,5,5,5"
                     Foreground="#088A08"
@@ -339,8 +333,8 @@
                 </Border>
 
             </StackPanel>
-        
-    </Grid>
-        
+
+        </Grid>
+
     </Grid>
 </base:PageBase>

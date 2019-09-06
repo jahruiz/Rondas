@@ -10,12 +10,9 @@
     {
         public static string Eco;
         public static bool Isvalid;
-<<<<<<< HEAD
-=======
-        public static bool initProgram = true;
-		private const string _FILENAMEXML = @".xml";
+
+        private const string _FILENAMEXML = @".xml";
         private const string _FILECONTINUARNAMEDRXML = @".drxml";
->>>>>>> 6380a5e4ca621293d63b1215e16843efb1c78ab8
 
         public MainPageViewModel()
         {
@@ -134,20 +131,16 @@
                         }                        
                     }
                 }
-<<<<<<< HEAD
                 int rondasPorContinuar = SuspendRound.getSuspendRoundCount();
                 int rondasPorHacer = Rondasdescargadas - RondasporSubir - rondasPorContinuar;
 
                 //Registrar datos de estado global de la app
-                CantRondasdescargadas = "Descargadas: " + Rondasdescargadas.ToString();
+                CantRondasdescargadas = "Total descargadas: " + Rondasdescargadas.ToString();
                 CantRondasPorHacer = "Por hacer: " + rondasPorHacer.ToString();
                 CantRondasPorContinuar = "Por continuar: " + rondasPorContinuar.ToString();
-=======
-                CantRondasdescargadas = "Total descargadas: " + Rondasdescargadas.ToString();
->>>>>>> 6380a5e4ca621293d63b1215e16843efb1c78ab8
                 CantRondasporSubir = "Por enviar: " + RondasporSubir.ToString();
             }
-            catch (System.Exception e)
+            catch (Exception)
             {
                 
             }
