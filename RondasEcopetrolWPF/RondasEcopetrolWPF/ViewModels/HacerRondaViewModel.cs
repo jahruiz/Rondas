@@ -76,7 +76,7 @@
                 LoadRondasDescargadas();
             }
 
-            ((HacerRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
+            ((HacerRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
 
@@ -108,6 +108,7 @@
                     await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
+                    return;
                 }
             }
             catch (System.Exception e)
@@ -144,6 +145,7 @@
                     await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
+                    return;
                 }
             }
             catch (System.Exception e)
@@ -187,13 +189,32 @@
 
         }
 
-        private void HacerRonda()
+        private async void HacerRonda()
         {
             if (showSuspendRounds)
             {
                 Rondas ronda = SuspendRound.getSuspendRound("" + SelectedUser.Message_ID);
                 if (ronda != null)
                 {
+                    if (ronda.Lector == null) //Viene del archivo de cache
+                    {
+                        try
+                        {
+                            ronda.Lector = new RondasLector(FileUtils.loadXMLFromUser("rnd" + ronda.MessageID + ".xml", ronda.Usuario), ronda);
+                            if (ronda.Lector.isClose)
+                            {
+                                //Error en los datos de la cache de la ronda
+                                await MessageDialogError.ImprimirAsync("Error en los datos de la ronda suspendida (Ronda ID: " + ronda.MessageID + ")");
+                                return;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            //Error en los datos de la cache de la ronda
+                            await MessageDialogError.ImprimirAsync("Error cargando la ronda suspendida (Ronda ID: " + ronda.MessageID + "): " + e.Message);
+                            return;
+                        }
+                    }
                     RondasLector.CurrentRonda = ronda;
                     RondasLector.StartStep = (Steps)ronda.Steps[0];
                     Object current = ronda.Current;

@@ -56,7 +56,7 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
-            ((EnviarRonda)this.Page).lstRondas.PreviewMouseLeftButtonUp += ListView_Click;
+            ((EnviarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
         private void ListView_Click(object sender, RoutedEventArgs e)
@@ -125,15 +125,18 @@
 						rondas.Add(ronda);
 					}
 				}
+                if (rondas.Count == 0)
+                {
+                    MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //Ir al menú principal
+                    Navigated(typeof(MainPage));
+                    return;
+                }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                await MessageDialogError.ImprimirAsync("Error listando las rondas a enviar");
+                await MessageDialogError.ImprimirAsync("Error listando las rondas a enviar: " + ex.Message);
             }
-			if(rondas.Count==0)
-			{
-				MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-			}
             RondasaSubir = rondas;
         }
         public void EnviarRonda()

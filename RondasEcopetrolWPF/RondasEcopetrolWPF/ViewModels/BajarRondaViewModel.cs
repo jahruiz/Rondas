@@ -161,6 +161,9 @@
 			if (rondas.Count == 0)
             {
                 MessageBox.Show("No hay rondas disponibles para este turno", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                //Ir al menú principal
+                Navigated(typeof(MainPage));
+                return;
             }
             RondasDisponibles = rondas;
         }

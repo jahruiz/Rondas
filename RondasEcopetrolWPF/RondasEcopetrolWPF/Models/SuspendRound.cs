@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -12,13 +13,22 @@ namespace RondasEcopetrolWPF.Models
     class SuspendRound
     {
         private static Hashtable suspendRounds;
-        private const string CACHE_FILENAME = @"suspendRounds.xml";
+
+        private static bool loaded = false;
+        private const string CACHE_FILENAME = @"suspendRounds.dat";
 
         public static IEnumerable<Rondas> getSuspendRoundsList()
         {
             if (suspendRounds == null) return new List<Rondas>();
             return suspendRounds.Values.Cast<Rondas>();
         }
+
+        public static int getSuspendRoundCount()
+        {
+            if (suspendRounds == null) return 0;
+            return suspendRounds.Count;
+        }
+
         public static void addSuspendRound(Rondas ronda)
         {
             if (suspendRounds == null) suspendRounds = new Hashtable();
@@ -48,24 +58,6 @@ namespace RondasEcopetrolWPF.Models
             }
         }
 
-        public static void closeSuspends()
-        {
-            try
-            {
-                if (suspendRounds != null && suspendRounds.Count > 0)
-                {
-                    foreach (Rondas r in suspendRounds.Values)
-                    {
-                        r.Lector.Close();
-                    }
-                    //suspendRounds.Clear();
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-
         public static void SaveSuspends()
         {
             try
@@ -75,60 +67,48 @@ namespace RondasEcopetrolWPF.Models
                     SerializeData();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
         }
 
         public static void LoadSuspends()
         {
-            try
+            if (!loaded)
             {
-                if (File.Exists(CACHE_FILENAME))
+                try
                 {
-                    DeserializeData();
+                    if (File.Exists(CACHE_FILENAME))
+                    {
+                        DeserializeData();
+                        //Borrar el archivo de la cache
+                        File.Delete(CACHE_FILENAME);
+                    }
                 }
-            }
-            catch (Exception e)
-            {
+                catch (Exception)
+                {
+                }
+                //Actualizar la bandera
+                loaded = true;
             }
         }
 
         private static void SerializeData()
         {
-            //Colocar las rondas en un objeto lista temporal
-            List<Rondas> tempdataitems = new List<Rondas>(suspendRounds.Count);
-            foreach (Rondas ronda in suspendRounds.Values)
-            {
-                ronda.Lector.Close();
-                ronda.Lector = null;
-                //Agregar a la lista temporal
-                tempdataitems.Add(ronda);
-            }
-
-            //Serializar la lista en un archivo XML
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Rondas>));
-            TextWriter textWriter = new StreamWriter(CACHE_FILENAME);
-            serializer.Serialize(textWriter, tempdataitems);
-            textWriter.Close();
+            //Guardar el HashTasble en un archivo binario (.dat)
+            Stream SaveFileStream = File.Create(CACHE_FILENAME);
+            BinaryFormatter serializer = new BinaryFormatter();
+            serializer.Serialize(SaveFileStream, suspendRounds);
+            SaveFileStream.Close();
         }
 
         private static void DeserializeData()
         {
-            //Inicializar la cache
-            suspendRounds = new Hashtable();
-            
-            //Leer la lista de Rondas del archivo XML
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Rondas>));
-            TextReader textReader = new StreamReader(CACHE_FILENAME);
-            List<Rondas> tempdataitems = (List<Rondas>)serializer.Deserialize(textReader);
-            textReader.Close();
-
-            //Agregar las rondas a la cache
-            foreach (Rondas ronda in tempdataitems)
-            {
-                addSuspendRound(ronda);
-            }
+            //Cargar el HashTasble desde el archivo binario (.dat)
+            Stream openFileStream = File.OpenRead(CACHE_FILENAME);
+            BinaryFormatter deserializer = new BinaryFormatter();
+            suspendRounds = (Hashtable)deserializer.Deserialize(openFileStream);
+            openFileStream.Close();
         }
     }
 }

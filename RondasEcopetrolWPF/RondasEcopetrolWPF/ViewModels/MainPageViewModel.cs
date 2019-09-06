@@ -5,21 +5,18 @@
     using RondasEcopetrolWPF.Base;
     using RondasEcopetrolWPF.ServerUtils;
     using RondasEcopetrolWPF.Views;
+    using RondasEcopetrolWPF.Models;
     public class MainPageViewModel : ViewModelBase
     {
         public static string Eco;
         public static bool Isvalid;
-        public static bool initProgram = true;
-		private const string _FILENAMEXML = @".xml";
+
+        private const string _FILENAMEXML = @".xml";
         private const string _FILECONTINUARNAMEDRXML = @".drxml";
 
         public MainPageViewModel()
         {
-            if (initProgram)
-            {
-                RondasEcopetrolWPF.Models.SuspendRound.LoadSuspends();
-                initProgram = false;
-            }
+            SuspendRound.LoadSuspends();
         }
         #region Propiedades
         public bool IsButtonEnable
@@ -47,6 +44,22 @@
             }
         }
         public string CantRondasporSubir
+        {
+            get { return GetPropertyValue<string>(); ; }
+            set
+            {
+                SetPropertyValue(value);
+            }
+        }
+        public string CantRondasPorContinuar
+        {
+            get { return GetPropertyValue<string>(); ; }
+            set
+            {
+                SetPropertyValue(value);
+            }
+        }
+        public string CantRondasPorHacer
         {
             get { return GetPropertyValue<string>(); ; }
             set
@@ -83,7 +96,7 @@
                     Navigated(typeof(HacerRonda));
                     break;
                 case "Salir":
-                    RondasEcopetrolWPF.Models.SuspendRound.SaveSuspends();
+                    SuspendRound.SaveSuspends();
                     App.Current.Shutdown();
                     break;
             }
@@ -118,10 +131,16 @@
                         }                        
                     }
                 }
+                int rondasPorContinuar = SuspendRound.getSuspendRoundCount();
+                int rondasPorHacer = Rondasdescargadas - RondasporSubir - rondasPorContinuar;
+
+                //Registrar datos de estado global de la app
                 CantRondasdescargadas = "Total descargadas: " + Rondasdescargadas.ToString();
+                CantRondasPorHacer = "Por hacer: " + rondasPorHacer.ToString();
+                CantRondasPorContinuar = "Por continuar: " + rondasPorContinuar.ToString();
                 CantRondasporSubir = "Por enviar: " + RondasporSubir.ToString();
             }
-            catch (System.Exception e)
+            catch (Exception)
             {
                 
             }

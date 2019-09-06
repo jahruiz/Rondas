@@ -3,13 +3,11 @@
     //using jump.controls.tree;
     using System;
     using System.Collections;
+    using System.Xml.Serialization;
 
+    [Serializable()]
     public class Steps
     {
-        public Steps()
-        {
-        }
-
         // Methods
         public Steps(Rondas round, string[] row)
         {
