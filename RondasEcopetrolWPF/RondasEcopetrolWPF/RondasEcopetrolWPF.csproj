@@ -71,6 +71,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\RondaCompletada.cs" />
+    <Compile Include="Models\Rondas_Completadas.cs" />
     <Compile Include="PopUps\Block.xaml.cs">
       <DependentUpon>Block.xaml</DependentUpon>
     </Compile>

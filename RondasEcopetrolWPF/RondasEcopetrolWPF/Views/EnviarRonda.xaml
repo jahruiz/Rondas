@@ -68,7 +68,7 @@
             <ListView Margin="10"  Grid.Row="1" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasaSubir,Mode = TwoWay}"  SelectedItem="{Binding SelectedItem,Mode = TwoWay  }">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding Nombre}" />
+                        <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding name}" />
                         <GridViewColumn Header="Fecha" Width="120" DisplayMemberBinding="{Binding Fecha_Gen}" />
                         <GridViewColumn Header="Hora" Width="80" DisplayMemberBinding="{Binding Hora_Gen}" />
                     </GridView>

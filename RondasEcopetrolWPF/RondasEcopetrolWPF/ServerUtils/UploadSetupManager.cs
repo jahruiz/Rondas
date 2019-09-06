@@ -10,6 +10,7 @@
         private byte[] _currentRonda = (byte[])null;
         private string _idMessage = "";
         private string _usuario = "";
+        private bool _sendOk;
         //public static DataRow row = (DataRow)null;
         public UploadSetupManager(byte[] CurrentRonda, string IDMessage, string Usuario)
         {
@@ -18,8 +19,16 @@
             _usuario = Usuario;
         }
 
+        public bool SendOK
+        {
+            get
+            {
+                return _sendOk;
+            }
+        }
         public async void Enviar()//RondasApp app, ConnectClass connect) 
         {
+            _sendOk = false;
             if (ServerUtils.send("/servlet/ecopetrol.ris.rondas.subirRondas?userId=" + FileUtils.getActualUser() + "&pwd=" + FileUtils.getActualUserpwd(), "text/xml", _currentRonda))
             {
                 //connect.setDetail("Recibiendo respuesta");
@@ -32,7 +41,8 @@
 
                 if (!msg.StartsWith("Error::"))
                 {
-                    FileUtils.deleteUserasync(_usuario, _idMessage);
+                    _sendOk = true;
+                    FileUtils.deleteRonda(_usuario, _idMessage);
                     //MessageBox.Show("Ronda enviada con exito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                     //DataTable table = UploadSetupManager.row.Table;
                     //table.Rows.Remove(UploadSetupManager.row);
