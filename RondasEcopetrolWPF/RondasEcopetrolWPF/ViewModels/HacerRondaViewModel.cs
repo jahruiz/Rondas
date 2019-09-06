@@ -91,11 +91,12 @@
                 {
                     foreach (var file in FileUtils.GetArchivosRondasDescargadas(usuario))
                     {
-                        Rondas_Descargadas rondas_actuales = FileUtils.Deserialize<Rondas_Descargadas>(FileUtils.GetXmlRonda(file));
-
-                        foreach (RondaDescargada ronda in rondas_actuales)
+                        string messageID = file.Substring(file.IndexOf("rnd") + 3).Replace(".xml", "");
+                        if (!SuspendRound.isRoundSuspend(messageID))
                         {
-                            if (!SuspendRound.isRoundSuspend(ronda.Message_ID))
+                            Rondas_Descargadas rondas_actuales = FileUtils.Deserialize<Rondas_Descargadas>(FileUtils.GetXmlRonda(file));
+
+                            foreach (RondaDescargada ronda in rondas_actuales)
                             {
                                 ronda.Usuario = usuario;
                                 ronda.Pasos = rondas_actuales.Steps.Count;

@@ -16,7 +16,7 @@
     {
         public BajarRondaViewModel()
         {
-            LoadRondas();
+            //LoadRondas();
         }
         public ObservableCollection<Ronda> RondasDisponibles
         {
@@ -65,7 +65,8 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
-			((BajarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
+            LoadRondas();
+            ((BajarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
         #region Metodos
@@ -79,6 +80,13 @@
             using (Loading loading = new Loading(LoadRondasDisponibles, "Descargando..."))
             {
                 loading.ShowDialog();
+            }
+            if (RondasDisponibles.Count == 0)
+            {
+                MessageBox.Show("No hay rondas disponibles para este turno", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                //Ir al menú principal
+                Navigated(typeof(MainPage));
+                return;
             }
         }
         public async void LoadRondasDisponibles()
@@ -158,13 +166,6 @@
 
             }
             ServerUtils.close();
-			if (rondas.Count == 0)
-            {
-                MessageBox.Show("No hay rondas disponibles para este turno", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                //Ir al menú principal
-                Navigated(typeof(MainPage));
-                return;
-            }
             RondasDisponibles = rondas;
         }
         private void ClickItemListAsync()
