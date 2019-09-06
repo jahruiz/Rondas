@@ -169,6 +169,7 @@
         }
         private void ClickItemListAsync()
         {
+            if (SelectedUser == null) return;
             string textoRonda = "";
             textoRonda =
                 SelectedUser.Nombre_Ronda.ToString() + "\n" + "\n" +

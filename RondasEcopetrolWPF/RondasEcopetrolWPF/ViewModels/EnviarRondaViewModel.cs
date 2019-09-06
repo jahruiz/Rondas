@@ -18,17 +18,17 @@
             LoadRondasCompl();
         }
         #region Propiedades
-        public ObservableCollection<RondaDescargada> RondasaSubir
+        public ObservableCollection<RondaCompletada> RondasaSubir
         {
-            get { return GetPropertyValue<ObservableCollection<RondaDescargada>>(); }
+            get { return GetPropertyValue<ObservableCollection<RondaCompletada>>(); }
             set
             {
                 SetPropertyValue(value);
             }
         }
-        public RondaDescargada SelectedItem
+        public RondaCompletada SelectedItem
         {
-            get { return GetPropertyValue<RondaDescargada>(); }
+            get { return GetPropertyValue<RondaCompletada>(); }
             set
             {
                 SetPropertyValue(value);
@@ -82,13 +82,12 @@
         }
         private void ClickItemListAsync()
         {
+            if (SelectedItem == null) return;
             string textoRonda = "";
             textoRonda =
-                SelectedItem.Nombre.ToString() + "\n" + "\n" +
+                SelectedItem.name.ToString() + "\n" + "\n" +
                 "Fecha: " + SelectedItem.Fecha_Gen.ToString() + "\n" +
-                "Hora: " + SelectedItem.Hora_Gen.ToString() + "\n" +
-                "Planta: " + SelectedItem.Planta.ToString() + "\n" +
-                "Puesto: " + SelectedItem.Puesto.ToString();
+                "Hora: " + SelectedItem.Hora_Gen.ToString();
             DetallesRondaAsync(textoRonda);
         }
         public async void DetallesRondaAsync(string texto)
@@ -111,15 +110,15 @@
         //}
         public async void LoadRondasCompletas()
         {
-            ObservableCollection<RondaDescargada> rondas = new ObservableCollection<RondaDescargada>();
+            ObservableCollection<RondaCompletada> rondas = new ObservableCollection<RondaCompletada>();
 
             try
             {
 				foreach (var file in FileUtils.GetArchivosRondasASubir(FileUtils.getActualUser()))
 				{
-					Rondas_Descargadas rondas_actuales = FileUtils.Deserialize<Rondas_Descargadas>(FileUtils.GetXmlRonda(file));
+					Rondas_Completadas rondas_actuales = FileUtils.Deserialize<Rondas_Completadas>(FileUtils.GetXmlRonda(file));
 
-					foreach (RondaDescargada ronda in rondas_actuales)
+					foreach (RondaCompletada ronda in rondas_actuales)
 					{
 						ronda.Usuario = FileUtils.getActualUser();
 						rondas.Add(ronda);
@@ -141,12 +140,17 @@
         }
         public void EnviarRonda()
         {
-            byte[] currentRonda = FileUtils.getUTF8BytesFromXml("rnd" + SelectedItem.Message_ID + ".drxml");
-            UploadSetupManager uploadSetupManager = new UploadSetupManager(currentRonda, SelectedItem.Message_ID, SelectedItem.Usuario);
+            byte[] currentRonda = FileUtils.getUTF8BytesFromXml("rnd" + SelectedItem.message_id + ".drxml");
+            UploadSetupManager uploadSetupManager = new UploadSetupManager(currentRonda, SelectedItem.message_id, SelectedItem.Usuario);
             using (Loading loading = new Loading(uploadSetupManager.Enviar, "Enviando..."))
             {
                 loading.ShowDialog();
-            }  
+            }
+            if (uploadSetupManager.SendOK)
+            {
+                //Actualizar la lista de rondas por enviar
+                LoadRondasCompl();
+            }
         }
     }
 }

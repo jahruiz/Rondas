@@ -280,7 +280,7 @@
             }
             return files;
         }
-        public static async void deleteUserasync(string usuario, string fileNameStartsWith)
+        public static void deleteRonda(string usuario, string rondaID)
         {
             if (FileUtils.path == null)
             {
@@ -293,7 +293,7 @@
             //{
             //    await file.DeleteAsync(StorageDeleteOption.Default);
             //}
-            foreach (var file in Directory.GetFiles(path + "\\" + usuario, fileNameStartsWith +".*xml"))
+            foreach (var file in Directory.GetFiles(path + "\\" + usuario, "rnd" + rondaID + ".*xml"))
             {
                 File.Delete(file);                    
             }
@@ -353,7 +353,7 @@
 
             xmlRonda = xmlRonda
                             .Replace("RondasHHT", "Rondas_Descargadas") //Ronda descargada
-                            .Replace("RondasValues", "Rondas_Descargadas"); //Ronda a enviar
+                            .Replace("RondasValues", "Rondas_Completadas"); //Ronda a enviar
             return xmlRonda;
         }
 
