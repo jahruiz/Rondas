@@ -25,5 +25,16 @@ namespace RondasEcopetrolWPF.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnGotFocusHandler(object sender, RoutedEventArgs e)
+        {
+            Button tb = e.Source as Button;
+            tb.Background = Brushes.Red;
+        }
     }
 }
