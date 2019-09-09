@@ -8,14 +8,15 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       DataContext="{Binding Source={StaticResource Locator}, Path=CapturaDatos2ViewModel}"
-      Title="CapturaDatos2">
+      Title="CapturaDatos2"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
@@ -62,13 +63,36 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
+            <Button 
+                HorizontalAlignment="Left"
+                Background="#004236"
+                Foreground="White"
+                Margin="5,5,5,5"
+                Height="30"
+                Width="70"
+                >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock 
+                        Text="Buscar"
+                        VerticalAlignment="Center"></TextBlock>
+                    <materialDesign:PackIcon
+                            Kind="Search"
+                            Height="25"
+                            Width="25"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="White"/>
+                </StackPanel>
+            </Button>
             <TextBlock 
                 Text="{Binding Path=NombreRonda,Mode = TwoWay}"
                 HorizontalAlignment="Center"
+                VerticalAlignment="Center"
                 FontSize="20"/>
             <TextBlock 
                 Text="{Binding Path=RefPaso,Mode = TwoWay}"
                 HorizontalAlignment="Right"
+                VerticalAlignment="Center"
                 Margin="0,0,30,0"
                 FontSize="20"/>
         </Grid>
@@ -138,20 +162,23 @@
                         x:Name="txtValorText"
                         x:FieldModifier="public"
                         Text="{Binding ValorText,Mode=TwoWay}"
-                        HorizontalAlignment="Right"
+                        HorizontalAlignment="Left"
                         FontSize="18"
-                        Width="50"
+                        Width="450"
                         Height="50"/>
                     <ComboBox Grid.Row="5" Grid.Column="1"
                         x:Name="cmbValor"
                         x:FieldModifier="public"
                         HorizontalAlignment="Left"
-                        Margin="0,0,984,0" 
                         ItemsSource="{Binding Path=ValorCombo,Mode = TwoWay}" 
                         SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
                         SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
                         FontSize="18"
-                        Width="50"/>
+                        Width="450"/>
+                    <DatePicker Grid.Row="5" Grid.Column="1"
+                        Width="450"
+                        Height="50"
+                        HorizontalAlignment="Left"/>
                 </Grid>
                 <TextBlock 
                     Grid.Row="3"
@@ -201,27 +228,13 @@
                 </ComboBox>
             </Grid>
         </ScrollViewer>
-        <ListView Grid.Row="3"
-            x:Name="listView1" >
-            <ListView.ItemTemplate>
-                <DataTemplate >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="47"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock 
-                            Text="valor:291"
-                            Foreground="Teal" 
-                            FontSize="14" />
-                        <TextBlock 
-                            Text="01/23/2018 21:01:58"
-                            Foreground="Teal" 
-                            FontSize="14" Grid.Column="1"/>
-                    </Grid>
-                </DataTemplate>
-
-            </ListView.ItemTemplate>
+        <ListView Margin="10"  Grid.Row="3" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Valor" Width="600" DisplayMemberBinding="{Binding Nombre}" />
+                    <GridViewColumn Header="Fecha/Hora" Width="120" DisplayMemberBinding="{Binding Fecha_Gen}" />
+                </GridView>
+            </ListView.View>
         </ListView>
         <StackPanel Grid.Row="4"
             Orientation="Horizontal"

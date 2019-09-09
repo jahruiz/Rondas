@@ -64,8 +64,30 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock Text="{Binding Path=NombreRonda,Mode = TwoWay}" HorizontalAlignment="Center" FontSize="20"></TextBlock>
-            <TextBlock Text="{Binding Path=RefPaso,Mode = TwoWay}" HorizontalAlignment="Right" Margin="0,0,30,0" FontSize="20"></TextBlock>
+            <Button 
+                HorizontalAlignment="Left"
+                Background="#004236"
+                Foreground="White"
+                Margin="5,5,5,5"
+                Height="30"
+                Width="70"
+                >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock 
+                        Text="Buscar"
+                        VerticalAlignment="Center"></TextBlock>
+                    <materialDesign:PackIcon
+                            Kind="Search"
+                            Height="25"
+                            Width="25"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Foreground="White"/>
+                </StackPanel>
+
+            </Button>
+            <TextBlock Text="{Binding Path=NombreRonda,Mode = TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+            <TextBlock Text="{Binding Path=RefPaso,Mode = TwoWay}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0" FontSize="20"></TextBlock>
         </Grid>
         <Grid Grid.Row="2" Margin="20,20,20,20">
             <Grid.RowDefinitions>
