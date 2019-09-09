@@ -103,6 +103,7 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\ViewModelLocator.cs" />
     <Compile Include="Base\WarningPopUp.cs" />
+    <Compile Include="ViewModels\TreeRoundViewModel.cs" />
     <Compile Include="Views\BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
     </Compile>
@@ -123,6 +124,9 @@
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TreeRound.xaml.cs">
+      <DependentUpon>TreeRound.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +229,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TreeRound.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
