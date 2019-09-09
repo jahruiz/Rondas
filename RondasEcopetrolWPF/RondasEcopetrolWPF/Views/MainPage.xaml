@@ -127,7 +127,7 @@
                     BorderBrush="#004236"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    IsEnabled="{Binding IsButtonSesionEnable}" Click="Button_Click">
+                    IsEnabled="{Binding IsButtonSesionEnable}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
