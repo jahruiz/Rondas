@@ -67,6 +67,15 @@
                 SetPropertyValue(value);
             }
         }
+        public string InfoUsuario
+        {
+            get { return GetPropertyValue<string>(); ; }
+            set
+            {
+                SetPropertyValue(value);
+            }
+        }
+
         #endregion Propiedades
 
         private DelegateCommand<string> _navigationCommand;
@@ -114,6 +123,11 @@
             {
                 IsButtonEnable = Isvalid;
                 IsButtonSesionEnable = false;
+                InfoUsuario = "USUARIO: " + FileUtils.getActualUser().ToUpper();
+            }
+            else
+            {
+                InfoUsuario = "USUARIO: <DESCONECTADO>";
             }
             try
             {

@@ -314,7 +314,7 @@
                     files.Add(file);
             }*/
             List<string> files = new List<string>();
-            foreach (var file in Directory.GetFiles(path + "\\" + usuario, "*.xml"))
+            foreach (var file in Directory.GetFiles(path + "\\" + usuario, "rnd*.xml"))
             {
                 if (!File.Exists(file.Replace(".xml", ".drxml")))
                     files.Add(file);
@@ -338,7 +338,7 @@
                     files.Add(file);
             }*/
             List<string> files = new List<string>();
-            foreach (var file in Directory.GetFiles(path + "\\" + usuario, "*.drxml"))
+            foreach (var file in Directory.GetFiles(path + "\\" + usuario, "rnd*.drxml"))
             {
                 //if (!File.Exists(file.Replace(".xml", ".drxml")))
                     files.Add(file);

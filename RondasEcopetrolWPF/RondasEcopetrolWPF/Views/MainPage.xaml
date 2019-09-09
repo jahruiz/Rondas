@@ -71,7 +71,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="0,2,0,0">
                 <TextBlock 
-                    Text="USUARIO:"
+                    Text="{Binding InfoUsuario}"
                     FontWeight="Bold"
                     FontSize="20"
                     FontStyle="Italic"/>

@@ -15,7 +15,7 @@
     {
         public EnviarRondaViewModel()
         {
-            LoadRondasCompl();
+            //LoadRondasCompl();
         }
         #region Propiedades
         public ObservableCollection<RondaCompletada> RondasaSubir
@@ -56,6 +56,7 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
+            LoadRondasCompl();
             ((EnviarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
@@ -69,6 +70,13 @@
             using (Loading loading = new Loading(LoadRondasCompletas, "Buscando..."))
             {
                 loading.ShowDialog();
+            }
+            if (RondasaSubir.Count == 0)
+            {
+                MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                //Ir al menú principal
+                Navigated(typeof(MainPage));
+                return;
             }
         }
         private void ActualizarExecute()
@@ -124,13 +132,6 @@
 						rondas.Add(ronda);
 					}
 				}
-                if (rondas.Count == 0)
-                {
-                    MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //Ir al menú principal
-                    Navigated(typeof(MainPage));
-                    return;
-                }
             }
             catch (System.Exception ex)
             {
