@@ -8,8 +8,35 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       DataContext="{Binding Source={StaticResource Locator}, Path=BajarRondaViewModel}"
-      Title="BajarRonda">
-
+      Title="BajarRonda"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    
+    <base:PageBase.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#BAD405"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F7DB17"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Yellow"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#C3C5C6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </base:PageBase.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
@@ -47,7 +74,10 @@
                         HorizontalAlignment="Right"/>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" Background="#80FF00" >
+            <Grid Grid.Row="1" Background="#BAD405" >
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="10"/>
+                </Grid.Effect>
                 <TextBlock 
                     Text="RONDAS TURNO ACTUAL"
                     FontSize="40"
@@ -55,7 +85,7 @@
                     VerticalAlignment="Stretch"
                     FontFamily="Segoe UI"
                     Margin="0,10,0,10"
-                    Foreground="#088A08"
+                    Foreground="#004236"
                     FontWeight="Bold"/>
             </Grid>
         </Grid>
@@ -76,15 +106,17 @@
             </ListView>
         </Grid>
         <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel.Effect>
+                <DropShadowEffect BlurRadius="10"/>
+            </StackPanel.Effect>
             <Button
                     x:Name="actualizar"
                     Command="{Binding ActualizarCommand}"
                     CommandParameter="{Binding ElementName=txtPassword}"
                     Margin="10,10,10,10"
-                    Width="150"
+                    Width="190"
                     Height="50"
                     FontSize="18"
-                    Background="#80FF00"
                     BorderBrush="Green">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -97,25 +129,26 @@
                             VerticalAlignment="Center"
                             FontSize="20"
                             Margin="10"
-                            Foreground="#088A08"
+                            Foreground="#004236"
                             FontWeight="Bold"/>
-                    <Image 
-                        Grid.Column="1"
-                        Source="/Assets/VoBo.png"
-                        Margin="0,10,0,10"
-                        HorizontalAlignment="Right"/>
+                    <materialDesign:PackIcon
+                            Grid.Column="1"
+                            Kind="Cached"
+                            Width="35"
+                            Height="35"
+                           HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Foreground="#004236"/>
                 </Grid>
             </Button>
             <Button
                     x:Name="cancelar"
-                    Grid.Row="2"
-                    Command="{Binding CancelarCommand}"
+                    Command="{Binding CancelarSesionCommand}"
                     CommandParameter="{Binding ElementName=txtPassword}"
                     Margin="10,10,10,10"
-                    Width="150"
+                    Width="190"
                     Height="50"
                     FontSize="18"
-                    Background="#80FF00"
                     BorderBrush="Green">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -128,13 +161,16 @@
                             VerticalAlignment="Center"
                             FontSize="20"
                             Margin="10"
-                            Foreground="#088A08"
+                            Foreground="#004236"
                             FontWeight="Bold"/>
-                    <Image 
-                        Grid.Column="1"
-                        Source="/Assets/Regresar.png"
-                        Margin="0,10,0,10"
-                        HorizontalAlignment="Right"/>
+                    <materialDesign:PackIcon
+                            Grid.Column="1"
+                            Kind="Reply"
+                            Width="35"
+                            Height="35"
+                           HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Foreground="#004236"/>
                 </Grid>
             </Button>
         </StackPanel>

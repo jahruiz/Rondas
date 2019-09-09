@@ -132,3 +132,4 @@ C:\Users\Alexander\Documents\Repositorio\RondasEcopetrolWPF\RondasEcopetrolWPF\o
 C:\Users\Alexander\Documents\Repositorio\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csproj.CopyComplete
 C:\Users\Alexander\Documents\Repositorio\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.exe
 C:\Users\Alexander\Documents\Repositorio\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.pdb
+C:\Users\Alexander\Documents\Repositorio\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\RondasEcopetrolWPF.csprojAssemblyReference.cache
