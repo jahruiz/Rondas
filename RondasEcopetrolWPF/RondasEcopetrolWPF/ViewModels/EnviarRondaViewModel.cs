@@ -60,6 +60,7 @@
             ((EnviarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
+
         private void ListView_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedItem != null)
