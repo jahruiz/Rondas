@@ -17,7 +17,6 @@
     public class FileUtils
     {
         private static string path;
-        private static string configPath;
 
         private static string user;
         private static string pwd;
@@ -27,7 +26,6 @@
             FileUtils.user = null;
             FileUtils.pwd = null;
             FileUtils.path = null;
-            FileUtils.configPath = null;
         }
         public static void configure_user(string user, string pwd)
         {
@@ -357,5 +355,15 @@
             return xmlRonda;
         }
 
+        public static bool EsRondaYaDescargada(string messageID, string user)
+        {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
+
+            string file = path + "\\" + user + "\\rnd" + messageID + ".xml";
+            return File.Exists(file);
+        }
     }
 }

@@ -14,6 +14,7 @@
  
     public class BajarRondaViewModel : ViewModelBase
     {
+        private bool _descargaOk;
         public BajarRondaViewModel()
         {
             //LoadRondas();
@@ -105,7 +106,8 @@
 
                             foreach (Ronda ronda in rondas_Disponibles)
                             {
-                                rondas.Add(ronda);
+                                if (!FileUtils.EsRondaYaDescargada(ronda.Message_ID, FileUtils.getActualUser()))
+                                    rondas.Add(ronda);
                             }
                         }
                         catch (System.Exception)
@@ -140,7 +142,8 @@
 
                             foreach (Ronda ronda in rondas_Disponibles)
                             {
-                                rondas.Add(ronda);
+                                if (!FileUtils.EsRondaYaDescargada(ronda.Message_ID, FileUtils.getActualUser()))
+                                    rondas.Add(ronda);
                             }
                         }
                         catch (Exception)
@@ -196,10 +199,13 @@
         }
         private void DescargaAsync()
         {
+            _descargaOk = false;
             using (Loading loading = new Loading(DescargarRonda, "Descargando..."))
             {
                 loading.ShowDialog();
             }
+            if (_descargaOk)
+                RondasDisponibles.Remove(SelectedUser);
         }
         private async void DescargarRonda()
         {
@@ -216,6 +222,7 @@
                     String msgId = "" + SelectedUser.Message_ID;
                     FileUtils.writeXmlData("rnd" + msgId + ".xml", ServerUtils.getStream());
                     MessageBox.Show("La ronda ha sido descargada con éxito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    _descargaOk = true;
                 }
                 else
                 {
