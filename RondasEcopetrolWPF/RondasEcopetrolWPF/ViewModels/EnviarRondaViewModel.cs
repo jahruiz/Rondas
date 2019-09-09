@@ -95,7 +95,9 @@
             textoRonda =
                 SelectedItem.name.ToString() + "\n" + "\n" +
                 "Fecha: " + SelectedItem.Fecha_Gen.ToString() + "\n" +
-                "Hora: " + SelectedItem.Hora_Gen.ToString();
+                "Hora: " + SelectedItem.Hora_Gen.ToString() + "\n" +
+                "Planta: " + SelectedItem.Planta.ToString() + "\n" +
+                "Puesto: " + SelectedItem.Puesto.ToString();
             DetallesRondaAsync(textoRonda);
         }
         public async void DetallesRondaAsync(string texto)
