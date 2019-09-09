@@ -9,6 +9,8 @@ using System.Windows.Input;
 using RondasEcopetrolWPF.Views;
 using RondasEcopetrolWPF.Models;
 using RondasEcopetrolWPF.PopUps;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace RondasEcopetrolWPF.ViewModels
 {
@@ -155,20 +157,15 @@ namespace RondasEcopetrolWPF.ViewModels
             _popUp.showAsync();
         }
 
-        //TODO Pendiente Buscar en àrbol
-        /*public void buscar()
+        public void buscar(object sender, RoutedEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            Cursor.Show();
-            TreeNode node = RondasLector.CurrentRonda.getRoot();
-            if (node != TreeRound.root)
+            TreeViewItem node = RondasLector.CurrentRonda.getRoot();
+            if (node != TreeRoundViewModel.root)
             {
-                TreeRound.root = node;
+                TreeRoundViewModel.root = node;
             }
-            Cursor.Current = Cursors.Default;
-            Cursor.Hide();
-            base.Form.App.showCanvas(typeof(TreeRound));
-        }*/
+            Navigated(typeof(TreeRound));
+        }
 
         public void showActual()
         {
@@ -337,6 +334,11 @@ namespace RondasEcopetrolWPF.ViewModels
             if (step == StartStep) bar1.Anterior = false;
 
             bar1.Buscar = RondasLector.CurrentRonda.Show_tree;*/
+            if (RondasLector.CurrentRonda.Show_tree)
+            {
+                ((CapturaDatos1)this.Page).btnBuscar.Visibility = Visibility.Visible;
+                ((CapturaDatos1)this.Page).btnBuscar.Click += buscar;
+            }
             showActual();
         }
 

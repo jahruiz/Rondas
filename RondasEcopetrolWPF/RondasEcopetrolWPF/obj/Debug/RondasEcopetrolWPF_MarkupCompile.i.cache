@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Alexander\Documents\Repositorio\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\obj\Debug\
 RondasEcopetrolWPF
 none
 false
 DEBUG;TRACE
-C:\Users\Alexander\Documents\Repositorio\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
-9-1609983540
+C:\Users\ITAC\Documents\RepositorioRondasGit\Rondas\RondasEcopetrolWPF\RondasEcopetrolWPF\App.xaml
+10-666987243
 
-482123886749
-72-1451778301
-PopUps\Block.xaml;PopUps\Loading.xaml;Views\BajarRonda.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;
+50473444537
+7238591593
+PopUps\Block.xaml;PopUps\Loading.xaml;Views\BajarRonda.xaml;Views\CapturaDatos1.xaml;Views\CapturaDatos2.xaml;Views\EnviarRonda.xaml;Views\HacerRonda.xaml;Views\IniciarSesion.xaml;Views\MainPage.xaml;Views\TreeRound.xaml;
 
-True
+False
 

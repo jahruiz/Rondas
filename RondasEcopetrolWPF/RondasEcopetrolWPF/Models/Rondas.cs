@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections;
+    using System.Windows.Controls;
 
     [Serializable()]
     public class Rondas
@@ -103,21 +104,22 @@
             this.currentObj = steps1;
         }
 
-        //TODO Mover a la clase HacerRondaViewModel
-        /*public TreeNode getRoot()
+        public TreeViewItem getRoot()
         {
             if (this.node == null)
             {
-                this.node = new TreeNode(this.nombre);
+                this.node = new TreeViewItem();
+                this.node.Header = this.nombre;
                 this.node.Tag = this;
                 for (int num1 = 0; num1 < this.steps.Count; num1++)
                 {
                     Steps steps1 = (Steps)this.steps[num1];
-                    TreeNode node1 = new TreeNode(steps1.Alias);
+                    TreeViewItem node1 = new TreeViewItem();
+                    node1.Header = steps1.Alias;
                     node1.Tag = steps1;
-                    node1.ImageIndex = 2;
-                    node1.SelectedImageIndex = 2;
-                    this.node.Nodes.Add(node1);
+                    //node1.ImageIndex = 2;
+                    //node1.SelectedImageIndex = 2;
+                    this.node.Items.Add(node1);
                 }
                 if (!this.Lector.isClose)
                 {
@@ -125,17 +127,18 @@
                     while ((steps2 = this.lector.nextStep()) != null)
                     {
                         this.addStep(steps2);
-                        TreeNode node2 = new TreeNode(steps2.Alias);
+                        TreeViewItem node2 = new TreeViewItem();
+                        node2.Header = steps2.Alias;
                         node2.Tag = steps2;
-                        node2.ImageIndex = 2;
-                        node2.SelectedImageIndex = 2;
-                        this.node.Nodes.Add(node2);
+                        //node2.ImageIndex = 2;
+                        //node2.SelectedImageIndex = 2;
+                        this.node.Items.Add(node2);
                     }
                     this.Lector.Close();
                 }
             }
             return this.node;
-        }*/
+        }
 
         public string getStates()
         {
@@ -444,7 +447,7 @@
         [field: NonSerialized()]
         private RondasLector lector;
         //TODO Resolver asunto del atributo node
-        //private TreeNode node;
+        private TreeViewItem node;
         private string nombre;
         private string planta;
         private string puesto;

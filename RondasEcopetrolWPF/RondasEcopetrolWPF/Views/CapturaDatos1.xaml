@@ -64,7 +64,10 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <Button 
+            <Button
+                x:Name="btnBuscar"
+                x:FieldModifier="public"
+                Visibility="Collapsed"
                 HorizontalAlignment="Left"
                 Background="#004236"
                 Foreground="White"
