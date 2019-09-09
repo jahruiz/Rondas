@@ -156,7 +156,7 @@
             text1 = text1 + "<message_date><![CDATA[" + this.fecha + " " + this.hora + "]]></message_date>";
             text1 = text1 + "<mindate><![CDATA[" + this.minDate.ToString("yyyy-MM-dd HH:mm:ss") + "]]></mindate>";
             text1 = text1 + "<maxdate><![CDATA[" + this.maxDate.ToString("yyyy-MM-dd HH:mm:ss") + "]]></maxdate>";
-            //INICIO 2019/09/09 mamejiar: Se agregan los campos Planta y Puesto
+            //INICIO 2019/09/09 mamejiar: Se agregan los campos Planta y Puesto...
             text1 = text1 + "<Planta><![CDATA[" + this.Planta + "]]></Planta>";
             text1 = text1 + "<Puesto><![CDATA[" + this.Puesto + "]]></Puesto>";
             //FIN 2019/09/09 mamejiar: Se agregan los campos Planta y Puesto
