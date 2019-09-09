@@ -31,10 +31,6 @@ namespace RondasEcopetrolWPF.Views
 
         }
 
-        private void OnGotFocusHandler(object sender, RoutedEventArgs e)
-        {
-            Button tb = e.Source as Button;
-            tb.Background = Brushes.Red;
-        }
+     
     }
 }
