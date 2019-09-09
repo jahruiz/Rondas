@@ -49,27 +49,31 @@
                         HorizontalAlignment="Right"/>
                 </Grid>
             </Grid>
-
             <Grid Grid.Row="1" Background="#80FF00" >
                 <TextBlock 
-                Text="CAPTURA DATOS"
-                FontSize="40"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Stretch"
-                FontFamily="Segoe UI"
-                Margin="0,10,0,10"
-                Foreground="#088A08"
-                FontWeight="Bold"/>
+                    Text="CAPTURA DATOS"
+                    FontSize="40"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    FontFamily="Segoe UI"
+                    Margin="0,10,0,10"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock Text="{Binding Path=NombreRonda,Mode = TwoWay}" HorizontalAlignment="Center" FontSize="20"></TextBlock>
-            <TextBlock Text="{Binding Path=RefPaso,Mode = TwoWay}" HorizontalAlignment="Right" Margin="0,0,30,0" FontSize="20"></TextBlock>
+            <TextBlock 
+                Text="{Binding Path=NombreRonda,Mode = TwoWay}"
+                HorizontalAlignment="Center"
+                FontSize="20"/>
+            <TextBlock 
+                Text="{Binding Path=RefPaso,Mode = TwoWay}"
+                HorizontalAlignment="Right"
+                Margin="0,0,30,0"
+                FontSize="20"/>
         </Grid>
         <ScrollViewer Grid.Row="2">
-
             <Grid  Margin="20,20,20,20" HorizontalAlignment="Left" Width="1480">
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -82,118 +86,123 @@
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="6*" />
                 </Grid.ColumnDefinitions>
-
                 <TextBlock 
-                Grid.Row="0"
-                Grid.Column="0"
-                Text="Equipo"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="20"
-                Foreground="#088A08"
-                FontWeight="Bold"/>
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Equipo"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
                 <TextBox 
-                IsReadOnly="True"
-                Grid.Row="0"
-                Grid.Column="1"
-                Text="{Binding Paso,Mode=TwoWay}"
-                Height="50"
-                FontSize="18"/>
+                    IsReadOnly="True"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding Paso,Mode=TwoWay}"
+                    Height="50"
+                    FontSize="18"/>
                 <TextBlock 
-                Grid.Row="1"
-                Grid.Column="0"
-                Text="Tarea"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="20"
-                Foreground="#088A08"
-                FontWeight="Bold"/>
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Tarea"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
                 <TextBox 
-                IsReadOnly="True"
-                Grid.Row="1"
-                Grid.Column="1"
-                Text="{Binding Tarea,Mode=TwoWay}"
-                FontSize="18"
-                Height="50"/>
+                    IsReadOnly="True"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding Tarea,Mode=TwoWay}"
+                    FontSize="18"
+                    Height="50"/>
                 <TextBlock 
-                Grid.Row="2"
-                Grid.Column="0"
-                Text="{Binding Unidad,Mode=TwoWay}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="20"
-                Foreground="#088A08"
-                FontWeight="Bold"/>
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="{Binding Unidad,Mode=TwoWay}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
                 <Grid 
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="0,10,0,10">
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="0,10,0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="txtValorText" x:FieldModifier="public"
-                Grid.Column="0"
-                Text="{Binding ValorText,Mode=TwoWay}"
-                FontSize="18"
-                />
-                    <ComboBox x:Name="cmbValor" x:FieldModifier="public"
-                Grid.Row="5"
-                Grid.Column="1"
-                VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
-                ItemsSource="{Binding Path=ValorCombo,Mode = TwoWay}" 
-                       SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
-                       SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
-                          FontSize="18"
-                />
+                    <TextBox Grid.Row="5" Grid.Column="1"
+                        x:Name="txtValorText"
+                        x:FieldModifier="public"
+                        Text="{Binding ValorText,Mode=TwoWay}"
+                        HorizontalAlignment="Right"
+                        FontSize="18"
+                        Width="50"
+                        Height="50"/>
+                    <ComboBox Grid.Row="5" Grid.Column="1"
+                        x:Name="cmbValor"
+                        x:FieldModifier="public"
+                        HorizontalAlignment="Left"
+                        Margin="0,0,984,0" 
+                        ItemsSource="{Binding Path=ValorCombo,Mode = TwoWay}" 
+                        SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
+                        SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
+                        FontSize="18"
+                        Width="50"/>
                 </Grid>
                 <TextBlock 
-                Grid.Row="3"
-                Grid.Column="0"
-                Text="Comentario"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="20"
-                Foreground="#088A08"
-                FontWeight="Bold"/>
-                <TextBox x:Name="txtComentario" x:FieldModifier="public"
-                Grid.Row="3"
-                Grid.Column="1"
-                Text="{Binding Comentario,Mode=TwoWay}"
-                IsEnabled="{Binding IsComentarioEnabled,Mode=TwoWay}"
-                FontSize="18"
-                           Height="50"/>
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Comentario"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
+                <TextBox 
+                    x:Name="txtComentario"
+                    x:FieldModifier="public"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="{Binding Comentario,Mode=TwoWay}"
+                    IsEnabled="{Binding IsComentarioEnabled,Mode=TwoWay}"
+                    FontSize="18"
+                    Height="50"/>
                 <CheckBox 
-                Grid.Row="4"
-                Grid.Column="1"
-                x:Name="termsOfServiceCheckBox" 
-                Content="Sin comentario"
-                IsChecked="{Binding SinComentario,Mode=TwoWay}"
-                VerticalAlignment="Top"
-                FontSize="18"/>
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    x:Name="termsOfServiceCheckBox" 
+                    Content="Sin comentario"
+                    IsChecked="{Binding SinComentario,Mode=TwoWay}"
+                    VerticalAlignment="Top"
+                    FontSize="18"/>
                 <TextBlock 
-                Grid.Row="5"
-                Grid.Column="0"
-                Text="Causa"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="20"
-                Foreground="#088A08"
-                FontWeight="Bold"/>
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="Causa"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="#088A08"
+                    FontWeight="Bold"/>
                 <ComboBox  
-                x:Name="cmbCausas"
-                x:FieldModifier="public"
-                Grid.Row="5"
-                Grid.Column="1"
-                VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
-                ItemsSource="{Binding Path=Causa,Mode = TwoWay}" 
-                       SelectedIndex="{Binding Path=SelectedIndexCausa,Mode = TwoWay}"
-                       SelectedValue="{Binding Path= SelectedValueCausa,Mode = TwoWay}"
-                FontSize="18">
+                    x:Name="cmbCausas"
+                    x:FieldModifier="public"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,984,0" 
+                    ItemsSource="{Binding Path=Causa,Mode = TwoWay}" 
+                    SelectedIndex="{Binding Path=SelectedIndexCausa,Mode = TwoWay}"
+                    SelectedValue="{Binding Path= SelectedValueCausa,Mode = TwoWay}"
+                    FontSize="18">
                 </ComboBox>
-
             </Grid>
         </ScrollViewer>
-        <ListView x:Name="listView1" Grid.Row="3">
+        <ListView Grid.Row="3"
+            x:Name="listView1" >
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Grid>
@@ -201,16 +210,22 @@
                             <ColumnDefinition Width="47"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="valor:291" Foreground="Teal" 
-                           FontSize="14" />
-                        <TextBlock Text="01/23/2018 21:01:58" Foreground="Teal" 
-                           FontSize="14" Grid.Column="1"/>
+                        <TextBlock 
+                            Text="valor:291"
+                            Foreground="Teal" 
+                            FontSize="14" />
+                        <TextBlock 
+                            Text="01/23/2018 21:01:58"
+                            Foreground="Teal" 
+                            FontSize="14" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>
 
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="4"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
             <Button 
                 x:Name="btnAnterior" 
                 x:FieldModifier="public" 
@@ -224,8 +239,7 @@
                 Click="BtnAnterior_Click"
                 Background="#80FF00"
                 FontWeight="Bold"
-                BorderBrush="Green"
-                >
+                BorderBrush="Green">
             </Button>
             <Button
                 x:Name="siguiente"
@@ -233,13 +247,12 @@
                 Command="{Binding NavigationCommand}"
                 CommandParameter="Siguiente"
                 Margin="10,10,10,10"
-                 Background="#80FF00"
+                Background="#80FF00"
                 FontWeight="Bold"
                 BorderBrush="Green"
                 Width="100"
                 Height="50" 
-                FontSize="18" 
-                />
+                FontSize="18"/>
             <Button 
                 x:Name="btnGuardar"
                 Command="{Binding GuardarCommand}"
