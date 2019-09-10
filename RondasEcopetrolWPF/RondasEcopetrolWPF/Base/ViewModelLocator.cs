@@ -17,6 +17,7 @@
             _container.RegisterType<CapturaDatos1ViewModel>();
             _container.RegisterType<CapturaDatos2ViewModel>();
             _container.RegisterType<EnviarRondaViewModel>();
+            _container.RegisterType<TreeRoundViewModel>();
         }
         public MainPageViewModel MainPageViewModel => _container.Resolve<MainPageViewModel>();
         public BajarRondaViewModel BajarRondaViewModel => _container.Resolve<BajarRondaViewModel>();
@@ -25,5 +26,7 @@
         public CapturaDatos1ViewModel CapturaDatos1ViewModel => _container.Resolve<CapturaDatos1ViewModel>();
         public CapturaDatos2ViewModel CapturaDatos2ViewModel => _container.Resolve<CapturaDatos2ViewModel>();
         public EnviarRondaViewModel EnviarRondaViewModel => _container.Resolve<EnviarRondaViewModel>();
+
+        public TreeRoundViewModel TreeRoundViewModel => _container.Resolve<TreeRoundViewModel>();
     }
 }
