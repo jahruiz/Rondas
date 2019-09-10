@@ -115,6 +115,9 @@
     <Compile Include="Views\CapturaDatos2.xaml.cs">
       <DependentUpon>CapturaDatos2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CortarRonda.xaml.cs">
+      <DependentUpon>CortarRonda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EnviarRonda.xaml.cs">
       <DependentUpon>EnviarRonda.xaml</DependentUpon>
     </Compile>
@@ -216,6 +219,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CapturaDatos2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CortarRonda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
