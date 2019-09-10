@@ -91,17 +91,9 @@
                 SetPropertyValue(value);
             }
         }
-        public string FechaOld1
+        public ObservableCollection<OldValue> OldValues
         {
-            get { return GetPropertyValue<string>(); }
-            set
-            {
-                SetPropertyValue(value);
-            }
-        }
-        public string FechaOld2
-        {
-            get { return GetPropertyValue<string>(); }
+            get { return GetPropertyValue<ObservableCollection<OldValue>>(); }
             set
             {
                 SetPropertyValue(value);
@@ -341,8 +333,13 @@
                     }
                     this.Comentario = RondasLector.CurrentWork.Descripcion;
                     this.SinComentario = RondasLector.CurrentWork.NoComment;
-                    this.FechaOld1 = RondasLector.CurrentWork.OldValue1;
-                    this.FechaOld2 = RondasLector.CurrentWork.OldValue2;
+                    
+                    //this.FechaOld1 = RondasLector.CurrentWork.OldValue1;
+                    //this.FechaOld2 = RondasLector.CurrentWork.OldValue2;
+                    this.OldValues = new ObservableCollection<OldValue>();
+                    this.OldValues.Add(new OldValue(RondasLector.CurrentWork.OldValue1));
+                    this.OldValues.Add(new OldValue(RondasLector.CurrentWork.OldValue2));
+
                     this.Unidad = "Valor (" + RondasLector.CurrentWork.UM + ")";
                     this.NombreRonda = "Ronda: " + RondasLector.CurrentRonda.Nombre;
                     this.SelectedValueCausa = RondasLector.CurrentWork.Causa;

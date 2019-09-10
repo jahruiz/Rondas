@@ -555,4 +555,21 @@
         private bool noComment = false;
         private string desc;
     }
+
+    public class OldValue
+    {
+        public string valor { get; set; }
+        public string fecha { get; set; }
+
+        public OldValue(string xmlOldValue)
+        {
+            if (xmlOldValue != null && xmlOldValue.Length > 0)
+            {
+                //Ej: xmlOldValue = "valor:26     01/23/2018 21:04:40"
+                this.fecha = xmlOldValue.Substring(xmlOldValue.Length - 19).Trim();
+                this.valor = xmlOldValue.Substring(6, xmlOldValue.Length - 19 - 6).Trim();
+            }
+        }
+    }
+
 }

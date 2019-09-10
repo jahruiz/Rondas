@@ -232,11 +232,11 @@
                 </ComboBox>
             </Grid>
         </ScrollViewer>
-        <ListView Margin="10"  Grid.Row="3" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasDescargadas,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+        <ListView Margin="10"  Grid.Row="3" x:Name="lstOldValues" ItemsSource="{Binding Path=OldValues,Mode = TwoWay}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Valor" Width="600" DisplayMemberBinding="{Binding Nombre}" />
-                    <GridViewColumn Header="Fecha/Hora" Width="120" DisplayMemberBinding="{Binding Fecha_Gen}" />
+                    <GridViewColumn Header="Valor" Width="600" DisplayMemberBinding="{Binding valor}" />
+                    <GridViewColumn Header="Fecha/Hora" Width="120" DisplayMemberBinding="{Binding fecha}" />
                 </GridView>
             </ListView.View>
         </ListView>
