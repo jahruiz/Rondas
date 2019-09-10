@@ -165,7 +165,7 @@
                         HorizontalAlignment="Left"
                         FontSize="18"
                         Width="450"
-                        Height="50"/>
+                        Height="30"/>
                     <ComboBox Grid.Row="5" Grid.Column="1"
                         x:Name="cmbValor"
                         x:FieldModifier="public"
@@ -174,10 +174,14 @@
                         SelectedIndex="{Binding Path=SelectedIndexValorCombo,Mode = TwoWay}"
                         SelectedValue="{Binding Path= SelectedValueValorCombo,Mode = TwoWay}"
                         FontSize="18"
-                        Width="450"/>
-                    <DatePicker Grid.Row="5" Grid.Column="1"
                         Width="450"
-                        Height="50"
+                        Height="30"/>
+                    <DatePicker Grid.Row="5" Grid.Column="1"
+                        x:Name="dteValor"
+                        x:FieldModifier="public"
+                        SelectedDate="{Binding Path=ValorDatePicker,Mode = TwoWay}"
+                        Width="450"
+                        Height="30"
                         HorizontalAlignment="Left"/>
                 </Grid>
                 <TextBlock 

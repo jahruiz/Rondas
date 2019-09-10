@@ -16,12 +16,9 @@
     {
         public static bool NEXT_TRIGGER = true;
         public static bool INIT_STATE = false;
-        private bool pickEnabled = false;
 
-        //public static CapturaDatos2ViewModel currentInstance;
         public CapturaDatos2ViewModel()
         {
-            //currentInstance = this;
             //initPanel();
         }
         #region Propiedades
@@ -195,15 +192,18 @@
         }
         public bool IsEnabledPicker
         {
-            get { return GetPropertyValue<bool>(); }
+            get { return ((CapturaDatos2)this.Page).dteValor.Visibility == Visibility.Visible; }
             set
             {
-                SetPropertyValue(value);
+                if (value)
+                    ((CapturaDatos2)this.Page).dteValor.Visibility = Visibility.Visible;
+                else
+                    ((CapturaDatos2)this.Page).dteValor.Visibility = Visibility.Hidden;
             }
         }
-        public DateTime ValorDatePicker
+        public DateTime? ValorDatePicker
         {
-            get { return GetPropertyValue<DateTime>(); }
+            get { return GetPropertyValue<DateTime?>(); }
             set
             {
                 SetPropertyValue(value);
@@ -292,12 +292,6 @@
         {
             try
             {
-                //currFocus = null;
-                if (pickEnabled)
-                {
-                    //txtValor.GotFocus -= this.pickHandler;
-                    pickEnabled = false;
-                }
                 if (RondasLector.CurrentWork != null)
                 {
                     this.NombreRonda = RondasLector.CurrentRonda.Nombre;
@@ -310,18 +304,26 @@
                         if (RondasLector.CurrentWork.Values.Length == 0)
                         {
                             this.IsEnabledComboValor = false;
-                            this.IsEnabledValorText = true;
-                            //this.txtValor.GotFocus += this.pickHandler;
-                            pickEnabled = true;
-                            this.ValorText = RondasLector.CurrentWork.Valor;
-                            ((CapturaDatos2)this.Page).txtValorText.Focus();
+                            this.IsEnabledValorText = false;
+                            this.IsEnabledPicker = true;
+                            try
+                            {
+                                this.ValorDatePicker = DateTime.ParseExact(RondasLector.CurrentWork.Valor, "yyyy-MM-dd HH:mm", null);
+                            }
+                            catch (Exception)
+                            {
+                                this.ValorDatePicker = null;
+                            }
+                            ((CapturaDatos2)this.Page).dteValor.Focus();
                         }
                         else
                         {
                             this.IsEnabledComboValor = true;
                             this.IsEnabledValorText = false;
+                            this.IsEnabledPicker = false;
                             ((CapturaDatos2)this.Page).cmbValor.Focus();
-                            this.ValorCombo.Clear();
+                            this.ValorCombo = new ObservableCollection<string>();
+                            //this.ValorCombo.Clear();
                             for (int num1 = 0; num1 < (RondasLector.CurrentWork.Values.Length - 1); num1++)
                             {
                                 this.ValorCombo.Add(RondasLector.CurrentWork.Values[num1]);
@@ -333,8 +335,8 @@
                     {
                         this.IsEnabledComboValor = false;
                         this.IsEnabledValorText = true;
+                        this.IsEnabledPicker = false;
                         ((CapturaDatos2)this.Page).txtValorText.Focus();
-                        //currFocus = this.txtValor;
                         this.ValorText = RondasLector.CurrentWork.Valor;
                     }
                     this.Comentario = RondasLector.CurrentWork.Descripcion;
@@ -350,13 +352,13 @@
             {
             }
         }
-        public async void suspender()
+        public void suspender()
         {
             RondasSuspenderPopUp _popUp = new RondasSuspenderPopUp(this, true);
             _popUp.showAsync();
         }
 
-        public async void anterior()
+        public void anterior()
         {
             object obj;
             do
@@ -405,7 +407,7 @@
             {
                 if (RondasLector.CurrentWork != null)
                 {
-                    RondasLector.CurrentWork.Valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
+                    RondasLector.CurrentWork.Valor = this.getValor();
                     RondasLector.CurrentWork.Descripcion = this.Comentario.Trim();
                     RondasLector.CurrentWork.NoComment = this.SinComentario;
                     RondasLector.CurrentWork.Causa = this.SelectedValueCausa;
@@ -444,12 +446,22 @@
                 }
             }
         }
+
+        private string getValor()
+        {
+            if (this.IsEnabledPicker)
+            {
+                return this.ValorDatePicker.HasValue ? this.ValorDatePicker.Value.ToString("yyyy-MM-dd HH:mm") : "";
+            }
+            else
+                return this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
+        }
         private async Task<int[]> ValidarEntrada()
         {
             if (RondasLector.CurrentWork != null)
             {
                 int returnValue = 0;
-                string valor = this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
+                string valor = this.getValor();
                 if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                 {
                     await MessageDialogError.ImprimirAsync("Debe digitar valor o un comentario");
@@ -529,7 +541,7 @@
             }
             return valorReturn;
         }
-        public async void home()
+        public void home()
         {
             RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this, true);
             _popUp.showAsync();
