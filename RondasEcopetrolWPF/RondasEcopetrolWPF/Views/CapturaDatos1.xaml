@@ -311,38 +311,6 @@
                 </Grid>
             </Button>
             <Button 
-                x:Name="btnCortar"
-                Command="{Binding GuardarCommand}"
-                Margin="10,10,10,10"
-                Width="130"
-                Height="50"
-                FontSize="18"
-                FontWeight="Bold"
-                BorderBrush="Green">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock  
-                       Grid.Column="0"
-                       Text="Cortar"
-                       VerticalAlignment="Center"
-                       FontSize="20"
-                       Margin="10"
-                       Foreground="#004236"
-                       FontWeight="Bold"/>
-                    <materialDesign:PackIcon
-                       Grid.Column="1"
-                       Kind="Scissors"
-                       Width="28"
-                       Height="30"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Center"
-                       Foreground="#004236"/>
-                </Grid>
-            </Button>
-            <Button 
                 x:Name="btnGuardar"
                 Command="{Binding GuardarCommand}"
                 Margin="10,10,10,10"
