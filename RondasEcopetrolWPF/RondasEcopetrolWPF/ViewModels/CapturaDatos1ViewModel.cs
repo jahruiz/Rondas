@@ -160,11 +160,15 @@ namespace RondasEcopetrolWPF.ViewModels
         public void buscar(object sender, RoutedEventArgs e)
         {
             TreeViewItem node = RondasLector.CurrentRonda.getRoot();
-            if (node != TreeRoundViewModel.root)
+            if (node != TreeRound.root)
             {
-                TreeRoundViewModel.root = node;
+                TreeRound.root = node;
             }
-            Navigated(typeof(TreeRound));
+            using (TreeRound treeround = new TreeRound())
+            {
+                treeround.ShowDialog();
+            }
+            showActual();
         }
 
         public void showActual()

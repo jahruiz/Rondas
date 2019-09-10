@@ -80,6 +80,9 @@
     <Compile Include="PopUps\Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PopUps\TreeRound.xaml.cs">
+      <DependentUpon>TreeRound.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServerUtils\FileUtils.cs" />
     <Compile Include="ServerUtils\ServerUtils.cs" />
     <Compile Include="ServerUtils\UploadSetupManager.cs" />
@@ -103,7 +106,6 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\ViewModelLocator.cs" />
     <Compile Include="Base\WarningPopUp.cs" />
-    <Compile Include="ViewModels\TreeRoundViewModel.cs" />
     <Compile Include="Views\BajarRonda.xaml.cs">
       <DependentUpon>BajarRonda.xaml</DependentUpon>
     </Compile>
@@ -112,6 +114,9 @@
     </Compile>
     <Compile Include="Views\CapturaDatos2.xaml.cs">
       <DependentUpon>CapturaDatos2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CortarRonda.xaml.cs">
+      <DependentUpon>CortarRonda.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnviarRonda.xaml.cs">
       <DependentUpon>EnviarRonda.xaml</DependentUpon>
@@ -124,9 +129,6 @@
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TreeRound.xaml.cs">
-      <DependentUpon>TreeRound.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +206,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PopUps\TreeRound.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\BajarRonda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -213,6 +219,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CapturaDatos2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CortarRonda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,10 +239,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TreeRound.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
