@@ -2,8 +2,9 @@
 # Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
 ################################################################################
 
-/RondasEcopetrolWPF/RondasEcopetrolWPF/obj/Release
+/RondasEcopetrolWPF/RondasEcopetrolWPF/obj
 /RondasEcopetrol/obj
 /RondasEcopetrolWPF/.vs/RondasEcopetrolWPF/v16/Server/sqlite3
 /.vs/Rondas/v16/.suo
-/RondasEcopetrolWPF/RondasEcopetrolWPF/obj/Debug
+/RondasEcopetrolWPF/RondasEcopetrolWPF/bin/Debug
+/RondasEcopetrolWPF/RondasEcopetrolWPF/bin/Release
