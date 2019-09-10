@@ -107,9 +107,9 @@
                 }
                 if (rondas.Count == 0)
                 {
-                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
+                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     return;
                 }
             }
@@ -145,9 +145,9 @@
                 }
                 if (rondas.Count == 0)
                 {
-                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
+                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     return;
                 }
             }

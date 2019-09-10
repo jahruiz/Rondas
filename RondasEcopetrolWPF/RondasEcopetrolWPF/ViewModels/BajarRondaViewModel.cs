@@ -15,6 +15,7 @@
     public class BajarRondaViewModel : ViewModelBase
     {
         private bool _descargaOk;
+        private bool _listUpdate;
         public BajarRondaViewModel()
         {
             //LoadRondas();
@@ -50,7 +51,8 @@
         }
         private void ActualizarExecute()
         {
-			LoadRondas();
+            _listUpdate = true;
+            LoadRondas();
         }
         private void CancelarExecute()
         {
@@ -84,9 +86,12 @@
             }
             if (RondasDisponibles.Count == 0)
             {
+                if (!_listUpdate)
+                {
+                    //Ir al menú principal
+                    Navigated(typeof(MainPage));
+                }
                 MessageBox.Show("No hay rondas disponibles para este turno", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                //Ir al menú principal
-                Navigated(typeof(MainPage));
                 return;
             }
         }
