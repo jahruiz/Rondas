@@ -13,6 +13,7 @@
 
     public class EnviarRondaViewModel : ViewModelBase
     {
+        private bool _listUpdate;
         public EnviarRondaViewModel()
         {
             //LoadRondasCompl();
@@ -74,14 +75,18 @@
             }
             if (RondasaSubir.Count == 0)
             {
+                if (!_listUpdate)
+                {
+                    //Ir al menú principal
+                    Navigated(typeof(MainPage));
+                }
                 MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                //Ir al menú principal
-                Navigated(typeof(MainPage));
                 return;
             }
         }
         private void ActualizarExecute()
         {
+            _listUpdate = true;
             LoadRondasCompl();
         }
         private void CancelarExecute()
