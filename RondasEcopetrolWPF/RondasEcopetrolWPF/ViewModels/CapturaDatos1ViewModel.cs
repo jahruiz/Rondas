@@ -99,11 +99,16 @@ namespace RondasEcopetrolWPF.ViewModels
 
         #region Commands
         private DelegateCommand<string> _navigationCommand;
+        private ICommand _cortarCommand;
         private ICommand _guardarCommand;
         private ICommand _cancelarCommand;
         public DelegateCommand<string> NavigationCommand
         {
             get { return _navigationCommand = _navigationCommand ?? new DelegateCommand<string>(NavigationExecute); }
+        }
+        public ICommand CortarCommand
+        {
+            get { return _cortarCommand = _cortarCommand ?? new DelegateCommand(CortarExecute); }
         }
         public ICommand GuardarCommand
         {
@@ -126,6 +131,10 @@ namespace RondasEcopetrolWPF.ViewModels
             }
         }
 
+        private void CortarExecute()
+        {
+            cortar();
+        }
         private void GuardarExecute()
         {
             suspender();
@@ -254,15 +263,10 @@ namespace RondasEcopetrolWPF.ViewModels
             }
         }
 
-        //TODO Pendiente opcion de cortar ronda
-        /*public void eliminar()
+        public void cortar()
         {
-            jump.fbased.Application application1 = base.Form.App;
-            RondasAdvertenciaManager.sheet = true;
-            AdvertenciaCutManager.sheet = false;
-            AdvertenciaPopUp.manager = new AdvertenciaCutManager();
-            application1.showCanvas(typeof(AdvertenciaPopUp));
-        }*/
+            CortarRondaViewModel.Navigate(this);
+        }
 
         public void home()
         {

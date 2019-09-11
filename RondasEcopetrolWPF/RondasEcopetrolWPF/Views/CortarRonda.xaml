@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:RondasEcopetrolWPF.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      DataContext="{Binding Source={StaticResource Locator}, Path=CortarRondaViewModel}"
       Title="CortarRonda"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:base="clr-namespace:RondasEcopetrolWPF.Base">
@@ -135,7 +136,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock 
                     Grid.Column="1"
-                    Text="RONDA"
+                    Text="{Binding NombreRonda, Mode=TwoWay}"
                     Margin="0,10,0,10"
                     FontSize="20"
                     FontStyle="Italic"
@@ -148,7 +149,8 @@
                   Foreground="#004236"></TextBlock>
             <TextBox
                 Grid.Row="2"
-                Text="{Binding User, Mode=TwoWay}"
+                x:Name="txtComentario" x:FieldModifier="public"
+                Text="{Binding Comentario, Mode=TwoWay}"
                 Margin="0,10,0,10"
                 Width="700"
                 Height="200"
@@ -158,9 +160,8 @@
                     <DropShadowEffect BlurRadius="10"/>
                 </StackPanel.Effect>
                 <Button
-                    x:Name="ingresar"
-                    Command="{Binding IniciarSesionCommand}"
-                    CommandParameter="{Binding ElementName=txtPassword}"
+                    x:Name="aceptar"
+                    Command="{Binding AceptarCommand}"
                     Margin="10,10,10,10"
                     Width="190"
                     Height="50"
@@ -191,8 +192,7 @@
                 </Button>
                 <Button
                     x:Name="cancelar"
-                    Command="{Binding CancelarSesionCommand}"
-                    CommandParameter="{Binding ElementName=txtPassword}"
+                    Command="{Binding CancelarCommand}"
                     Margin="10,10,10,10"
                     Width="190"
                     Height="50"
