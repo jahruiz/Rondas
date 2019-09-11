@@ -238,6 +238,7 @@ namespace RondasEcopetrolWPF.ViewModels
                     if (w.Step.isValid())
                     {
                         CapturaDatos2ViewModel.NEXT_TRIGGER = false;
+                        RondasLector.Step = w.Step;
                         RondasLector.CurrentWork = (Work)obj1;
                         //AppFrame.Navigate(typeof(CapturaDatos2));
                         Navigated(typeof(CapturaDatos2));
