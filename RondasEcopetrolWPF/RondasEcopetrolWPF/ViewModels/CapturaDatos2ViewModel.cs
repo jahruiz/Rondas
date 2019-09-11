@@ -12,6 +12,8 @@
     using System.Collections.ObjectModel;
     using RondasEcopetrolWPF.Models;
     using RondasEcopetrolWPF.PopUps;
+    using System.Windows.Controls;
+
     public class CapturaDatos2ViewModel : ViewModelBase
     {
         public static bool NEXT_TRIGGER = true;
@@ -268,6 +270,11 @@
             //    //barra.Ultimo = false;
             //    //barra.Buscar = Sheet.CurrentRonda.Show_tree;
             //    //this.Form.Text = "Rondas Pocket";
+            if (RondasLector.CurrentRonda.Show_tree)
+            {
+                ((CapturaDatos2)this.Page).btnBuscar.Visibility = Visibility.Visible;
+                ((CapturaDatos2)this.Page).btnBuscar.Click += buscar;
+            }
             this.SinComentario = false;
             this.CargarComboCausa();
             if (NEXT_TRIGGER)
@@ -279,6 +286,19 @@
                 NEXT_TRIGGER = true;
                 this.showActual();
             }
+        }
+        public void buscar(object sender, RoutedEventArgs e)
+        {
+            TreeViewItem node = RondasLector.CurrentRonda.getRoot();
+            if (node != TreeRound.root)
+            {
+                TreeRound.root = node;
+            }
+            using (TreeRound treeround = new TreeRound())
+            {
+                treeround.ShowDialog();
+            }
+            Navigated(typeof(CapturaDatos1));
         }
         public void showActual()
         {
