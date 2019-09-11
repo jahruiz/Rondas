@@ -67,7 +67,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
     </base:PageBase.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -105,7 +104,8 @@
                         HorizontalAlignment="Right"/>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" Background="#BAD405" >
+            <Grid Grid.Row="1" 
+                  Background="#BAD405" >
                 <Grid.Effect>
                     <DropShadowEffect BlurRadius="10"/>
                 </Grid.Effect>
@@ -120,7 +120,9 @@
                     FontWeight="Bold"/>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Grid.Row="1" 
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -129,7 +131,8 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" HorizontalAlignment="Center">
+            <Grid Grid.Row="0" 
+                  HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -155,7 +158,9 @@
                 Width="700"
                 Height="200"
                 FontSize="30"/>
-            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Grid.Row="3"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
                 <StackPanel.Effect>
                     <DropShadowEffect BlurRadius="10"/>
                 </StackPanel.Effect>
@@ -185,7 +190,7 @@
                             Kind="DoneOutline"
                             Width="35"
                             Height="35"
-                           HorizontalAlignment="Right"
+                            HorizontalAlignment="Right"
                             VerticalAlignment="Center"
                             Foreground="#004236"/>
                     </Grid>
@@ -216,7 +221,7 @@
                             Kind="Reply"
                             Width="35"
                             Height="35"
-                           HorizontalAlignment="Right"
+                            HorizontalAlignment="Right"
                             VerticalAlignment="Center"
                             Foreground="#004236"/>
                     </Grid>

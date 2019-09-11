@@ -60,13 +60,13 @@
                         Margin="0,10,0,10"
                         HorizontalAlignment="Left"/>
                 </Grid>
-                <Grid   Grid.Column="1">
+                <Grid Grid.Column="1">
                     <Image 
                         Source="/Assets/DescripcionRIS.jpg"
                         Margin="0,10,0,10"
                         HorizontalAlignment="Center"/>
                 </Grid>
-                <Grid   Grid.Column="2">
+                <Grid Grid.Column="2">
                     <Image 
                         Grid.Row="0"
                         Source="/Assets/LogoEcopetrol.png"
@@ -74,7 +74,8 @@
                         HorizontalAlignment="Right"/>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" Background="#BAD405" >
+            <Grid Grid.Row="1"
+                  Background="#BAD405">
                 <Grid.Effect>
                     <DropShadowEffect BlurRadius="10"/>
                 </Grid.Effect>
@@ -89,88 +90,101 @@
                     FontWeight="Bold"/>
             </Grid>
         </Grid>
-
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="9*"/>
             </Grid.RowDefinitions>
-            <ListView Margin="10"  Grid.Row="1" x:Name="lstRondas" x:FieldModifier="public" ItemsSource="{Binding Path=RondasDisponibles,Mode = TwoWay}"  SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+            <ListView Grid.Row="1" 
+                Margin="10"
+                x:Name="lstRondas"
+                x:FieldModifier="public"
+                ItemsSource="{Binding Path=RondasDisponibles,Mode = TwoWay}"
+                SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Ronda" Width="600" DisplayMemberBinding="{Binding Nombre_Ronda}" />
-                        <GridViewColumn Header="Fecha" Width="120" DisplayMemberBinding="{Binding Fecha_Gen}" />
-                        <GridViewColumn Header="Hora" Width="80" DisplayMemberBinding="{Binding Hora_Gen}" />
+                        <GridViewColumn 
+                            Header="Ronda"
+                            Width="600"
+                            DisplayMemberBinding="{Binding Nombre_Ronda}"/>
+                        <GridViewColumn
+                            Header="Fecha"
+                            Width="120"
+                            DisplayMemberBinding="{Binding Fecha_Gen}"/>
+                        <GridViewColumn
+                            Header="Hora"
+                            Width="80"
+                            DisplayMemberBinding="{Binding Hora_Gen}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
         </Grid>
-        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
             <StackPanel.Effect>
                 <DropShadowEffect BlurRadius="10"/>
             </StackPanel.Effect>
             <Button
-                    x:Name="actualizar"
-                    Command="{Binding ActualizarCommand}"
-                    CommandParameter="{Binding ElementName=txtPassword}"
-                    Margin="10,10,10,10"
-                    Width="190"
-                    Height="50"
-                    FontSize="18"
-                    BorderBrush="Green">
+                x:Name="actualizar"
+                Command="{Binding ActualizarCommand}"
+                CommandParameter="{Binding ElementName=txtPassword}"
+                Margin="10,10,10,10"
+                Width="190"
+                Height="50"
+                FontSize="18"
+                BorderBrush="Green">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  
-                            Grid.Column="0"
-                            Text="Actualizar"
-                            VerticalAlignment="Center"
-                            FontSize="20"
-                            Margin="10"
-                            Foreground="#004236"
-                            FontWeight="Bold"/>
+                    <TextBlock Grid.Column="0"
+                        Text="Actualizar"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        Margin="10"
+                        Foreground="#004236"
+                        FontWeight="Bold"/>
                     <materialDesign:PackIcon
-                            Grid.Column="1"
-                            Kind="Cached"
-                            Width="35"
-                            Height="35"
-                           HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            Foreground="#004236"/>
+                        Grid.Column="1"
+                        Kind="Cached"
+                        Width="35"
+                        Height="35"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Foreground="#004236"/>
                 </Grid>
             </Button>
             <Button
-                    x:Name="cancelar"
-                    Command="{Binding CancelarSesionCommand}"
-                    CommandParameter="{Binding ElementName=txtPassword}"
-                    Margin="10,10,10,10"
-                    Width="190"
-                    Height="50"
-                    FontSize="18"
-                    BorderBrush="Green">
+                x:Name="cancelar"
+                Command="{Binding CancelarSesionCommand}"
+                CommandParameter="{Binding ElementName=txtPassword}"
+                Margin="10,10,10,10"
+                Width="190"
+                Height="50"
+                FontSize="18"
+                BorderBrush="Green">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  
-                            Grid.Column="0"
-                            Text="Regresar"
-                            VerticalAlignment="Center"
-                            FontSize="20"
-                            Margin="10"
-                            Foreground="#004236"
-                            FontWeight="Bold"/>
+                    <TextBlock Grid.Column="0"
+                        Text="Regresar"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        Margin="10"
+                        Foreground="#004236"
+                        FontWeight="Bold"/>
                     <materialDesign:PackIcon
-                            Grid.Column="1"
-                            Kind="Reply"
-                            Width="35"
-                            Height="35"
-                           HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            Foreground="#004236"/>
+                        Grid.Column="1"
+                        Kind="Reply"
+                        Width="35"
+                        Height="35"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Foreground="#004236"/>
                 </Grid>
             </Button>
         </StackPanel>

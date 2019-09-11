@@ -66,14 +66,12 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
     </base:PageBase.Resources>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
@@ -81,7 +79,6 @@
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -108,20 +105,20 @@
                         HorizontalAlignment="Right"/>
                 </Grid>
             </Grid>
-
-            <Grid Grid.Row="1" Background="#BAD405" >
+            <Grid Grid.Row="1"
+                Background="#BAD405">
                 <Grid.Effect>
                     <DropShadowEffect BlurRadius="10"/>
                 </Grid.Effect>
                 <TextBlock 
-                Text="CAPTURA DATOS"
-                FontSize="40"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Stretch"
-                FontFamily="Segoe UI"
-                Margin="0,10,0,10"
-                Foreground="#004236"
-                FontWeight="Bold"/>
+                    Text="CAPTURA DATOS"
+                    FontSize="40"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    FontFamily="Segoe UI"
+                    Margin="0,10,0,10"
+                    Foreground="#004236"
+                    FontWeight="Bold"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
@@ -130,118 +127,115 @@
                 x:FieldModifier="public"
                 Visibility="Collapsed"
                 HorizontalAlignment="Left"
-                Background="#004236"
-                Foreground="White"
+                Background="#F7DB17"
+                Foreground="#004236"
                 Margin="5,5,5,5"
                 Height="30"
-                Width="70"
-                >
+                Width="120">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock 
-                        Text="Buscar"
-                        VerticalAlignment="Center"></TextBlock>
+                        Text="Ir a Equipo"
+                        VerticalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Margin="0,0,10,0"/>
                     <materialDesign:PackIcon
-                            Kind="Search"
-                            Height="25"
-                            Width="25"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"
-                            Foreground="White"/>
+                        Kind="LaptopMac"
+                        Height="25"
+                        Width="25"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                        Foreground="#004236"/>
                 </StackPanel>
-
             </Button>
-            <TextBlock Text="{Binding Path=NombreRonda,Mode = TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#004236"></TextBlock>
-            <TextBlock Text="{Binding Path=RefPaso,Mode = TwoWay}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0" FontSize="20" Foreground="#004236"></TextBlock>
+            <TextBlock 
+                Text="{Binding Path=NombreRonda,Mode = TwoWay}"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                FontSize="20" 
+                Foreground="#004236"/>
+            <TextBlock 
+                Text="{Binding Path=RefPaso,Mode = TwoWay}"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Margin="0,0,30,0"
+                FontSize="20"
+                Foreground="#004236"/>
         </Grid>
-        <Grid Grid.Row="2" Margin="20,20,20,20">
+        <Grid Grid.Row="2" 
+            Margin="20,20,20,20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="5*" />
             </Grid.ColumnDefinitions>
-     
-            <TextBlock 
-                Grid.Row="0"
-                Grid.Column="0"
+            <TextBlock Grid.Row="0" Grid.Column="0"
                 Text="Equipo"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
                 Foreground="#004236"
-                FontWeight="Bold"
-                />
-            <TextBox IsReadOnly="True"
-                Grid.Row="0"
-                Grid.Column="1"
+                FontWeight="Bold"/>
+            <TextBox Grid.Row="0" Grid.Column="1"
+                IsReadOnly="True"
                 Height="50"
                 Text="{Binding Path=Paso,Mode = TwoWay}"
                 Margin="0,0,0,10"   
-                FontSize="18"
-                />
-            <TextBlock 
-                Grid.Row="1"
-                Grid.Column="0"
+                FontSize="18"/>
+            <TextBlock Grid.Row="1"  Grid.Column="0"
                 Text="Descripción"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
                 Foreground="#004236"
                 FontWeight="Bold"/>
-            <TextBox IsReadOnly="True"
-                Grid.Row="1"
-                Grid.Column="1"
+            <TextBox Grid.Row="1" Grid.Column="1"
+                IsReadOnly="True"
                 Text="{Binding Path=Direccion,Mode = TwoWay}"
                 Height="50"
-                FontSize="18"
-                />
-            <TextBlock 
-                Grid.Row="2"
-                Grid.Column="0"
+                FontSize="18"/>
+            <TextBlock Grid.Row="2" Grid.Column="0"
                 Text="Estado"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
                 Foreground="#004236"
                 FontWeight="Bold"/>
-            <ComboBox 
-                Width="200" Grid.Row="2"  Grid.Column="1" HorizontalAlignment="Left" 
+            <ComboBox Grid.Row="2" Grid.Column="1"
+                Width="200"
+                HorizontalAlignment="Left" 
                 ItemsSource="{Binding Path=EstadosEquipo,Mode = TwoWay}" 
                 SelectedIndex="{Binding Path=SelectedIndexEstado,Mode = TwoWay}"
                 SelectedValue="{Binding Path=SelectedValueEstado,Mode = TwoWay}"
                 Height="40"
                 FontSize="18"
-                 Margin="0,10,0,0">
+                Margin="0,10,0,0">
             </ComboBox>
-
-            <TextBlock 
-                Grid.Row="3"
-                Grid.Column="0"
+            <TextBlock Grid.Row="3" Grid.Column="0"
                 Text="Comentario"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="20"
                 Foreground="#004236"
                 FontWeight="Bold"/>
-            <TextBox x:Name="txtCommentary" x:FieldModifier="public"
-                Grid.Row="3"
-                Grid.Column="1"
+            <TextBox Grid.Row="3" Grid.Column="1"
+                x:Name="txtCommentary"
+                x:FieldModifier="public"
                 Text="{Binding Path=Comentario,Mode = TwoWay}"
                 FontSize="18"
-                     Margin="0,10,0,0"
+                Margin="0,10,0,0"
                 />
         </Grid>
-
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="3"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
             <StackPanel.Effect>
                 <DropShadowEffect BlurRadius="10"/>
             </StackPanel.Effect>
-
             <Button 
                 x:Name="btnAnterior" 
                 x:FieldModifier="public" 
@@ -249,7 +243,6 @@
                 CommandParameter="Anterior"
                 Margin="10,10,10,10"
                 FontSize="18" 
-                Click="BtnAnterior_Click"
                 Width="115"
                 Height="50"
                 FontWeight="Bold"
@@ -274,7 +267,6 @@
                        FontSize="20"
                        Foreground="#004236"
                        FontWeight="Bold"/>
-                    
                 </Grid>
             </Button>
             <Button 
@@ -286,8 +278,7 @@
                 Height="50"
                 FontSize="18" 
                 FontWeight="Bold"
-                BorderBrush="Green"
-                >
+                BorderBrush="Green">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
@@ -312,7 +303,7 @@
             </Button>
             <Button 
                 x:Name="btnCortar"
-                Command="{Binding GuardarCommand}"
+                Command="{Binding CortarCommand}"
                 Margin="10,10,10,10"
                 Width="130"
                 Height="50"
@@ -382,8 +373,7 @@
                 Height="50"
                 FontSize="18"
                 FontWeight="Bold"
-                BorderBrush="Green"
->
+                BorderBrush="Green">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
@@ -408,6 +398,5 @@
                 </Grid>
             </Button>
         </StackPanel>
-
     </Grid>
 </base:PageBase>
