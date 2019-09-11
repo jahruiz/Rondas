@@ -22,6 +22,8 @@ namespace RondasEcopetrolWPF.PopUps
     {
         public static TreeViewItem root;
         private bool _cancelar;
+		public bool NavegarCapturadatos1;//permita navegar a capturadatos1 o no.
+		
         public TreeRound()
         {
             InitializeComponent();
@@ -50,6 +52,7 @@ namespace RondasEcopetrolWPF.PopUps
                         RondasLector.Step = (Steps)obj1;
                         RondasLector.CurrentRonda.Current = obj1;
                         _cancelar = true;
+						NavegarCapturadatos1=true;
                         Treeview1.Items.Remove(root);
                         this.Close();
                     }

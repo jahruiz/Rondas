@@ -297,8 +297,11 @@
             using (TreeRound treeround = new TreeRound())
             {
                 treeround.ShowDialog();
-            }
-            Navigated(typeof(CapturaDatos1));
+				if(treeround.NavegarCapturadatos1)
+				{
+					Navigated(typeof(CapturaDatos1));
+				}
+            }            
         }
         public void showActual()
         {
