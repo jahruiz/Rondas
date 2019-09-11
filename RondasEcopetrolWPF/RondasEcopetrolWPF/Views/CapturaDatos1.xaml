@@ -71,7 +71,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
@@ -106,7 +106,7 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1"
-                Background="#BAD405" >
+                Background="#BAD405">
                 <Grid.Effect>
                     <DropShadowEffect BlurRadius="10"/>
                 </Grid.Effect>
@@ -127,22 +127,25 @@
                 x:FieldModifier="public"
                 Visibility="Collapsed"
                 HorizontalAlignment="Left"
-                Background="#004236"
-                Foreground="White"
+                Background="#F7DB17"
+                Foreground="#004236"
                 Margin="5,5,5,5"
                 Height="30"
-                Width="70">
+                Width="120">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock 
-                        Text="Buscar"
-                        VerticalAlignment="Center"/>
+                        Text="Ir a Equipo"
+                        VerticalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Margin="0,0,10,0"/>
                     <materialDesign:PackIcon
-                        Kind="Search"
+                        Kind="LaptopMac"
                         Height="25"
                         Width="25"
                         HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"
-                        Foreground="White"/>
+                        VerticalAlignment="Center"
+                        Foreground="#004236"/>
                 </StackPanel>
             </Button>
             <TextBlock 
@@ -240,7 +243,6 @@
                 CommandParameter="Anterior"
                 Margin="10,10,10,10"
                 FontSize="18" 
-                Click="BtnAnterior_Click"
                 Width="115"
                 Height="50"
                 FontWeight="Bold"
@@ -301,7 +303,7 @@
             </Button>
             <Button 
                 x:Name="btnCortar"
-                Command="{Binding GuardarCommand}"
+                Command="{Binding CortarCommand}"
                 Margin="10,10,10,10"
                 Width="130"
                 Height="50"

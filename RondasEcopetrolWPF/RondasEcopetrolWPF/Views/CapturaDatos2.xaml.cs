@@ -25,9 +25,6 @@ namespace RondasEcopetrolWPF.Views
         {
             InitializeComponent();
         }
-        private void BtnAnterior_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 }

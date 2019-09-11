@@ -10,12 +10,37 @@
       DataContext="{Binding Source={StaticResource Locator}, Path=CapturaDatos2ViewModel}"
       Title="CapturaDatos2"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-
+    <base:PageBase.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#BAD405"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F7DB17"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Yellow"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#C3C5C6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </base:PageBase.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="6*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
@@ -51,7 +76,10 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1"
-                Background="#80FF00" >
+                Background="#BAD405" >
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="10"/>
+                </Grid.Effect>
                 <TextBlock 
                     Text="CAPTURA DATOS"
                     FontSize="40"
@@ -59,7 +87,7 @@
                     VerticalAlignment="Stretch"
                     FontFamily="Segoe UI"
                     Margin="0,10,0,10"
-                    Foreground="#088A08"
+                    Foreground="#004236"
                     FontWeight="Bold"/>
             </Grid>
         </Grid>
@@ -69,41 +97,44 @@
                 x:FieldModifier="public"
                 Visibility="Collapsed"
                 HorizontalAlignment="Left"
-                Background="#004236"
-                Foreground="White"
-                Margin="5,5,5,5"
+                Background="#F7DB17"
+                Foreground="#004236"
+                Margin="5,10,5,5"
                 Height="30"
-                Width="70">
+                Width="120">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock 
-                        Text="Buscar"
-                        VerticalAlignment="Center"/>
+                        Text="Ir a Equipo"
+                        VerticalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Margin="0,0,10,0"/>
                     <materialDesign:PackIcon
-                        Kind="Search"
+                        Kind="LaptopMac"
                         Height="25"
                         Width="25"
                         HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"
-                        Foreground="White"/>
+                        VerticalAlignment="Center"
+                        Foreground="#004236"/>
                 </StackPanel>
             </Button>
             <TextBlock 
                 Text="{Binding Path=NombreRonda,Mode = TwoWay}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontSize="20"/>
+                FontSize="20"
+                Foreground="#004236"/>
             <TextBlock 
                 Text="{Binding Path=RefPaso,Mode = TwoWay}"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Margin="0,0,30,0"
-                FontSize="20"/>
+                FontSize="20"
+                Foreground="#004236"/>
         </Grid>
         <ScrollViewer Grid.Row="2">
             <Grid  
-                Margin="20,20,20,20"
-                HorizontalAlignment="Left"
-                Width="780">
+                Margin="20,20,20,20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -121,19 +152,20 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="20"
-                    Foreground="#088A08"
+                    Foreground="#004236"
                     FontWeight="Bold"/>
                 <TextBox Grid.Row="0" Grid.Column="1"
                     IsReadOnly="True"
                     Text="{Binding Paso,Mode=TwoWay}"
                     Height="50"
-                    FontSize="18"/>
+                    FontSize="18"
+                     Margin="0,0,0,10"/>
                 <TextBlock Grid.Row="1" Grid.Column="0"
                     Text="Tarea"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="20"
-                    Foreground="#088A08"
+                    Foreground="#004236"
                     FontWeight="Bold"/>
                 <TextBox Grid.Row="1" Grid.Column="1" 
                     IsReadOnly="True"
@@ -145,7 +177,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="20"
-                    Foreground="#088A08"
+                    Foreground="#004236"
                     FontWeight="Bold"/>
                 <Grid Grid.Row="2" Grid.Column="1"
                     Margin="0,10,0,10">
@@ -183,7 +215,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="20"
-                    Foreground="#088A08"
+                    Foreground="#004236"
                     FontWeight="Bold"/>
                 <TextBox Grid.Row="3" Grid.Column="1"
                     x:Name="txtComentario"
@@ -194,16 +226,18 @@
                     Height="50"/>
                 <CheckBox Grid.Row="4" Grid.Column="1"
                     x:Name="termsOfServiceCheckBox" 
-                    Content="Sin comentario"
                     IsChecked="{Binding SinComentario,Mode=TwoWay}"
-                    VerticalAlignment="Top"
-                    FontSize="18"/>
+                    Margin="10"
+                    FontSize="15"
+                    Content="Sin comentario"/>
+
+
                 <TextBlock Grid.Row="5" Grid.Column="0"
                     Text="Causa"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="20"
-                    Foreground="#088A08"
+                    Foreground="#004236"
                     FontWeight="Bold"/>
                 <ComboBox  Grid.Row="5" Grid.Column="1"
                     x:Name="cmbCausas"
@@ -242,50 +276,160 @@
                 Command="{Binding NavigationCommand}"
                 CommandParameter="Anterior"
                 Margin="10,10,10,10"
-                Width="100"
-                Height="50" 
-                Content="Anterior"
                 FontSize="18" 
-                Click="BtnAnterior_Click"
-                Background="#80FF00"
+                Width="115"
+                Height="50"
                 FontWeight="Bold"
                 BorderBrush="Green">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon
+                       Grid.Column="0"
+                       Kind="NavigateBefore"
+                       Width="30"
+                       Height="35"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="#004236"/>
+                    <TextBlock  
+                       Grid.Column="1"
+                       Text="Anterior"
+                       VerticalAlignment="Top"
+                       FontSize="20"
+                       Foreground="#004236"
+                       FontWeight="Bold"/>
+                </Grid>
             </Button>
-            <Button
-                x:Name="siguiente"
-                Content="Siguiente"
+            <Button 
+                x:Name="btnSiguiente"
                 Command="{Binding NavigationCommand}"
                 CommandParameter="Siguiente"
-                Margin="10,10,10,10"
-                Background="#80FF00"
+                Margin="10,10,80,10"
+                Width="115"
+                Height="50"
+                FontSize="18" 
                 FontWeight="Bold"
-                BorderBrush="Green"
-                Width="100"
-                Height="50" 
-                FontSize="18"/>
+                BorderBrush="Green">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  
+                       Grid.Column="0"
+                       Text="Siguiente"
+                       VerticalAlignment="Top"
+                       FontSize="20"
+                       Foreground="#004236"
+                       FontWeight="Bold"/>
+                    <materialDesign:PackIcon
+                       Grid.Column="1"
+                       Kind="NavigateNext"
+                       Width="30"
+                       Height="35"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="#004236"/>
+                </Grid>
+            </Button>
+            <Button 
+                x:Name="btnCortar"
+                Command="{Binding CortarCommand}"
+                Margin="10,10,10,10"
+                Width="130"
+                Height="50"
+                FontSize="18"
+                FontWeight="Bold"
+                BorderBrush="Green">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  
+                       Grid.Column="0"
+                       Text="Cortar"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"
+                       Foreground="#004236"
+                       FontWeight="Bold"/>
+                    <materialDesign:PackIcon
+                       Grid.Column="1"
+                       Kind="Scissors"
+                       Width="28"
+                       Height="30"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Foreground="#004236"/>
+                </Grid>
+            </Button>
             <Button 
                 x:Name="btnGuardar"
                 Command="{Binding GuardarCommand}"
                 Margin="10,10,10,10"
-                Width="200"
+                Width="290"
                 Height="50"
-                Content="Guardar y Suspender"
-                FontSize="18" 
-                Background="#80FF00"
+                FontSize="18"
                 FontWeight="Bold"
                 BorderBrush="Green">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  
+                       Grid.Column="0"
+                       Text="Guardar y suspender"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"
+                       Foreground="#004236"
+                       FontWeight="Bold"/>
+                    <materialDesign:PackIcon
+                       Grid.Column="1"
+                       Kind="ContentSave"
+                       Width="35"
+                       Height="35"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Foreground="#004236"/>
+                </Grid>
             </Button>
             <Button 
                 x:Name="btnCancelar"
                 Command="{Binding CancelarCommand}"
                 Margin="10,10,10,10"
-                Width="100"
+                Width="150"
                 Height="50"
-                Content="Cancelar"
-                FontSize="18" 
-                Background="#80FF00"
+                FontSize="18"
                 FontWeight="Bold"
                 BorderBrush="Green">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  
+                       Grid.Column="0"
+                       Text="Cancelar"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"
+                       Foreground="#004236"
+                       FontWeight="Bold"/>
+                    <materialDesign:PackIcon
+                       Grid.Column="1"
+                       Kind="Cancel"
+                       Width="30"
+                       Height="35"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Foreground="#004236"/>
+                </Grid>
             </Button>
         </StackPanel>
     </Grid>
