@@ -309,6 +309,7 @@
 				if(treeround.NavegarCapturadatos1)
 				{
 					Navigated(typeof(CapturaDatos1));
+					RondasLector.CurrentWork = (Work)null;
 				}
             }            
         }
