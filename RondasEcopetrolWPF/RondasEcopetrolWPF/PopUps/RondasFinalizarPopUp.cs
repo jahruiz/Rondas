@@ -20,7 +20,7 @@ namespace RondasEcopetrolWPF.PopUps
 
         public override string getDescription()
         {
-            return "No existen más datos por capturar.\nDesea terminar la ronda en este momento?";
+            return "No existen más datos por capturar.\n\nDesea terminar la ronda en este momento?";
         }
 
         public override string getTitle()

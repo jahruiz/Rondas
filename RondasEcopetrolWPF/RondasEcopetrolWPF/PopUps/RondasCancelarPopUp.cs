@@ -18,7 +18,7 @@ namespace RondasEcopetrolWPF.PopUps
 
         public override string getDescription()
         {
-            return "Esta seguro que desea INICIAR esta ronda en otro momento? \n(Si) Perdera los datos que ud haya tomado.";
+            return "Esta seguro que desea INICIAR esta ronda en otro momento? \n\n(Si) Perdera los datos que ud haya tomado.";
         }
 
         public override string getTitle()

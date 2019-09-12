@@ -17,7 +17,7 @@ namespace RondasEcopetrolWPF.PopUps
         }
         public override string getDescription()
         {
-            return "Desea Suspender la Ronda? \n(Si) La ronda será almacenada en disco y podrá continuarla en otro momento";
+            return "Desea Suspender la Ronda? \n\n(Si) La ronda será almacenada en disco y podrá continuarla en otro momento";
         }
 
         public override string getTitle()
