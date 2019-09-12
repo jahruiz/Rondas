@@ -447,6 +447,7 @@
         [field: NonSerialized()]
         private RondasLector lector;
         //TODO Resolver asunto del atributo node
+        [field: NonSerialized()]
         private TreeViewItem node;
         private string nombre;
         private string planta;

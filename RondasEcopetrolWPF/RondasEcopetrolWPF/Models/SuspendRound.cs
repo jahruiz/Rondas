@@ -33,7 +33,11 @@ namespace RondasEcopetrolWPF.Models
         {
             if (suspendRounds == null) suspendRounds = new Hashtable();
             if (!suspendRounds.ContainsKey(ronda.MessageID))
+            {
                 suspendRounds.Add(ronda.MessageID, ronda);
+                //Actualizar el archivo de la cache
+                SaveSuspends();
+            }
         }
 
         public static bool isRoundSuspend(object MessageID)
@@ -55,6 +59,8 @@ namespace RondasEcopetrolWPF.Models
             {
                 rondas.Lector.Close();
                 suspendRounds.Remove(MessageID);
+                //Actualizar el archivo de la cache
+                SaveSuspends();
             }
         }
 
@@ -65,6 +71,11 @@ namespace RondasEcopetrolWPF.Models
                 if (suspendRounds != null && suspendRounds.Count > 0)
                 {
                     SerializeData();
+                }
+                else
+                {
+                    //Borrar el archivo de la cache
+                    File.Delete(CACHE_FILENAME);
                 }
             }
             catch (Exception)
@@ -81,8 +92,6 @@ namespace RondasEcopetrolWPF.Models
                     if (File.Exists(CACHE_FILENAME))
                     {
                         DeserializeData();
-                        //Borrar el archivo de la cache
-                        File.Delete(CACHE_FILENAME);
                     }
                 }
                 catch (Exception)
