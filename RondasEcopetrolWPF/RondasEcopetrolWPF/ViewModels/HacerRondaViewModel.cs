@@ -174,18 +174,14 @@
             DetallesRonda(textoRonda);*/
             using (DetallesRondas detallesRonda = new DetallesRondas(SelectedUser))        
             {
-                detallesRonda.Focus();
-                ((HacerRonda)this.Page).IsEnabled = false;
                 if (detallesRonda.mostrar())
                 {
                     HacerRonda();
-
                 }
                 else
                 {
                     SelectedUser = null;
                 }
-                 ((HacerRonda)this.Page).IsEnabled = true;
             }
         }
 
