@@ -34,7 +34,7 @@
             set
             {
                 SetPropertyValue(value);
-                //this.ClickItemListAsync();
+                this.ClickItemListAsync();
             }
         }
         private ICommand _actualizarCommand;
@@ -69,14 +69,14 @@
         public override Task OnNavigatedTo(EventArgs args)
         {
             LoadRondas();
-            ((BajarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
+            //((BajarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
         #region Metodos
 		private void ListView_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedUser != null)
-                ClickItemListAsync();
+                ClickItemListAsync();                
         }
         private void LoadRondas()
         {
@@ -176,32 +176,44 @@
             ServerUtils.close();
             RondasDisponibles = rondas;
         }
+
         private void ClickItemListAsync()
         {
             if (SelectedUser == null) return;
-            string textoRonda = "";
-            textoRonda =
-                SelectedUser.Nombre_Ronda.ToString() + "\n" + "\n" +
-                "Fecha: " + SelectedUser.Fecha_Gen.ToString() + "\n" +
-                "Hora: " + SelectedUser.Hora_Gen.ToString() + "\n" +
-                "Planta: " + SelectedUser.Nombre_Planta.ToString() + "\n" +
-                "Puesto: " + SelectedUser.Nombre_Puesto.ToString();
-            DetallesRondaAsync(textoRonda);
-        }
-        public  void DetallesRondaAsync(string texto)
-        {
-            //var messageDialog = new MessageDialog(texto);
-            //messageDialog.Commands.Add(new UICommand(
-            //    "Descargar", new UICommandInvokedHandler(DescargarCommand)));
-            //messageDialog.Commands.Add(new UICommand(
-            //    "Cancelar"));
-            //await messageDialog.ShowAsync();
-            MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
-            if (result == MessageBoxResult.OK)
+            //string textoRonda = "";
+            //textoRonda =
+            //    SelectedUser.Nombre_Ronda.ToString() + "\n" + "\n" +
+            //    "Fecha: " + SelectedUser.Fecha_Gen.ToString() + "\n" +
+            //    "Hora: " + SelectedUser.Hora_Gen.ToString() + "\n" +
+            //    "Planta: " + SelectedUser.Nombre_Planta.ToString() + "\n" +
+            //    "Puesto: " + SelectedUser.Nombre_Puesto.ToString();
+            //DetallesRondaAsync(textoRonda);
+            using (DetallesRondas detallesRonda = new DetallesRondas(SelectedUser))
             {
-                DescargaAsync();
+                if (detallesRonda.mostrar())
+                {
+                    DescargaAsync(); 
+                }
+                else
+                {
+                    SelectedUser = null;
+                }
             }
         }
+        //public  void DetallesRondaAsync(string texto)
+        //{
+        //    //var messageDialog = new MessageDialog(texto);
+        //    //messageDialog.Commands.Add(new UICommand(
+        //    //    "Descargar", new UICommandInvokedHandler(DescargarCommand)));
+        //    //messageDialog.Commands.Add(new UICommand(
+        //    //    "Cancelar"));
+        //    //await messageDialog.ShowAsync();
+        //    MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+        //    if (result == MessageBoxResult.OK)
+        //    {
+        //        DescargaAsync();
+        //    }
+        //}
         private void DescargaAsync()
         {
             _descargaOk = false;
@@ -239,7 +251,7 @@
             }
             else
             {
-                await MessageDialogError.ImprimirAsync("Hubo inconvenientes en el servidor, para mas detalle consulte el Log");                
+                await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");                
                 //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
                 //app1.showCanvas(typeof(ErrorMessage));
             }

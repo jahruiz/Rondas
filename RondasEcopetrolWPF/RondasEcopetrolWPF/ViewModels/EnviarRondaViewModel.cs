@@ -33,7 +33,7 @@
             set
             {
                 SetPropertyValue(value);
-                //this.ClickItemListAsync();
+                this.ClickItemListAsync();
             }
         }
         #endregion Propiedades
@@ -58,16 +58,16 @@
         public override Task OnNavigatedTo(EventArgs args)
         {
             LoadRondasCompl();
-            ((EnviarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
+            //((EnviarRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
 
         private void ListView_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedItem != null)
-                ClickItemListAsync();
+                ClickItemListAsync();                
         }
-        private void LoadRondasCompl()
+        private async void LoadRondasCompl()
         {
             LoadRondasCompletas();
             if (RondasaSubir.Count == 0)
@@ -77,7 +77,7 @@
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
                 }
-                MessageBox.Show("No tiene Rondas por Enviar", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                await MessageDialogWarning.ImprimirAsync("No hay rondas por enviar");
                 return;
             }
         }
@@ -94,29 +94,40 @@
         private void ClickItemListAsync()
         {
             if (SelectedItem == null) return;
-            string textoRonda = "";
-            textoRonda =
-                SelectedItem.name.ToString() + "\n" + "\n" +
-                "Fecha: " + SelectedItem.Fecha_Gen.ToString() + "\n" +
-                "Hora: " + SelectedItem.Hora_Gen.ToString() + "\n" +
-                "Planta: " + SelectedItem.Planta.ToString() + "\n" +
-                "Puesto: " + SelectedItem.Puesto.ToString();
-            DetallesRondaAsync(textoRonda);
-        }
-        public async void DetallesRondaAsync(string texto)
-        {
-            //var messageDialog = new MessageDialog(texto);
-            //messageDialog.Commands.Add(new UICommand(
-            //    "Aceptar", new UICommandInvokedHandler(HacerCommand)));
-            //messageDialog.Commands.Add(new UICommand(
-            //    "Cancelar"));
-            //await messageDialog.ShowAsync();
-			MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
-            if (result == MessageBoxResult.OK)
+            //string textoRonda = "";
+            //textoRonda =
+            //    SelectedItem.name.ToString() + "\n" + "\n" +
+            //    "Fecha: " + SelectedItem.Fecha_Gen.ToString() + "\n" +
+            //    "Hora: " + SelectedItem.Hora_Gen.ToString() + "\n" +
+            //    "Planta: " + SelectedItem.Planta.ToString() + "\n" +
+            //    "Puesto: " + SelectedItem.Puesto.ToString();
+            //DetallesRondaAsync(textoRonda);
+            using (DetallesRondas detallesRonda = new DetallesRondas(SelectedItem))
             {
-                EnviarRonda();
+                if (detallesRonda.mostrar())
+                {
+                    EnviarRonda();
+                }
+                else
+                {
+                    SelectedItem = null;
+                }
             }
         }
+   //     public async void DetallesRondaAsync(string texto)
+   //     {
+   //         //var messageDialog = new MessageDialog(texto);
+   //         //messageDialog.Commands.Add(new UICommand(
+   //         //    "Aceptar", new UICommandInvokedHandler(HacerCommand)));
+   //         //messageDialog.Commands.Add(new UICommand(
+   //         //    "Cancelar"));
+   //         //await messageDialog.ShowAsync();
+			//MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+   //         if (result == MessageBoxResult.OK)
+   //         {
+   //             EnviarRonda();
+   //         }
+   //     }
         //private void HacerCommand(IUICommand command)
         //{
 
