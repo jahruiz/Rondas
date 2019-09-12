@@ -205,9 +205,8 @@
         }
         #endregion Propiedades
 
-        #region Commands
+
         private DelegateCommand<string> _navigationCommand;
-        private ICommand _cortarCommand;
         private ICommand _guardarCommand;
         private ICommand _cancelarCommand;
         public DelegateCommand<string> NavigationCommand
@@ -226,10 +225,7 @@
                     break;
             }
         }
-        public ICommand CortarCommand
-        {
-            get { return _cortarCommand = _cortarCommand ?? new DelegateCommand(CortarExecute); }
-        }
+
         public ICommand GuardarCommand
         {
             get { return _guardarCommand = _guardarCommand ?? new DelegateCommand(GuardarExecute); }
@@ -237,10 +233,6 @@
         public ICommand CancelarCommand
         {
             get { return _cancelarCommand = _cancelarCommand ?? new DelegateCommand(CancelarExecute); }
-        }
-        private void CortarExecute()
-        {
-            cortar();
         }
         private void GuardarExecute()
         {
@@ -250,7 +242,6 @@
         {
             this.home();
         }
-        #endregion Commands
 
         //public override Task OnNavigatedFrom(NavigationEventArgs args)
         //{
@@ -309,7 +300,6 @@
 				if(treeround.NavegarCapturadatos1)
 				{
 					Navigated(typeof(CapturaDatos1));
-					RondasLector.CurrentWork = (Work)null;
 				}
             }            
         }
@@ -576,11 +566,5 @@
             RondasCancelarPopUp _popUp = new RondasCancelarPopUp(this, true);
             _popUp.showAsync();
         }
-
-        public void cortar()
-        {
-            CortarRondaViewModel.Navigate(this);
-        }
-
     }
 }

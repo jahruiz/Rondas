@@ -105,7 +105,7 @@
                     Navigated(typeof(HacerRonda));
                     break;
                 case "Salir":
-                    SuspendRound.SaveSuspends();
+                    //SuspendRound.SaveSuspends();
                     App.Current.Shutdown();
                     break;
             }

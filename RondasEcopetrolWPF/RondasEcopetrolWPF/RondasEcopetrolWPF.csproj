@@ -90,7 +90,6 @@
     <Compile Include="ViewModels\BajarRondaViewModel.cs" />
     <Compile Include="ViewModels\CapturaDatos1ViewModel.cs" />
     <Compile Include="ViewModels\CapturaDatos2ViewModel.cs" />
-    <Compile Include="ViewModels\CortarRondaViewModel.cs" />
     <Compile Include="ViewModels\EnviarRondaViewModel.cs" />
     <Compile Include="ViewModels\HacerRondaViewModel.cs" />
     <Compile Include="ViewModels\IniciarSesionViewModel.cs" />
