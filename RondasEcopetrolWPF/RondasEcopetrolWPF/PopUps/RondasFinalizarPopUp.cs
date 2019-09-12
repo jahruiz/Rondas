@@ -20,7 +20,7 @@ namespace RondasEcopetrolWPF.PopUps
 
         public override string getDescription()
         {
-            return "No existen más datos por capturar.\nDesea terminar la ronda en este momento?";
+            return "No existen más datos por capturar.\n\nDesea terminar la ronda en este momento?";
         }
 
         public override string getTitle()
@@ -30,7 +30,7 @@ namespace RondasEcopetrolWPF.PopUps
 
         public override void noClick()
         {
-            if (navFromSheet)
+            /*if (navFromSheet)
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 RondasLector.CurrentRonda.getLastWork();
@@ -41,7 +41,7 @@ namespace RondasEcopetrolWPF.PopUps
             {
                 RondasLector.CurrentRonda.getLastStep();
                 _viewModel.Navigated(typeof(CapturaDatos1));
-            }
+            }*/
         }
 
         public override void yesClick()

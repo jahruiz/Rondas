@@ -17,7 +17,7 @@ namespace RondasEcopetrolWPF.PopUps
         }
         public override string getDescription()
         {
-            return "Desea Suspender la Ronda? \n(Si) La ronda será almacenada en disco y podrá continuarla en otro momento";
+            return "Desea Suspender la Ronda? \n\n(Si) La ronda será almacenada en disco y podrá continuarla en otro momento";
         }
 
         public override string getTitle()
@@ -27,7 +27,7 @@ namespace RondasEcopetrolWPF.PopUps
 
         public override void noClick()
         {
-            if (navFromSheet)
+            /*if (navFromSheet)
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 _viewModel.Navigated(typeof(CapturaDatos2));
@@ -36,7 +36,7 @@ namespace RondasEcopetrolWPF.PopUps
             else
             {
                 _viewModel.Navigated(typeof(CapturaDatos1));
-            }
+            }*/
         }
 
         public override void yesClick()
