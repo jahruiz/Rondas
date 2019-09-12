@@ -34,7 +34,7 @@
             set
             {
                 SetPropertyValue(value);
-                this.ClickItemListAsync();
+                //this.ClickItemListAsync();
             }
         }
         private ICommand _actualizarCommand;
@@ -80,7 +80,7 @@
         }
         private void LoadRondas()
         {
-            using (Loading loading = new Loading(LoadRondasDisponibles, "Descargando..."))
+            using (Loading loading = new Loading(LoadRondasDisponibles, "Buscando..."))
             {
                 loading.ShowDialog();
             }
@@ -239,7 +239,7 @@
             }
             else
             {
-				MessageBox.Show("Por favor asegúrese de disponer servicio de red", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);                
+                await MessageDialogError.ImprimirAsync("Hubo inconvenientes en el servidor, para mas detalle consulte el Log");                
                 //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
                 //app1.showCanvas(typeof(ErrorMessage));
             }

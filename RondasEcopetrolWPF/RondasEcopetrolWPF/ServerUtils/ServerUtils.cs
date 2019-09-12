@@ -105,7 +105,7 @@
             try
             {
                 WebRequest webRequest = WebRequest.Create(string.Concat(array2));
-                webRequest.Timeout = 10000;
+                webRequest.Timeout = -1;
                 ServerUtils.response = webRequest.GetResponse();
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 flag = true;

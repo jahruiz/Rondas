@@ -33,7 +33,7 @@
             set
             {
                 SetPropertyValue(value);
-                this.ClickItemListAsync();
+                //this.ClickItemListAsync();
             }
         }
         #endregion Propiedades
@@ -69,10 +69,7 @@
         }
         private void LoadRondasCompl()
         {
-            using (Loading loading = new Loading(LoadRondasCompletas, "Buscando..."))
-            {
-                loading.ShowDialog();
-            }
+            LoadRondasCompletas();
             if (RondasaSubir.Count == 0)
             {
                 if (!_listUpdate)
