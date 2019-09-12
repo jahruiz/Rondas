@@ -250,10 +250,13 @@
                 </ComboBox>
             </Grid>
         </ScrollViewer>
-        <ListView Grid.Row="3" 
+        <ListView  Grid.Row="3"
             Margin="10"  
             x:Name="lstOldValues"
-            ItemsSource="{Binding Path=OldValues,Mode = TwoWay}">
+            ItemsSource="{Binding Path=OldValues,Mode = TwoWay}"
+            Height="65"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
