@@ -28,7 +28,7 @@ namespace RondasEcopetrolWPF.PopUps
 
         public override void noClick()
         {
-            if (navFromSheet)
+            /*if (navFromSheet)
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 _viewModel.Navigated(typeof(CapturaDatos2));
@@ -37,7 +37,7 @@ namespace RondasEcopetrolWPF.PopUps
             else
             {
                 _viewModel.Navigated(typeof(CapturaDatos1));
-            }
+            }*/
         }
 
         public override void yesClick()
