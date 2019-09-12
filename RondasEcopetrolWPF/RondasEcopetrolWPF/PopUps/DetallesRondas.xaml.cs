@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RondasEcopetrolWPF.Base;
 using RondasEcopetrolWPF.Models;
 
 namespace RondasEcopetrolWPF.PopUps
@@ -45,24 +46,33 @@ namespace RondasEcopetrolWPF.PopUps
             }
         }
 
-        public bool mostrar()
+        private ViewModelBase viewModel;
+
+        public void mostrar(ViewModelBase viewModel)
         {
-            _respondOK = false;
-            this.ShowDialog();
-            return _respondOK;
+            this.viewModel = viewModel;
+            viewModel.Page.IsEnabled = false;
+            this.Show();
         }
         private void BtnAceptar_Click(object sender, RoutedEventArgs e)
         {
             _respondOK = true;
+            viewModel.Page.IsEnabled = true;
             Close();
         }
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
+            viewModel.Page.IsEnabled = true;
             Close();
         }
 
         public void Dispose()
         {
+        }
+        void Window_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
+        {
+            e.ManipulationContainer = this;
+            e.Handled = true;
         }
     }
 }

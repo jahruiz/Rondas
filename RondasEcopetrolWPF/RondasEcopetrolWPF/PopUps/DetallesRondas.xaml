@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:RondasEcopetrolWPF.PopUps"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="DetallesRondas" Height="450" Width="800">
+        Title="DetallesRondas" Height="450" Width="800"
+        ManipulationStarting="Window_ManipulationStarting">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#BAD405"/>
