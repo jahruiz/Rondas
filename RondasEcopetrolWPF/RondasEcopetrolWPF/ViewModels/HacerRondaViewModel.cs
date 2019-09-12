@@ -10,6 +10,8 @@
     using RondasEcopetrolWPF.ServerUtils;
     using RondasEcopetrolWPF.Views;
     using System.Windows;
+    using RondasEcopetrolWPF.PopUps;
+
     public class HacerRondaViewModel : ViewModelBase
     {
         public static bool showSuspendRounds = false;
@@ -162,14 +164,21 @@
         private void ClickItemListAsync()
         {
             if (SelectedUser == null) return;
-            string textoRonda = "";
+            /*string textoRonda = "";
             textoRonda =
                 SelectedUser.Nombre.ToString() + "\n" + "\n" +
                 "Fecha: " + SelectedUser.Fecha_Gen.ToString() + "\n" +
                 "Hora: " + SelectedUser.Hora_Gen.ToString() + "\n" +
                 "Planta: " + SelectedUser.Planta.ToString() + "\n" +
                 "Puesto: " + SelectedUser.Puesto.ToString();
-            DetallesRonda(textoRonda);
+            DetallesRonda(textoRonda);*/
+            using (DetallesRondas detallesRonda = new DetallesRondas(SelectedUser))
+            {
+                if (detallesRonda.mostrar())
+                {
+                    HacerRonda();
+                }
+            }
         }
 
         private void ListView_Click(object sender, RoutedEventArgs e)
@@ -177,7 +186,7 @@
             if (SelectedUser != null)
                 ClickItemListAsync();
         }
-        public void DetallesRonda(string texto)
+        /*public void DetallesRonda(string texto)
         {
             //var messageDialog = new MessageDialog(texto);
             //messageDialog.Commands.Add(new UICommand(
@@ -191,7 +200,7 @@
                 HacerRonda();
             }
 
-        }
+        }*/
 
         private async void HacerRonda()
         {
