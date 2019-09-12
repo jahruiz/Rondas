@@ -41,7 +41,7 @@
             set
             {
                 SetPropertyValue(value);
-                //this.ClickItemListAsync();
+                this.ClickItemListAsync();
             }
         }
 
@@ -78,7 +78,7 @@
                 LoadRondasDescargadas();
             }
 
-            ((HacerRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
+            //((HacerRonda)this.Page).lstRondas.GotTouchCapture += ListView_Click;
             return null;
         }
 
@@ -177,6 +177,10 @@
                 if (detallesRonda.mostrar())
                 {
                     HacerRonda();
+                }
+                else
+                {
+                    SelectedUser = null;
                 }
             }
         }
