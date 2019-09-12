@@ -100,7 +100,8 @@
                 x:Name="lstRondas"
                 x:FieldModifier="public"
                 ItemsSource="{Binding Path=RondasDisponibles,Mode = TwoWay}"
-                SelectedItem="{Binding SelectedUser,Mode = TwoWay  }">
+                SelectedItem="{Binding SelectedUser,Mode = TwoWay  }"
+                FontSize="18">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn 
