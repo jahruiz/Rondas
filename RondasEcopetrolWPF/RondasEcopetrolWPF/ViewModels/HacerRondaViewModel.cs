@@ -39,7 +39,7 @@
             set
             {
                 SetPropertyValue(value);
-                this.ClickItemListAsync();
+                //this.ClickItemListAsync();
             }
         }
 
