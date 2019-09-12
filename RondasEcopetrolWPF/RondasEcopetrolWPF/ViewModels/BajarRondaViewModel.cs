@@ -80,7 +80,7 @@
         }
         private void LoadRondas()
         {
-            using (Loading loading = new Loading(LoadRondasDisponibles, "Descargando..."))
+            using (Loading loading = new Loading(LoadRondasDisponibles, "Buscando..."))
             {
                 loading.ShowDialog();
             }
