@@ -164,16 +164,25 @@
         }
         public void EnviarRonda()
         {
-            byte[] currentRonda = FileUtils.getUTF8BytesFromXml("rnd" + SelectedItem.message_id + ".drxml");
-            UploadSetupManager uploadSetupManager = new UploadSetupManager(currentRonda, SelectedItem.message_id, SelectedItem.Usuario);
-            using (Loading loading = new Loading(uploadSetupManager.Enviar, "Enviando..."))
+            try
             {
-                loading.ShowDialog();
+                byte[] currentRonda = FileUtils.getUTF8BytesFromXml("rnd" + SelectedItem.message_id + ".drxml");
+                UploadSetupManager uploadSetupManager = new UploadSetupManager(currentRonda, SelectedItem.message_id, SelectedItem.Usuario);
+                using (Loading loading = new Loading(uploadSetupManager.Enviar, "Enviando..."))
+                {
+                    loading.ShowDialog();
+                }
+                if (uploadSetupManager.SendOK)
+                {
+                    //Actualizar la lista de rondas por enviar
+                    LoadRondasCompl();
+                }
             }
-            if (uploadSetupManager.SendOK)
+            catch (Exception e)
             {
-                //Actualizar la lista de rondas por enviar
-                LoadRondasCompl();
+                //Error en los datos de la cache de la ronda
+                MessageDialogError.ImprimirAsync("Error cargando la ronda suspendida (Ronda ID: " + SelectedItem.message_id + "): " + e.Message);
+                return;
             }
         }
     }
