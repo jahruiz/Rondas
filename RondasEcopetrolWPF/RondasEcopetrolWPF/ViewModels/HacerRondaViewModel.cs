@@ -261,16 +261,25 @@
             }
             else
             {
-                RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
-                lector1.Current.TotalPasos = SelectedUser.Pasos;
-                RondasLector.CurrentRonda = lector1.Current;
-                object obj1 = lector1.Current.next();
-                if ((obj1 != null) && (obj1 is Steps))
+                try
                 {
-                    RondasLector.StartStep = (Steps)obj1;
-                    RondasLector.CurrentWork = (Work)null;
-                    RondasLector.Step = (Steps)obj1;
-                    this.Navigated(typeof(CapturaDatos1));
+                    RondasLector lector1 = new RondasLector(FileUtils.loadXMLFromUser("rnd" + SelectedUser.Message_ID + ".xml", SelectedUser.Usuario), SelectedUser.Usuario);
+                    lector1.Current.TotalPasos = SelectedUser.Pasos;
+                    RondasLector.CurrentRonda = lector1.Current;
+                    object obj1 = lector1.Current.next();
+                    if ((obj1 != null) && (obj1 is Steps))
+                    {
+                        RondasLector.StartStep = (Steps)obj1;
+                        RondasLector.CurrentWork = (Work)null;
+                        RondasLector.Step = (Steps)obj1;
+                        this.Navigated(typeof(CapturaDatos1));
+                    }
+                }
+                catch (Exception e)
+                {
+                    //Error abriendo el archivo de la ronda
+                    await MessageDialogError.ImprimirAsync("Error cargando el archivo de la ronda (Ronda ID: " + SelectedUser.Message_ID + "): " + e.Message);
+                    return;
                 }
             }
         }
