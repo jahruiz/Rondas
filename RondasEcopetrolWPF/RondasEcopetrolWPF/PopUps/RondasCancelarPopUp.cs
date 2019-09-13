@@ -28,16 +28,16 @@ namespace RondasEcopetrolWPF.PopUps
 
         public override void noClick()
         {
-            /*if (navFromSheet)
+            if (navFromSheet && _viewModel is CapturaDatos1ViewModel)
             {
                 CapturaDatos2ViewModel.NEXT_TRIGGER = false;
                 _viewModel.Navigated(typeof(CapturaDatos2));
                 //CapturaDatos2ViewModel.currentInstance.initPanel();
             }
-            else
+            else if (!navFromSheet && _viewModel is CapturaDatos2ViewModel)
             {
                 _viewModel.Navigated(typeof(CapturaDatos1));
-            }*/
+            }
         }
 
         public override void yesClick()
