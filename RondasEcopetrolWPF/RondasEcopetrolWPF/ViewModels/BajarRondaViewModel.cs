@@ -190,14 +190,16 @@
             //DetallesRondaAsync(textoRonda);
             using (DetallesRondas detallesRonda = new DetallesRondas(SelectedUser))
             {
-                if (detallesRonda.mostrar())
+                /*if (detallesRonda.mostrar())
                 {
                     DescargaAsync(); 
                 }
                 else
                 {
                     SelectedUser = null;
-                }
+                }*/
+
+                detallesRonda.mostrar(this, DescargaAsync, resetSelectedItem);
             }
         }
         //public  void DetallesRondaAsync(string texto)
@@ -214,6 +216,11 @@
         //        DescargaAsync();
         //    }
         //}
+
+        private void resetSelectedItem()
+        {
+            SelectedUser = null;
+        }
         private void DescargaAsync()
         {
             _descargaOk = false;

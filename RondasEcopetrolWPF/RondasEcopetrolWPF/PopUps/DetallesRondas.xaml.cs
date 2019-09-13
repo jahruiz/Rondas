@@ -21,7 +21,9 @@ namespace RondasEcopetrolWPF.PopUps
     /// </summary>
     public partial class DetallesRondas : Window, IDisposable
     {
-        private bool _respondOK { get; set; }
+        //private bool _respondOK { get; set; }
+        private Action _accionOK { get; set; }
+        private Action _accionCancel { get; set; }
         public DetallesRondas(Object ronda)
         {
             InitializeComponent();
@@ -48,22 +50,28 @@ namespace RondasEcopetrolWPF.PopUps
 
         private ViewModelBase viewModel;
 
-        public void mostrar(ViewModelBase viewModel)
+        public void mostrar(ViewModelBase viewModel, Action AccionOK, Action AccionCancel)
         {
             this.viewModel = viewModel;
             viewModel.Page.IsEnabled = false;
+
+            _accionOK = AccionOK;
+            _accionCancel = AccionCancel;
+
             this.Show();
         }
         private void BtnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            _respondOK = true;
+            //_respondOK = true;
             viewModel.Page.IsEnabled = true;
             Close();
+            _accionOK.Invoke();
         }
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
             viewModel.Page.IsEnabled = true;
             Close();
+            _accionCancel.Invoke();
         }
 
         public void Dispose()

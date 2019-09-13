@@ -185,7 +185,7 @@
                     SelectedUser = null;
                 }*/
 
-                detallesRonda.mostrar(this);
+                detallesRonda.mostrar(this, HacerRonda, resetSelectedItem);
             }
         }
 
@@ -210,6 +210,10 @@
 
         }*/
 
+        private void resetSelectedItem()
+        {
+            SelectedUser = null;
+        }
         private async void HacerRonda()
         {
             if (showSuspendRounds)
