@@ -337,7 +337,7 @@
                 x:Name="btnGuardar"
                 Command="{Binding GuardarCommand}"
                 Margin="10,10,10,10"
-                Width="290"
+                Width="200"
                 Height="50"
                 FontSize="18"
                 FontWeight="Bold"
@@ -349,7 +349,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock  
                        Grid.Column="0"
-                       Text="Guardar y suspender"
+                       Text="Suspender"
                        VerticalAlignment="Center"
                        FontSize="20"
                        Margin="10"
