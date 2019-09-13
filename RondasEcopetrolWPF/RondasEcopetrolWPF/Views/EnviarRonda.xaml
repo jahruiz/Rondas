@@ -159,7 +159,7 @@
             </Button>
             <Button
                 x:Name="cancelar"
-                Command="{Binding CancelarSesionCommand}"
+                Command="{Binding CancelarCommand}"
                 CommandParameter="{Binding ElementName=txtPassword}"
                 Margin="10,10,10,10"
                 Width="190"
