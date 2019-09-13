@@ -104,34 +104,41 @@
             //DetallesRondaAsync(textoRonda);
             using (DetallesRondas detallesRonda = new DetallesRondas(SelectedItem))
             {
-                if (detallesRonda.mostrar())
+                /*if (detallesRonda.mostrar())
                 {
                     EnviarRonda();
                 }
                 else
                 {
                     SelectedItem = null;
-                }
+                }*/
+
+                detallesRonda.mostrar(this, EnviarRonda, resetSelectedItem);
             }
         }
-   //     public async void DetallesRondaAsync(string texto)
-   //     {
-   //         //var messageDialog = new MessageDialog(texto);
-   //         //messageDialog.Commands.Add(new UICommand(
-   //         //    "Aceptar", new UICommandInvokedHandler(HacerCommand)));
-   //         //messageDialog.Commands.Add(new UICommand(
-   //         //    "Cancelar"));
-   //         //await messageDialog.ShowAsync();
-			//MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
-   //         if (result == MessageBoxResult.OK)
-   //         {
-   //             EnviarRonda();
-   //         }
-   //     }
+        //     public async void DetallesRondaAsync(string texto)
+        //     {
+        //         //var messageDialog = new MessageDialog(texto);
+        //         //messageDialog.Commands.Add(new UICommand(
+        //         //    "Aceptar", new UICommandInvokedHandler(HacerCommand)));
+        //         //messageDialog.Commands.Add(new UICommand(
+        //         //    "Cancelar"));
+        //         //await messageDialog.ShowAsync();
+        //MessageBoxResult result = MessageBox.Show(texto, "Detalle Ronda", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+        //         if (result == MessageBoxResult.OK)
+        //         {
+        //             EnviarRonda();
+        //         }
+        //     }
         //private void HacerCommand(IUICommand command)
         //{
 
         //}
+
+        private void resetSelectedItem()
+        {
+            SelectedItem = null;
+        }
         public async void LoadRondasCompletas()
         {
             ObservableCollection<RondaCompletada> rondas = new ObservableCollection<RondaCompletada>();
