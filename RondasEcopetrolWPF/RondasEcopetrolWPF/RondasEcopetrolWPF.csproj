@@ -87,6 +87,7 @@
       <DependentUpon>TreeRound.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServerUtils\FileUtils.cs" />
+    <Compile Include="ServerUtils\LogError.cs" />
     <Compile Include="ServerUtils\ServerUtils.cs" />
     <Compile Include="ServerUtils\UploadSetupManager.cs" />
     <Compile Include="ServerUtils\XmlUtils.cs" />

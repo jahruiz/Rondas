@@ -98,7 +98,8 @@
             }
             catch (Exception ex)
             {
-                Info = "Error::interno reinicie el programa " + ex.Message + "\r\n";
+                Info = "Error:interno, para mas detalle consulte el Log\r\n";
+                LogError.CustomErrorLog(ex);
             }
         }
         private void CancelarSesionExecute()
@@ -141,6 +142,7 @@
                 catch (System.Exception e)
                 {
                     await MessageDialogError.ImprimirAsync(e.Message);
+                    LogError.CustomErrorLog(e);
                     IsValidUser = false;
                 }
             }

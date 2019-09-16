@@ -110,7 +110,7 @@
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 flag = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 if (ServerUtils.response != null)
                 {
@@ -123,6 +123,7 @@
                     return result;
                 }
                 flag = false;
+                LogError.CustomErrorLog(e);
             }
             result = flag;
             return result;
@@ -145,7 +146,7 @@
                 ServerUtils.response = httpWebRequest.GetResponse();
                 flag = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 if (ServerUtils.response != null)
                 {
@@ -157,6 +158,7 @@
                     return result;
                 }
                 flag = false;
+                LogError.CustomErrorLog(e);
             }
             result = flag;
             return result;
@@ -172,13 +174,14 @@
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 result = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 if (ServerUtils.response != null)
                 {
                     ServerUtils.response.Close();
                 }
                 result = false;
+                LogError.CustomErrorLog(e);
             }
             return result;
         }
@@ -200,13 +203,14 @@
                 ServerUtils.response = httpWebRequest.GetResponse();
                 result = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 if (ServerUtils.response != null)
                 {
                     ServerUtils.response.Close();
                 }
                 result = false;
+                LogError.CustomErrorLog(e);
             }
             return result;
         }
