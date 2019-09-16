@@ -69,7 +69,9 @@ namespace RondasEcopetrolWPF.PopUps
                         Treeview1.Items.Clear();
                         this.Close();
                     }
-                }
+                    else
+                        ((Treeview1.Items[0] as TreeViewItem)).IsSelected=true;
+                }               
             }
         }
     }
