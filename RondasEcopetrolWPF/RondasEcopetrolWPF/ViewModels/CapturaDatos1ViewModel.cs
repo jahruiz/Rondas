@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RondasEcopetrolWPF.Base;
-using System.Windows.Input;
-using RondasEcopetrolWPF.Views;
+﻿using RondasEcopetrolWPF.Base;
 using RondasEcopetrolWPF.Models;
 using RondasEcopetrolWPF.PopUps;
+using RondasEcopetrolWPF.Views;
+using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace RondasEcopetrolWPF.ViewModels
 {

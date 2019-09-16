@@ -2,7 +2,6 @@
 {
     using RondasEcopetrolWPF.Base;
     using System.IO;
-    using System.Threading.Tasks;
     using System.Windows;
 
     public class UploadSetupManager

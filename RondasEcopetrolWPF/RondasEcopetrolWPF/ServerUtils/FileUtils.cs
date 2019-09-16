@@ -1,18 +1,13 @@
 ﻿namespace RondasEcopetrolWPF.ServerUtils
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
     using System.Data;
     using System.IO;
-    using System.Reflection;
     using System.Text;
     using System.Xml;
     using System.Xml.Serialization;
-
-    using System.Threading.Tasks;
-    using System.Runtime;
-    using System;
-
-    using System.Collections.Generic;
-    using System.Configuration;
 
     public class FileUtils
     {

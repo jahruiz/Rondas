@@ -1,10 +1,9 @@
 ﻿namespace RondasEcopetrolWPF.ServerUtils
 {
     using System;
+    using System.Configuration;
     using System.IO;
     using System.Net;
-    using System.Xml;
-    using System.Configuration;
     public class ServerUtils
     {
         private static string backupHost;
