@@ -60,7 +60,7 @@
         </Grid>
    
         <Grid Grid.Row="2" Margin="20,20,20,20">
-            <TreeView x:Name="Treeview1" FontSize="20">
+            <TreeView x:Name="Treeview1" FontSize="20" SelectedItemChanged="Treeview1_SelectedItemChanged">
                 <TreeView.Resources>
                     <Style TargetType="{x:Type TreeViewItem}">
                         <Setter Property="HeaderTemplate">
