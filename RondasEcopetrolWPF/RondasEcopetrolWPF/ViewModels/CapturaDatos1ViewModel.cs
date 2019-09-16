@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RondasEcopetrolWPF.Base;
-using System.Windows.Input;
-using RondasEcopetrolWPF.Views;
+﻿using RondasEcopetrolWPF.Base;
 using RondasEcopetrolWPF.Models;
 using RondasEcopetrolWPF.PopUps;
+using RondasEcopetrolWPF.Views;
+using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace RondasEcopetrolWPF.ViewModels
 {
@@ -275,74 +272,8 @@ namespace RondasEcopetrolWPF.ViewModels
             _popUp.showAsync();
         }
 
-        //TODO Mirar que se toma de aqui
-        /*private void InitializeComponent()
-        {
-            ResourceManager manager1 = new ResourceManager(typeof(StateMachine));
-            this.cmbEstado = new ComboBox();
-            this.txtPaso = new TextBox();
-            this.txtDireccion = new TextBox();
-            this.txtCommentary = new TextBox();
-            this.btnAceptar = new SButton();
-            this.lblNameRonda = new Label();
-
-            this.cmbEstado.Location = new Point(0x49, 0x3f + (0x17 * 3) + 6);
-            this.cmbEstado.Size = new Size(0x9d, 0x18);
-            this.cmbEstado.SelectedValueChanged += new EventHandler(this.itemChanged);
-
-            this.txtCommentary.Location = new Point(0x49, 0x3f + (0x17 * 3) + 0x18 + 9);
-            this.txtCommentary.BackColor = Color.White;
-            this.txtCommentary.Multiline = true;
-            this.txtCommentary.Size = new Size(0x9d, 0x17 * 2);
-            this.txtCommentary.MaxLength = 2000;
-
-            this.txtPaso.Location = new Point(0x49, 0x23);
-            this.txtPaso.BackColor = Color.White;
-            //this.txtPaso.ReadOnly = true;
-            this.txtPaso.Multiline = true;
-            this.txtPaso.Size = new Size(0x9d, 0x17 * 2);
-
-
-            this.txtDireccion.Location = new Point(0x49, 0x3f + 0x17 + 3);
-            this.txtDireccion.BackColor = Color.White;
-            //this.txtPaso.ReadOnly = true;
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Size = new Size(0x9d, 0x17 * 2);
-
-            this.btnAceptar.Location = new Point(0x7a, 0xc9 + 15);
-            this.btnAceptar.ForeColor = Color.White;
-            this.btnAceptar.Size = new Size(0x6b, 30);
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.Click += new EventHandler(this.aceptarClick);
-
-            this.lblNameRonda.Font = new Font("Verdana", 8.25f, FontStyle.Regular);
-            this.lblNameRonda.Bounds = new Rectangle(6, 0xde + 15 + 10, 0xe2 * 3, 15);
-            this.lblNameRonda.BackColor = Color.FromArgb(222, 222, 222);
-
-            base.Fondo = (Image)manager1.GetObject("fondo");
-            base.Controls.Add(this.btnAceptar);
-            base.Controls.Add(this.cmbEstado);
-            base.Controls.Add(this.txtPaso);
-            base.Controls.Add(this.txtDireccion);
-            base.Controls.Add(this.lblNameRonda);
-            base.Controls.Add(this.txtCommentary);
-            base.Size = new Size(240, 0x115);
-
-            this.txtPaso.TextChanged += new EventHandler(this.txtUnChanged);
-            this.txtDireccion.TextChanged += new EventHandler(this.txtUnChanged);
-            base.KeyDown += new KeyEventHandler(this.keyImpl);
-        }*/
-
         public void initPanel()
         {
-            //TODO Pendiente Buscar en Arbol de la ronda
-            /*SToolBar bar1 = base.Form.Barra;
-            bar1.Editar = false;
-            bar1.Primero = false;
-            bar1.Ultimo = false;
-            if (step == StartStep) bar1.Anterior = false;
-
-            bar1.Buscar = RondasLector.CurrentRonda.Show_tree;*/
             if (RondasLector.CurrentRonda.Show_tree)
             {
                 ((CapturaDatos1)this.Page).btnBuscar.Visibility = Visibility.Visible;
@@ -350,50 +281,6 @@ namespace RondasEcopetrolWPF.ViewModels
             }
             showActual();
         }
-
-        /*protected void itemChanged(object sender, EventArgs a)
-        {
-            base.Focus();
-        }*/
-
-        /*protected void keyImpl(object sender, KeyEventArgs a)
-        {
-            if (a.KeyCode == Keys.Down)
-            {
-                int num1 = this.cmbEstado.Items.Count;
-                int num2 = this.cmbEstado.SelectedIndex;
-                if (num2 == (num1 - 1))
-                {
-                    this.cmbEstado.SelectedIndex = 0;
-                }
-                else
-                {
-                    this.cmbEstado.SelectedIndex = num2 + 1;
-                }
-            }
-            else if (a.KeyCode == Keys.Up)
-            {
-                int num3 = this.cmbEstado.Items.Count;
-                int num4 = this.cmbEstado.SelectedIndex;
-                if (num4 == -1) num4 = 0;
-                if (num4 == 0)
-                {
-                    this.cmbEstado.SelectedIndex = num3 - 1;
-                }
-                else
-                {
-                    this.cmbEstado.SelectedIndex = num4 - 1;
-                }
-            }
-            else if (a.KeyCode == Keys.Left)
-            {
-                this.anterior();
-            }
-            else if (a.KeyCode == Keys.Right)
-            {
-                this.siguiente();
-            }
-        }*/
 
         public async void siguiente()
         {
@@ -419,9 +306,10 @@ namespace RondasEcopetrolWPF.ViewModels
                     CapturaDatos2ViewModel.INIT_STATE = true;
                     if (RondasLector.Step.Works.Count > 0)
                     {
-                        //AppFrame.Navigate(typeof(CapturaDatos2));
+                        /*//AppFrame.Navigate(typeof(CapturaDatos2));
                         Navigated(typeof(CapturaDatos2));
-                        //CapturaDatos2ViewModel.currentInstance.initPanel();
+                        //CapturaDatos2ViewModel.currentInstance.initPanel();*/
+                        CapturaDatos2ViewModel.navigateNext(this);
                     }
                     else
                     {

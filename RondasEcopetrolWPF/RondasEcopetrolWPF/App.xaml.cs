@@ -1,10 +1,5 @@
 ﻿using RondasEcopetrolWPF.Models;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 
 namespace RondasEcopetrolWPF
@@ -14,9 +9,24 @@ namespace RondasEcopetrolWPF
     /// </summary>
     public partial class App : Application
     {
+        private static Mutex _mutex = null;
         private void Application_Exit(object sender, ExitEventArgs e)
         {
             SuspendRound.SaveSuspends();
+        }
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            const string appName = "RondasEcopetrolWPF";
+            bool createdNew;
+
+            _mutex = new Mutex(true, appName, out createdNew);
+
+            if (!createdNew)
+            {
+                //MessageBox.Show("Ya existe una instancia de la aplicación ejecutandose","Advertencia",MessageBoxButton.OK,MessageBoxImage.Warning);
+                Application.Current.Shutdown();
+            }
+            base.OnStartup(e);
         }
     }
 }

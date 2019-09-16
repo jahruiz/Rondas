@@ -35,10 +35,23 @@ namespace RondasEcopetrolWPF.PopUps
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
             _cancelar = true;
-            Treeview1.Items.Remove(root);
+            Treeview1.Items.Clear();
             this.Close();
         }
-        private void ListView_Click(object sender, RoutedPropertyChangedEventArgs<object> e)
+        public void Dispose()
+        {
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (root != null)
+            {
+                Treeview1.Items.Clear();
+                Treeview1.Items.Add(root);
+            }
+        }
+
+        private void Treeview1_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (!_cancelar)//sin esta validaciòn se muestre  el mensaje cada vez que se elimina la coleccion.
             {
@@ -52,25 +65,14 @@ namespace RondasEcopetrolWPF.PopUps
                         RondasLector.Step = (Steps)obj1;
                         RondasLector.CurrentRonda.Current = obj1;
                         _cancelar = true;
-						NavegarCapturadatos1=true;
-                        Treeview1.Items.Remove(root);
+                        NavegarCapturadatos1 = true;
+                        Treeview1.Items.Clear();
                         this.Close();
                     }
-                }
+                    else
+                        ((Treeview1.Items[0] as TreeViewItem)).IsSelected=true;
+                }               
             }
-        }
-        public void Dispose()
-        {
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (root != null)
-            {
-                Treeview1.Items.Clear();
-                Treeview1.Items.Add(root);
-            }
-            Treeview1.SelectedItemChanged += ListView_Click;
         }
     }
 }

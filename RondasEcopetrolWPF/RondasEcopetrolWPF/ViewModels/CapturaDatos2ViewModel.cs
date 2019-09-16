@@ -424,7 +424,7 @@
         public async void siguiente()
         {
             bool b = true;
-            bool prevEquipment = INIT_STATE;
+            //bool prevEquipment = INIT_STATE;
             int value_Validation = 0;
             if (!INIT_STATE)
             {
@@ -443,7 +443,7 @@
                     RondasLector.CurrentWork.Causa = this.SelectedValueCausa;
                     RondasLector.CurrentWork.fechar();
                 }
-                while (true)
+                /*while (true)
                 {
                     object obj1 = RondasLector.CurrentRonda.next();
                     if (obj1 == null)
@@ -473,6 +473,55 @@
                         Navigated(typeof(CapturaDatos1));
                         break;
                     }
+                }*/
+                navigateNext(this);
+            }
+        }
+
+        public static void navigateNext(ViewModelBase viewModel)
+        {
+            INIT_STATE = false;
+            bool prevEquipment = viewModel is CapturaDatos1ViewModel;
+            while (true)
+            {
+                object obj1 = RondasLector.CurrentRonda.next();
+                if (obj1 == null)
+                {
+                    RondasFinalizarPopUp _popUp = new RondasFinalizarPopUp(viewModel, !prevEquipment);
+                    if (_popUp.showAsync())
+                    {
+                        //Ir al menú principal
+                        viewModel.Navigated(typeof(MainPage));
+                    }
+                    break;
+                }
+                else if (obj1 is Work && ((Work)obj1).isValidForThisState())
+                {
+                    RondasLector.CurrentWork = (Work)obj1;
+                    if (prevEquipment)
+                    {
+                        NEXT_TRIGGER = false;
+                        viewModel.Navigated(typeof(CapturaDatos2));
+                    }
+                    else
+                    {
+                        ((CapturaDatos2ViewModel)viewModel).showActual();
+                    }
+                    break;
+                }
+                else if (obj1 is Steps)
+                {
+                    RondasLector.CurrentWork = (Work)null;
+                    RondasLector.Step = (Steps)obj1;
+                    if (prevEquipment)
+                    {
+                        ((CapturaDatos1ViewModel)viewModel).showActual();
+                    }
+                    else
+                    {
+                        viewModel.Navigated(typeof(CapturaDatos1));
+                    }
+                    break;
                 }
             }
         }

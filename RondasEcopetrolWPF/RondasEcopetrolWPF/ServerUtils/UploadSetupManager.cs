@@ -2,7 +2,6 @@
 {
     using RondasEcopetrolWPF.Base;
     using System.IO;
-    using System.Threading.Tasks;
     using System.Windows;
 
     public class UploadSetupManager
@@ -54,7 +53,7 @@
             {
                 //ErrorMessage.ERRROR_II = true;
                 //app.showCanvas(typeof(ErrorMessage));
-                await MessageDialogError.ImprimirAsync("Fallas de Conexión no permiten almacenar esta ronda en RIS.");
+                await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
             }
         }
     }

@@ -115,9 +115,10 @@
                                     rondas.Add(ronda);
                             }
                         }
-                        catch (System.Exception)
+                        catch (System.Exception e)
                         {
                             await MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
+                            LogError.CustomErrorLog(e);
                         }
                     }
                     else
@@ -131,8 +132,8 @@
                 }
                 else
                 {
+                    await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
                     //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
-                    //RondasApp.app.showCanvas(typeof(ErrorMessage));
                 }
             }
             else
@@ -169,6 +170,7 @@
                 }
                 else
                 {
+                    await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
                     //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
                 }
 
@@ -233,36 +235,37 @@
         }
         private async void DescargarRonda()
         {
-            //var messageDialog = new MessageDialog("Descargando ronda estructurada del sistema RIS...");
-            //messageDialog.Commands.Add(new UICommand(
-            //    "Cancelar"));
-            //await messageDialog.ShowAsync();
-
-            object[] objArray1 = new object[10] { "rondaid=", SelectedUser.ID_Ronda, "&msgId=", SelectedUser.Message_ID, "&pdate=", DateTime.Now.ToString("yyyyMMddHHmmss"), "&user=", FileUtils.getActualUser(), "&pwd=", FileUtils.getActualUserpwd() };
-            if (ServerUtils.send("/getRonda", string.Concat(objArray1)))
+            try
             {
-                if (ServerUtils.isMIME("text/xml"))
+                object[] objArray1 = new object[10] { "rondaid=", SelectedUser.ID_Ronda, "&msgId=", SelectedUser.Message_ID, "&pdate=", DateTime.Now.ToString("yyyyMMddHHmmss"), "&user=", FileUtils.getActualUser(), "&pwd=", FileUtils.getActualUserpwd() };
+                if (ServerUtils.send("/getRonda", string.Concat(objArray1)))
                 {
-                    String msgId = "" + SelectedUser.Message_ID;
-                    FileUtils.writeXmlData("rnd" + msgId + ".xml", ServerUtils.getStream());
-                    MessageBox.Show("La ronda ha sido descargada con éxito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                    _descargaOk = true;
+                    if (ServerUtils.isMIME("text/xml"))
+                    {
+                        String msgId = "" + SelectedUser.Message_ID;
+                        FileUtils.writeXmlData("rnd" + msgId + ".xml", ServerUtils.getStream());
+                        MessageBox.Show("La ronda ha sido descargada con éxito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                        _descargaOk = true;
+                    }
+                    else
+                    {
+                        StreamReader reader1 = new StreamReader(ServerUtils.getStream());
+                        MessageBox.Show(reader1.ReadToEnd(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                        //await MessageDialogError.ImprimirAsync(reader1.ReadToEnd());//, "Server");
+                        reader1.Close();
+                    }
                 }
                 else
                 {
-                    StreamReader reader1 = new StreamReader(ServerUtils.getStream());
-                    MessageBox.Show(reader1.ReadToEnd(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //await MessageDialogError.ImprimirAsync(reader1.ReadToEnd());//, "Server");
-                    reader1.Close();
+                    await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
                 }
+                ServerUtils.close();
             }
-            else
+            catch(Exception e)
             {
-                await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");                
-                //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
-                //app1.showCanvas(typeof(ErrorMessage));
-            }
-            ServerUtils.close();
+                await MessageDialogError.ImprimirAsync("Se genero un error, para mas detalle consulte el Log");
+                LogError.CustomErrorLog(e);
+            }            
         }
         #endregion Metodos
     }
