@@ -421,14 +421,14 @@
             //AppFrame.Navigate(typeof(CapturaDatos1));
             Navigated(typeof(CapturaDatos1));
         }
-        public async void siguiente()
+        public void siguiente()
         {
             bool b = true;
             //bool prevEquipment = INIT_STATE;
             int value_Validation = 0;
             if (!INIT_STATE)
             {
-                int[] result = await this.ValidarEntrada();
+                int[] result = this.ValidarEntrada();
                 value_Validation = result[0];
                 b = (result[1] == 1);
             }
@@ -535,7 +535,7 @@
             else
                 return this.IsEnabledValorText ? this.ValorText : this.SelectedValueValorCombo;
         }
-        private async Task<int[]> ValidarEntrada()
+        private int[] ValidarEntrada()
         {
             if (RondasLector.CurrentWork != null)
             {
@@ -543,7 +543,7 @@
                 string valor = this.getValor();
                 if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                 {
-                    await MessageDialogError.ImprimirAsync("Debe digitar valor o un comentario");
+                    MessageDialogError.ImprimirAsync("Debe digitar valor o un comentario");
                     ((CapturaDatos2)this.Page).txtValorText.Focus();
                     //currFocus = txtValor;
                     return new int[] { 0, 0 };
@@ -552,7 +552,7 @@
                 {
                     if (valor.Length == 0 && this.Comentario.Trim().Length == 0)
                     {
-                        await MessageDialogError.ImprimirAsync("El valor es obligatorio");
+                        MessageDialogError.ImprimirAsync("El valor es obligatorio");
                         ((CapturaDatos2)this.Page).txtValorText.Focus();
                         //currFocus = txtValor;
                         return new int[] { 0, 0 };
@@ -561,7 +561,7 @@
                 }
                 if (valor.Length != 0)
                 {
-                    returnValue = await this.validValue(valor);
+                    returnValue = this.validValue(valor);
                 }
                 if (returnValue == 0)
                 {
@@ -588,7 +588,7 @@
             }
             return new int[] { 0, 1 };
         }
-        private async Task<int> validValue(string valor)
+        private int validValue(string valor)
         {
             //bool showMsg = !noComment.Selected && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
             bool showMsg = !this.SinComentario && (Comentario.Length == 0 || this.SelectedValueCausa.Length == 0);
@@ -606,7 +606,7 @@
                         valorReturn = RondasLector.CurrentWork.validEntryText(index, value, showMsg, out resultMsgTitle, out resultMsgDetail);
                         if (resultMsgTitle != null)
                         {
-                            await MessageDialogError.ImprimirAsync(resultMsgDetail, resultMsgTitle);
+                            MessageDialogError.ImprimirAsync(resultMsgDetail, resultMsgTitle);
                         }
                         return valorReturn;
                     }
@@ -616,7 +616,7 @@
             valorReturn = RondasLector.CurrentWork.validEntry(valor, showMsg, out resultMsgTitle, out resultMsgDetail);
             if (resultMsgTitle != null)
             {
-                await MessageDialogError.ImprimirAsync(resultMsgDetail, resultMsgTitle);
+                MessageDialogError.ImprimirAsync(resultMsgDetail, resultMsgTitle);
             }
             return valorReturn;
         }

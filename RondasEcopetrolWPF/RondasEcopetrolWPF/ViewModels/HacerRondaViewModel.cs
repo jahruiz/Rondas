@@ -82,7 +82,7 @@
         }
 
         #region Metodos
-        public async void LoadRondasDescargadas()
+        public void LoadRondasDescargadas()
         {
             ObservableCollection<RondaDescargada> rondas = new ObservableCollection<RondaDescargada>();
 
@@ -110,19 +110,19 @@
                 {
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
-                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
+                    MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     return;
                 }
             }
             catch (System.Exception e)
             {
-                await MessageDialogError.ImprimirAsync("Error listando las rondas descargadas: " + e.Message);
+                MessageDialogError.ImprimirAsync("Error listando las rondas descargadas: " + e.Message);
             }
 
             RondasDescargadas = rondas;
         }
 
-        public async void LoadRondasSuspendidas()
+        public void LoadRondasSuspendidas()
         {
             ObservableCollection<RondaDescargada> rondas = new ObservableCollection<RondaDescargada>();
 
@@ -148,13 +148,13 @@
                 {
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
-                    await MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
+                    MessageDialogWarning.ImprimirAsync("No hay rondas disponibles");
                     return;
                 }
             }
             catch (System.Exception e)
             {
-                await MessageDialogError.ImprimirAsync("Error listando las rondas suspendidas: " + e.Message);
+                MessageDialogError.ImprimirAsync("Error listando las rondas suspendidas: " + e.Message);
             }
 
             RondasDescargadas = rondas;
@@ -213,7 +213,7 @@
         {
             SelectedUser = null;
         }
-        private async void HacerRonda()
+        private void HacerRonda()
         {
             if (showSuspendRounds)
             {
@@ -228,14 +228,14 @@
                             if (ronda.Lector.isClose)
                             {
                                 //Error en los datos de la cache de la ronda
-                                await MessageDialogError.ImprimirAsync("Error en los datos de la ronda suspendida (Ronda ID: " + ronda.MessageID + ")");
+                                MessageDialogError.ImprimirAsync("Error en los datos de la ronda suspendida (Ronda ID: " + ronda.MessageID + ")");
                                 return;
                             }
                         }
                         catch (Exception e)
                         {
                             //Error en los datos de la cache de la ronda
-                            await MessageDialogError.ImprimirAsync("Error cargando la ronda suspendida (Ronda ID: " + ronda.MessageID + "): " + e.Message);
+                            MessageDialogError.ImprimirAsync("Error cargando la ronda suspendida (Ronda ID: " + ronda.MessageID + "): " + e.Message);
                             return;
                         }
                     }
@@ -277,7 +277,7 @@
                 catch (Exception e)
                 {
                     //Error abriendo el archivo de la ronda
-                    await MessageDialogError.ImprimirAsync("Error cargando el archivo de la ronda (Ronda ID: " + SelectedUser.Message_ID + "): " + e.Message);
+                    MessageDialogError.ImprimirAsync("Error cargando el archivo de la ronda (Ronda ID: " + SelectedUser.Message_ID + "): " + e.Message);
                     return;
                 }
             }

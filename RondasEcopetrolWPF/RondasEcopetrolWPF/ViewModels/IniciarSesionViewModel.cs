@@ -50,13 +50,13 @@
         private ICommand _cancelarSesionCommand;
         public ICommand IniciarSesionCommand
         {
-            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommandAsync<object>(IniciarSesionExecuteAsync); }
+            get { return _iniciarSesionCommand = _iniciarSesionCommand ?? new DelegateCommand<object>(IniciarSesionExecuteAsync); }
         }
         public ICommand CancelarSesionCommand
         {
             get { return _cancelarSesionCommand = _cancelarSesionCommand ?? new DelegateCommand(CancelarSesionExecute); }
         }
-        private async Task IniciarSesionExecuteAsync(object parameter)
+        private void IniciarSesionExecuteAsync(object parameter)
         {
 			var passwordBox = parameter as PasswordBox;
             Password = passwordBox.Password;
@@ -121,7 +121,7 @@
 
         #region Metodos
 
-        private async void loginAsync()
+        private void loginAsync()
         {
             IsValidUser = false;
             if (ServerUtils.send("/validateUser", "user=" + FileUtils.getActualUser() + "&pwd=" + FileUtils.getActualUserpwd()))
@@ -134,21 +134,21 @@
                     if (!IsValidUser)
                     {
                         if (returnValue != null && returnValue.Equals("block"))
-                            await MessageDialogError.ImprimirAsync("El usuario esta bloqueado consulte a su administrador para que pueda restablecerle contraseña.");
+                            MessageDialogError.ImprimirAsync("El usuario esta bloqueado consulte a su administrador para que pueda restablecerle contraseña.");
                         else
-                            await MessageDialogError.ImprimirAsync("Usuario y / o Clave Incorrecta");
+                            MessageDialogError.ImprimirAsync("Usuario y / o Clave Incorrecta");
                     }
                 }
                 catch (System.Exception e)
                 {
-                    await MessageDialogError.ImprimirAsync(e.Message);
+                    MessageDialogError.ImprimirAsync(e.Message);
                     LogError.CustomErrorLog(e);
                     IsValidUser = false;
                 }
             }
             else
             {
-                await MessageDialogError.ImprimirAsync("Error en la conexion con la BD, intente más tarde");
+                MessageDialogError.ImprimirAsync("Error en la conexion con la BD, intente más tarde");
                 IsValidUser = false;
             }
             ServerUtils.close();

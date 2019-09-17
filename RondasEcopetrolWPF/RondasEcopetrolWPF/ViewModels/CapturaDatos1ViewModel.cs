@@ -282,18 +282,18 @@ namespace RondasEcopetrolWPF.ViewModels
             showActual();
         }
 
-        public async void siguiente()
+        public void siguiente()
         {
             string text1 = this.SelectedValueEstado;
             if (text1.Length == 0)
             {
-                await MessageDialogError.ImprimirAsync("Usted debe seleccionar un estado");
+                MessageDialogError.ImprimirAsync("Usted debe seleccionar un estado");
             }
             else
             {
                 if ((text1.Equals("OF") || text1.Equals("SF") || text1.Equals("EF")) && this.Comentario.Trim().Length == 0)
                 {
-                    await MessageDialogWarning.ImprimirAsync("Se sugiere documentar");
+                    MessageDialogWarning.ImprimirAsync("Se sugiere documentar");
                     //((CapturaDatos1)this.Page).txtCommentary.Focus(FocusState.Programmatic);
                     ((CapturaDatos1)this.Page).txtCommentary.Focus();
                 }

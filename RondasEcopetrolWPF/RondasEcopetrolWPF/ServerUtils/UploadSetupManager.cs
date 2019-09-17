@@ -25,7 +25,7 @@
                 return _sendOk;
             }
         }
-        public async void Enviar()//RondasApp app, ConnectClass connect) 
+        public void Enviar()//RondasApp app, ConnectClass connect) 
         {
             _sendOk = false;
             if (ServerUtils.send("/servlet/ecopetrol.ris.rondas.subirRondas?userId=" + FileUtils.getActualUser() + "&pwd=" + FileUtils.getActualUserpwd(), "text/xml", _currentRonda))
@@ -53,7 +53,7 @@
             {
                 //ErrorMessage.ERRROR_II = true;
                 //app.showCanvas(typeof(ErrorMessage));
-                await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
+                MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
             }
         }
     }

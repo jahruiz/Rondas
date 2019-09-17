@@ -95,7 +95,7 @@
                 return;
             }
         }
-        public async void LoadRondasDisponibles()
+        public void LoadRondasDisponibles()
         {
             ObservableCollection<Ronda> rondas = new ObservableCollection<Ronda>();
 
@@ -117,7 +117,7 @@
                         }
                         catch (System.Exception e)
                         {
-                            await MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
+                            MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
                             LogError.CustomErrorLog(e);
                         }
                     }
@@ -127,12 +127,12 @@
                             new System.IO.StreamReader(ServerUtils.getStream());
                         string str = reader.ReadToEnd();
                         reader.Close();
-                        await MessageDialogError.ImprimirAsync(str);
+                        MessageDialogError.ImprimirAsync(str);
                     }
                 }
                 else
                 {
-                    await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
+                    MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
                     //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
                 }
             }
@@ -154,7 +154,7 @@
                         }
                         catch (Exception)
                         {
-                            await MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
+                            MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
                             //int num = (int)MessageBox.Show("La ronda no esta en su formato correcto");
                             //app.showMenuDialog();
                         }
@@ -165,12 +165,12 @@
                         string end = streamReader.ReadToEnd();
                         streamReader.Close();
                         //int num = (int)MessageBox.Show(end);
-                        await MessageDialogError.ImprimirAsync(end);
+                        MessageDialogError.ImprimirAsync(end);
                     }
                 }
                 else
                 {
-                    await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
+                    MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
                     //Error en la conexión, Asegúrese de dispones servicio de red y que la pocket este conectada correctamente.
                 }
 
@@ -233,7 +233,7 @@
             if (_descargaOk)
                 RondasDisponibles.Remove(SelectedUser);
         }
-        private async void DescargarRonda()
+        private void DescargarRonda()
         {
             try
             {
@@ -257,13 +257,13 @@
                 }
                 else
                 {
-                    await MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
+                    MessageDialogError.ImprimirAsync("Se genero un error en el servidor, para mas detalle consulte el Log");
                 }
                 ServerUtils.close();
             }
             catch(Exception e)
             {
-                await MessageDialogError.ImprimirAsync("Se genero un error, para mas detalle consulte el Log");
+                MessageDialogError.ImprimirAsync("Se genero un error, para mas detalle consulte el Log");
                 LogError.CustomErrorLog(e);
             }            
         }

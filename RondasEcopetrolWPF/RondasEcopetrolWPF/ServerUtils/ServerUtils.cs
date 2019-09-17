@@ -6,7 +6,7 @@
     using System.Net;
     public class ServerUtils
     {
-        private static string backupHost;
+        private static string backupHost = null;
 
         private static string contentType;
 

@@ -67,7 +67,7 @@
             if (SelectedItem != null)
                 ClickItemListAsync();                
         }
-        private async void LoadRondasCompl()
+        private void LoadRondasCompl()
         {
             LoadRondasCompletas();
             if (RondasaSubir.Count == 0)
@@ -77,7 +77,7 @@
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
                 }
-                await MessageDialogWarning.ImprimirAsync("No hay rondas por enviar");
+                MessageDialogWarning.ImprimirAsync("No hay rondas por enviar");
                 return;
             }
         }
@@ -139,7 +139,7 @@
         {
             SelectedItem = null;
         }
-        public async void LoadRondasCompletas()
+        public void LoadRondasCompletas()
         {
             ObservableCollection<RondaCompletada> rondas = new ObservableCollection<RondaCompletada>();
 
@@ -158,7 +158,7 @@
             }
             catch (System.Exception ex)
             {
-                await MessageDialogError.ImprimirAsync("Error listando las rondas a enviar: " + ex.Message);
+                MessageDialogError.ImprimirAsync("Error listando las rondas a enviar: " + ex.Message);
             }
             RondasaSubir = rondas;
         }

@@ -9,8 +9,8 @@
     /// </summary>
     public partial class Loading : Window, IDisposable
     {
-        private string _title;
-        private string _detail;
+        //private string _title;
+        //private string _detail;
         private Action _accion { get; set; }
         public Loading(Action Accion, string Detail)
         {

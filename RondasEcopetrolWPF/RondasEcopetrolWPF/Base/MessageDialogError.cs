@@ -9,7 +9,7 @@ namespace RondasEcopetrolWPF.Base
 {
     public class MessageDialogError
     {
-        public static async System.Threading.Tasks.Task ImprimirAsync(string message)
+        public static void ImprimirAsync(string message)
         {
             MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             //var messageDialog = new MessageDialog(message);
@@ -17,7 +17,7 @@ namespace RondasEcopetrolWPF.Base
             //await messageDialog.ShowAsync();
         }
 
-        public static async System.Threading.Tasks.Task ImprimirAsync(string message, string title)
+        public static void ImprimirAsync(string message, string title)
         {
             MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Information);
             //var messageDialog = new MessageDialog(message);

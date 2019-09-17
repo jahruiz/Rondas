@@ -30,7 +30,15 @@ namespace RondasEcopetrolWPF.PopUps
             this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.WindowStyle = WindowStyle.None; //sin barra de titulo
 
-            if (ronda is RondaDescargada)
+            if (ronda is Ronda)
+            {
+                this.txtNombre.Text = ((Ronda)ronda).Nombre_Ronda;
+                this.txtFecha.Text = ((Ronda)ronda).Fecha_Gen;
+                this.txtHora.Text = ((Ronda)ronda).Hora_Gen;
+                this.txtPlanta.Text = ((Ronda)ronda).Nombre_Planta;
+                this.txtPuesto.Text = ((Ronda)ronda).Nombre_Puesto;
+            }
+            else if (ronda is RondaDescargada)
             {
                 this.txtNombre.Text = ((RondaDescargada)ronda).Nombre;
                 this.txtFecha.Text = ((RondaDescargada)ronda).Fecha_Gen;
