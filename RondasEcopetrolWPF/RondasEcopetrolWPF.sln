@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RondasEcopetrolWPF", "RondasEcopetrolWPF\RondasEcopetrolWPF.csproj", "{629DD74B-1326-4243-9C57-9CB638B4A959}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador_ROF", "Instalador_ROF\Instalador_ROF.vdproj", "{D01F9963-9920-479D-A191-CC90124D3261}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{629DD74B-1326-4243-9C57-9CB638B4A959}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{629DD74B-1326-4243-9C57-9CB638B4A959}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{629DD74B-1326-4243-9C57-9CB638B4A959}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D01F9963-9920-479D-A191-CC90124D3261}.Debug|Any CPU.ActiveCfg = Debug
-		{D01F9963-9920-479D-A191-CC90124D3261}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
