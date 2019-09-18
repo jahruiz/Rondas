@@ -360,5 +360,14 @@
             string file = path + "\\" + user + "\\rnd" + messageID + ".xml";
             return File.Exists(file);
         }
+
+        public static string getFolderPath()
+        {
+            if (FileUtils.path == null)
+            {
+                FileUtils.initPath();
+            }
+            return FileUtils.path;
+        }
     }
 }
