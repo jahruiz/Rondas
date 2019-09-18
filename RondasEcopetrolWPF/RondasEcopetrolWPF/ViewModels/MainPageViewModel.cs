@@ -6,6 +6,8 @@
     using RondasEcopetrolWPF.ServerUtils;
     using RondasEcopetrolWPF.Views;
     using RondasEcopetrolWPF.Models;
+    using System.Windows;
+
     public class MainPageViewModel : ViewModelBase
     {
         public static string Eco;
@@ -117,6 +119,7 @@
 
         public override Task OnNavigatedTo(EventArgs args)
         {
+            (this.Page.Parent as Window).WindowState = WindowState.Maximized;
             int Rondasdescargadas = 0, RondasporSubir = 0;
             this.IsButtonSesionEnable = true;
             if (Isvalid)
