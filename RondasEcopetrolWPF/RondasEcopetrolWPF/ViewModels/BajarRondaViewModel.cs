@@ -73,11 +73,11 @@
             return null;
         }
         #region Metodos
-		private void ListView_Click(object sender, RoutedEventArgs e)
+		/*private void ListView_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedUser != null)
                 ClickItemListAsync();                
-        }
+        }*/
         private void LoadRondas()
         {
             using (Loading loading = new Loading(LoadRondasDisponibles, "Buscando..."))
@@ -117,7 +117,7 @@
                         }
                         catch (System.Exception e)
                         {
-                            MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
+                            MessageDialogError.ImprimirAsync("La información de las rondas no esta en el formato correcto");
                             LogError.CustomErrorLog(e);
                         }
                     }
@@ -232,6 +232,10 @@
             }
             if (_descargaOk)
                 RondasDisponibles.Remove(SelectedUser);
+            else
+            {
+                resetSelectedItem();
+            }
         }
         private void DescargarRonda()
         {
@@ -263,7 +267,7 @@
             }
             catch(Exception e)
             {
-                MessageDialogError.ImprimirAsync("Se genero un error, para mas detalle consulte el Log");
+                MessageDialogError.ImprimirAsync("Se genero un error descargando la ronda: " + e.Message);
                 LogError.CustomErrorLog(e);
             }            
         }
