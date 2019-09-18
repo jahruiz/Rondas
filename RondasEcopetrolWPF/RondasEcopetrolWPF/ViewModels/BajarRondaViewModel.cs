@@ -80,6 +80,7 @@
         }*/
         private void LoadRondas()
         {
+            _descargaOk = false;
             using (Loading loading = new Loading(LoadRondasDisponibles, "Buscando..."))
             {
                 loading.ShowDialog();
@@ -91,7 +92,10 @@
                     //Ir al menú principal
                     Navigated(typeof(MainPage));
                 }
-                MessageBox.Show("No hay rondas disponibles para este turno", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (_descargaOk)
+                {
+                    MessageBox.Show("No hay rondas disponibles para este turno", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
                 return;
             }
         }
@@ -114,6 +118,7 @@
                                 if (!FileUtils.EsRondaYaDescargada(ronda.Message_ID, FileUtils.getActualUser()))
                                     rondas.Add(ronda);
                             }
+                            _descargaOk = true;
                         }
                         catch (System.Exception e)
                         {
@@ -151,10 +156,11 @@
                                 if (!FileUtils.EsRondaYaDescargada(ronda.Message_ID, FileUtils.getActualUser()))
                                     rondas.Add(ronda);
                             }
+                            _descargaOk = true;
                         }
                         catch (Exception)
                         {
-                            MessageDialogError.ImprimirAsync("La ronda no esta en su formato correcto");
+                            MessageDialogError.ImprimirAsync("La información de las rondas no esta en el formato correcto");
                             //int num = (int)MessageBox.Show("La ronda no esta en su formato correcto");
                             //app.showMenuDialog();
                         }
