@@ -175,13 +175,18 @@
                 if (uploadSetupManager.SendOK)
                 {
                     //Actualizar la lista de rondas por enviar
-                    LoadRondasCompl();
+                    ActualizarExecute();
+                }
+                else
+                {
+                    resetSelectedItem();
                 }
             }
             catch (Exception e)
             {
                 //Error en los datos de la cache de la ronda
                 MessageDialogError.ImprimirAsync("Error cargando la ronda suspendida (Ronda ID: " + SelectedItem.message_id + "): " + e.Message);
+                resetSelectedItem();
                 return;
             }
         }

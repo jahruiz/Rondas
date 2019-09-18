@@ -188,11 +188,11 @@
             }
         }
 
-        private void ListView_Click(object sender, RoutedEventArgs e)
+        /*private void ListView_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedUser != null)
                 ClickItemListAsync();
-        }
+        }*/
         /*public void DetallesRonda(string texto)
         {
             //var messageDialog = new MessageDialog(texto);
@@ -229,6 +229,7 @@
                             {
                                 //Error en los datos de la cache de la ronda
                                 MessageDialogError.ImprimirAsync("Error en los datos de la ronda suspendida (Ronda ID: " + ronda.MessageID + ")");
+                                resetSelectedItem();
                                 return;
                             }
                         }
@@ -236,6 +237,7 @@
                         {
                             //Error en los datos de la cache de la ronda
                             MessageDialogError.ImprimirAsync("Error cargando la ronda suspendida (Ronda ID: " + ronda.MessageID + "): " + e.Message);
+                            resetSelectedItem();
                             return;
                         }
                     }
@@ -278,6 +280,7 @@
                 {
                     //Error abriendo el archivo de la ronda
                     MessageDialogError.ImprimirAsync("Error cargando el archivo de la ronda (Ronda ID: " + SelectedUser.Message_ID + "): " + e.Message);
+                    resetSelectedItem();
                     return;
                 }
             }
