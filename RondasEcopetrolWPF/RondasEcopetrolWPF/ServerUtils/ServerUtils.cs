@@ -104,7 +104,7 @@
             try
             {
                 WebRequest webRequest = WebRequest.Create(string.Concat(array2));
-                webRequest.Timeout = -1;
+                webRequest.Timeout = 30000;
                 ServerUtils.response = webRequest.GetResponse();
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 flag = true;
@@ -138,7 +138,7 @@
                 httpWebRequest.SendChunked = true;
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentLength = (long)bytes.Length;
-                httpWebRequest.Timeout = -1;
+                httpWebRequest.Timeout = 30000;
                 Stream requestStream = httpWebRequest.GetRequestStream();
                 requestStream.Write(bytes, 0, bytes.Length);
                 requestStream.Close();
@@ -168,7 +168,7 @@
             try
             {
                 WebRequest webRequest = WebRequest.Create(uri);
-                webRequest.Timeout = -1;
+                webRequest.Timeout = 30000;
                 ServerUtils.response = webRequest.GetResponse();
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 result = true;
@@ -195,7 +195,7 @@
                 httpWebRequest.SendChunked = true;
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentLength = (long)bytes.Length;
-                httpWebRequest.Timeout = -1;
+                httpWebRequest.Timeout = 30000;
                 Stream requestStream = httpWebRequest.GetRequestStream();
                 requestStream.Write(bytes, 0, bytes.Length);
                 requestStream.Close();
