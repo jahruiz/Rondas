@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RondasEcopetrolWPF.ServerUtils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -75,7 +76,7 @@ namespace RondasEcopetrolWPF.Models
                 else
                 {
                     //Borrar el archivo de la cache
-                    File.Delete(CACHE_FILENAME);
+                    File.Delete(FileUtils.getFolderPath() + "\\" + CACHE_FILENAME);
                 }
             }
             catch (Exception)
@@ -89,7 +90,7 @@ namespace RondasEcopetrolWPF.Models
             {
                 try
                 {
-                    if (File.Exists(CACHE_FILENAME))
+                    if (File.Exists(FileUtils.getFolderPath() + "\\" + CACHE_FILENAME))
                     {
                         DeserializeData();
                     }
@@ -105,7 +106,7 @@ namespace RondasEcopetrolWPF.Models
         private static void SerializeData()
         {
             //Guardar el HashTasble en un archivo binario (.dat)
-            Stream SaveFileStream = File.Create(CACHE_FILENAME);
+            Stream SaveFileStream = File.Create(FileUtils.getFolderPath() + "\\" + CACHE_FILENAME);
             BinaryFormatter serializer = new BinaryFormatter();
             serializer.Serialize(SaveFileStream, suspendRounds);
             SaveFileStream.Close();
@@ -114,7 +115,7 @@ namespace RondasEcopetrolWPF.Models
         private static void DeserializeData()
         {
             //Cargar el HashTasble desde el archivo binario (.dat)
-            Stream openFileStream = File.OpenRead(CACHE_FILENAME);
+            Stream openFileStream = File.OpenRead(FileUtils.getFolderPath() + "\\" + CACHE_FILENAME);
             BinaryFormatter deserializer = new BinaryFormatter();
             suspendRounds = (Hashtable)deserializer.Deserialize(openFileStream);
             openFileStream.Close();
