@@ -12,6 +12,8 @@
 
         private static string host;
 
+        private static int timeout;
+
         private static WebResponse response;
 
         private static Stream stream;
@@ -82,6 +84,11 @@
             xmlNodeReader.Close();*/
             ServerUtils.host = ConfigurationManager.AppSettings["host"].ToString();
             string result = ConfigurationManager.AppSettings["tag"].ToString();
+            if (!int.TryParse(ConfigurationManager.AppSettings["timeout"].ToString(), out timeout))
+            {
+                timeout = 30; //Predeterminado: 30 seg
+            }
+            timeout *= 1000; //Convertir a milisegundos
             return result;
         }
         public static bool isMIME(string mime)
@@ -104,7 +111,7 @@
             try
             {
                 WebRequest webRequest = WebRequest.Create(string.Concat(array2));
-                webRequest.Timeout = 30000;
+                webRequest.Timeout = timeout;
                 ServerUtils.response = webRequest.GetResponse();
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 flag = true;
@@ -138,7 +145,7 @@
                 httpWebRequest.SendChunked = true;
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentLength = (long)bytes.Length;
-                httpWebRequest.Timeout = 30000;
+                httpWebRequest.Timeout = timeout;
                 Stream requestStream = httpWebRequest.GetRequestStream();
                 requestStream.Write(bytes, 0, bytes.Length);
                 requestStream.Close();
@@ -168,7 +175,7 @@
             try
             {
                 WebRequest webRequest = WebRequest.Create(uri);
-                webRequest.Timeout = 30000;
+                webRequest.Timeout = timeout;
                 ServerUtils.response = webRequest.GetResponse();
                 ServerUtils.contentType = ServerUtils.response.ContentType;
                 result = true;
@@ -195,7 +202,7 @@
                 httpWebRequest.SendChunked = true;
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentLength = (long)bytes.Length;
-                httpWebRequest.Timeout = 30000;
+                httpWebRequest.Timeout = timeout;
                 Stream requestStream = httpWebRequest.GetRequestStream();
                 requestStream.Write(bytes, 0, bytes.Length);
                 requestStream.Close();
