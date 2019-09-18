@@ -68,7 +68,7 @@
             }
             if (string.IsNullOrEmpty(Password))
             {
-                Info = "Debe ingresar el password." + "\r\n";
+                Info = "Debe ingresar la contraseña" + "\r\n";
                 return;
             }
             try
