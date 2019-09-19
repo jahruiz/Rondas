@@ -3,7 +3,7 @@
     using System;
     using System.Net;
     using System.Threading.Tasks;
-	using System.Windows.Controls;
+    using System.Windows.Controls;
     using System.Windows.Input;
     using RondasEcopetrolWPF.Base;
     using RondasEcopetrolWPF.PopUps;
@@ -58,9 +58,9 @@
         }
         private void IniciarSesionExecuteAsync(object parameter)
         {
-			var passwordBox = parameter as PasswordBox;
+            var passwordBox = parameter as PasswordBox;
             Password = passwordBox.Password;
-			
+            Info = "";
             if (string.IsNullOrEmpty(User))
             {
                 Info = "Debe ingresar un nombre de usuario." + "\r\n";
@@ -93,12 +93,12 @@
                 }
                 else
                 {
-                    Info="El nombre de usuario deben ser carcateres en el rango 'a'-'z', 'A'-'Z', '0'-'9'";
+                    Info = "El nombre de usuario deben ser caracteres en el rango 'a'-'z', 'A'-'Z', '0'-'9'";
                 }
             }
             catch (Exception ex)
             {
-                Info = "Error:interno, para mas detalle consulte el Log\r\n";
+                Info = "Error interno, para más detalles consulte el Log\r\n";
                 LogError.CustomErrorLog(ex);
             }
         }
@@ -134,7 +134,7 @@
                     if (!IsValidUser)
                     {
                         if (returnValue != null && returnValue.Equals("block"))
-                            MessageDialogError.ImprimirAsync("El usuario esta bloqueado consulte a su administrador para que pueda restablecerle contraseña.");
+                            MessageDialogError.ImprimirAsync("El usuario esta bloqueado consulte al Administrador del Sistema para que pueda restablecer la contraseña.");
                         else
                             MessageDialogError.ImprimirAsync("Usuario y / o Clave Incorrecta");
                     }
@@ -148,7 +148,7 @@
             }
             else
             {
-                MessageDialogError.ImprimirAsync("Error en la conexion con la BD, intente más tarde");
+                MessageDialogError.ImprimirAsync("Falló la conexión con el servidor.");
                 IsValidUser = false;
             }
             ServerUtils.close();
