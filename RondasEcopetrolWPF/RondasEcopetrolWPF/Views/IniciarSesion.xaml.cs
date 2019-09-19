@@ -1,4 +1,6 @@
 ﻿using RondasEcopetrolWPF.Base;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace RondasEcopetrolWPF.Views
 {
@@ -11,5 +13,15 @@ namespace RondasEcopetrolWPF.Views
         {
             InitializeComponent();
         }
+
+        // helper to hide watermark hint in password field
+        private void passwordChanged(object sender, RoutedEventArgs e)
+        {
+            if (txtPassword.Password.Length == 0)
+                txtPassword.Background.Opacity = 1;
+            else
+                txtPassword.Background.Opacity = 0;
+        }
+
     }
 }

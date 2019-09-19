@@ -4,12 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RondasEcopetrolWPF.Views"
+      xmlns:pop="clr-namespace:RondasEcopetrolWPF.PopUps"
       xmlns:base="clr-namespace:RondasEcopetrolWPF.Base"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       DataContext="{Binding Source={StaticResource Locator}, Path=IniciarSesionViewModel}"
       Title="IniciarSesion"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
 
     <base:PageBase.Resources>
         <Style TargetType="{x:Type Button}">
@@ -67,6 +69,21 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <ControlTemplate x:Key="WatermarkedPasswordBoxTemplate" TargetType="{x:Type PasswordBox}">
+            <Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
+                <Grid>
+                    <TextBlock Text="{Binding Path=(pop:PasswordBoxHelper.Watermark), RelativeSource={RelativeSource TemplatedParent}}" Opacity=".5"  Visibility="{Binding (pop:PasswordBoxHelper.ShowWatermark), Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                </Grid>
+            </Microsoft_Windows_Themes:ListBoxChrome>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                    <Setter Property="Foreground" Value="Gray"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </base:PageBase.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -188,7 +205,9 @@
                 Margin="0,10,0,10"
                 Width="700"
                 Height="50"
-                FontSize="30"/>
+                FontSize="30"
+                Template="{StaticResource WatermarkedPasswordBoxTemplate}" 
+                pop:PasswordBoxHelper.Watermark="Ingrese su contraseña"/>
             <TextBlock Grid.Row="4"
                 Foreground="#FFC43131"
                 Text = "{Binding Info, Mode=TwoWay}"
