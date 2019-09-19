@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="16.3" version="16.3" Modules="simple" RootPath="." Language="es" Id="{FEE5055A-A548-450D-88A3-93992D231AAC}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.3" version="16.3" Modules="simple" RootPath="." Language="es" Id="{CAAE4A06-9958-4272-B73B-4B0D255BABFD}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;DigCertStoreComponent;MsiAssemblyComponent;MsiClassComponent;MsiServInstComponent;MsiExtComponent;TilesComponent;MsiOrgComponent;FixupComponent;MsiThemeComponent;BackgroundImagesComponent;UpdaterComponent;SerValComponent;MsiInstExSeqComponent;DictionaryComponent;MsiAppSearchComponent;MsiOdbcDataSrcComponent;CPLAppletComponent;ActSyncAppComponent;PreReqComponent;WebApplicationsComponent;MsiJavaComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent"/>
   </COMPONENT>
@@ -11,12 +11,12 @@
     <ROW Property="ARPNOREPAIR" Value="1"/>
     <ROW Property="ARPPRODUCTICON" Value="LogoRIS_1.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Indra"/>
-    <ROW Property="ProductCode" Value="3082:{73294B7C-544A-43CB-A7DF-8509518CFF64} " Type="16"/>
+    <ROW Property="ProductCode" Value="3082:{DAFE2D31-61D2-41E5-B1BB-D4785F365C24} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="RONDAS OFFLINE"/>
+    <ROW Property="ProductName" Value="Rondas Offline"/>
     <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
-    <ROW Property="UpgradeCode" Value="{CD6C31A6-236E-45A0-9F2C-8A0497709F85}"/>
+    <ROW Property="UpgradeCode" Value="{33E3ECE0-E7F8-49A4-8DAF-87AD12C63F27}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
@@ -33,30 +33,31 @@
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="APPDIR" ComponentId="{5FA04144-F964-42E4-BE66-1289885A57C6}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="MaterialDesignColors.dll" ComponentId="{189C4E72-3223-4B05-AD4F-31BC9A850D23}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignColors.dll"/>
-    <ROW Component="MaterialDesignThemes.Wpf.dll" ComponentId="{9F29CE08-861F-44EF-9097-DAFFD1916572}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll"/>
-    <ROW Component="Microsoft.CSharp.dll" ComponentId="{0CB3AB9C-7071-4A70-AA03-45F61ECBDC29}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.CSharp.dll"/>
-    <ROW Component="PresentationCore.dll" ComponentId="{73670D07-7053-47CE-8C99-061BB3FB7942}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationCore.dll"/>
-    <ROW Component="PresentationFramework.dll" ComponentId="{F5CC97B3-AB5B-472C-BECA-CC124676D4F4}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationFramework.dll"/>
-    <ROW Component="ProductInformation" ComponentId="{26FC60C2-EAAC-4E80-A684-BE58D363EAA8}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="RondasEcopetrolWPF.exe" ComponentId="{0B0418BC-3F7A-449C-8C97-19B55932074E}" Directory_="APPDIR" Attributes="0" KeyPath="RondasEcopetrolWPF.exe"/>
-    <ROW Component="RondasEcopetrolWPF.exe.config" ComponentId="{C56AE9A0-66F3-4B86-8339-59DFBA41CFC7}" Directory_="APPDIR" Attributes="0" KeyPath="RondasEcopetrolWPF.exe.config" Type="0"/>
-    <ROW Component="SHORTCUTDIR" ComponentId="{B3A9C482-A26F-49E8-B659-6EBA95E92119}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="System.Configuration.dll" ComponentId="{6115A9A4-87F4-4953-8393-2E3135C5D6AE}" Directory_="APPDIR" Attributes="0" KeyPath="System.Configuration.dll"/>
-    <ROW Component="System.Core.dll" ComponentId="{5C51799F-DE9D-4092-8FDE-D241A2F4902A}" Directory_="APPDIR" Attributes="0" KeyPath="System.Core.dll"/>
-    <ROW Component="System.Data.DataSetExtensions.dll" ComponentId="{DA5FC6DC-D95E-4407-AC40-56D6D6080DB9}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.DataSetExtensions.dll"/>
-    <ROW Component="System.Data.dll" ComponentId="{4BF0B64D-45A5-4056-B23C-0153FCFFACCB}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.dll"/>
-    <ROW Component="System.Net.Http.dll" ComponentId="{B08B9E18-A7F8-43CC-B563-623EB6CF4A21}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.dll"/>
-    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{1CBC483D-52EC-4338-A1E8-62750C837B0B}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
-    <ROW Component="System.Xaml.dll" ComponentId="{967C3A07-C518-402C-B47D-DE1358DF2671}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xaml.dll"/>
-    <ROW Component="System.Xml.Linq.dll" ComponentId="{1DC76EE9-D530-4E38-B213-78B0F437FAB9}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xml.Linq.dll"/>
-    <ROW Component="System.Xml.dll" ComponentId="{CA60A631-CD85-44E3-8521-D6D1DA625803}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xml.dll"/>
-    <ROW Component="System.dll" ComponentId="{6958FDAE-A007-4672-AD71-49B818F16D82}" Directory_="APPDIR" Attributes="0" KeyPath="System.dll"/>
-    <ROW Component="Unity.Abstractions.dll" ComponentId="{6AE9E9AF-15A5-4EE2-B6CB-ABB10465C0CF}" Directory_="APPDIR" Attributes="0" KeyPath="Unity.Abstractions.dll"/>
-    <ROW Component="Unity.Container.dll" ComponentId="{7B31F631-6DB6-40A7-86E3-3A0BEAAC1906}" Directory_="APPDIR" Attributes="0" KeyPath="Unity.Container.dll"/>
-    <ROW Component="WindowsBase.dll" ComponentId="{FD8B7AE1-1219-4C23-91AE-75EAC3642CB3}" Directory_="APPDIR" Attributes="0" KeyPath="WindowsBase.dll"/>
-    <ROW Component="mscorlib.dll" ComponentId="{BE8F32AC-0706-4CCF-8189-3DB7E58B5610}" Directory_="APPDIR" Attributes="0" KeyPath="mscorlib.dll"/>
+    <ROW Component="APPDIR" ComponentId="{A9BB2F47-59BC-4653-A56D-DC1ABEF3EB13}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="MaterialDesignColors.dll" ComponentId="{9B9EF471-18B7-4A6E-8C3B-CB64A5B4B87C}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignColors.dll"/>
+    <ROW Component="MaterialDesignThemes.Wpf.dll" ComponentId="{5B92BCC8-0C7A-4B2F-B047-EC2C33E8988B}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Component="Microsoft.CSharp.dll" ComponentId="{4EC7FE3E-B206-462F-84C6-5E3E822BB23D}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.CSharp.dll"/>
+    <ROW Component="PresentationCore.dll" ComponentId="{A85A9E70-7FD9-4162-B63D-88255C6C80DD}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationCore.dll"/>
+    <ROW Component="PresentationFramework.Aero.dll" ComponentId="{96C7BA58-BB03-4505-8CE7-2CC2CBB18296}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationFramework.Aero.dll"/>
+    <ROW Component="PresentationFramework.dll" ComponentId="{223680C6-AF62-4DD9-9F9E-3DCF30F2DD55}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationFramework.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{DE139105-AAC3-4DC7-9F6E-AB5DA9B355B3}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="RondasEcopetrolWPF.exe" ComponentId="{1966EC2C-B86D-4CCC-BD3A-029137399124}" Directory_="APPDIR" Attributes="0" KeyPath="RondasEcopetrolWPF.exe"/>
+    <ROW Component="RondasEcopetrolWPF.exe.config" ComponentId="{65315780-C602-459F-9644-B7A3AA3D79A2}" Directory_="APPDIR" Attributes="0" KeyPath="RondasEcopetrolWPF.exe.config" Type="0"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{E2E88983-E53F-4DF7-AFC2-244641B11E84}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="System.Configuration.dll" ComponentId="{3C6D273F-A169-4D69-8081-56E9D355A922}" Directory_="APPDIR" Attributes="0" KeyPath="System.Configuration.dll"/>
+    <ROW Component="System.Core.dll" ComponentId="{CE32B6C8-B9D1-49A8-BD33-E32884DDDCBE}" Directory_="APPDIR" Attributes="0" KeyPath="System.Core.dll"/>
+    <ROW Component="System.Data.DataSetExtensions.dll" ComponentId="{DA30DAE0-ABCC-4696-9F5B-DD77268DB88C}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.DataSetExtensions.dll"/>
+    <ROW Component="System.Data.dll" ComponentId="{F347ECFD-7997-4111-963D-A438E5791A95}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.dll"/>
+    <ROW Component="System.Net.Http.dll" ComponentId="{956136CC-A917-47C1-ADB8-CEE7B61EF796}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{78C48BF2-5BF7-4BA5-BF61-89197BA1C619}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="System.Xaml.dll" ComponentId="{046B754F-D8D2-425C-86F1-39EB8DE101B2}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xaml.dll"/>
+    <ROW Component="System.Xml.Linq.dll" ComponentId="{3E3FCA05-B852-40C1-A11D-BA9D69EFE4F8}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xml.Linq.dll"/>
+    <ROW Component="System.Xml.dll" ComponentId="{95B6BF62-A611-4143-B439-564FF95C3C8B}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xml.dll"/>
+    <ROW Component="System.dll" ComponentId="{4E03839C-2927-4EA1-9065-58E4A167DACB}" Directory_="APPDIR" Attributes="0" KeyPath="System.dll"/>
+    <ROW Component="Unity.Abstractions.dll" ComponentId="{FC779B83-DA51-4767-9C59-E236CAC65DF2}" Directory_="APPDIR" Attributes="0" KeyPath="Unity.Abstractions.dll"/>
+    <ROW Component="Unity.Container.dll" ComponentId="{A21B034F-50D3-491E-88B9-A2A0808D43FA}" Directory_="APPDIR" Attributes="0" KeyPath="Unity.Container.dll"/>
+    <ROW Component="WindowsBase.dll" ComponentId="{607FA773-5F21-4FEA-8F37-E7220986293B}" Directory_="APPDIR" Attributes="0" KeyPath="WindowsBase.dll"/>
+    <ROW Component="mscorlib.dll" ComponentId="{8F7A1B10-F81D-494C-B75E-1E87C41C77D9}" Directory_="APPDIR" Attributes="0" KeyPath="mscorlib.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -64,13 +65,14 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="RondasEcopetrolWPF.exe" Component_="RondasEcopetrolWPF.exe" FileName="RONDAS~1.EXE|RondasEcopetrolWPF.exe" Attributes="0" SourcePath="..\..\..\RepoRondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Release\RondasEcopetrolWPF.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="PresentationFramework.dll" Component_="PresentationFramework.dll" FileName="PRESEN~1.DLL|PresentationFramework.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\PresentationFramework.dll" SelfReg="false"/>
     <ROW File="RondasEcopetrolWPF.exe.config" Component_="RondasEcopetrolWPF.exe.config" FileName="RONDAS~1.CON|RondasEcopetrolWPF.exe.config" Attributes="0" SourcePath="..\..\..\RepoRondas\RondasEcopetrolWPF\RondasEcopetrolWPF\bin\Release\RondasEcopetrolWPF.exe.config" SelfReg="false"/>
     <ROW File="Microsoft.CSharp.dll" Component_="Microsoft.CSharp.dll" FileName="MICROS~1.DLL|Microsoft.CSharp.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Microsoft.CSharp.dll" SelfReg="false"/>
     <ROW File="MaterialDesignThemes.Wpf.dll" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~1.DLL|MaterialDesignThemes.Wpf.dll" Attributes="0" SourcePath="..\..\..\RepoRondas\RondasEcopetrolWPF\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll" SelfReg="false"/>
     <ROW File="MaterialDesignColors.dll" Component_="MaterialDesignColors.dll" FileName="MATERI~2.DLL|MaterialDesignColors.dll" Attributes="0" SourcePath="..\..\..\RepoRondas\RondasEcopetrolWPF\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll" SelfReg="false"/>
     <ROW File="mscorlib.dll" Component_="mscorlib.dll" FileName="mscorlib.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll" SelfReg="false"/>
+    <ROW File="PresentationFramework.Aero.dll" Component_="PresentationFramework.Aero.dll" FileName="PRESEN~1.DLL|PresentationFramework.Aero.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\PresentationFramework.Aero.dll" SelfReg="false"/>
     <ROW File="PresentationCore.dll" Component_="PresentationCore.dll" FileName="PRESEN~2.DLL|PresentationCore.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\PresentationCore.dll" SelfReg="false"/>
+    <ROW File="PresentationFramework.dll" Component_="PresentationFramework.dll" FileName="PRESEN~3.DLL|PresentationFramework.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\PresentationFramework.dll" SelfReg="false"/>
     <ROW File="System.Configuration.dll" Component_="System.Configuration.dll" FileName="SYSTEM~1.DLL|System.Configuration.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Configuration.dll" SelfReg="false"/>
     <ROW File="System.Core.dll" Component_="System.Core.dll" FileName="SYSTEM~2.DLL|System.Core.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Core.dll" SelfReg="false"/>
     <ROW File="System.Data.DataSetExtensions.dll" Component_="System.Data.DataSetExtensions.dll" FileName="SYSTEM~3.DLL|System.Data.DataSetExtensions.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.DataSetExtensions.dll" SelfReg="false"/>
@@ -158,13 +160,14 @@
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="RondasEcopetrolWPF.exe"/>
-    <ROW Feature_="MainFeature" Component_="PresentationFramework.dll"/>
     <ROW Feature_="MainFeature" Component_="RondasEcopetrolWPF.exe.config"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.CSharp.dll"/>
     <ROW Feature_="MainFeature" Component_="MaterialDesignThemes.Wpf.dll"/>
     <ROW Feature_="MainFeature" Component_="MaterialDesignColors.dll"/>
     <ROW Feature_="MainFeature" Component_="mscorlib.dll"/>
+    <ROW Feature_="MainFeature" Component_="PresentationFramework.Aero.dll"/>
     <ROW Feature_="MainFeature" Component_="PresentationCore.dll"/>
+    <ROW Feature_="MainFeature" Component_="PresentationFramework.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Configuration.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Core.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Data.DataSetExtensions.dll"/>
@@ -208,8 +211,8 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="RondasEcopetrolWPF.exe" Directory_="SHORTCUTDIR" Name="RONDAS~1|RondasOffline" Component_="RondasEcopetrolWPF.exe" Target="[#RondasEcopetrolWPF.exe]" Description="RondasEcopetrolWPF.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="RondasEcopetrolWPF.exe_1" Directory_="DesktopFolder" Name="RONDAS~1.EXE|RondasEcopetrolWPF.exe" Component_="RondasEcopetrolWPF.exe" Target="[#RondasEcopetrolWPF.exe]" Description="RondasEcopetrolWPF.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RondasOffline" Directory_="SHORTCUTDIR" Name="RONDAS~1|Rondas Offline" Component_="RondasEcopetrolWPF.exe" Target="[#RondasEcopetrolWPF.exe]" Description="Rondas Offline" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RondasOffline_1" Directory_="DesktopFolder" Name="RONDAS~1|Rondas Offline" Component_="RondasEcopetrolWPF.exe" Target="[#RondasEcopetrolWPF.exe]" Description="Rondas Offline" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
