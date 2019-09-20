@@ -93,7 +93,7 @@
                 }
                 else
                 {
-                    Info = "El nombre de usuario deben ser caracteres en el rango 'a'-'z', 'A'-'Z', '0'-'9'";
+                    Info = "El nombre de usuario debe contener caracteres en el rango 'a'-'z', 'A'-'Z', '0'-'9'";
                 }
             }
             catch (Exception ex)
