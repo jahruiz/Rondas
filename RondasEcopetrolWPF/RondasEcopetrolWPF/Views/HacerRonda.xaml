@@ -80,7 +80,7 @@
                     <DropShadowEffect BlurRadius="10"/>
                 </Grid.Effect>
                 <TextBlock 
-                    Text="RONDAS POR REALIZAR"
+                    Text="{Binding Path=tituloPantalla,Mode = TwoWay}"
                     FontSize="40"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
